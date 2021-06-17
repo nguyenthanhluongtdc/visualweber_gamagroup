@@ -6,15 +6,15 @@
         "Laravel CMS",
         "Laravel CMS Platform"
     ],
-    "homepage": "https://laravel-cms.gistensal.com",
+    "homepage": "https://laravel-cms.demo.gistensal.com",
     "support": {
-        "issues": "https://laravel-cms.gistensal.com",
-        "document": "https://laravel-cms.gistensal.com/docs-cms"
+        "issues": "https://laravel-cms.demo.gistensal.com",
+        "document": "https://laravel-cms.demo.gistensal.com/docs-cms"
     },
     "authors": [
         {
             "name": "Laravel Technologies",
-            "email": "contact@laravel-cms.gistensal.com"
+            "email": "contact@laravel-cms.demo.gistensal.com"
         }
     ],
     "type": "project",

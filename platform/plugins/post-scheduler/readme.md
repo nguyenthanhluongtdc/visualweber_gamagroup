@@ -1,6 +1,6 @@
 # Overview
 This is a plugin for Laravel CMS so you have to purchase Laravel CMS first to use this plugin. 
-Purchase it here: [laravel-cms.gistensal.com](https://mailto:get-quote@visualweber.co)
+Purchase it here: [laravel-cms.demo.gistensal.com](https://mailto:get-quote@visualweber.co)
 
 Post Scheduler is a plugin that allows you to modify the created time of posts.
 
@@ -14,5 +14,5 @@ Post Scheduler is a plugin that allows you to modify the created time of posts.
 ![Screenshot](https://raw.githubusercontent.com/botble/post-scheduler/master/public/images/screenshot.png)
 
 # Contact us
-- Website: [https://laravel-cms.gistensal.com](https://laravel-cms.gistensal.com)
+- Website: [https://laravel-cms.demo.gistensal.com](https://laravel-cms.demo.gistensal.com)
 - Email: [get-quote@visualweber.com](mailto:get-quote@visualweber.com)

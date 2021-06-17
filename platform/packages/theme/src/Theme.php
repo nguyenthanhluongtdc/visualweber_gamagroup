@@ -985,7 +985,7 @@ class Theme implements ThemeContract
         }
 
         $content->withHeaders([
-            'Author'            => 'Laravel Technologies (contact@laravel-cms.gistensal.com)',
+            'Author'            => 'Laravel Technologies (contact@laravel-cms.demo.gistensal.com)',
             'Author-Team'       => 'mailto:get-quote@visualweber.com',
             'CMS'               => 'Laravel CMS',
             'CMS-Version'       => get_cms_version(),

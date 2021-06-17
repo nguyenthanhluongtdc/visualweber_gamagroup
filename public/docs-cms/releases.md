@@ -371,7 +371,7 @@ Example:
 <a name="version_3_3"></a>
 ## Botble 3.3
 ### 30-09-2018
-- See what's new here: https://laravel-cms.gistensal.com/whats-new-in-laravel-cms-33
+- See what's new here: https://laravel-cms.demo.gistensal.com/whats-new-in-laravel-cms-33
 
 <a name="version_3_2_1"></a>
 ## Botble 3.2.1

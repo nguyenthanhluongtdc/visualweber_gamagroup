@@ -1,6 +1,6 @@
 # Overview
 This is a plugin for Laravel CMS so you have to purchase Laravel CMS first to use this plugin. 
-Purchase it here: [laravel-cms.gistensal.com](https://mailto:get-quote@visualweber.co)
+Purchase it here: [laravel-cms.demo.gistensal.com](https://mailto:get-quote@visualweber.co)
 
 # Video
 [![https://youtu.be/RAnfFj4g5qY](https://img.youtube.com/vi/RAnfFj4g5qY/0.jpg)](https://youtu.be/RAnfFj4g5qY)
@@ -15,5 +15,5 @@ Purchase it here: [laravel-cms.gistensal.com](https://mailto:get-quote@visualweb
 ![Screenshot](https://raw.githubusercontent.com/botble/wordpress-importer/master/public/images/screenshot.png)
 
 # Contact us
-- Website: [https://laravel-cms.gistensal.com](https://laravel-cms.gistensal.com)
+- Website: [https://laravel-cms.demo.gistensal.com](https://laravel-cms.demo.gistensal.com)
 - Email: [get-quote@visualweber.com](mailto:get-quote@visualweber.com)

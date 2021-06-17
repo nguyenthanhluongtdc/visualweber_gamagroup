@@ -1,6 +1,6 @@
 # Overview
 This is a plugin for Laravel CMS so you have to purchase Laravel CMS first to use this plugin. 
-Purchase it here: [laravel-cms.gistensal.com](https://mailto:get-quote@visualweber.co)
+Purchase it here: [laravel-cms.demo.gistensal.com](https://mailto:get-quote@visualweber.co)
 
 Impersonate is a plugin that allows you to authenticate as your users.
 
@@ -23,5 +23,5 @@ Impersonate is a plugin that allows you to authenticate as your users.
 - [Laravel](https://github.com/laravel/framework) community
 
 # Contact us
-- Website: [https://laravel-cms.gistensal.com](https://laravel-cms.gistensal.com)
+- Website: [https://laravel-cms.demo.gistensal.com](https://laravel-cms.demo.gistensal.com)
 - Email: [get-quote@visualweber.com](mailto:get-quote@visualweber.com)
