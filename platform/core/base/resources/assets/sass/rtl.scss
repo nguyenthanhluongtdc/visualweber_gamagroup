@@ -345,6 +345,7 @@ body[dir="rtl"] {
 .dropdown-hover a > i {
     right: auto;
     left: 5px;
+
     &:before {
         content: "\f104";
     }
@@ -436,4 +437,20 @@ small.charcounter {
         right: auto;
         left: 20px;
     }
+}
+
+.toast-bottom-right {
+    right: auto;
+    left: 0;
+
+    .toast-close-button {
+        right: auto;
+        left: -.3em;
+        float: left;
+    }
+}
+
+#toast-container > div {
+    padding: 15px 50px 15px 15px;
+    background-position: right 15px center;
 }

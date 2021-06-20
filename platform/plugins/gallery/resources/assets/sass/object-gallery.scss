@@ -13,6 +13,7 @@
         left: 40px;
         z-index: 10;
     }
+
     .owl-controls {
         margin: 0;
         text-align: right;
@@ -20,6 +21,7 @@
         top: 30px;
         right: 30px;
     }
+
     &.c-pagination-bottom {
         .owl-controls {
             top: auto;
@@ -27,6 +29,7 @@
             right: 30px;
         }
     }
+
     .c-content-label {
         position: absolute;
         top: 25px;
@@ -53,7 +56,7 @@
 }
 
 .owl-theme {
-    .owl-controls{
+    .owl-controls {
         margin-top: 10px;
         text-align: center;
     }

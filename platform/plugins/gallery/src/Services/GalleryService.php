@@ -61,7 +61,7 @@ class GalleryService
         Gallery::registerAssets();
 
         Theme::breadcrumb()
-            ->add(__('Home'), url('/'))
+            ->add(__('Home'), route('public.index'))
             ->add(__('Galleries'), route('public.galleries'))
             ->add($gallery->name, $gallery->url);
 

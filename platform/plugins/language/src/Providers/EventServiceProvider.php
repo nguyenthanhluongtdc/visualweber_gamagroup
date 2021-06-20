@@ -6,10 +6,12 @@ use Artisan;
 use Platform\Base\Events\CreatedContentEvent;
 use Platform\Base\Events\DeletedContentEvent;
 use Platform\Base\Events\UpdatedContentEvent;
+use Platform\Language\Listeners\ActivatedPluginListener;
 use Platform\Language\Listeners\CreatedContentListener;
 use Platform\Language\Listeners\DeletedContentListener;
 use Platform\Language\Listeners\ThemeRemoveListener;
 use Platform\Language\Listeners\UpdatedContentListener;
+use Platform\PluginManagement\Events\ActivatedPluginEvent;
 use Platform\Theme\Events\ThemeRemoveEvent;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -33,6 +35,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         ThemeRemoveEvent::class    => [
             ThemeRemoveListener::class,
+        ],
+        ActivatedPluginEvent::class    => [
+            ActivatedPluginListener::class,
         ],
     ];
 

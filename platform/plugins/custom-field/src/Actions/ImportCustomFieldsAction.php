@@ -61,7 +61,7 @@ class ImportCustomFieldsAction extends AbstractAction
                 return $this->error($validator->messages()->first());
             }
 
-            $fieldGroup['created_by'] = Auth::user()->id;
+            $fieldGroup['created_by'] = Auth::id();
             $item = $this->fieldGroupRepository->create($fieldGroup);
             if (!$item) {
                 DB::rollBack();
@@ -106,7 +106,7 @@ class ImportCustomFieldsAction extends AbstractAction
 
             $item['field_group_id'] = $fieldGroupId;
             $item['parent_id'] = $parentId;
-            $item['created_by'] = Auth::user()->id;
+            $item['created_by'] = Auth::id();
             $field = $this->fieldItemRepository->create($item);
 
             if (!$field) {

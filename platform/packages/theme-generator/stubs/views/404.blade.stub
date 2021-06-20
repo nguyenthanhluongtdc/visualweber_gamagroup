@@ -4,27 +4,6 @@
 @endphp
 
 {!! Theme::partial('header') !!}
-<style>
-    .error-code {
-        color: #22292f;
-        font-size: 3rem;
-    }
-
-    .error-border {
-        background-color: var(--color-1st);
-        height: .25rem;
-        width: 6rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .error-page a {
-        color: var(--color-1st);
-    }
-
-    .error-page ul li {
-        margin-bottom : 5px;
-    }
-</style>
 
 <div class="container error-page">
     <div class="error-code">

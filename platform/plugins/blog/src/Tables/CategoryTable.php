@@ -88,7 +88,7 @@ class CategoryTable extends TableAbstract
      */
     public function query()
     {
-        return collect(get_categories([]));
+        return collect(get_categories(['indent' => '↳']));
     }
 
     /**

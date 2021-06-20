@@ -4,6 +4,7 @@ namespace Platform\PluginManagement\Commands;
 
 use Platform\PluginManagement\Services\PluginService;
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
 class PluginActivateCommand extends Command
 {
@@ -38,7 +39,7 @@ class PluginActivateCommand extends Command
 
     /**
      * @return boolean
-     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     * @throws FileNotFoundException
      */
     public function handle()
     {

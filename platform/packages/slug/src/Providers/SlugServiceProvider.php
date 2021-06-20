@@ -70,6 +70,9 @@ class SlugServiceProvider extends ServiceProvider
 
         $this->app->booted(function () {
             foreach (array_keys($this->app->make(SlugHelper::class)->supportedModels()) as $item) {
+                /**
+                 * @var BaseModel $item
+                 */
                 $item::resolveRelationUsing('slugable', function ($model) {
                     return $model->morphOne(Slug::class, 'reference');
                 });

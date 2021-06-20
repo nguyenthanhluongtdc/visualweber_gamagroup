@@ -38,6 +38,7 @@ return [
             'image/jpeg',
             'image/gif',
             'image/bmp',
+            'image/svg+xml',
         ],
         'video'    => [
             'video/mp4',

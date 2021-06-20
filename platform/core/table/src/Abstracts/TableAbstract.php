@@ -262,7 +262,7 @@ abstract class TableAbstract extends DataTable
 
         return $this->builder()
             ->columns($this->getColumns())
-            ->ajax(['url' => $this->getAjaxUrl()])
+            ->ajax(['url' => $this->getAjaxUrl(), 'method' => 'POST'])
             ->parameters([
                 'dom'          => $this->getDom(),
                 'buttons'      => $this->getBuilderParameters(),
@@ -274,8 +274,8 @@ abstract class TableAbstract extends DataTable
                 'searchDelay'  => 350,
                 'bStateSave'   => $this->bStateSave,
                 'lengthMenu'   => Arr::sortRecursive([
-                    array_values(array_unique(array_merge([10, 30, 50], [$this->pageLength, -1]))),
-                    array_values(array_unique(array_merge([10, 30, 50],
+                    array_values(array_unique(array_merge([10, 30, 50, 100, 500], [$this->pageLength, -1]))),
+                    array_values(array_unique(array_merge([10, 30, 50, 100, 500],
                         [$this->pageLength, trans('core/base::tables.all')]))),
                 ]),
                 'pageLength'   => $this->pageLength,

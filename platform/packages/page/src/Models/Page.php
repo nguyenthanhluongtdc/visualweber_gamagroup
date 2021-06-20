@@ -4,9 +4,9 @@ namespace Platform\Page\Models;
 
 use Platform\ACL\Models\User;
 use Platform\Base\Enums\BaseStatusEnum;
+use Platform\Base\Models\BaseModel;
 use Platform\Base\Traits\EnumCastable;
 use Platform\Revision\RevisionableTrait;
-use Platform\Base\Models\BaseModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Page extends BaseModel
@@ -22,12 +22,12 @@ class Page extends BaseModel
     protected $table = 'pages';
 
     /**
-     * @var mixed
+     * @var bool
      */
     protected $revisionEnabled = true;
 
     /**
-     * @var mixed
+     * @var bool
      */
     protected $revisionCleanup = true;
 

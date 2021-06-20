@@ -23,7 +23,7 @@ class DeleteCustomFieldAction extends AbstractAction
     }
 
     /**
-     * @param $id
+     * @param int $id
      * @return array
      * @throws Exception
      */

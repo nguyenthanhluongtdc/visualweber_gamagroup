@@ -46,6 +46,8 @@ class AuditLog
                         $name = $data->name;
                     } elseif (isset($data->title)) {
                         $name = $data->title;
+                    } elseif (isset($data->id)) {
+                        $name = 'ID: ' . $data->id;
                     }
                 }
         }

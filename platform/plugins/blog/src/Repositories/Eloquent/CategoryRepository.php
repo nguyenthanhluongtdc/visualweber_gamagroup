@@ -3,8 +3,8 @@
 namespace Platform\Blog\Repositories\Eloquent;
 
 use Platform\Base\Enums\BaseStatusEnum;
-use Platform\Support\Repositories\Eloquent\RepositoriesAbstract;
 use Platform\Blog\Repositories\Interfaces\CategoryInterface;
+use Platform\Support\Repositories\Eloquent\RepositoriesAbstract;
 use Eloquent;
 
 class CategoryRepository extends RepositoriesAbstract implements CategoryInterface
@@ -144,7 +144,7 @@ class CategoryRepository extends RepositoriesAbstract implements CategoryInterfa
 
         $orderBy = isset($filters['order_by']) ? $filters['order_by'] : 'created_at';
         $order = isset($filters['order']) ? $filters['order'] : 'desc';
-        $this->model->where('status', BaseStatusEnum::PUBLISHED)->orderBy($orderBy, $order);
+        $this->model = $this->model->where('status', BaseStatusEnum::PUBLISHED)->orderBy($orderBy, $order);
 
         return $this->applyBeforeExecuteQuery($this->model)->paginate((int)$filters['per_page']);
     }

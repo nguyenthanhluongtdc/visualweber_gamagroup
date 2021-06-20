@@ -142,8 +142,9 @@ class FormServiceProvider extends ServiceProvider
 
         Form::component('repeater', 'core/base::forms.partials.repeater', [
             'name',
-            'value'  => null,
-            'fields' => [],
+            'value'      => null,
+            'fields'     => [],
+            'attributes' => [],
         ]);
     }
 }

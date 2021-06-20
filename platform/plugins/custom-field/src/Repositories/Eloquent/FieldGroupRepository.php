@@ -2,6 +2,7 @@
 
 namespace Platform\CustomField\Repositories\Eloquent;
 
+use Platform\CustomField\Models\FieldItem;
 use Platform\CustomField\Repositories\Interfaces\FieldGroupInterface;
 use Platform\Support\Repositories\Eloquent\RepositoriesAbstract;
 use Eloquent;
@@ -81,7 +82,7 @@ class FieldGroupRepository extends RepositoriesAbstract implements FieldGroupInt
                         continue;
                     }
 
-                    foreach ($item['value'] as $key => $child) {
+                    foreach ($item['value'] as $child) {
                         $this->getRepeaterValues($item['value']);
                     }
 
@@ -129,8 +130,8 @@ class FieldGroupRepository extends RepositoriesAbstract implements FieldGroupInt
     }
 
     /**
-     * @param $items
-     * @param $data
+     * @param array $items
+     * @param array|string $data
      * @return array|string
      */
     protected function getRepeaterValue($items, $data)
@@ -139,7 +140,7 @@ class FieldGroupRepository extends RepositoriesAbstract implements FieldGroupInt
             return null;
         }
 
-        $data = ($data) ?: [];
+        $data = $data ?: [];
         if (!is_array($data)) {
             $data = json_decode((string)$data, true);
         }
@@ -169,9 +170,9 @@ class FieldGroupRepository extends RepositoriesAbstract implements FieldGroupInt
     }
 
     /**
-     * @param $fieldItem
-     * @param $morphClass
-     * @param $morphId
+     * @param FieldItem $fieldItem
+     * @param string $morphClass
+     * @param int $morphId
      * @return Eloquent|mixed
      */
     protected function getFieldItemValue($fieldItem, $morphClass, $morphId)
@@ -199,7 +200,7 @@ class FieldGroupRepository extends RepositoriesAbstract implements FieldGroupInt
 
         if ($result) {
             if (Arr::get($data, 'group_items')) {
-                $this->editGroupItems(json_decode($data['group_items'], true), $result->id);
+                $this->editGroupItems(json_decode((string)$data['group_items'], true), $result->id);
             }
         }
 
@@ -246,13 +247,14 @@ class FieldGroupRepository extends RepositoriesAbstract implements FieldGroupInt
     public function createOrUpdateFieldGroup($id, array $data)
     {
         $result = $this->createOrUpdate($data, compact('id'));
+
         if ($result) {
             if (Arr::get($data, 'deleted_items')) {
-                $this->fieldItemRepository->deleteFieldItem(json_decode($data['deleted_items'], true));
+                $this->fieldItemRepository->deleteFieldItem(json_decode((string)$data['deleted_items'], true));
             }
 
             if (Arr::get($data, 'group_items')) {
-                $this->editGroupItems(json_decode($data['group_items'], true), $result->id);
+                $this->editGroupItems(json_decode((string)$data['group_items'], true), $result->id);
             }
         }
 
@@ -268,11 +270,11 @@ class FieldGroupRepository extends RepositoriesAbstract implements FieldGroupInt
 
         if ($result) {
             if (Arr::get($data, 'deleted_items')) {
-                $this->fieldItemRepository->deleteFieldItem(json_decode($data['deleted_items'], true));
+                $this->fieldItemRepository->deleteFieldItem(json_decode((string)$data['deleted_items'], true));
             }
 
             if (Arr::get($data, 'group_items')) {
-                $this->editGroupItems(json_decode($data['group_items'], true), $result->id);
+                $this->editGroupItems(json_decode((string)$data['group_items'], true), $result->id);
             }
         }
 

@@ -26,7 +26,7 @@ return [
         'field_type'                => 'Field type',
         'field_type_helper'         => 'Please select the type of this field.',
         'field_instructions'        => 'Field instructions',
-        'field_instructions_helper' => 'HThe instructions guide for user easier know what they need to input.',
+        'field_instructions_helper' => 'The instructions guide for user easier know what they need to input.',
 
         'default_value'        => 'Default value',
         'default_value_helper' => 'The default value of field when leave it blank',

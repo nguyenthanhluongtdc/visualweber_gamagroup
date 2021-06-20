@@ -99,12 +99,12 @@ class MenuSeeder extends BaseSeeder
                             'reference_type' => Page::class,
                         ],
                         [
-                            'title'          => 'News & Updates',
+                            'title'          => 'Hotel',
                             'reference_id'   => 6,
                             'reference_type' => Category::class,
                         ],
                         [
-                            'title'          => 'Projects',
+                            'title'          => 'Travel Tips',
                             'reference_id'   => 3,
                             'reference_type' => Category::class,
                         ],
@@ -120,27 +120,27 @@ class MenuSeeder extends BaseSeeder
                     'slug'  => 'featured-categories',
                     'items' => [
                         [
-                            'title'          => 'Events',
+                            'title'          => 'Lifestyle',
                             'reference_id'   => 2,
                             'reference_type' => Category::class,
                         ],
                         [
-                            'title'          => 'Projects',
+                            'title'          => 'Travel Tips',
                             'reference_id'   => 3,
                             'reference_type' => Category::class,
                         ],
                         [
-                            'title'          => 'Business',
+                            'title'          => 'Healthy',
                             'reference_id'   => 4,
                             'reference_type' => Category::class,
                         ],
                         [
-                            'title'          => 'News & Updates',
+                            'title'          => 'Hotel',
                             'reference_id'   => 6,
                             'reference_type' => Category::class,
                         ],
                         [
-                            'title'          => 'Resources',
+                            'title'          => 'Nature',
                             'reference_id'   => 7,
                             'reference_type' => Category::class,
                         ],
@@ -256,12 +256,12 @@ class MenuSeeder extends BaseSeeder
                             'reference_type' => Page::class,
                         ],
                         [
-                            'title'          => 'Tin tức & Cập nhật',
+                            'title'          => 'Khách sạn',
                             'reference_id'   => 13,
                             'reference_type' => Category::class,
                         ],
                         [
-                            'title'          => 'Dự án',
+                            'title'          => 'Món ngon',
                             'reference_id'   => 10,
                             'reference_type' => Category::class,
                         ],
@@ -277,27 +277,27 @@ class MenuSeeder extends BaseSeeder
                     'slug'  => 'danh-muc-noi-bat',
                     'items' => [
                         [
-                            'title'          => 'Sự kiện',
+                            'title'          => 'Sức khỏe',
                             'reference_id'   => 9,
                             'reference_type' => Category::class,
                         ],
                         [
-                            'title'          => 'Dự án',
+                            'title'          => 'Món ngon',
                             'reference_id'   => 10,
                             'reference_type' => Category::class,
                         ],
                         [
-                            'title'          => 'Business',
+                            'title'          => 'Sức khỏe',
                             'reference_id'   => 11,
                             'reference_type' => Category::class,
                         ],
                         [
-                            'title'          => 'Tin tức & Cập nhật',
+                            'title'          => 'Khách sạn',
                             'reference_id'   => 13,
                             'reference_type' => Category::class,
                         ],
                         [
-                            'title'          => 'Tài nguyên',
+                            'title'          => 'Thiên nhiên',
                             'reference_id'   => 14,
                             'reference_type' => Category::class,
                         ],

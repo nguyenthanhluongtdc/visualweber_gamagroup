@@ -3,8 +3,8 @@
 namespace Platform\Menu\Models;
 
 use Platform\Base\Enums\BaseStatusEnum;
-use Platform\Base\Traits\EnumCastable;
 use Platform\Base\Models\BaseModel;
+use Platform\Base\Traits\EnumCastable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Menu extends BaseModel
@@ -35,6 +35,15 @@ class Menu extends BaseModel
         'status' => BaseStatusEnum::class,
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function (Menu $menu) {
+            MenuNode::where('menu_id', $menu->id)->delete();
+        });
+    }
+
     /**
      * @return HasMany
      */
@@ -49,14 +58,5 @@ class Menu extends BaseModel
     public function locations()
     {
         return $this->hasMany(MenuLocation::class, 'menu_id');
-    }
-
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::deleting(function (Menu $menu) {
-            MenuNode::where('menu_id', $menu->id)->delete();
-        });
     }
 }

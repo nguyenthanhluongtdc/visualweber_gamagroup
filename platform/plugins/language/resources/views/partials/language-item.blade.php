@@ -9,7 +9,8 @@
             <i class="fa fa-star" data-id="{{ $item->lang_id }}" data-name="{{ $item->lang_name }}"></i>
         @else
             <a data-section="{{ route('languages.set.default') }}?lang_id={{ $item->lang_id }}" class="set-language-default" data-toggle="tooltip" data-original-title="{{ trans('plugins/language::language.choose_default_language', ['language' => $item->lang_name]) }}"><i class="fa fa-star" data-id="{{ $item->lang_id }}" data-name="{{ $item->lang_name }}"></i></a>
-        @endif</td>
+        @endif
+    </td>
     <td class="text-center">{{ $item->lang_order }}</td>
     <td class="text-center">
         {!! language_flag($item->lang_flag, $item->lang_name) !!}

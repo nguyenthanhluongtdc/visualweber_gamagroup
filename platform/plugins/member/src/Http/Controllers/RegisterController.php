@@ -3,15 +3,16 @@
 namespace Platform\Member\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Platform\ACL\Traits\RegistersUsers;
 use Platform\Base\Http\Responses\BaseHttpResponse;
 use Platform\Member\Models\Member;
 use Platform\Member\Repositories\Interfaces\MemberInterface;
 use Illuminate\Auth\Events\Registered;
-use Platform\ACL\Traits\RegistersUsers;
 use Illuminate\Http\Request;
-use SeoHelper;
-use URL;
 use Illuminate\Support\Facades\Validator;
+use SeoHelper;
+use Theme;
+use URL;
 
 class RegisterController extends Controller
 {
@@ -48,7 +49,6 @@ class RegisterController extends Controller
     public function __construct(MemberInterface $memberRepository)
     {
         $this->memberRepository = $memberRepository;
-        $this->redirectTo = route('public.member.register');
     }
 
     /**
@@ -60,6 +60,14 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         SeoHelper::setTitle(__('Register'));
+
+        if (!session()->has('url.intended')) {
+            session(['url.intended' => url()->previous()]);
+        }
+
+        Theme::breadcrumb()
+            ->add(__('Home'), route('public.index'))
+            ->add(__('Register'), route('public.member.register'));
 
         return view('plugins/member::auth.register');
     }
@@ -104,7 +112,7 @@ class RegisterController extends Controller
     /**
      * Resend a confirmation code to a user.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @param MemberInterface $memberRepository
      * @param BaseHttpResponse $response
      * @return BaseHttpResponse
@@ -155,7 +163,8 @@ class RegisterController extends Controller
         if (setting('verify_account_email', config('plugins.member.general.verify_email'))) {
             $this->sendConfirmationToUser($member);
             return $this->registered($request, $member)
-                ?: $response->setNextUrl($this->redirectPath())->setMessage(trans('plugins/member::member.confirmation_info'));
+                ?: $response->setNextUrl($this->redirectPath())
+                    ->setMessage(trans('plugins/member::member.confirmation_info'));
         }
 
         $member->confirmed_at = now();
@@ -168,7 +177,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -184,7 +193,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array $data
+     * @param array $data
      * @return Member
      */
     protected function create(array $data)

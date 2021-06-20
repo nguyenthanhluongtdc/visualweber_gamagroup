@@ -29,7 +29,7 @@
 
     {!! Assets::renderHeader(['core']) !!}
 
-    @if (BaseHelper::siteLanguageDirection() == 'rtl' && config('core.base.general.enabled_rtl_for_admin_panel', false))
+    @if (setting('admin_locale_direction', 'ltr') == 'rtl')
         <link rel="stylesheet" href="{{ asset('vendor/core/core/base/css/rtl.css') }}">
     @endif
 
@@ -37,7 +37,7 @@
 
     @stack('header')
 </head>
-<body @if (BaseHelper::siteLanguageDirection() == 'rtl' && config('core.base.general.enabled_rtl_for_admin_panel', false)) dir="rtl" @endif class="@yield('body-class', 'page-sidebar-closed-hide-logo page-content-white page-container-bg-solid')" style="@yield('body-style')">
+<body @if (setting('admin_locale_direction', 'ltr') == 'rtl') dir="rtl" @endif class="@yield('body-class', 'page-sidebar-closed-hide-logo page-content-white page-container-bg-solid')" style="@yield('body-style')">
     {!! apply_filters(BASE_FILTER_HEADER_LAYOUT_TEMPLATE, null) !!}
 
     @yield('page')

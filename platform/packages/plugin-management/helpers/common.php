@@ -40,7 +40,7 @@ if (!function_exists('get_active_plugins')) {
     function get_active_plugins()
     {
         try {
-            return json_decode(setting('activated_plugins', '[]'), true);
+            return array_unique(json_decode(setting('activated_plugins', '[]'), true));
         } catch (Exception $exception) {
             return [];
         }

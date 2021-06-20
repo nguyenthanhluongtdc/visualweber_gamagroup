@@ -3,12 +3,12 @@
 namespace Platform\Menu\Tables;
 
 use BaseHelper;
-use Html;
-use Illuminate\Support\Facades\Auth;
 use Platform\Base\Enums\BaseStatusEnum;
 use Platform\Menu\Repositories\Interfaces\MenuInterface;
 use Platform\Table\Abstracts\TableAbstract;
+use Html;
 use Illuminate\Contracts\Routing\UrlGenerator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\DataTables;
 

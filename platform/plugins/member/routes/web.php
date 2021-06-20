@@ -44,7 +44,10 @@ if (defined('THEME_MODULE_SCREEN_NAME')) {
             });
 
             Route::group([
-                'middleware' => [setting('verify_account_email', config('plugins.member.general.verify_email')) ? 'member.guest' : 'member'],
+                'middleware' => [
+                    setting('verify_account_email',
+                        config('plugins.member.general.verify_email')) ? 'member.guest' : 'member',
+                ],
             ], function () {
                 Route::get('register/confirm/resend',
                     'RegisterController@resendConfirmation')->name('resend_confirmation');
@@ -110,40 +113,15 @@ if (defined('THEME_MODULE_SCREEN_NAME')) {
             if (is_plugin_active('blog')) {
                 Route::group([
                     'prefix' => 'account/posts',
+                    'as'     => 'posts.',
                 ], function () {
 
-                    Route::get('', [
-                        'as'   => 'posts.index',
-                        'uses' => 'PostController@index',
-                    ]);
-
-                    Route::get('create', [
-                        'as'   => 'posts.create',
-                        'uses' => 'PostController@create',
-                    ]);
-
-                    Route::post('create', [
-                        'as'   => 'posts.create.post',
-                        'uses' => 'PostController@store',
-                    ]);
-
-                    Route::get('edit/{id}', [
-                        'as'   => 'posts.edit',
-                        'uses' => 'PostController@edit',
-                    ]);
-
-                    Route::post('edit/{id}', [
-                        'as'   => 'posts.edit.post',
-                        'uses' => 'PostController@update',
-                    ]);
+                    Route::resource('', 'PostController')
+                        ->parameters(['' => 'post']);
 
                 });
 
                 Route::group(['prefix' => 'ajax/members'], function () {
-                    Route::delete('delete/{id}', [
-                        'as'   => 'posts.destroy',
-                        'uses' => 'PostController@delete',
-                    ]);
                     Route::get('tags/all', [
                         'as'   => 'tags.all',
                         'uses' => 'PostController@getAllTags',

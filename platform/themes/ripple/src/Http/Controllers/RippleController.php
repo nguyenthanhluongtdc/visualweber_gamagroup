@@ -2,11 +2,11 @@
 
 namespace Theme\Ripple\Http\Controllers;
 
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
-use Illuminate\Http\Request;
 use Platform\Base\Http\Responses\BaseHttpResponse;
 use Platform\Blog\Repositories\Interfaces\PostInterface;
 use Platform\Theme\Http\Controllers\PublicController;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Illuminate\Http\Request;
 use Theme;
 
 class RippleController extends PublicController
@@ -52,6 +52,7 @@ class RippleController extends PublicController
     public function getSearch(Request $request, PostInterface $postRepository, BaseHttpResponse $response)
     {
         $query = $request->input('q');
+
         if (!empty($query)) {
             $posts = $postRepository->getSearch($query);
 
@@ -69,10 +70,5 @@ class RippleController extends PublicController
         return $response
             ->setError()
             ->setMessage(__('No results found, please try with different keywords.'));
-    }
-
-    public function test(Request $request, PostInterface $postRepository, BaseHttpResponse $response)
-    {
-        dd($request);
     }
 }

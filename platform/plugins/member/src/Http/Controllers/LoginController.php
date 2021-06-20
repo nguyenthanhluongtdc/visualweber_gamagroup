@@ -8,6 +8,7 @@ use Platform\ACL\Traits\LogoutGuardTrait;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use SeoHelper;
+use Theme;
 use URL;
 
 class LoginController extends Controller
@@ -35,23 +36,6 @@ class LoginController extends Controller
     public $redirectTo;
 
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        session(['url.intended' => URL::previous()]);
-        $pages = [route('public.member.login'), route('public.single'), route('public.member.register')];
-
-        if (in_array(session()->get('url.intended'), $pages)) {
-            $this->redirectTo = route('public.member.dashboard');
-        } else {
-            $this->redirectTo = session()->get('url.intended');
-        }
-    }
-
-    /**
      * Show the application's login form.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -60,6 +44,13 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         SeoHelper::setTitle(trans('plugins/member::member.login'));
+
+        if (!session()->has('url.intended')) {
+            session(['url.intended' => url()->previous()]);
+        }
+
+        Theme::breadcrumb()->add(__('Home'), route('public.index'))->add(__('Login'), route('public.member.login'));
+
         return view('plugins/member::auth.login');
     }
 

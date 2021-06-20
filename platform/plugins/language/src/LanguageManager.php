@@ -305,7 +305,13 @@ class LanguageManager
         if (empty($locale) || !is_string($locale)) {
             // If the locale has not been passed through the function
             // it tries to get it from the first segment of the url
-            $locale = request()->segment(1);
+            $locale = $this->request->segment(1);
+
+            $localeFromRequest = $this->request->input('language');
+
+            if ($localeFromRequest && array_key_exists($localeFromRequest, $this->supportedLocales)) {
+                $locale = $localeFromRequest;
+            }
 
             if (!$locale) {
                 $locale = $this->getForcedLocale();
@@ -361,7 +367,7 @@ class LanguageManager
         }
 
         /*if ($this->useAcceptLanguageHeader() && !$this->app->runningInConsole()) {
-            $negotiator = new LanguageNegotiator($this->defaultLocale, $this->getSupportedLocales(), request());
+            $negotiator = new LanguageNegotiator($this->defaultLocale, $this->getSupportedLocales(), $this->request);
 
             return $negotiator->negotiateLanguage();
         }*/
@@ -899,8 +905,8 @@ class LanguageManager
             return $this->currentAdminLocaleCode;
         }
 
-        if (request()->has('ref_lang')) {
-            return request()->input('ref_lang');
+        if ($this->request->has('ref_lang')) {
+            return $this->request->input('ref_lang');
         }
 
         return Arr::get($this->supportedLocales, $this->getCurrentLocale() . '.lang_code');
@@ -996,7 +1002,7 @@ class LanguageManager
     {
         $attributes = $this->extractAttributes($path);
 
-        $path = str_replace(url('/'), '', $path);
+        $path = str_replace(route('public.index'), '', $path);
         if ($path[0] !== '/') {
             $path = '/' . $path;
         }

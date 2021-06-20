@@ -33,7 +33,7 @@ class MemberActivityLog extends BaseModel
             $model->user_agent = $model->user_agent ? $model->user_agent : request()->userAgent();
             $model->ip_address = $model->ip_address ? $model->ip_address : request()->ip();
             $model->member_id = $model->member_id ? $model->member_id : auth('member')->user()->getAuthIdentifier();
-            $model->reference_url = str_replace(url('/'), '', $model->reference_url);
+            $model->reference_url = str_replace(route('public.index'), '', $model->reference_url);
         });
     }
 

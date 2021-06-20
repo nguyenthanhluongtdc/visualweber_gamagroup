@@ -5,7 +5,7 @@ namespace Platform\CustomField\Actions;
 abstract class AbstractAction
 {
     /**
-     * @param $message
+     * @param string $message
      * @param array|null $data
      * @return array
      */
@@ -18,7 +18,7 @@ abstract class AbstractAction
     }
 
     /**
-     * @param $message
+     * @param string $message
      * @param array|null $data
      * @return array
      */

@@ -2,22 +2,22 @@
 
 namespace Platform\Page\Http\Controllers;
 
-use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Auth;
 use Platform\Base\Events\BeforeEditContentEvent;
 use Platform\Base\Events\CreatedContentEvent;
 use Platform\Base\Events\DeletedContentEvent;
 use Platform\Base\Events\UpdatedContentEvent;
+use Platform\Base\Forms\FormBuilder;
 use Platform\Base\Http\Controllers\BaseController;
 use Platform\Base\Http\Responses\BaseHttpResponse;
 use Platform\Base\Traits\HasDeleteManyItemsTrait;
 use Platform\Page\Forms\PageForm;
-use Platform\Page\Tables\PageTable;
 use Platform\Page\Http\Requests\PageRequest;
 use Platform\Page\Repositories\Interfaces\PageInterface;
+use Platform\Page\Tables\PageTable;
 use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Platform\Base\Forms\FormBuilder;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Throwable;
 
@@ -83,7 +83,7 @@ class PageController extends BaseController
 
     /**
      * @param Request $request
-     * @param $id
+     * @param int $id
      * @param FormBuilder $formBuilder
      * @return string
      */
@@ -120,7 +120,7 @@ class PageController extends BaseController
 
     /**
      * @param Request $request
-     * @param $id
+     * @param int $id
      * @param BaseHttpResponse $response
      * @return BaseHttpResponse
      */

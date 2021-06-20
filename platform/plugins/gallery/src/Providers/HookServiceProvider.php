@@ -3,6 +3,7 @@
 namespace Platform\Gallery\Providers;
 
 use Assets;
+use Platform\Base\Models\BaseModel;
 use Platform\Gallery\Services\GalleryService;
 use Platform\Shortcode\Compilers\Shortcode;
 use Eloquent;
@@ -30,7 +31,7 @@ class HookServiceProvider extends ServiceProvider
 
     /**
      * @param string $context
-     * @param $object
+     * @param BaseModel $object
      */
     public function addGalleryBox($context, $object)
     {
@@ -40,8 +41,13 @@ class HookServiceProvider extends ServiceProvider
                 ->addScriptsDirectly(['vendor/core/plugins/gallery/js/gallery-admin.js'])
                 ->addScripts(['sortable']);
 
-            MetaBox::addMetaBox('gallery_wrap', trans('plugins/gallery::gallery.gallery_box'), [$this, 'galleryMetaField'],
-                get_class($object), $context, 'default');
+            MetaBox::addMetaBox(
+                'gallery_wrap',
+                trans('plugins/gallery::gallery.gallery_box'),
+                [$this, 'galleryMetaField'],
+                get_class($object),
+                $context
+            );
         }
     }
 
@@ -53,6 +59,7 @@ class HookServiceProvider extends ServiceProvider
     {
         $value = null;
         $args = func_get_args();
+
         if ($args[0] && $args[0]->id) {
             $value = gallery_meta_data($args[0]);
         }
@@ -66,7 +73,7 @@ class HookServiceProvider extends ServiceProvider
      */
     public function render($shortcode)
     {
-        return render_galleries($shortcode->limit ? $shortcode->limit : 6);
+        return render_galleries($shortcode->limit ?: 6);
     }
 
     /**

@@ -91,7 +91,7 @@ class PostForm extends FormAbstract
             ])
             ->add('format_type', 'customRadio', [
                 'label'      => trans('plugins/blog::posts.form.format_type'),
-                'label_attr' => ['class' => 'control-label required'],
+                'label_attr' => ['class' => 'control-label'],
                 'choices'    => get_post_formats(true),
             ])
             ->add('categories[]', 'categoryMulti', [

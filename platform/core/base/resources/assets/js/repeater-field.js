@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import RepeaterComponent from './form/fields/RepeaterComponent';
 
-Vue.prototype.__ = (key) => {
+Vue.prototype.__ = key => {
     return _.get(window.trans, key, key);
 };
 

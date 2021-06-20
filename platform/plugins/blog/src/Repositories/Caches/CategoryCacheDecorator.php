@@ -2,8 +2,8 @@
 
 namespace Platform\Blog\Repositories\Caches;
 
-use Platform\Support\Repositories\Caches\CacheAbstractDecorator;
 use Platform\Blog\Repositories\Interfaces\CategoryInterface;
+use Platform\Support\Repositories\Caches\CacheAbstractDecorator;
 
 class CategoryCacheDecorator extends CacheAbstractDecorator implements CategoryInterface
 {

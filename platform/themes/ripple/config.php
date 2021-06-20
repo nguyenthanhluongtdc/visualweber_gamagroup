@@ -44,7 +44,7 @@ return [
         'beforeRenderTheme'  => function (Theme $theme) {
             // You may use this event to set up your assets.
 
-            $version = '5.15';
+            $version = '5.16';
 
             $theme
                 ->asset()

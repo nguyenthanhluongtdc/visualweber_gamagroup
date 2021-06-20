@@ -1,3 +1,5 @@
+"use strict";
+
 class GalleryManagement {
     init() {
         let container = document.querySelector('#list-photo');
@@ -5,7 +7,9 @@ class GalleryManagement {
         // initialize Masonry after all images have loaded
         if (container) {
             imagesLoaded(container, () => {
-                masonry = new Masonry(container);
+                masonry = new Masonry(container, {
+                    isOriginLeft: $('body').prop('dir') !== 'rtl'
+                });
             });
         }
 

@@ -2,13 +2,18 @@
 
 namespace Platform\CustomField\Models;
 
-use Platform\CustomField\Repositories\Interfaces\CustomFieldInterface;
 use Platform\Base\Models\BaseModel;
+use Platform\CustomField\Repositories\Interfaces\CustomFieldInterface;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class FieldItem extends BaseModel
 {
+    /**
+     * @var bool
+     */
+    public $timestamps = false;
+
     /**
      * @var string
      */
@@ -28,10 +33,14 @@ class FieldItem extends BaseModel
         'options',
     ];
 
-    /**
-     * @var bool
-     */
-    public $timestamps = false;
+    protected static function boot()
+    {
+        parent::boot();
+
+        self::deleting(function (FieldItem $fieldItem) {
+            app(CustomFieldInterface::class)->deleteBy(['field_item_id' => $fieldItem->id]);
+        });
+    }
 
     /**
      * @return BelongsTo
@@ -55,14 +64,5 @@ class FieldItem extends BaseModel
     public function child(): HasMany
     {
         return $this->hasMany(FieldItem::class, 'parent_id');
-    }
-
-    protected static function boot()
-    {
-        parent::boot();
-
-        self::deleting(function (FieldItem $fieldItem) {
-            app(CustomFieldInterface::class)->deleteBy(['field_item_id' => $fieldItem->id]);
-        });
     }
 }

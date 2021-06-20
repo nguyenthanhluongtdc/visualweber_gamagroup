@@ -273,6 +273,7 @@ class Language
         'bn_BD'          => ['bn', 'bn_BD', 'বাংলা', 'ltr', 'bd'],
         'bo'             => ['bo', 'bo', 'བོད་སྐད', 'ltr', 'tibet'],
         'bs_BA'          => ['bs', 'bs_BA', 'Bosanski', 'ltr', 'ba'],
+        'ca'             => ['ca', 'ca_ES', 'Catalan', 'ltr', 'es'],
         'ceb'            => ['ceb', 'ceb', 'Cebuano', 'ltr', 'ph'],
         'cs_CZ'          => ['cs', 'cs_CZ', 'Čeština', 'ltr', 'cz'],
         'cy'             => ['cy', 'cy', 'Cymraeg', 'ltr', 'gb-wls'],

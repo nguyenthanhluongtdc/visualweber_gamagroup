@@ -4,10 +4,10 @@ namespace Platform\Base\Supports;
 
 use Platform\Media\Models\MediaFile;
 use Platform\Media\Models\MediaFolder;
-use Platform\Setting\Models\Setting;
+use Platform\PluginManagement\Services\PluginService;
+use Exception;
 use File;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Arr;
 use Mimey\MimeTypes;
 use RvMedia;
 
@@ -15,9 +15,10 @@ class BaseSeeder extends Seeder
 {
     /**
      * @param string $folder
+     * @param null|string $basePath
      * @return array
      */
-    public function uploadFiles(string $folder): array
+    public function uploadFiles(string $folder, $basePath = null): array
     {
         File::deleteDirectory(config('filesystems.disks.public.root') . '/' . $folder);
         MediaFile::where('url', 'LIKE', $folder . '/%')->forceDelete();
@@ -26,7 +27,10 @@ class BaseSeeder extends Seeder
         $mimeType = new MimeTypes;
 
         $files = [];
-        foreach (File::allFiles(database_path('seeders/files/' . $folder)) as $file) {
+
+        $folderPath = ($basePath ?: database_path('seeders/files')) . '/' . $folder;
+
+        foreach (File::allFiles($folderPath) as $file) {
             $type = $mimeType->getMimeType(File::extension($file));
             $files[] = RvMedia::uploadFromPath($file, 0, $folder, $type);
         }
@@ -36,25 +40,17 @@ class BaseSeeder extends Seeder
 
     /**
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
     public function activateAllPlugins(): array
     {
-        Setting::where('key', 'activated_plugins')->delete();
-
         $plugins = array_values(scan_folder(plugin_path()));
 
-        foreach ($plugins as $key => $plugin) {
-            $content = get_file_data(plugin_path($plugin) . '/plugin.json');
-            if (empty($content) || !Arr::get($content, 'ready', 1)) {
-                Arr::forget($plugins, $key);
-            }
-        }
+        $pluginService = app(PluginService::class);
 
-        Setting::create([
-            'key'   => 'activated_plugins',
-            'value' => json_encode($plugins),
-        ]);
+        foreach ($plugins as $plugin) {
+            $pluginService->activate($plugin);
+        }
 
         return $plugins;
     }

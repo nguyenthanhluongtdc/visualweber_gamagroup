@@ -40,7 +40,7 @@ class PublicController extends Controller
         SeoHelper::setTitle(__('Galleries'));
 
         Theme::breadcrumb()
-            ->add(__('Home'), url('/'))
+            ->add(__('Home'), route('public.index'))
             ->add(__('Galleries'), route('public.galleries'));
 
         return Theme::scope('galleries', compact('galleries'), 'plugins/gallery::themes.galleries')
@@ -63,7 +63,8 @@ class PublicController extends Controller
         $data = $galleryService->handleFrontRoutes($slug);
 
         if (isset($data['slug']) && $data['slug'] !== $slug->key) {
-            return redirect()->to(route('public.single', SlugHelper::getPrefix(GalleryModel::class) . '/' . $data['slug']));
+            return redirect()
+                ->to(route('public.single', SlugHelper::getPrefix(GalleryModel::class) . '/' . $data['slug']));
         }
 
         return Theme::scope($data['view'], $data['data'], $data['default_view'])

@@ -16,9 +16,9 @@ use Platform\Menu\Repositories\Eloquent\MenuRepository;
 use Platform\Menu\Repositories\Interfaces\MenuInterface;
 use Platform\Menu\Repositories\Interfaces\MenuLocationInterface;
 use Platform\Menu\Repositories\Interfaces\MenuNodeInterface;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Routing\Events\RouteMatched;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 
 class MenuServiceProvider extends ServiceProvider

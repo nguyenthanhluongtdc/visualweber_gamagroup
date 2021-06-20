@@ -3,13 +3,13 @@
 namespace Platform\Page\Tables;
 
 use BaseHelper;
-use Illuminate\Support\Facades\Auth;
 use Platform\Base\Enums\BaseStatusEnum;
 use Platform\Page\Repositories\Interfaces\PageInterface;
 use Platform\Table\Abstracts\TableAbstract;
 use Html;
 use Illuminate\Contracts\Routing\UrlGenerator;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\DataTables;
 
@@ -101,8 +101,7 @@ class PageTable extends TableAbstract
             'pages.status',
         ];
 
-        $query = $model
-            ->select($select);
+        $query = $model->select($select);
 
         return $this->applyScopes(apply_filters(BASE_FILTER_TABLE_QUERY, $query, $model, $select));
     }

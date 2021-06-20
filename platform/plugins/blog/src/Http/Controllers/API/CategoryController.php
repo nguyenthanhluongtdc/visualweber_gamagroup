@@ -42,10 +42,14 @@ class CategoryController extends Controller
     public function index(Request $request, BaseHttpResponse $response)
     {
         $data = $this->categoryRepository
-            ->getModel()
-            ->where(['status' => BaseStatusEnum::PUBLISHED])
-            ->select(['id', 'name', 'description'])
-            ->paginate((int)$request->input('per_page', 10));
+            ->advancedGet([
+                'with'      => ['slugable'],
+                'condition' => ['status' => BaseStatusEnum::PUBLISHED],
+                'paginate'  => [
+                    'per_page'      => (int)$request->input('per_page', 10),
+                    'current_paged' => (int)$request->input('page', 1),
+                ],
+            ]);
 
         return $response
             ->setData(ListCategoryResource::collection($data))
@@ -65,6 +69,7 @@ class CategoryController extends Controller
     {
         $filters = FilterCategory::setFilters($request->input());
         $data = $this->categoryRepository->getFilters($filters);
+
         return $response
             ->setData(CategoryResource::collection($data))
             ->toApiResponse();
@@ -82,6 +87,7 @@ class CategoryController extends Controller
     public function findBySlug(string $slug, BaseHttpResponse $response)
     {
         $slug = SlugHelper::getSlug($slug, SlugHelper::getPrefix(Category::class), Category::class);
+
         if (!$slug) {
             return $response->setError()->setCode(404)->setMessage('Not found');
         }

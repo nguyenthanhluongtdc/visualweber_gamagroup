@@ -6,12 +6,12 @@ use Platform\CustomField\Support\CustomFieldSupport;
 if (!function_exists('add_custom_fields_rules_to_check')) {
     /**
      * @param string|array $ruleName
-     * @param $value
+     * @param string $value
      * @return CustomFieldSupportFacade|CustomFieldSupport
      */
     function add_custom_fields_rules_to_check($ruleName, $value = null)
     {
-        return CustomFieldSupportFacade::addRule($ruleName, $value);
+        return CustomField::addRule($ruleName, $value);
     }
 }
 
@@ -27,7 +27,7 @@ if (!function_exists('get_custom_field_boxes')) {
             $modelName = get_class($modelName);
         }
 
-        return CustomFieldSupportFacade::exportCustomFieldsData($modelName, $modelId);
+        return CustomField::exportCustomFieldsData($modelName, $modelId);
     }
 }
 

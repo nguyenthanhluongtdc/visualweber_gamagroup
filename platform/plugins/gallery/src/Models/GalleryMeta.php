@@ -26,7 +26,6 @@ class GalleryMeta extends BaseModel
     /**
      * @param string $value
      * @return array
-     *
      */
     public function getImagesAttribute($value)
     {

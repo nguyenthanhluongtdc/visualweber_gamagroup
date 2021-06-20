@@ -151,14 +151,19 @@ app()->booted(function () {
             'attributes' => [
                 'name'    => 'facebook_chat_enabled',
                 'list'    => [
-                    'yes' => trans('core/base::base.yes'),
                     'no'  => trans('core/base::base.no'),
+                    'yes' => trans('core/base::base.yes'),
                 ],
-                'value'   => 'yes',
+                'value'   => 'no',
                 'options' => [
                     'class' => 'form-control',
                 ],
             ],
+            'helper'     => __('To show chat box on that website, please go to :link and add :domain to whitelist domains!',
+                [
+                    'domain' => Html::link(url('')),
+                    'link'   => Html::link('https://www.facebook.com/' . theme_option('facebook_page_id') . '/settings/?tab=messenger_platform'),
+                ]),
         ])
         ->setField([
             'id'         => 'facebook_page_id',
@@ -172,6 +177,7 @@ app()->booted(function () {
                     'class' => 'form-control',
                 ],
             ],
+            'helper'     => __('You can get fan page ID using this site :link', ['link' => Html::link('https://findmyfbid.com')]),
         ])
         ->setField([
             'id'         => 'facebook_comment_enabled_in_post',

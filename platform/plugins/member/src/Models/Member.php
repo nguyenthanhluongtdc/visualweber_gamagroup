@@ -5,6 +5,7 @@ namespace Platform\Member\Models;
 use Platform\Base\Supports\Avatar;
 use Platform\Media\Models\MediaFile;
 use Platform\Member\Notifications\ResetPasswordNotification;
+use Exception;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -74,7 +75,15 @@ class Member extends Authenticatable
      */
     public function getAvatarUrlAttribute()
     {
-        return $this->avatar->url ? RvMedia::url($this->avatar->url) : (new Avatar)->create($this->name)->toBase64();
+        if ($this->avatar->url) {
+            return RvMedia::url($this->avatar->url);
+        }
+
+        try {
+            return (new Avatar)->create($this->name)->toBase64();
+        } catch (Exception $exception) {
+            return RvMedia::getDefaultImage();
+        }
     }
 
     /**

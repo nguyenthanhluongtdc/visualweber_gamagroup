@@ -28,8 +28,8 @@ class CreateCustomFieldAction extends AbstractAction
      */
     public function run(array $data)
     {
-        $data['created_by'] = Auth::user()->id;
-        $data['updated_by'] = Auth::user()->id;
+        $data['created_by'] = Auth::id();
+        $data['updated_by'] = Auth::id();
 
         $result = $this->fieldGroupRepository->createFieldGroup($data);
 

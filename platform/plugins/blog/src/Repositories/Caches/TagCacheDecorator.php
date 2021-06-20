@@ -2,8 +2,8 @@
 
 namespace Platform\Blog\Repositories\Caches;
 
-use Platform\Support\Repositories\Caches\CacheAbstractDecorator;
 use Platform\Blog\Repositories\Interfaces\TagInterface;
+use Platform\Support\Repositories\Caches\CacheAbstractDecorator;
 
 class TagCacheDecorator extends CacheAbstractDecorator implements TagInterface
 {

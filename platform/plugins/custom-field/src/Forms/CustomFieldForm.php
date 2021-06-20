@@ -37,6 +37,7 @@ class CustomFieldForm extends FormAbstract
             $customFieldItems = $this->fieldGroupRepository->getFieldGroupItems($this->getModel()->id);
             $this->setActionButtons(view('plugins/custom-field::actions', ['object' => $this->getModel()])->render());
         }
+
         $this
             ->setupModel(new FieldGroup)
             ->setValidatorClass(CreateFieldGroupRequest::class)

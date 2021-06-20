@@ -107,8 +107,9 @@ class Manager
             }
             $locale = basename($jsonTranslationFile, '.json');
             $group = self::JSON_GROUP;
-            $translations = Lang::getLoader()->load($locale, '*',
-                '*'); // Retrieves JSON entries of the given locale only
+
+            // Retrieves JSON entries of the given locale only
+            $translations = Lang::getLoader()->load($locale, '*', '*');
             if ($translations && is_array($translations)) {
                 foreach ($translations as $key => $value) {
                     $importedTranslation = $this->importTranslation($key, $value, $locale, $group, $replace);
@@ -118,6 +119,31 @@ class Manager
         }
 
         return $counter;
+    }
+
+    public function publishLocales()
+    {
+        $paths = ServiceProvider::pathsToPublish(null, 'cms-lang');
+
+        foreach ($paths as $from => $to) {
+            if ($this->files->isFile($from)) {
+                if (!$this->files->isDirectory(dirname($to))) {
+                    $this->files->makeDirectory(dirname($to), 0755, true);
+                }
+                $this->files->copy($from, $to);
+            } elseif ($this->files->isDirectory($from)) {
+                $manager = new MountManager([
+                    'from' => new Flysystem(new LocalAdapter($from)),
+                    'to'   => new Flysystem(new LocalAdapter($to)),
+                ]);
+
+                foreach ($manager->listContents('from://', true) as $file) {
+                    if ($file['type'] === 'file') {
+                        $manager->put('to://' . $file['path'], $manager->read('from://' . $file['path']));
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -155,31 +181,6 @@ class Manager
         $translation->save();
 
         return true;
-    }
-
-    public function publishLocales()
-    {
-        $paths = ServiceProvider::pathsToPublish(null, 'cms-lang');
-
-        foreach ($paths as $from => $to) {
-            if ($this->files->isFile($from)) {
-                if (!$this->files->isDirectory(dirname($to))) {
-                    $this->files->makeDirectory(dirname($to), 0755, true);
-                }
-                $this->files->copy($from, $to);
-            } elseif ($this->files->isDirectory($from)) {
-                $manager = new MountManager([
-                    'from' => new Flysystem(new LocalAdapter($from)),
-                    'to'   => new Flysystem(new LocalAdapter($to)),
-                ]);
-
-                foreach ($manager->listContents('from://', true) as $file) {
-                    if ($file['type'] === 'file') {
-                        $manager->put('to://' . $file['path'], $manager->read('from://' . $file['path']));
-                    }
-                }
-            }
-        }
     }
 
     /**
@@ -224,8 +225,9 @@ class Manager
         }
 
         if ($json) {
-            $tree = $this->makeTree(Translation::ofTranslatedGroup(self::JSON_GROUP)->orderByGroupKeys(Arr::get($this->config,
-                'sort_keys', false))->get(), true);
+            $tree = $this->makeTree(Translation::ofTranslatedGroup(self::JSON_GROUP)
+                ->orderByGroupKeys(Arr::get($this->config,
+                    'sort_keys', false))->get(), true);
 
             foreach ($tree as $locale => $groups) {
                 if (isset($groups[self::JSON_GROUP])) {

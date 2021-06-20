@@ -3,11 +3,11 @@
 namespace Platform\JsValidation\Providers;
 
 use Platform\Base\Traits\LoadAndPublishDataTrait;
+use Platform\JsValidation\Javascript\ValidatorHandler;
 use Platform\JsValidation\JsValidatorFactory;
 use Platform\JsValidation\RemoteValidationMiddleware;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
-use Platform\JsValidation\Javascript\ValidatorHandler;
 
 class JsValidationServiceProvider extends ServiceProvider
 {
@@ -42,6 +42,7 @@ class JsValidationServiceProvider extends ServiceProvider
         $callback = function () {
             return true;
         };
+
         $this->app['validator']->extend(ValidatorHandler::JS_VALIDATION_DISABLE, $callback);
     }
 

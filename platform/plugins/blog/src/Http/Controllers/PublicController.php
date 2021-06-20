@@ -33,7 +33,7 @@ class PublicController extends Controller
         $posts = $postRepository->getSearch($query, 0, 12);
 
         Theme::breadcrumb()
-            ->add(__('Home'), url('/'))
+            ->add(__('Home'), route('public.index'))
             ->add($title, route('public.search'));
 
         return Theme::scope('search', compact('posts'))

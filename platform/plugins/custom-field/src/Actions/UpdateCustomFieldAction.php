@@ -37,7 +37,7 @@ class UpdateCustomFieldAction extends AbstractAction
             return $this->error(trans('plugins/custom-field::base.item_not_existed'));
         }
 
-        $data['updated_by'] = Auth::user()->id;
+        $data['updated_by'] = Auth::id();
 
         $result = $this->fieldGroupRepository->updateFieldGroup($item->id, $data);
 

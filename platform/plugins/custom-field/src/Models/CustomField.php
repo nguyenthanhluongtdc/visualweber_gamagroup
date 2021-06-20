@@ -2,12 +2,17 @@
 
 namespace Platform\CustomField\Models;
 
-use Exception;
 use Platform\Base\Models\BaseModel;
+use Exception;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class CustomField extends BaseModel
 {
+    /**
+     * @var bool
+     */
+    public $timestamps = false;
+
     /**
      * @var string
      */
@@ -27,11 +32,6 @@ class CustomField extends BaseModel
     ];
 
     /**
-     * @var bool
-     */
-    public $timestamps = false;
-
-    /**
      * @return MorphTo
      */
     public function useCustomFields(): MorphTo
@@ -49,10 +49,11 @@ class CustomField extends BaseModel
         switch ($this->type) {
             case 'repeater':
                 try {
-                    $value = json_decode($this->value, true);
+                    $value = json_decode((string)$this->value, true);
                 } catch (Exception $exception) {
                     $value = [];
                 }
+
                 break;
         }
 

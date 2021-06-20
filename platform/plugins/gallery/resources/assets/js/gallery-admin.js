@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 $(document).ready(function () {
 
@@ -6,7 +6,7 @@ $(document).ready(function () {
         onSelectFiles: function (files) {
             var last_index = $('.list-photos-gallery .photo-gallery-item:last-child').data('id') + 1;
             $.each(files, function (index, file) {
-                $('.list-photos-gallery .row').append('<div class="col-md-2 col-sm-3 col-4 photo-gallery-item" data-id="' + (last_index + index) + '" data-img="' + file.url + '" data-description=""><div class="gallery_image_wrapper"><img src="' + file.thumb + '" /></div></div>');
+                $('.list-photos-gallery .row').append('<div class="col-md-2 col-sm-3 col-4 photo-gallery-item" data-id="' + (last_index + index) + '" data-img="' + file.url + '" data-description=""><div class="gallery_image_wrapper"><img src="' + file.thumb + '" alt="image"/></div></div>');
             });
             initSortable();
             updateItems();
@@ -14,7 +14,7 @@ $(document).ready(function () {
         }
     });
 
-    var initSortable = function () {
+    let initSortable = function () {
         let el = document.getElementById('list-photos-items');
         Sortable.create(el, {
             group: 'galleries', // or { name: "...", pull: [true, false, clone], put: [true, false, array] }
@@ -45,7 +45,7 @@ $(document).ready(function () {
 
     initSortable();
 
-    var updateItems = function () {
+    let updateItems = function () {
         let items = [];
         $.each($('.photo-gallery-item'), (index, widget) => {
             $(widget).data('id', index);
@@ -55,8 +55,8 @@ $(document).ready(function () {
         $('#gallery-data').val(JSON.stringify(items));
     };
 
-    var list_photo_gallery = $('.list-photos-gallery');
-    var edit_gallery_modal = $('#edit-gallery-item');
+    let $listPhotos = $('.list-photos-gallery');
+    let $editGalleryItem = $('#edit-gallery-item');
 
     $('.reset-gallery').on('click', function (event) {
         event.preventDefault();
@@ -65,28 +65,28 @@ $(document).ready(function () {
         $(this).addClass('hidden');
     });
 
-    list_photo_gallery.on('click', '.photo-gallery-item', function () {
-        var id = $(this).data('id');
+    $listPhotos.on('click', '.photo-gallery-item', function () {
+        let id = $(this).data('id');
         $('#delete-gallery-item').data('id', id);
         $('#update-gallery-item').data('id', id);
         $('#gallery-item-description').val($(this).data('description'));
-        edit_gallery_modal.modal('show');
+        $editGalleryItem.modal('show');
     });
 
-    edit_gallery_modal.on('click', '#delete-gallery-item', function (event) {
+    $editGalleryItem.on('click', '#delete-gallery-item', function (event) {
         event.preventDefault();
-        edit_gallery_modal.modal('hide');
-        list_photo_gallery.find('.photo-gallery-item[data-id=' + $(this).data('id') + ']').remove();
+        $editGalleryItem.modal('hide');
+        $listPhotos.find('.photo-gallery-item[data-id=' + $(this).data('id') + ']').remove();
         updateItems();
-        if (list_photo_gallery.find('.photo-gallery-item').length === 0) {
+        if ($listPhotos.find('.photo-gallery-item').length === 0) {
             $('.reset-gallery').addClass('hidden');
         }
     });
 
-    edit_gallery_modal.on('click', '#update-gallery-item', function (event) {
+    $editGalleryItem.on('click', '#update-gallery-item', function (event) {
         event.preventDefault();
-        edit_gallery_modal.modal('hide');
-        list_photo_gallery.find('.photo-gallery-item[data-id=' + $(this).data('id') + ']').data('description', $('#gallery-item-description').val());
+        $editGalleryItem.modal('hide');
+        $listPhotos.find('.photo-gallery-item[data-id=' + $(this).data('id') + ']').data('description', $('#gallery-item-description').val());
         updateItems();
     });
 });

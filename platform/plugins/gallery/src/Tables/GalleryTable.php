@@ -3,12 +3,12 @@
 namespace Platform\Gallery\Tables;
 
 use BaseHelper;
-use Illuminate\Support\Facades\Auth;
 use Platform\Base\Enums\BaseStatusEnum;
 use Platform\Gallery\Repositories\Interfaces\GalleryInterface;
 use Platform\Table\Abstracts\TableAbstract;
 use Html;
 use Illuminate\Contracts\Routing\UrlGenerator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\DataTables;
 
@@ -82,6 +82,7 @@ class GalleryTable extends TableAbstract
     public function query()
     {
         $model = $this->repository->getModel();
+
         $select = [
             'galleries.id',
             'galleries.name',

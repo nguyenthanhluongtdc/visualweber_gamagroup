@@ -6,9 +6,9 @@ use Platform\Base\Supports\Helper;
 use Platform\Base\Traits\LoadAndPublishDataTrait;
 use Platform\Setting\Supports\SettingStore;
 use Platform\SocialLogin\Facades\SocialServiceFacade;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Routing\Events\RouteMatched;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Route;
 

@@ -5,10 +5,10 @@ namespace Platform\PluginManagement\Providers;
 use Platform\Base\Supports\Helper;
 use Platform\Base\Traits\LoadAndPublishDataTrait;
 use Composer\Autoload\ClassLoader;
-use Illuminate\Support\Facades\Event;
 use Exception;
 use Illuminate\Routing\Events\RouteMatched;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
 use Psr\SimpleCache\InvalidArgumentException;
@@ -70,6 +70,7 @@ class PluginManagementServiceProvider extends ServiceProvider
                         $providers[] = $content['provider'];
                     }
                 }
+
                 cache()->forever('plugin_namespaces', $namespaces);
                 cache()->forever('plugin_providers', $providers);
             }

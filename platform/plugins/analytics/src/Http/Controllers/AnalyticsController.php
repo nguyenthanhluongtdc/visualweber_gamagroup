@@ -54,6 +54,16 @@ class AnalyticsController extends BaseController
                 }
             }
 
+            if (count($visitorData) == 0) {
+                for ($i = 0; $i <= 23; $i++) {
+                    $visitorData[] = [
+                        'axis'      => $i . 'h',
+                        'visitors'  => 0,
+                        'pageViews' => 0,
+                    ];
+                }
+            }
+
             $stats = collect($visitorData);
             $country_stats = Analytics::performQuery($period, 'ga:sessions',
                 ['dimensions' => 'ga:countryIsoCode'])->rows;

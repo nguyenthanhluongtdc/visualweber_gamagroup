@@ -1,3 +1,5 @@
+'use strict';
+
 class ObjectGalleryManagement {
     init() {
         $('[data-slider="owl"] .owl-carousel').each((index, el) => {

@@ -2,9 +2,13 @@
 
 namespace Platform\Contact\Models;
 
+use Platform\Base\Supports\Avatar;
 use Platform\Base\Traits\EnumCastable;
 use Platform\Contact\Enums\ContactStatusEnum;
 use Platform\Base\Models\BaseModel;
+use Exception;
+use Illuminate\Contracts\Routing\UrlGenerator;
+use RvMedia;
 
 class Contact extends BaseModel
 {
@@ -55,5 +59,17 @@ class Contact extends BaseModel
     public function replies()
     {
         return $this->hasMany(ContactReply::class);
+    }
+
+    /**
+     * @return UrlGenerator|string
+     */
+    public function getAvatarUrlAttribute()
+    {
+        try {
+            return (new Avatar)->create($this->name)->toBase64();
+        } catch (Exception $exception) {
+            return RvMedia::getDefaultImage();
+        }
     }
 }

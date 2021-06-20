@@ -9,34 +9,6 @@
     </div>
 </template>
 
-<style>
-
-.repeater-item-group {
-    padding       : 10px;
-    border        : 1px solid #aaaaaa;
-    padding-right : 45px;
-}
-
-.repeater-group {
-    padding    : 10px;
-    background : rgba(0, 0, 0, 0.05);
-}
-
-.repeater-group .remove-item-button {
-    position      : absolute;
-    right         : 10px;
-    top           : 10px;
-    width         : 25px;
-    height        : 25px;
-    display       : inline-block;
-    border-radius : 50%;
-    background    : #c3c3c3;
-    line-height   : 25px;
-    text-align    : center;
-}
-
-</style>
-
 <script>
 
 export default {

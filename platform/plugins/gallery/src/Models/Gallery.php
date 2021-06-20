@@ -4,8 +4,8 @@ namespace Platform\Gallery\Models;
 
 use Platform\ACL\Models\User;
 use Platform\Base\Enums\BaseStatusEnum;
-use Platform\Base\Traits\EnumCastable;
 use Platform\Base\Models\BaseModel;
+use Platform\Base\Traits\EnumCastable;
 
 class Gallery extends BaseModel
 {

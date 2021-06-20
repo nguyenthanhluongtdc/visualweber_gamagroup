@@ -112,8 +112,8 @@ class MenuNode extends BaseModel
     }
 
     /**
-     * @deprecated
      * @return mixed
+     * @deprecated
      */
     public function hasChild()
     {
@@ -121,8 +121,8 @@ class MenuNode extends BaseModel
     }
 
     /**
-     * @deprecated
      * @return $this
+     * @deprecated
      */
     public function getRelated()
     {
@@ -130,8 +130,8 @@ class MenuNode extends BaseModel
     }
 
     /**
-     * @deprecated
      * @return mixed
+     * @deprecated
      */
     public function getNameAttribute()
     {

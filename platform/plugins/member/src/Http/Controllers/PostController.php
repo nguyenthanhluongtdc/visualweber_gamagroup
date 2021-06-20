@@ -246,7 +246,7 @@ class PostController extends Controller
      * @return BaseHttpResponse
      * @throws Exception
      */
-    public function delete($id, BaseHttpResponse $response)
+    public function destroy($id, BaseHttpResponse $response)
     {
         $post = $this->postRepository->getFirstBy([
             'id'          => $id,

@@ -31,6 +31,7 @@ class Gallery
         if (!is_array($model)) {
             $model = [$model];
         }
+
         config([
             'plugins.gallery.general.supported' => array_merge(config('plugins.gallery.general.supported', []), $model),
         ]);
@@ -46,7 +47,7 @@ class Gallery
     {
         $models = config('plugins.gallery.general.supported', []);
 
-        foreach ($models as $key  => $item) {
+        foreach ($models as $key => $item) {
             if ($item == $model) {
                 Arr::forget($models, $key);
                 break;
@@ -117,8 +118,10 @@ class Gallery
         Theme::asset()
             ->container('footer')
             ->usePath(false)
-            ->add('lightgallery-js', asset('vendor/core/plugins/gallery/js/lightgallery.min.js'), ['jquery'], [], '1.0.0')
-            ->add('imagesloaded', asset('vendor/core/plugins/gallery/js/imagesloaded.pkgd.min.js'), ['jquery'], [], '1.0.0')
+            ->add('lightgallery-js', asset('vendor/core/plugins/gallery/js/lightgallery.min.js'), ['jquery'], [],
+                '1.0.0')
+            ->add('imagesloaded', asset('vendor/core/plugins/gallery/js/imagesloaded.pkgd.min.js'), ['jquery'], [],
+                '1.0.0')
             ->add('masonry', asset('vendor/core/plugins/gallery/js/masonry.pkgd.min.js'), ['jquery'], [], '1.0.0')
             ->add('gallery-js', asset('vendor/core/plugins/gallery/js/gallery.js'), ['jquery'], [], '1.0.0');
 

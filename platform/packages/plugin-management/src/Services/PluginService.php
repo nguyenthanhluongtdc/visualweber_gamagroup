@@ -3,13 +3,14 @@
 namespace Platform\PluginManagement\Services;
 
 use Platform\Base\Supports\Helper;
+use Platform\PluginManagement\Events\ActivatedPluginEvent;
 use Platform\Setting\Supports\SettingStore;
 use Composer\Autoload\ClassLoader;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Schema;
 
@@ -67,7 +68,8 @@ class PluginService
         if (!Arr::get($content, 'ready', 1)) {
             return [
                 'error'   => true,
-                'message' => trans('packages/plugin-management::plugin.plugin_is_not_ready', ['name' => Str::studly($plugin)]),
+                'message' => trans('packages/plugin-management::plugin.plugin_is_not_ready',
+                    ['name' => Str::studly($plugin)]),
             ];
         }
 
@@ -115,6 +117,8 @@ class PluginService
             }
 
             Helper::clearCache();
+
+            event(new ActivatedPluginEvent($plugin));
 
             return [
                 'error'   => false,
@@ -177,7 +181,8 @@ class PluginService
         if (!$this->files->isWritable($pluginPath)) {
             return [
                 'error'   => true,
-                'message' => trans('packages/plugin-management::plugin.folder_is_not_writeable', ['name' => $pluginPath]),
+                'message' => trans('packages/plugin-management::plugin.folder_is_not_writeable',
+                    ['name' => $pluginPath]),
             ];
         }
 

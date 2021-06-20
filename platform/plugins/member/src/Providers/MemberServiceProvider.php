@@ -2,7 +2,6 @@
 
 namespace Platform\Member\Providers;
 
-use BaseHelper;
 use Platform\Blog\Models\Post;
 use EmailHandler;
 use Illuminate\Routing\Events\RouteMatched;
@@ -95,7 +94,7 @@ class MemberServiceProvider extends ServiceProvider
 
         $this->app->register(EventServiceProvider::class);
 
-        add_filter(IS_IN_ADMIN_FILTER, [$this, 'setInAdmin'], 20, 0);
+        add_filter(IS_IN_ADMIN_FILTER, [$this, 'setInAdmin'], 24);
 
         add_action(BASE_ACTION_INIT, function () {
             if (defined('GALLERY_MODULE_SCREEN_NAME') && request()->segment(1) == 'account') {
@@ -109,9 +108,9 @@ class MemberServiceProvider extends ServiceProvider
     /**
      * @return bool
      */
-    public function setInAdmin(): bool
+    public function setInAdmin($isInAdmin): bool
     {
-        return in_array(request()->segment(1), ['account', BaseHelper::getAdminPrefix()]);
+        return request()->segment(1) === 'account' || $isInAdmin;
     }
 
     /**

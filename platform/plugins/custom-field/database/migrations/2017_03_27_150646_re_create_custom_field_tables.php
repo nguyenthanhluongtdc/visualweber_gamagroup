@@ -27,7 +27,12 @@ class ReCreateCustomFieldTables extends Migration
         Schema::create('field_items', function (Blueprint $table) {
             $table->id();
             $table->integer('field_group_id')->unsigned()->references('id')->on('field_groups')->onDelete('cascade');
-            $table->integer('parent_id')->unsigned()->nullable()->references('id')->on('field_items')->onDelete('cascade');
+            $table->integer('parent_id')
+                ->unsigned()
+                ->nullable()
+                ->references('id')
+                ->on('field_items')
+                ->onDelete('cascade');
             $table->integer('order')->default(0)->nullable();
             $table->string('title', 255);
             $table->string('slug', 255);

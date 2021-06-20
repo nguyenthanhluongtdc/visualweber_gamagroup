@@ -79,8 +79,10 @@ export class Helpers {
             } catch (err) {
                 result = defaultValue;
             }
+
             return result;
         }
+
         return null;
     }
 }
@@ -396,6 +398,10 @@ class UseCustomFields {
         };
 
         let parseChoices = choiceString => {
+            if (!choiceString) {
+                return [];
+            }
+
             let choices = [];
             choiceString.split('\n').forEach(item => {
                 let currentChoice = item.split(':');
@@ -540,6 +546,7 @@ class UseCustomFields {
                 let $current = $(el);
                 data.push(getRepeaterItemValue($current));
             });
+
             return data;
         };
 

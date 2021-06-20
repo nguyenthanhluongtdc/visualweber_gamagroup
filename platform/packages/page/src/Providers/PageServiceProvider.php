@@ -9,8 +9,8 @@ use Platform\Page\Repositories\Caches\PageCacheDecorator;
 use Platform\Page\Repositories\Eloquent\PageRepository;
 use Platform\Page\Repositories\Interfaces\PageInterface;
 use Platform\Shortcode\View\View;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Routing\Events\RouteMatched;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 
 /**

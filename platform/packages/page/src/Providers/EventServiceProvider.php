@@ -2,8 +2,8 @@
 
 namespace Platform\Page\Providers;
 
-use Platform\Theme\Events\RenderingSiteMapEvent;
 use Platform\Page\Listeners\RenderingSiteMapListener;
+use Platform\Theme\Events\RenderingSiteMapEvent;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class EventServiceProvider extends ServiceProvider

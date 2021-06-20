@@ -45,55 +45,55 @@ class BlogSeeder extends BaseSeeder
         $data = [
             'en_US' => [
                 [
-                    'name'       => 'Uncategorized',
+                    'name'       => 'Design',
                     'is_default' => true,
                 ],
                 [
-                    'name' => 'Events',
+                    'name' => 'Lifestyle',
                 ],
                 [
-                    'name'      => 'Projects',
+                    'name'      => 'Travel Tips',
                     'parent_id' => 2,
                 ],
                 [
-                    'name' => 'Business',
+                    'name' => 'Healthy',
                 ],
                 [
-                    'name'      => 'Portfolio',
+                    'name'      => 'Travel Tips',
                     'parent_id' => 4,
                 ],
                 [
-                    'name' => 'News & Updates',
+                    'name' => 'Hotel',
                 ],
                 [
-                    'name'      => 'Resources',
+                    'name'      => 'Nature',
                     'parent_id' => 6,
                 ],
             ],
             'vi'    => [
                 [
-                    'name'       => 'Không phân loại',
+                    'name'       => 'Phong cách sống',
                     'is_default' => true,
                 ],
                 [
-                    'name' => 'Sự kiện',
+                    'name' => 'Sức khỏe',
                 ],
                 [
-                    'name'      => 'Dự án',
+                    'name'      => 'Món ngon',
                     'parent_id' => 9,
                 ],
                 [
-                    'name' => 'Doanh nghiệp',
+                    'name' => 'Sức khỏe',
                 ],
                 [
-                    'name'      => 'Đầu tư',
+                    'name'      => 'Mẹo du lịch',
                     'parent_id' => 11,
                 ],
                 [
-                    'name' => 'Tin tức & cập nhật',
+                    'name' => 'Khách sạn',
                 ],
                 [
-                    'name'      => 'Tài nguyên',
+                    'name'      => 'Thiên nhiên',
                     'parent_id' => 13,
                 ],
             ],

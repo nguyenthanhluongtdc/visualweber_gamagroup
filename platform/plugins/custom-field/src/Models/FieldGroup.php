@@ -3,9 +3,9 @@
 namespace Platform\CustomField\Models;
 
 use Platform\Base\Enums\BaseStatusEnum;
+use Platform\Base\Models\BaseModel;
 use Platform\Base\Traits\EnumCastable;
 use Platform\CustomField\Repositories\Interfaces\FieldItemInterface;
-use Platform\Base\Models\BaseModel;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class FieldGroup extends BaseModel
@@ -36,14 +36,6 @@ class FieldGroup extends BaseModel
         'status' => BaseStatusEnum::class,
     ];
 
-    /**
-     * @return HasMany
-     */
-    public function fieldItems(): HasMany
-    {
-        return $this->hasMany(FieldItem::class, 'field_group_id');
-    }
-
     protected static function boot()
     {
         parent::boot();
@@ -51,5 +43,13 @@ class FieldGroup extends BaseModel
         self::deleting(function (FieldGroup $fieldGroup) {
             app(FieldItemInterface::class)->deleteBy(['field_group_id' => $fieldGroup->id]);
         });
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function fieldItems(): HasMany
+    {
+        return $this->hasMany(FieldItem::class, 'field_group_id');
     }
 }

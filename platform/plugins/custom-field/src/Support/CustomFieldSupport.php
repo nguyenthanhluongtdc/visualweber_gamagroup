@@ -12,6 +12,7 @@ use Exception;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Throwable;
 
@@ -160,10 +161,11 @@ class CustomFieldSupport
     public function setRules($rules): self
     {
         if (!is_array($rules)) {
-            $this->rules = json_decode($rules, true);
+            $this->rules = json_decode((string)$rules, true);
         } else {
             $this->rules = $rules;
         }
+
         return $this;
     }
 
@@ -183,6 +185,7 @@ class CustomFieldSupport
             $ruleName = Str::slug(str_replace('\\', '_', $ruleName), '_');
             $rules = [$ruleName => $value];
         }
+
         $this->rules = array_merge($this->rules, $rules);
 
         return $this;
@@ -202,12 +205,17 @@ class CustomFieldSupport
         $result = [];
 
         foreach ($fieldGroups as $row) {
-            if ($this->checkRules(json_decode($row->rules, true))) {
+            if ($this->checkRules(json_decode((string)$row->rules, true))) {
                 $result[] = [
                     'id'    => $row->id,
                     'title' => $row->title,
-                    'items' => $this->fieldGroupRepository->getFieldGroupItems($row->id, null, true, $morphClass,
-                        $morphId),
+                    'items' => $this->fieldGroupRepository->getFieldGroupItems(
+                        $row->id,
+                        null,
+                        true,
+                        $morphClass,
+                        $morphId
+                    ),
                 ];
             }
         }
@@ -224,11 +232,13 @@ class CustomFieldSupport
         if (!$ruleGroups) {
             return false;
         }
+
         foreach ($ruleGroups as $group) {
             if ($this->checkEachRule($group)) {
                 return true;
             }
         }
+
         return false;
     }
 
@@ -242,6 +252,7 @@ class CustomFieldSupport
             if (!array_key_exists($ruleGroupItem['name'], $this->rules)) {
                 return false;
             }
+
             if ($ruleGroupItem['type'] == '==') {
                 if (is_array($this->rules[$ruleGroupItem['name']])) {
                     $result = in_array($ruleGroupItem['value'], $this->rules[$ruleGroupItem['name']]);
@@ -255,6 +266,7 @@ class CustomFieldSupport
                     $result = $ruleGroupItem['value'] != $this->rules[$ruleGroupItem['name']];
                 }
             }
+
             if (!$result) {
                 return false;
             }
@@ -334,13 +346,23 @@ class CustomFieldSupport
     /**
      * @param \Illuminate\Http\Request $request
      * @param mixed $data
+     * @return bool
      */
     public function saveCustomFields(Request $request, $data)
     {
-        $rows = $this->parseRawData($request->input('custom_fields', []));
+        $fields = $request->input('custom_fields');
+
+        if (!$fields) {
+            return false;
+        }
+
+        $rows = $this->parseRawData($fields);
+
         foreach ($rows as $row) {
             $this->saveCustomField(get_class($data), $data->id, $row);
         }
+
+        return true;
     }
 
     /**
@@ -350,7 +372,7 @@ class CustomFieldSupport
     protected function parseRawData($jsonString): array
     {
         try {
-            $fieldGroups = json_decode($jsonString, true) ?: [];
+            $fieldGroups = json_decode((string)$jsonString, true) ?: [];
         } catch (Exception $exception) {
             return [];
         }
@@ -361,6 +383,7 @@ class CustomFieldSupport
                 $result[] = $item;
             }
         }
+
         return $result;
     }
 
@@ -483,5 +506,55 @@ class CustomFieldSupport
     public function supportedModules()
     {
         return config('plugins.custom-field.general.supported', []);
+    }
+
+    /**
+     * @param string|array $ruleName
+     * @param string $value
+     * @return string|array|null
+     */
+    public function getField($data, $key = null, $default = null)
+    {
+        if (empty($data)) {
+            return $default;
+        }
+
+        $customFieldRepository = app(CustomFieldInterface::class);
+
+        if ($key === null || !trim($key)) {
+            return $customFieldRepository->getFirstBy([
+                'use_for'    => get_class($data),
+                'use_for_id' => $data->id,
+            ]);
+        }
+
+        $field = $customFieldRepository->getFirstBy([
+            'use_for'    => get_class($data),
+            'use_for_id' => $data->id,
+            'slug'       => $key,
+        ]);
+
+        if (!$field || !$field->resolved_value) {
+            return $default;
+        }
+
+        return $field->resolved_value;
+    }
+
+     /**
+     * @param array $parentField
+     * @param string $key
+     * @param null $default
+     * @return string|array|null
+     */
+    public function getChildField(array $parentField, $key, $default = null)
+    {
+        foreach ($parentField as $field) {
+            if (Arr::get($field, 'slug') === $key) {
+                return Arr::get($field, 'value', $default);
+            }
+        }
+
+        return $default;
     }
 }

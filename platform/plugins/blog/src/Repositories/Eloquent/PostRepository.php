@@ -3,8 +3,8 @@
 namespace Platform\Blog\Repositories\Eloquent;
 
 use Platform\Base\Enums\BaseStatusEnum;
-use Platform\Support\Repositories\Eloquent\RepositoriesAbstract;
 use Platform\Blog\Repositories\Interfaces\PostInterface;
+use Platform\Support\Repositories\Eloquent\RepositoriesAbstract;
 use Eloquent;
 use Exception;
 use Illuminate\Database\Query\Builder;
@@ -54,9 +54,30 @@ class PostRepository extends RepositoriesAbstract implements PostInterface
             ->where('posts.id', '!=', $id)
             ->limit($limit)
             ->with('slugable')
-            ->orderBy('posts.created_at', 'desc');
+            ->orderBy('posts.created_at', 'desc')
+            ->whereHas('categories', function ($query) use ($id) {
+                $query->whereIn('categories.id', $this->getRelatedCategoryIds($id));
+            });
 
         return $this->applyBeforeExecuteQuery($data)->get();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRelatedCategoryIds($model)
+    {
+        $model = $model instanceof Eloquent ? $model : $this->findById($model);
+
+        if (!$model) {
+            return [];
+        }
+
+        try {
+            return $model->categories()->allRelatedIds()->toArray();
+        } catch (Exception $exception) {
+            return [];
+        }
     }
 
     /**
@@ -218,20 +239,6 @@ class PostRepository extends RepositoriesAbstract implements PostInterface
     /**
      * {@inheritDoc}
      */
-    public function getRelatedCategoryIds($model)
-    {
-        $model = $model instanceof Eloquent ? $model : $this->findOrFail($model);
-
-        try {
-            return $model->categories()->allRelatedIds()->toArray();
-        } catch (Exception $exception) {
-            return [];
-        }
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getFilters(array $filters)
     {
         $this->model = $this->originalModel;
@@ -280,7 +287,7 @@ class PostRepository extends RepositoriesAbstract implements PostInterface
         $orderBy = isset($filters['order_by']) ? $filters['order_by'] : 'updated_at';
         $order = isset($filters['order']) ? $filters['order'] : 'desc';
 
-        $this->model->where('posts.status', BaseStatusEnum::PUBLISHED)->orderBy($orderBy, $order);
+        $this->model = $this->model->where('posts.status', BaseStatusEnum::PUBLISHED)->orderBy($orderBy, $order);
 
         return $this->applyBeforeExecuteQuery($this->model)->paginate((int)$filters['per_page']);
     }

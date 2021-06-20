@@ -77,8 +77,7 @@ class TranslationController extends BaseController
             ->with('group', $group)
             ->with('numTranslations', $numTranslations)
             ->with('numChanged', $numChanged)
-            ->with('editUrl', route('translations.group.edit', ['group' => $group]))
-            ->with('deleteEnabled', $this->manager->getConfig('delete_enabled'));
+            ->with('editUrl', route('translations.group.edit', ['group' => $group]));
     }
 
     /**

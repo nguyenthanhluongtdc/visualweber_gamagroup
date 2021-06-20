@@ -33,26 +33,3 @@
 
     {!! Form::close() !!}
 @stop
-@push('footer')
-    <script>
-        var username = document.querySelector('[name="username"]');
-        var password = document.querySelector('[name="password"]');
-        username.focus();
-        document.getElementById('emailGroup').classList.add('focused');
-
-        // Focus events for email and password fields
-        username.addEventListener('focusin', function(){
-            document.getElementById('emailGroup').classList.add('focused');
-        });
-        username.addEventListener('focusout', function(){
-            document.getElementById('emailGroup').classList.remove('focused');
-        });
-
-        password.addEventListener('focusin', function(){
-            document.getElementById('passwordGroup').classList.add('focused');
-        });
-        password.addEventListener('focusout', function(){
-            document.getElementById('passwordGroup').classList.remove('focused');
-        });
-    </script>
-@endpush

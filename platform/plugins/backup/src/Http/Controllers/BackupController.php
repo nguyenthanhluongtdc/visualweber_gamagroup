@@ -9,7 +9,6 @@ use Platform\Base\Http\Controllers\BaseController;
 use Platform\Base\Http\Responses\BaseHttpResponse;
 use Platform\Base\Supports\Helper;
 use Exception;
-use Illuminate\Encryption\Encrypter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -41,9 +40,11 @@ class BackupController extends BaseController
         Assets::addScriptsDirectly(['vendor/core/plugins/backup/js/backup.js'])
             ->addStylesDirectly(['vendor/core/plugins/backup/css/backup.css']);
 
+        $backupManager = $this->backup;
+
         $backups = $this->backup->getBackupList();
 
-        return view('plugins/backup::index', compact('backups'));
+        return view('plugins/backup::index', compact('backups', 'backupManager'));
     }
 
     /**
@@ -59,6 +60,8 @@ class BackupController extends BaseController
             $this->backup->backupDb();
             $this->backup->backupFolder(config('filesystems.disks.public.root'));
             do_action(BACKUP_ACTION_AFTER_BACKUP, BACKUP_MODULE_SCREEN_NAME, $request);
+
+            $data['backupManager'] = $this->backup;
 
             return $response
                 ->setData(view('plugins/backup::partials.backup-item', $data)->render())
@@ -79,6 +82,7 @@ class BackupController extends BaseController
     {
         try {
             $this->backup->deleteFolderBackup($this->backup->getBackupPath($folder));
+
             return $response->setMessage(trans('plugins/backup::backup.delete_backup_success'));
         } catch (Exception $exception) {
             return $response

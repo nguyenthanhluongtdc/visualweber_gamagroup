@@ -2,8 +2,8 @@
 
 namespace Platform\Blog\Repositories\Caches;
 
-use Platform\Support\Repositories\Caches\CacheAbstractDecorator;
 use Platform\Blog\Repositories\Interfaces\PostInterface;
+use Platform\Support\Repositories\Caches\CacheAbstractDecorator;
 
 class PostCacheDecorator extends CacheAbstractDecorator implements PostInterface
 {

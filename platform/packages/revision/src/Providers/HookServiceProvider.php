@@ -33,6 +33,7 @@ class HookServiceProvider extends ServiceProvider
 
             return $tabs . view('packages/revision::history-tab')->render();
         }
+
         return $tabs;
     }
 
@@ -48,6 +49,7 @@ class HookServiceProvider extends ServiceProvider
         if (!empty($data) && in_array(get_class($data), config('packages.revision.general.supported', []))) {
             return $tabs . view('packages/revision::history-content', ['model' => $data])->render();
         }
+
         return $tabs;
     }
 }
