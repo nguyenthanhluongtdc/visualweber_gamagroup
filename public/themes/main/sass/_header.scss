@@ -8,6 +8,57 @@ a{
 .font-helve-bold{
     font-family: $font-helve-bold;
 }
+.font17{
+    font-size: 17px;
+    @media(max-width : 1440px){
+        font-size: 16px;
+    }
+    @media(max-width : 1240px){
+        font-size: 15px;
+    }
+}
+.font18 {
+    font-size: 18px;
+    @media(max-width : 1440px){
+        font-size: 16px;
+    }
+    @media(max-width : 480px){
+        font-size: 15px;
+    }
+    @media(max-width : 360px){
+        font-size: 13px;
+    }
+}
+.font20{
+    font-size: 20px;
+    @media(max-width : 1440px){
+        font-size: 18px;
+    }
+    @media(max-width : 480px){
+        font-size: 16px;
+    }
+    @media(max-width : 360px){
+        font-size: 15px;
+    }
+}
+.font30{
+    font-size: 30px;
+    line-height: 32px;
+    @media(max-width : 1440px){
+        font-size: 25px;
+        line-height: 27px;
+    }
+    @media(max-width : 1240px){
+        font-size: 20px;
+        line-height: 22px;
+    }
+    @media(max-width : 480px){
+        font-size: 20px;
+    }
+    @media(max-width : 360px){
+        font-size: 18px;
+    }
+}
 .header{
     height: 140px;
     background: $primary-color;
@@ -34,7 +85,7 @@ a{
                     margin-right: 60px;
                     a{
                         color: #A8A9AD;
-                        font-size: 17px;
+                        
                         text-decoration: none;
                     }
                     position: relative;
@@ -61,7 +112,7 @@ a{
         .language-search{
             display: flex;
             align-items: center;
-            font-family: $font-helve;
+          
             li{
                 margin-left: 15px;
                 .search-btn, a{

@@ -54,13 +54,13 @@
 ]) !!}
             </nav>
             <ul class="language-search">
-                <li class="lang">
+                <li class="lang lang-vi font-helve font18">
                     <a rel="alternate" hreflang="vi" href="{{ Language::getLocalizedURL('vi') }}">
 
                         <span>VN</span>
                     </a>
                 </li>
-                <li class="lang">
+                <li class="lang lang-en font-helve font18">
                     <a rel="alternate" hreflang="en" href="{{ Language::getLocalizedURL('en') }}">
 
                         <span>EN</span>

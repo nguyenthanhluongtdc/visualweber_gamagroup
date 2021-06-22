@@ -14,17 +14,18 @@
             left: 50%;
             z-index: 2;
             transform: translateY(-50%);
+            padding-right: 5%;
             h1{
-                font-size: 30px;
+                
                 color: #fff;
                 margin-bottom: 70px;
                 line-height: 38px;
             }
             a{
-               padding: 20px 30px;
+               padding: 10px 30px;
                color: #fff;
                border: 1px solid #fff;
-               font-size: 17px;
+               text-decoration: none;
 
 
             }
@@ -48,17 +49,19 @@
     .next-slide{
         position: absolute;
       top: 0;
-        right: 5%;
+        right: 3%;
+        color: #fff;
+        font-size: 20px;
     }
     .prev-slide{
         position: absolute;
        top: 0;
-        left: 5%;
+        left: 3%;
+        color: #fff;
+        font-size: 20px;
     }
-    [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled){
-        color: #A8A9AD;
-    }
-    .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot{
-        color: aliceblue;
+    
+    .main-slider [type=button]:not(:disabled), .main-slider [type=reset]:not(:disabled), .main-slider [type=submit]:not(:disabled), .main-slider button:not(:disabled){
+        color: red;
     }
 }

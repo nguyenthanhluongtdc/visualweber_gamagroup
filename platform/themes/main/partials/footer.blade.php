@@ -1,7 +1,67 @@
-<footer class="page-footer bg-dark pt-50">
-   
+<footer class="footer">
+   <div class="footer-content container">
+       <div class="row row-footer">
+           <div class="col-md-2">
+                <a class="footer-logo" href="{{ route('public.index') }}">
+                    <img src="{{ theme::asset()->url('images/logo.png') }}" alt="logo">
+                </a>
+           </div>
+           <div class="col-md-8 menu-footer">
+               <div class="row ">
+                   <div class="col-md-6">
+                        <ul class="list-menu-footer font-helve font18">
+                            <li class="active"><a href="">Trang chủ</a></li>
+                            <li><a href="">Lĩnh vực kinh doanh</a></li>
+                            <li><a href="">Đối tác</a></li>
+                            <li><a href="">Nhân tài</a></li>
+                            <li><a href="">Giới thiệu</a></li>
+                            <li><a href="">Liên hệ</a></li>
+                            <li><a href="">Tin tức</a></li>
+                        </ul>
+                   </div>
+                   <ul class="col-md-6 link-another font18 font-helve">
+                        <li><a href="">Câu hỏi thường gặp</a></li>
+                        <li><a href="">Quy định bảo mật</a></li>
+                   </ul>
+               </div>
+           </div>
+           <div class="col-md-2 footer-right">
+               <p>Liên kết với chúng tôi</p>
+               <ul>
+                   <li><a href=""><img src="{{ theme::asset()->url('images/homepage/iconfb.png') }}" alt="facebook"></a></li>
+                   <li><a href=""><img src="{{ theme::asset()->url('images/homepage/iconyt.png') }}" alt="youtube"></a></li>
+                   <li><a href=""><img src="{{ theme::asset()->url('images/homepage/iconistar.png') }}" alt="instargram"></a></li>
+               </ul>
+           </div>
+       </div>
+
+       <div class="row end-home row-footer">
+           <div class="col-md-2">
+
+           </div>
+           <div class="col-md-8 coppy-right">
+            © Copyright GAMAGROUP. All rights reserved. 
+           </div>
+           <div class="col-md-2">
+            <ul class="language-footer font-helve">
+                <li class="lang lang-vi">
+                    <a rel="alternate" hreflang="vi" href="{{ Language::getLocalizedURL('vi') }}">
+
+                        <span>VN</span>
+                    </a>
+                </li>
+                <li class="lang lang-en">
+                    <a rel="alternate" hreflang="en" href="{{ Language::getLocalizedURL('en') }}">
+
+                        <span>EN</span>
+                    </a>
+                </li>
+            </ul>
+           </div>
+       </div>
+   </div>
 </footer>
-<div id="back2top"><i class="fa fa-angle-up"></i></div>
+{{-- <div id="back2top"><i class="fa fa-angle-up"></i></div> --}}
 
 <!-- JS Library-->
 {!! Theme::footer() !!}

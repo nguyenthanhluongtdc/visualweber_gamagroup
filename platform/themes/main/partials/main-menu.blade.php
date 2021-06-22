@@ -1,6 +1,6 @@
 <ul {!! clean($options) !!} class="list-menu">
     @foreach ($menu_nodes as $key => $row)
-        <li class="menu-item @if ($row->has_child) menu-item-has-children @endif {{ $row->css_class }} @if ($row->active) active @endif font-helve">
+        <li class="menu-item @if ($row->has_child) menu-item-has-children @endif {{ $row->css_class }} @if ($row->active) active @endif font-helve font17">
             <a href="{{ $row->url }}" target="{{ $row->target }}">
                 @if ($row->icon_font)<i class='{{ trim($row->icon_font) }}'></i> @endif{{ $row->title }}
                 @if ($row->has_child) <span class="toggle-icon"><i class="fa fa-angle-down"></i></span>@endif
