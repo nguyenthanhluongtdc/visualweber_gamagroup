@@ -59,6 +59,9 @@ a{
         font-size: 18px;
     }
 }
+.header-mobie{
+    display: none;
+}
 .header{
     height: 140px;
     background: $primary-color;
@@ -109,23 +112,87 @@ a{
                 }
             }
         }
-        .language-search{
-            display: flex;
-            align-items: center;
-          
-            li{
-                margin-left: 15px;
-                .search-btn, a{
-                    color: #A8A9AD;
-                    text-decoration: none;
-                }
-            }
-            li.lang.active{
-                a{
-                    color: #fff;
-                }
-            }
+        
+    }
+}
+.language-search{
+    display: flex;
+    align-items: center;
+  
+    li{
+        margin-left: 15px;
+        .search-btn, a{
+            color: #A8A9AD;
+            text-decoration: none;
+        }
+    }
+    .open-menu-mobie{
+        color: #A8A9AD;
+    }
+    li.lang.active{
+        a{
+            color: #fff;
+        }
+    }
 
+}
+.list-menu-mobie{
+    // display: none;
+    position: fixed;
+    top: 20px;
+    background: $primary-color;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    padding-top: 70px;
+    padding-left: 5%;
+    display: none;
+    ul{
+        
+        
+       
+        li{
+            
+            animation: menumobie 0.5s ease-in-out;
+            margin-bottom: 15px;
+            a{
+                color: #A8A9AD;
+            }
+        }
+        li.active {
+            a{
+                color: #fff;
+            }
+        }
+        li:first-child{
+            animation-delay: .2s;
+        }
+        li:nth-child(2){
+            animation-delay: .3s;
+        }
+        li:nth-child(3){
+            animation-delay: .4s;
+        }
+        li:nth-child(4){
+            animation-delay: .5s;
+        }
+        li:nth-child(5){
+            animation-delay: .6s;
+        }
+        li:nth-child(6){
+            animation-delay: .7s;
+        }
+        li:nth-child(7){
+            animation-delay: .8s;
+        }
+        li:nth-child(8){
+            animation-delay: .9s;
         }
     }
 }
+
+@keyframes menumobie {
+    from {transform: translateX(100%);}
+    to {transform: translateX(0%);}
+  }

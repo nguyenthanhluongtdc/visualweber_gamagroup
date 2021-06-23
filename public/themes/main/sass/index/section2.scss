@@ -203,6 +203,7 @@
                 right: 0;
                 background: rgba(0,0,0,0.5);
             }
+           
             .content-title{
                 position: absolute;
                 bottom: 20px;
@@ -212,7 +213,7 @@
                
                 .content-none{
                     padding-right: 20px;
-                    transition: opacity .6s linear;
+                    animation: mymove 0.5s ease-in-out;
                     display: none;
                     .desc{
                         margin: 30px 0;
@@ -229,6 +230,9 @@
                     width: 31px;
                 }
             }
+        }
+        .section4-item{
+            overflow: hidden;
         }
         .section4-item:hover .content-none{
             display: block;
@@ -248,3 +252,7 @@
         }
     }
 }
+@keyframes mymove {
+    from {margin-bottom: -200px;}
+    to {margin-bottom: 0;}
+  }

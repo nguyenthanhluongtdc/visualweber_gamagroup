@@ -40,7 +40,7 @@
     {!! apply_filters(THEME_FRONT_BODY, null) !!}
 
 
-    <header class="header" id="header">
+    <header class="header header-desktop" id="header">
         <div class="header-top">
             <a class="header-logo" href="{{ route('public.index') }}">
                 <img src="{{ theme::asset()->url('images/logo.png') }}" alt="logo">
@@ -73,5 +73,41 @@
             </ul>
         </div>
     </header>
-  
+    <header class="header-mobie">
+        <div class="container header-mobie-content">
+            <div class="left">
+                <a class="header-logo" href="{{ route('public.index') }}">
+                    <img src="{{ theme::asset()->url('images/logo.png') }}" alt="logo">
+                </a>
+            </div>
+            <div class="right">
+                <ul class="language-search">
+                    <li class="lang lang-vi font-helve font18">
+                        <a rel="alternate" hreflang="vi" href="{{ Language::getLocalizedURL('vi') }}">
+
+                            <span>VN</span>
+                        </a>
+                    </li>
+                    <li class="lang lang-en font-helve font18">
+                        <a rel="alternate" hreflang="en" href="{{ Language::getLocalizedURL('en') }}">
+
+                            <span>EN</span>
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <div class="search-btn c-search-toggler"><i class="fa fa-search close-search"></i></div>
+                    </li>
+                    <li class="open-menu-mobie"><i class="fas fa-bars"></i></li>
+                </ul>
+            </div>
+            <nav class="list-menu-mobie">
+                {!! Menu::renderMenuLocation('main-menu', [
+    'options' => ['class' => 'menu sub-menu--slideLeft'],
+    'view' => 'main-menu',
+]) !!}
+            </nav>
+        </div>
+    </header>
+
     <div id="page-wrap">

@@ -25,7 +25,7 @@
 <div class="business-areas">
     <div class="business-areas-content container">
         <div class="row">
-            <div class="col-md-4 content-left">
+            <div class="col-lg-4 content-left">
                 <h3 class="font-helve-bold font30">
                     Lĩnh vực <br> kinh doanh
                 </h3>
@@ -35,7 +35,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-8 content-right">
+            <div class="col-lg-8 content-right">
                 <div class="row">
                     <div class="col-md-7">
                         <div class="tab-content">
@@ -139,7 +139,7 @@
 <div class="news-home">
     <div class="news-home-content container">
         <div class="row">
-            <div class="col-md-4 content-left">
+            <div class="col-lg-4 content-left">
                 <h3 class="font-helve-bold font30">Tin tức<br>
                     mới nhất</h3>
                 <div class="views-all content-desktop">
@@ -149,7 +149,7 @@
                 </div>
 
             </div>
-            <div class="content-right col-md-8">
+            <div class="content-right col-lg-8">
                 <div class="row">
                     <div class="item-right col-md-6">
                         <a href="" class="item-link">

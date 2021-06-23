@@ -1,6 +1,6 @@
 $('.main-slider').owlCarousel({
     smartSpeed: 1000,
-    loop: false,
+    loop: true,
     autoplay: false,
     dots: false,
     margin : 0,
@@ -18,4 +18,9 @@ $('.main-slider').owlCarousel({
             items: 1
         }
     }
+});
+
+$('.open-menu-mobie').click(function(){
+$('.list-menu-mobie').toggle();
+
 });

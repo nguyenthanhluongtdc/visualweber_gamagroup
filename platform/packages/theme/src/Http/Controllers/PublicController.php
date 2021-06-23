@@ -32,7 +32,7 @@ class PublicController extends Controller
                 if ($slug) {
                     $data = (new PageService)->handleFrontRoutes($slug);
 
-                    return Theme::scope($data['view'], $data['data'], $data['default_view'])->render();
+                    return Theme::scope('index', $data['data'], $data['default_view'])->render();
                 }
             }
         }

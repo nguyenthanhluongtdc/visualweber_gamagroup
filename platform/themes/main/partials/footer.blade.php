@@ -1,12 +1,12 @@
 <footer class="footer">
    <div class="footer-content container">
        <div class="row row-footer">
-           <div class="col-md-2">
+           <div class="col-lg-2">
                 <a class="footer-logo" href="{{ route('public.index') }}">
                     <img src="{{ theme::asset()->url('images/logo.png') }}" alt="logo">
                 </a>
            </div>
-           <div class="col-md-8 menu-footer">
+           <div class="col-lg-8 menu-footer">
                <div class="row ">
                    <div class="col-md-6">
                         <ul class="list-menu-footer font-helve font18">
@@ -18,6 +18,10 @@
                             <li><a href="">Liên hệ</a></li>
                             <li><a href="">Tin tức</a></li>
                         </ul>
+                        {{-- {!! Menu::renderMenuLocation('main-menu', [
+                            'options' => ['class' => 'menu sub-menu--slideLeft'],
+                            'view' => 'main-menu',
+                        ]) !!} --}}
                    </div>
                    <ul class="col-md-6 link-another font18 font-helve">
                         <li><a href="">Câu hỏi thường gặp</a></li>
@@ -25,7 +29,7 @@
                    </ul>
                </div>
            </div>
-           <div class="col-md-2 footer-right">
+           <div class="col-lg-2 footer-right">
                <p>Liên kết với chúng tôi</p>
                <ul>
                    <li><a href=""><img src="{{ theme::asset()->url('images/homepage/iconfb.png') }}" alt="facebook"></a></li>
@@ -39,10 +43,10 @@
            <div class="col-md-2">
 
            </div>
-           <div class="col-md-8 coppy-right">
+           <div class="col-lg-8 coppy-right">
             © Copyright GAMAGROUP. All rights reserved. 
            </div>
-           <div class="col-md-2">
+           <div class="col-lg-2">
             <ul class="language-footer font-helve">
                 <li class="lang lang-vi">
                     <a rel="alternate" hreflang="vi" href="{{ Language::getLocalizedURL('vi') }}">

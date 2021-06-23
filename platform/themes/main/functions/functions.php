@@ -2,6 +2,9 @@
 
 register_page_template([
     'no-sidebar' => __('No sidebar'),
+    'default' => 'Default',
+    'about' => 'About',
+    'news-gama' => 'NEWS GAMA',
 ]);
 
 register_sidebar([

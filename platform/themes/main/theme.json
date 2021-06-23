@@ -1,6 +1,6 @@
 {
-    "name": "Ripple",
-    "namespace": "Theme\\Ripple\\",
+    "name": "Gama",
+    "namespace": "Theme\\Gama\\",
     "description": "Ripple is default theme for Laravel CMS since v2.0",
     "author": "Laravel Technologies",
     "version": "5.17",
