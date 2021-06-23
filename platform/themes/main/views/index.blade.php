@@ -4,18 +4,14 @@
     <div class="abouut-us-content container">
         <div class="row">
             <div class="col-md-4">
-                <h3 class="font-helve-bold font30">Sứ mệnh của <br>
-                    Tập đoàn</h3>
+                @if (has_field($page, 'title_section1'))
+                    <h3 class="font-helve-bold font30">{!! get_field($page, 'title_section1') !!}</h3>
+                @endif
             </div>
             <div class="col-md-8 font-helve content-right font18">
-                Là NGƯỜI TIÊN PHONG, chúng tôi hiểu rằng thế giới là một kho báu tràn đầy
-                sự kỳ diệu và ẩn chứa những trải nghiệm tuyệt mỹ. Với CHUYÊN MÔN SÂU RỘNG cùng NIỀM ĐAM MÊ và SỰ SÁNG
-                SUỐT,
-                chúng tôi chọn lọc những TINH HOA CỦA THẾ GIỚI và mang đến Việt Nam qua các sản phẩm & dịch vụ đẳng cấp.
-                Đồng thời,
-                GamaGroup hướng đến tạo ra giá trị gia tăng cho đối tác và nhân viên, thực hiện trách nhiệm đồng hành và
-                hỗ trợ cộng đồng
-                xã hội và không ngừng mở đường, vượt mọi thách thức để phát triển bền vững.
+                @if (has_field($page, 'content_section1'))
+                    {!! get_field($page, 'content_section1') !!}
+                @endif
             </div>
         </div>
     </div>
@@ -26,12 +22,14 @@
     <div class="business-areas-content container">
         <div class="row">
             <div class="col-lg-4 content-left">
-                <h3 class="font-helve-bold font30">
-                    Lĩnh vực <br> kinh doanh
-                </h3>
+                @if (has_field($page, 'title_section1'))
+                    <h3 class="font-helve-bold font30">
+                        {!! get_field($page, 'title_section2') !!}
+                    </h3>
+                @endif
                 <div class="views-all-logo content-desktop">
                     <a href="" class="font18 font-helve">
-                        Xem tất cả thương hiệu
+                        {{ get_field($page, 'view_all_brand') }}
                     </a>
                 </div>
             </div>
@@ -39,7 +37,45 @@
                 <div class="row">
                     <div class="col-md-7">
                         <div class="tab-content">
-                            <div id="tab1" class="tab-pane active content-tab">
+                            @if (has_field($page, 'content_section2'))
+                                @foreach (get_field($page, 'content_section2') as $key => $item)
+                                    <div id="tab{{ $key }}"
+                                        class="tab-pane content-tab {{ $loop->first ? 'active' : '' }}">
+
+                                        <h5 class="font-helve-bold">{{ get_sub_field($item, 'tab_menu') }}</h5>
+                                        @if (has_sub_field($item, 'tab_content'))
+                                            <div class="desc font-helve font18">
+                                                {!! get_sub_field($item, 'tab_content') !!}
+                                            </div>
+                                        @endif
+
+                                        @if (has_sub_field($item, 'list_img_brand'))
+                                            <div class="list-logo">
+                                                @foreach (get_sub_field($item, 'list_img_brand') as $item_img)
+                                                    <a href="{{ get_sub_field($item_img, 'link_brand') }}"
+                                                        class="logo-link" title="logo">
+                                                        <img src="{{ RvMedia::getImageUrl(get_sub_field($item_img, 'img_brand')) }}"
+                                                            alt="logo">
+                                                    </a>
+                                                @endforeach
+
+                                                {{-- <a href="" class="logo-link">
+                                            <img src="{{ Theme::asset()->url('images/homepage/logo2.png') }}" alt="">
+                                        </a>
+                                        <a href="" class="logo-link">
+                                            <img src="{{ Theme::asset()->url('images/homepage/logo3.png') }}" alt="">
+                                        </a>
+                                        <a href="" class="logo-link">
+                                            <img src="{{ Theme::asset()->url('images/homepage/logo4.png') }}" alt="">
+                                        </a>
+                                        <a href="" class="logo-link">
+                                            <img src="{{ Theme::asset()->url('images/homepage/logo5.png') }}" alt="">
+                                        </a> --}}
+                                            </div>
+                                        @endif
+                                    </div>
+                                @endforeach
+                                {{-- <div id="tab1" class="tab-pane active content-tab">
                                 <h5 class="font-helve-bold">Tích hợp hệ thống</h5>
                                 <p class="desc font-helve font18">
                                     Công nghệ đang được xem là công cụ chiến lược giúp các tổ chức, doanh nghiệp nâng
@@ -62,80 +98,44 @@
                                         <img src="{{ Theme::asset()->url('images/homepage/logo5.png') }}" alt="">
                                     </a>
                                 </div>
-                            </div>
+                            </div> --}}
+                            @endif
 
-                            <div id="tab2" class="container tab-pane fade content-tab">
-                                <h5 class="font-helve-bold">Giải pháp thang máy</h5>
-                                <p class="desc font-helve font18">
-                                    Công nghệ đang được xem là công cụ chiến lược giúp các tổ chức, doanh nghiệp nâng
-                                    cao năng lực cạnh tranh, thúc đẩy sự đổi mới sáng tạo trong hoạt động.
-                                </p>
-                                <div class="list-logo">
-                                    <a href="" class="logo-link">
-                                        <img src="{{ Theme::asset()->url('images/homepage/logo1.png') }}" alt="">
-                                    </a>
-                                    <a href="" class="logo-link">
-                                        <img src="{{ Theme::asset()->url('images/homepage/logo2.png') }}" alt="">
-                                    </a>
-                                    <a href="" class="logo-link">
-                                        <img src="{{ Theme::asset()->url('images/homepage/logo3.png') }}" alt="">
-                                    </a>
-                                    <a href="" class="logo-link">
-                                        <img src="{{ Theme::asset()->url('images/homepage/logo4.png') }}" alt="">
-                                    </a>
-                                    <a href="" class="logo-link">
-                                        <img src="{{ Theme::asset()->url('images/homepage/logo5.png') }}" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div id="tab3" class="container tab-pane fade">
-                                <h3>Menu 2</h3>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                    laudantium, totam rem aperiam.</p>
-                            </div>
-                            <div id="tab4" class="container tab-pane fade">
-                                <h3>Menu 2</h3>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                    laudantium, totam rem aperiam.</p>
-                            </div>
-                            <div id="tab5" class="container tab-pane fade">
-                                <h3>Menu 2</h3>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                    laudantium, totam rem aperiam.</p>
-                            </div>
                         </div>
                     </div>
                     <div class="col-md-5 menu-tab">
+
                         <ul class="nav nav-tabs font20 font-helve" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tab1">Tích hợp hệ thống</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tab2">Giải pháp thang máy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tab3">Dịch vụ & Công Nghệ CNTT</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tab4">Trung tâm dữ liệu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tab5">Dịch vụ trực tuyến</a>
-                            </li>
+                            @if (has_field($page, 'content_section2'))
+                                @foreach (get_field($page, 'content_section2') as $key => $item)
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ $loop->first ? 'active' : '' }}" data-toggle="tab"
+                                            href="#tab{{ $key }}">{{ get_sub_field($item, 'tab_menu') }}</a>
+                                    </li>
+                                @endforeach
+                            @endif
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div class="views-all-logo content-mobie">
-            <a href="" class="font18 font-helve views-logo-mobie">
-                Xem tất cả thương hiệu
+            <a href="" class="font18 font-helve views-logo-mobie" title="brand">
+                {{ get_field($page, 'view_all_brand') }}
             </a>
         </div>
     </div>
 </div>
 
 {{-- tin tức --}}
+
+
+
+
+
+
+
 <div class="news-home">
     <div class="news-home-content container">
         <div class="row">
@@ -151,25 +151,28 @@
             </div>
             <div class="content-right col-lg-8">
                 <div class="row">
+                    @if (!empty(get_posts_by_category_order(get_category_order()[0]['id'], 2, 2, ['posts.created_at' => 'desc'])))
+                    @foreach (get_posts_by_category_order(get_category_order()[0]['id'], 2, 2, ['posts.created_at' => 'desc']) as $post)
+                   
                     <div class="item-right col-md-6">
-                        <a href="" class="item-link">
-                            <img src="{{ Theme::asset()->url('images/homepage/item1.jpg') }}" alt=""
-                                class="img-slider">
-                            <h4 class="font-helve font20">Gama Service và “Hội nghị gắn kết
-                                giáo dục nghề nghiệp thủ đô với thị trường
+                        <a href="{{ $post->slug }}" class="item-link" title="{{ $post->name }}">
+                            <img src="{{ RvMedia::getImageUrl($post->image) }}" alt="{{ $post->name }}" class="img-slider">
+                            <h4 class="font-helve font20">
+                                {{ $post->name }}
                             </h4>
 
                         </a>
                         <div class="tag-time font-helve">
                             <span class="tag">Kinh doanh</span>
-                            <span class="time">15/03/2021 15:00</span>
+                            <span class="time"> {{ $post->created_at->format('d/m/Y H:i') }}</span>
                         </div>
                         <p class="desc font-helve font18">
-                            Sáng 24/4, tại Hội nghị gắn kết giáo dục nghề nghiệp thủ đô 2021, Gama Service đã cùng Hiệp
-                            hội Thang máy Việt Nam (VNEA) và Trường Cao đẳng Nghề.
+                            {{ $post->description }}
                         </p>
                     </div>
-                    <div class="item-right col-md-6">
+                    @endforeach
+                    @endif
+                    {{-- <div class="item-right col-md-6">
                         <a href="" class="item-link">
                             <img src="{{ Theme::asset()->url('images/homepage/item2.jpg') }}" alt=""
                                 class="img-slider">
@@ -185,7 +188,7 @@
                             Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công Thương tính hạn chế xuất
                             khẩu loại thép mà trong nước có nhu cầu.
                         </p>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

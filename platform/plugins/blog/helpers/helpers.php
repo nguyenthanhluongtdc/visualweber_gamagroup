@@ -262,3 +262,25 @@ if (!function_exists('get_post_formats')) {
         return PostFormat::getPostFormats($convertToList);
     }
 }
+if (!function_exists('get_category_order')) {
+    /**
+     * @param bool $convertToList
+     * @return array
+     */
+    function get_category_order()
+    {
+       return app(CategoryInterface::class)->getModel()->where('order', 2)->take(1)->get();
+    }
+}
+if (!function_exists('get_posts_by_category_order')) {
+    /**
+     * @param int $categoryId
+     * @param int $paginate
+     * @param int $limit
+     * @return \Illuminate\Support\Collection
+     */
+    function get_posts_by_category_order($categoryId, $paginate = 12, $limit = 0, $order = [])
+    {
+        return app(PostInterface::class)->getByCategoryOrderBy($categoryId, $paginate, $limit, $order);
+    }
+}

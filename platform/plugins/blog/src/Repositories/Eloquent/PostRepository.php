@@ -291,4 +291,33 @@ class PostRepository extends RepositoriesAbstract implements PostInterface
 
         return $this->applyBeforeExecuteQuery($this->model)->paginate((int)$filters['per_page']);
     }
+
+    public function getByCategoryOrderBy($categoryId, $paginate = 12, $limit = 0, $orders = [])
+    {
+        if (!is_array($categoryId)) {
+            $categoryId = [$categoryId];
+        }
+
+        $data = $this->model
+            ->where('posts.status', BaseStatusEnum::PUBLISHED)
+            ->join('post_categories', 'post_categories.post_id', '=', 'posts.id')
+            ->join('categories', 'post_categories.category_id', '=', 'categories.id')
+            ->whereIn('post_categories.category_id', $categoryId)
+            ->select('posts.*')
+            ->distinct()
+            ->with('slugable');
+
+        if(count($orders) > 0) {
+            foreach($orders as $column => $type) {
+                $data = $data->orderBy($column, !blank($type) ? $type : 'asc');
+            }
+        }
+
+
+        if ($paginate != 0) {
+            return $this->applyBeforeExecuteQuery($data)->paginate($paginate);
+        }
+
+        return $this->applyBeforeExecuteQuery($data)->limit($limit)->get();
+    }
 }

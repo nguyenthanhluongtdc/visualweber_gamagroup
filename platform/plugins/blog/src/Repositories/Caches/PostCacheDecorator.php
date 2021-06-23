@@ -110,4 +110,9 @@ class PostCacheDecorator extends CacheAbstractDecorator implements PostInterface
     {
         return $this->getDataIfExistCache(__FUNCTION__, func_get_args());
     }
+
+    public function getByCategoryOrderBy($categoryId, $paginate = 12, $limit = 0, $orders = [])
+    {
+        return $this->getDataIfExistCache(__FUNCTION__, func_get_args());
+    }
 }

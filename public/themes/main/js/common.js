@@ -24,3 +24,5 @@ $('.open-menu-mobie').click(function(){
 $('.list-menu-mobie').toggle();
 
 });
+
+

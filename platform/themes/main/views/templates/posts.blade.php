@@ -1,4 +1,5 @@
-@if ($posts->count() > 0)
+<div class="all-news-content">
+    @if ($posts->count() > 0)
     @foreach ($posts as $post)
         <article class="post post__horizontal mb-40 clearfix">
             <div class="post__thumbnail">
@@ -36,3 +37,4 @@
         background-color: #ecf0f1;
     }
 </style>
+</div>
