@@ -8,6 +8,7 @@ a{
 .font-helve-bold{
     font-family: $font-helve-bold;
 }
+
 .font17{
     font-size: 17px;
     @media(max-width : 1440px){
@@ -59,6 +60,9 @@ a{
         font-size: 18px;
     }
 }
+.font50{
+    font-size: 50px;
+}
 .header-mobie{
     display: none;
 }
@@ -85,17 +89,66 @@ a{
                 align-items: center;
                 list-style: none;
                 li{
-                    margin-right: 60px;
+                    margin-right: 55px;
+                    position: relative;
                     a{
                         color: #A8A9AD;
                         
                         text-decoration: none;
                     }
                     position: relative;
-                    
+                    .sub-menu-drop{
+                        position: absolute;
+                        top: 164%;
+                        
+                        width: max-content;
+                        padding: 10px;
+                        z-index: 5;
+                        padding: 30px;
+                        left: -30px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        display: none;
+                        li{
+                            margin-right: 0;
+                            margin-bottom: 25px;
+                            
+                        }
+                        li:last-child{
+                            margin-bottom: 0;
+                        }
+                        .item-menu-drop:hover {
+                            a.child{
+                                color: #fff;
+                            }
+                        }
+                    }
+                    .fixed{
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color : rgba(13, 63, 117, 0.8);
+                        z-index: -1;
+                    }
+                    .sub-menu-drop::before{
+                        position: absolute;
+                        content: '';
+                        top: -30px;
+                        height: 50px;
+                        background: transparent;
+                        width: 70%;
+                        left: 0;
+                    }
                 }
-                li.active , li:hover{
-                    a{
+                li.menu-big:hover .sub-menu-drop{
+                    display: block;
+                }
+                li.menu-big.active , li.menu-big:hover{
+                    a.menu-link{
                         color: #fff;
 
                     }

@@ -3,12 +3,12 @@
 <div class="about-us">
     <div class="abouut-us-content container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
                 @if (has_field($page, 'title_section1'))
                     <h3 class="font-helve-bold font30">{!! get_field($page, 'title_section1') !!}</h3>
                 @endif
             </div>
-            <div class="col-md-8 font-helve content-right font18">
+            <div class="col-md-8 font-helve content-right font18" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
                 @if (has_field($page, 'content_section1'))
                     {!! get_field($page, 'content_section1') !!}
                 @endif
@@ -21,21 +21,21 @@
 <div class="business-areas">
     <div class="business-areas-content container">
         <div class="row">
-            <div class="col-lg-4 content-left">
+            <div class="col-lg-4 content-left" data-aos="zoom-out-right" data-aos-duration="700" data-aos-easing="ease-in-out">
                 @if (has_field($page, 'title_section1'))
                     <h3 class="font-helve-bold font30">
                         {!! get_field($page, 'title_section2') !!}
                     </h3>
                 @endif
-                <div class="views-all-logo content-desktop">
+                {{-- <div class="views-all-logo content-desktop">
                     <a href="" class="font18 font-helve">
                         {{ get_field($page, 'view_all_brand') }}
                     </a>
-                </div>
+                </div> --}}
             </div>
             <div class="col-lg-8 content-right">
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-7" data-aos="zoom-out-up" data-aos-duration="700" data-aos-easing="ease-in-out">
                         <div class="tab-content">
                             @if (has_field($page, 'content_section2'))
                                 @foreach (get_field($page, 'content_section2') as $key => $item)
@@ -103,7 +103,7 @@
 
                         </div>
                     </div>
-                    <div class="col-md-5 menu-tab">
+                    <div class="col-md-5 menu-tab" data-aos="zoom-out-left" data-aos-duration="700" data-aos-easing="ease-in-out">
 
                         <ul class="nav nav-tabs font20 font-helve" role="tablist">
                             @if (has_field($page, 'content_section2'))
@@ -120,26 +120,19 @@
                 </div>
             </div>
         </div>
-        <div class="views-all-logo content-mobie">
+        {{-- <div class="views-all-logo content-mobie">
             <a href="" class="font18 font-helve views-logo-mobie" title="brand">
                 {{ get_field($page, 'view_all_brand') }}
             </a>
-        </div>
+        </div> --}}
     </div>
 </div>
 
 {{-- tin tức --}}
-
-
-
-
-
-
-
 <div class="news-home">
     <div class="news-home-content container">
         <div class="row">
-            <div class="col-lg-4 content-left">
+            <div class="col-lg-4 content-left" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
                 <h3 class="font-helve-bold font30">Tin tức<br>
                     mới nhất</h3>
                 <div class="views-all content-desktop">
@@ -154,7 +147,7 @@
                     @if (!empty(get_posts_by_category_order(get_category_order()[0]['id'], 2, 2, ['posts.created_at' => 'desc'])))
                     @foreach (get_posts_by_category_order(get_category_order()[0]['id'], 2, 2, ['posts.created_at' => 'desc']) as $post)
                    
-                    <div class="item-right col-md-6">
+                    <div class="item-right col-md-6" data-aos="zoom-in-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="30">
                         <a href="{{ $post->slug }}" class="item-link" title="{{ $post->name }}">
                             <img src="{{ RvMedia::getImageUrl($post->image) }}" alt="{{ $post->name }}" class="img-slider">
                             <h4 class="font-helve font20">
@@ -201,10 +194,10 @@
 </div>
 
 <div class="section4-home">
-    <div class="section4-content container">
-        <div class="section4-item">
+    <div class="section4-content container" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out">
+        <div class="section4-item" >
             <img src="{{ Theme::asset()->url('images/homepage/end1.jpg') }}" alt="">
-            <div class="content-title">
+            <div class="content-title" >
                 <h5 class="title font-helve-bold font30">Lịch sử <br> phát triển</h5>
                 <div class="content-none ">
                     <p class="desc font-helve font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công
@@ -216,7 +209,7 @@
         </div>
         <div class="section4-item">
             <img src="{{ Theme::asset()->url('images/homepage/end2.jpg') }}" alt="">
-            <div class="content-title">
+            <div class="content-title" >
                 <h5 class="title font-helve-bold font30">Nhân tài</h5>
                 <div class="content-none ">
                     <p class="desc font-helve font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công
@@ -228,7 +221,7 @@
         </div>
         <div class="section4-item">
             <img src="{{ Theme::asset()->url('images/homepage/end3.jpg') }}" alt="">
-            <div class="content-title">
+            <div class="content-title" >
                 <h5 class="title font-helve-bold font30">Định hướng <br> phát triển</h5>
                 <div class="content-none ">
                     <p class="desc font-helve font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công

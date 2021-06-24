@@ -1,3 +1,10 @@
+@media (min-width : 1919px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 @media(max-width : 1240px){
     .header .header-menu .main-menu ul li{
         margin-right: 40px;
@@ -169,10 +176,50 @@
         font-size: 15px;
         margin-bottom: 20px;
     }
+    .about-section1 h3 , .section5-about h3{
+        margin-bottom: 30px;
+    }
+    .section5-about .list-admin-slider .owl-nav .prev-slide{
+        left: 1%;
+    }
+    .section5-about .list-admin-slider .owl-nav .next-slide{
+        right: 1%;
+    }
+    .section5-about .content-mobie{
+        a{
+            padding: 10px 30px;
+            border: 1px solid $primary-color;
+            color: $primary-color;
+        }
+    }
 }
+@media(max-width : 767px){
+    .section4-about .item-coun{
+        margin-bottom: 20px;
+    }
+    .section4-about .item-coun:last-child{
+        margin-bottom: 0;
+    }
+    .content-none-mobie{
+        display: none;
+    }
+    .content-show-mobie{
+        display: block;
+        margin-top: 50px;
+        a{
+            padding: 10px 30px;
+            border: 1px solid $primary-color;
+            color: $primary-color; 
+        }
+    }
+    .about-section3 .right-img img{
+        width: 100%;
+        margin-top: 30px;
+    }
 
+}
 @media(max-width : 480px){
-    .news-home, .section4-home, .business-areas, .about-us{
+    .news-home, .section4-home, .business-areas, .about-us, .section5-about, .section4-about, .about-section3, .about-section1{
         padding: 40px 0;
     }
     .business-areas .content-right .tab-content .content-tab h5::after{
