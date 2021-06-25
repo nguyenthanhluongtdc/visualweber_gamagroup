@@ -136,7 +136,7 @@
                 <h3 class="font-helve-bold font30">Tin tức<br>
                     mới nhất</h3>
                 <div class="views-all content-desktop">
-                    <a href="" class="font-helve font20">
+                    <a href="" class="font-helve font20 primary-a">
                         Xem tất cả
                     </a>
                 </div>

@@ -5,6 +5,7 @@ register_page_template([
     'default' => 'Default',
     'about' => 'About',
     'news-gama' => 'NEWS GAMA',
+    'about-detail' => 'About-detail',
 ]);
 
 register_sidebar([

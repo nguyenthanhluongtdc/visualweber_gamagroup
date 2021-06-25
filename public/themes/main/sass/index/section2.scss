@@ -119,13 +119,7 @@
         justify-content: space-between;
         .views-all{
             margin-bottom: 15px;
-            a{
-                color: $primary-color;
-                padding: 10px 30px;
-                border: 1px solid $primary-color;
-                text-decoration: none;
-                cursor: pointer;
-            }
+            
         }
     }
     h3{
@@ -216,7 +210,8 @@
                
                 .content-none{
                     padding-right: 20px;
-                    animation: mymove 0.5s ease-in-out;
+                    animation: mymove 0.5s ease-in;
+                    transition: transform .5s, visibility .5s ease-in;
                     display: none;
                     .desc{
                         margin: 30px 0;

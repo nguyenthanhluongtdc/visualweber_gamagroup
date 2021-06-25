@@ -60,9 +60,69 @@ a{
         font-size: 18px;
     }
 }
+
 .font50{
     font-size: 50px;
 }
+a.primary-a{
+    padding: 10px 30px;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    text-decoration: none;
+    transition: ease-out 0.3s;
+    position: relative;
+    z-index: 1;
+    &:hover{
+        color: #fff;
+        cursor: pointer;
+    }
+    &::before{
+        transition: 0.5s all ease;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        opacity: 0;
+        content: '';
+        background: $primary-color;
+    }
+    &:hover::before{
+        transition: 0.5s all ease;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        z-index: -1;
+    }
+}
+
+.breadcrumb-wrap{
+    background: #E7E7E7;
+    padding: 20px 0;
+}
+.breadcrumb-list{
+    display: flex;
+    align-items: center;
+    font-family: $font-helve;
+    li.active{
+        color: $primary-color;
+    }
+}
+.breadcrumb-list li{
+    margin-right: 20px;
+    font-size: 15px;
+}
+.breadcrumb-list li .icon{
+    margin-left: 20px;
+}
+.breadcrumb-list .bread-link a{
+    color: black;
+    text-decoration: none;
+    
+}
+
+
+
 .header-mobie{
     display: none;
 }
@@ -96,7 +156,6 @@ a{
                         
                         text-decoration: none;
                     }
-                    position: relative;
                     .sub-menu-drop{
                         position: absolute;
                         top: 164%;
@@ -209,9 +268,42 @@ a{
             
             animation: menumobie 0.5s ease-in-out;
             margin-bottom: 15px;
+            position: relative;
             a{
                 color: #A8A9AD;
             }
+            .sub-menu-drop{
+                position: relative;
+                width:100%;
+                z-index: 5;
+               padding-left: 30px;
+                padding-top: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                display: none;
+                li{
+                    margin-right: 0;
+                    margin-bottom: 15px;
+                    a{
+                        color: #A8A9AD;
+                        text-decoration: none;
+                    }
+                    
+                }
+                li:last-child{
+                    margin-bottom: 0;
+                }
+                .item-menu-drop:hover {
+                    a.child{
+                        color: #fff;
+                    }
+                }
+            }
+           
+        }
+        li.menu-item-has-children:hover .sub-menu-drop{
+            display: block;
         }
         li.active {
             a{

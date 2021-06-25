@@ -2,9 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
-class AddMoreColumnsToTableAbouts extends Migration
+class AboutCreateAboutTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +12,11 @@ class AddMoreColumnsToTableAbouts extends Migration
      */
     public function up()
     {
-        Schema::table('about', function (Blueprint $table) {
-            //
+        Schema::create('app_abouts', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 255);
+            $table->string('status', 60)->default('published');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddMoreColumnsToTableAbouts extends Migration
      */
     public function down()
     {
-        Schema::table('about', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('app_abouts');
     }
 }

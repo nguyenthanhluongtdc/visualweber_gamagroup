@@ -1,3 +1,5 @@
+{!! Theme::breadcrumb()->render() !!}
+ @includeIf("theme.armcobarriers::views.modules.breadcrumb")
 <div class="container">
     <div class="about-section1">
         <div class="row">
@@ -55,7 +57,7 @@
                                     cộng đồng.
                                 </div>
                                 <div class="views content-none-mobie">
-                                    <a href="">
+                                    <a href="" class="primary-a">
                                         Xem thêm
                                     </a>
                                 </div>
@@ -98,7 +100,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 item-coun">
-                <p class="title font-helve-bold font50 counting" data-count="15">0 năm</p>
+                <p class="title font-helve-bold font50"><span class="counting" data-count="15">0</span><span class="year">năm</span></p>
                 <p class="desc font-helve font18">Hoạt động</p>
             </div>
             <div class="col-md-4 item-coun">
@@ -119,7 +121,7 @@
             <div class="col-lg-4 admin-left" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
                 <h3 class="font-helve-bold font30">Hội đồng quản trị <br>GAMA Group</h3>
                 <div class="view font-helve font18 content-desktop">
-                    <a href="">Xem thêm</a>
+                    <a href="" class="primary-a">Xem thêm</a>
                 </div>
             </div>
             <div class="col-lg-8" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">

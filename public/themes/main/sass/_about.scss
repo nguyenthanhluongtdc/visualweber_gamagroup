@@ -33,12 +33,7 @@
         justify-content: space-between;
         .views{
             margin-bottom: 11px;
-            a{
-                padding: 10px 30px;
-                color: $primary-color;
-                border: 1px solid $primary-color;
-                text-decoration: none;
-            }
+           
         }
     }
     .right-img{
@@ -50,6 +45,11 @@
 }
 
 .section4-about{
+    .item-coun{
+        .year{
+            margin-left: 10px;
+        }
+    }
     background: #E7E7E7;
     padding: 60px 0;
     color: $primary-color;
@@ -69,12 +69,7 @@
         color: $primary-color;
         .view{
             margin-bottom: 11px;
-            a{
-                padding: 10px 30px;
-                border: 1px solid $primary-color;
-                color: $primary-color;
-                text-decoration: none;
-            }
+           
         }
     }
     .list-admin-slider{
