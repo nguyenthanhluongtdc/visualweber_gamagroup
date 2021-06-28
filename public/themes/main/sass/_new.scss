@@ -1,118 +1,99 @@
 .new-section1 {
     padding: 80px 0;
+    .new-title {
+        color: #0D3F75;
+    }
 }
 
-.new-section2 {
-    img {
+.new--banner {
+    .new--slider__item {
         width: 100%;
-        max-width: 100%;
+        position: relative;
+    }
+    .content {
+        position: absolute;
+        top: 65%;
+        width: 31%;
+        right: 3rem;
+        z-index: 2;
+        transform: translateY(-50%);
+        padding-right: 5%;
+        color: #ffff;
+        .new--time {
+            margin: 1.6rem 0rem;
+        }
+        .new--info {
+            padding: 4px 17px;
+            background-color: #0D3F75;
+            color: #fff;
+        }
+        .new--item {
+            color: #8F8F8F;
+        }
     }
 }
 
-.new-section3 {
-    padding: 80px 0;
-    .list-menu-tabnew {
-        display: flex;
-        flex-direction: column;
-        li {
-            margin-bottom: 20px;
-            a {
-                color: black;
-                padding: 0;
-            }
-            a.active {
-                color: $primary-color;
-                background: none;
-                font-family: $font-helve-bold;
-            }
-        }
+.filter {
+    padding: 4rem 0;
+    .filter--title {
+        color: #0D3F75;
     }
-    .content-tab .left {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        .views {
-            margin-bottom: 11px;
-        }
+    .row {
+        margin: 0px;
+        padding: 0px;
     }
-    .right-img {
-        img {
+    .col-md-3 {
+        margin: 0px;
+        padding: 0px;
+        .dropdown {
             width: 80%;
-            float: right;
+            height: 2.5rem;
+            border-color: #B5C5D5;
+            .option {
+                height: 2.5rem;
+            }
         }
     }
 }
 
-.section4-new {
-    .item-coun {
-        .year {
+.new {
+    a {
+        text-decoration: none;
+    }
+    .new--title {
+        color: #0D3F75;
+        overflow: hidden; // ẩn các nội dung khi kích thước lớn hơn chiều rộng khối bên ngoài
+        text-overflow: ellipsis; //thêm 3 dấu chấm ở cuối
+        -webkit-line-clamp: 2; // số dòng muốn hiển thị
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+    }
+    .new--time {
+        margin: 1rem 0rem;
+    }
+    .new--info {
+        padding: 4px 17px;
+        background-color: #0D3F75;
+        color: #fff;
+    }
+    .new--item {
+        color: #8F8F8F;
+    }
+    .new--des {
+        color: black;
+        overflow: hidden; // ẩn các nội dung khi kích thước lớn hơn chiều rộng khối bên ngoài
+        -webkit-line-clamp: 3; // số dòng muốn hiển thị
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+    }
+}
+
+.page-item {
+    margin: 0px 0.3rem;
+    a {
+        color: #0D3F75;
+        img {
             margin-left: 10px;
         }
     }
-    background: #E7E7E7;
-    padding: 60px 0;
-    color: $primary-color;
-    p.title {
-        margin-bottom: 10px;
-    }
-}
-
-.section5-new {
-    padding: 80px 0;
-    .desc-right {
-        margin-bottom: 45px;
-    }
-    .admin-left {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        color: $primary-color;
-        .view {
-            margin-bottom: 11px;
-        }
-    }
-    .list-admin-slider {
-        .admin-item {
-            opacity: 0.7;
-            &:hover {
-                opacity: 1;
-            }
-            h5 {
-                margin: 15px 0;
-                line-height: 19px;
-            }
-            .desc {
-                font-size: 13px;
-                font-family: $font-helve-light;
-                line-height: 17px;
-                color: black;
-            }
-        }
-        .owl-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            .prev-slide {
-                position: absolute;
-                top: 0;
-                left: -5%;
-                color: #A8A9AD;
-            }
-            .next-slide {
-                position: absolute;
-                top: 0;
-                right: -5%;
-                color: #A8A9AD;
-            }
-        }
-    }
-}
-
-.content-show-mobie {
-    display: none;
-}
-
-.desc-right {
-    color: black;
 }
