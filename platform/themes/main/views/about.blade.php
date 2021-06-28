@@ -48,7 +48,7 @@
                     <div id="tababout1" class="tab-pane active">
                         <div class="row">
                             <div class="col-md-6 left font-helve font18">
-                                <div class="content">
+                                <div class="content desc-right">
                                     Sau 15 năm hoạt động, không chỉ nỗ lực trong kinh doanh, hỗ trợ phát triển kinh tế Việt
                                     Nam,
                                     GAMA Group Việt Nam cũng luôn hướng đến các hoạt động an sinh xã hội, bảo trợ trẻ em và
