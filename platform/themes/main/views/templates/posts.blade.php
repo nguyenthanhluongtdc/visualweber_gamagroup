@@ -19,6 +19,7 @@
         </div>
     </div>
     {{-- ---------------------------------- new banner ------------------------------ --}}
+   <div class="new-banner">
     <div class="container">
         <div class="new--banner">
             <div class="main-slider owl-carousel">
@@ -73,7 +74,9 @@
             </div>
         </div>
     </div>
+   </div>
     {{------------------------------------- filter ------------------------------------}}
+   <div class="new-filter">
     <div class="container">
        <div class="filter">
 
@@ -86,7 +89,7 @@
            
              <div class="col-md-3">
                <select class="dropdown">
-                  <option  hidden>Select an option ...</option>
+                  <option  hidden>Mới nhất</option>
                  
                   <option class="option" value="1">Option 1</option>
                   <option value="2">Option 2</option>
@@ -97,17 +100,16 @@
                 
              <div class="col-md-3">
                <select class="dropdown">
-                  <option hidden>Select an option ...</option>
-                 
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
+                  <option hidden>Tin tổng hợp</option>
+                  <option value="1">Tin kinh doanh</option>
+                  <option value="2">Tin cộng đồng</option>
+                  <option value="3">Tin nội bộ</option>
                   
                 </select>
              </div>
              <div class="col-md-3">
                <select class="dropdown">
-                  <option hidden>Select an option ...</option>
+                  <option hidden>Thương hiệu</option>
                  
                   <option value="1">Option 1</option>
                   <option value="2">Option 2</option>
@@ -121,7 +123,10 @@
          </div>
       
     </div>
+   </div>
+
     {{------------------------------------ new ------------------------------------------}}
+    <div class="blod-new">
     <div class="container">
        <div class="new">
           <div class="row mb-5">
@@ -220,7 +225,7 @@
          </div>
        </div>
     </div>
-
+   </div>
     {{------------------------------------ phân trang  ---------------------------}}
     <div class="container mb-5">
       <nav aria-label="Page navigation example">
