@@ -27,6 +27,10 @@ class AboutServiceProvider extends ServiceProvider
 
     public function boot()
     {
+      
+
+
+
         $this->setNamespace('plugins/about')
             ->loadAndPublishConfigurations(['permissions'])
             ->loadMigrations()
@@ -48,6 +52,29 @@ class AboutServiceProvider extends ServiceProvider
                 'url'         => route('about.index'),
                 'permissions' => ['about.index'],
             ]);
+        });
+
+      
+
+        \SeoHelper::registerModule(About::class);
+        \SlugHelper::registerModule(About::class, 'About');
+        \SlugHelper::setPrefix(About::class, 'gioi-thieu');
+        
+
+        $this->app->booted(function () {
+            
+            if (defined('ABOUT_MODULE_SCREEN_NAME')) {
+               
+                \CustomField::registerModule(About::class)
+                ->registerRule('basic', trans('plugins/about::about.name'), About::class, function () {
+                        return $this->app->make(AboutInterface::class)->pluck('name', 'id');
+                    })
+                    ->expandRule('other', trans('plugins/custom-field::rules.model_name'), 'model_name', function () {
+                        return [
+                            About::class => trans('plugins/about::about.name'),
+                        ];
+                    });
+             }
         });
     }
 }

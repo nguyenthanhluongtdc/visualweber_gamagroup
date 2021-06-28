@@ -7,6 +7,12 @@ Route::group(['namespace' => 'Theme\Gama\Http\Controllers', 'middleware' => ['we
         // Add your custom route here
         // Ex: Route::get('hello', 'RippleController@getHello');
 
+        Route::get(\SlugHelper::getPrefix(About::class, 'gioi-thieu') . '/{slug}', [
+            'as' => 'about-detail',
+            'uses' => 'GamaController@getAbout',
+        ]);
+
+
         Route::get('ajax/search', 'GamaController@getSearch')->name('public.ajax.search');
 
     });

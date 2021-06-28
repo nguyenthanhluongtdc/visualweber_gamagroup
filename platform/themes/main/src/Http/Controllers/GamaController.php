@@ -137,4 +137,28 @@ class GamaController extends PublicController
 
         abort(404);
     }
+
+
+    public function getAbout($slug)
+    {
+        $slug = SlugHelper::getSlug($slug, SlugHelper::getPrefix(About::class, 'gioi-thieu'));
+        if (!$slug) {
+            abort(404);
+        }
+
+        $data['about'] = $slug->reference;
+
+        if (blank($data)) {
+            abort(404);
+        }
+
+        // Theme::breadcrumb()
+        //     ->add(__('Trang chủ'), url('/'))
+        //     ->add(__('Giới thiệu'), url(get_slug_by_template('About')))
+        //     ->add($data['about']->name, $data['about']->url);
+
+        SeoHelper::setTitle($data['about']->name)->setDescription($data['about']->description);
+
+        return Theme::scope('about-detail', $data)->render();
+    }
 }
