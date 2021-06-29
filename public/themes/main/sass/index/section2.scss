@@ -157,11 +157,12 @@
         }
         .tag-time{
             margin: 20px 0;
-            .tag{
+            .tag a{
                 font-size: 12px;
                 background: $primary-color;
                 padding: 5px;
                 color: #fff;
+                text-decoration: none;
             }
             .time{
                 font-size: 13px;

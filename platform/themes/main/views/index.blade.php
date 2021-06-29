@@ -144,8 +144,8 @@
             </div>
             <div class="content-right col-lg-8">
                 <div class="row">
-                    @if (!empty(get_posts_by_category_order(get_category_order()[0]['id'], 2, 2, ['posts.created_at' => 'desc'])))
-                    @foreach (get_posts_by_category_order(get_category_order()[0]['id'], 2, 2, ['posts.created_at' => 'desc']) as $post)
+                    @if (!empty(get_post_new(2)))
+                    @foreach (get_post_new(2) as $post)
                    
                     <div class="item-right col-md-6" data-aos="zoom-in-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="30">
                         <a href="{{ $post->slug }}" class="item-link" title="{{ $post->name }}">
@@ -156,7 +156,12 @@
 
                         </a>
                         <div class="tag-time font-helve">
-                            <span class="tag">Kinh doanh</span>
+                            @if (!$post->categories->isEmpty())
+                            <span class="tag">
+                                <a href="{{ $post->categories->last()->url }}">{{ $post->categories->last()->name }}</a>
+                            </span>
+                             @endif
+                            
                             <span class="time"> {{ $post->created_at->format('d/m/Y H:i') }}</span>
                         </div>
                         <p class="desc font-helve font18">
