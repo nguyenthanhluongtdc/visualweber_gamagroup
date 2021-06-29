@@ -88,7 +88,7 @@
                         Xem tin theo
                     </h4>
                 </div>
-                <div class="row mt-3">
+                <div class="row mt-3"  data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-in-out">
 
                     <div class="col-md-3  mt-2">
                         <select class="dropdown">
@@ -132,8 +132,8 @@
     <div class="blod-new">
         <div class="container">
             <div class="new">
-                <div class="row ">
-                    <div class="col-md-4 mt-2 mb-3">
+                <div class="row " data-aos="fade-right" data-aos-duration="1500" data-aos-easing="ease-in-out">
+                    <div class="col-md-4 mt-2 mb-3 " >
                         <a href="">
                             <img src="{{ Theme::asset()->url('images/new/new1.jpg') }}" alt="" class="img-slider"
                                 alt="">
@@ -187,7 +187,7 @@
                             thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) </span>
                     </div>
                 </div>
-                <div class="row mb-5">
+                <div class="row mb-5" data-aos="fade-left" data-aos-duration="1500" data-aos-easing="ease-in-out">
                     <div class="col-md-4 mt-2 mb-3 ">
                         <a href="">
                             <img src="{{ Theme::asset()->url('images/new/new1.jpg') }}" alt="" class="img-slider"
