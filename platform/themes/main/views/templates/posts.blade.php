@@ -1,3 +1,7 @@
+{!! Theme::breadcrumb()->render() !!}
+{{-- @includeIf("theme.armcobarriers::views.modules.breadcrumb") --}}
+@dd('page->description')
+
 {{-- -------------------------------------- new title--------------------- --}}
 <div class="all-news-content">
     <div class="container">
@@ -5,14 +9,13 @@
             <div class="row">
                 <div class="col-lg-4">
                     <h3 class="font-helve-bold font30 new-title">
-                        Tin tức
-                        <br>
-                        mới nhất
+                        {{-- {!! $page -> description !!} --}}
                     </h3>
                 </div>
                 <div class="col-lg-8">
                     <div class="desc font18 font-helve">
-                        Cùng điểm qua các tin tức mới nhất về những dự án đầu tư của GAMA Group Viet Nam.
+                        {{-- {!! $page -> content!!} --}}
+
                     </div>
                 </div>
             </div>
@@ -24,8 +27,8 @@
             <div class="new--banner">
                 <div class="main-slider owl-carousel">
                     <div class="new--slider__item">
-                        <img src="{{ Theme::asset()->url('images/new/slider1.jpg') }}" alt="" class="img-slider">
-                        <div class="fade"></div>
+                        <img src="{{ Theme::asset()->url('images/new/slide.jpg') }}" alt="" class="img-slider">
+                        <div class="fade">dfghjk</div>
                         <div class="content">
                             <h4 class="font-helve-bold font20">
                                 Nhật coi hồi sinh ngành chất bán dẫn là nhiệm vụ quốc gia
@@ -58,7 +61,7 @@
                         </div>
                     </div>
                     <div class="new--slider__item">
-                        <img src="{{ Theme::asset()->url('images/new/slider1.jpg') }}" alt="" class="img-slider">
+                        <img src="{{ Theme::asset()->url('images/new/slide.jpg') }}" alt="" class="img-slider">
                         <div class="fade"></div>
                         <div class="content">
                             <h4 class="font-helve-bold font20">
@@ -92,13 +95,15 @@
 
                     <div class="col-md-3  mt-2">
                         <select class="dropdown">
+                            <div class="option">
                             <option hidden>Mới nhất</option>
 
                             <option class="option" value="1">Option 1</option>
                             <option value="2">Option 2</option>
                             <option value="3">Option 3</option>
-
+                        </div>
                         </select>
+
                     </div>
 
                     <div class="col-md-3 mt-2">
