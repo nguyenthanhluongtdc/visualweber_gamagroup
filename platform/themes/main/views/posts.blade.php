@@ -155,7 +155,6 @@
                                         </span>
                                     @endif
                             <span class="new--item">{{ $itemPost->created_at->format('d/m/Y H:i') }}</span>
-                            {{-- <span class="new--item"> 15:00</span> --}}
                         </div>
                         <span class="new--des font-helve font18">
                             {{-- {{ $itemPost->content }} --}}
@@ -167,95 +166,8 @@
 
                             @endforeach
                             @endif
+                        </div>
 
-                    {{-- <div class="col-md-4 mt-2 mb-3">
-                        <a href="">
-                            <img src="{{ Theme::asset()->url('images/new/new1.jpg') }}" alt="" class="img-slider"
-                                alt="">
-                        </a>
-                        <a href="">
-                            <span class="new--title font-helve font20">Gama Service và “Hội nghị gắn kết
-                                giáo dục nghề nghiệp thủ đô với thị tr</span>
-                        </a>
-                        <div class="new--time font-helve font12">
-                            <span class="new--info">Kinh Doanh</span>
-                            <span class="new--item">15/03/2021</span>
-                            <span class="new--item"> 15:00</span>
-                        </div>
-                        <span class="new--des font-helve font18">Sáng 24/4, tại Hội nghị gắn kết giáo dục nghề nghiệp
-                            thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) </span>
-                    </div>
-                    <div class="col-md-4 mt-2 mb-3">
-                        <a href="">
-                            <img src="{{ Theme::asset()->url('images/new/new1.jpg') }}" alt="" class="img-slider"
-                                alt="">
-                        </a>
-                        <a href="">
-                            <span class="new--title font-helve font20">Gama Service và “Hội nghị gắn kết
-                                giáo dục nghề nghiệp thủ đô với thị tr</span>
-                        </a>
-                        <div class="new--time font-helve font12">
-                            <span class="new--info">Kinh Doanh</span>
-                            <span class="new--item">15/03/2021</span>
-                            <span class="new--item"> 15:00</span>
-                        </div>
-                        <span class="new--des font-helve font18">Sáng 24/4, tại Hội nghị gắn kết giáo dục nghề nghiệp
-                            thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) </span>
-                    </div> --}}
-                </div>
-                {{-- <div class="row mb-5" data-aos="fade-left" data-aos-duration="1500" data-aos-easing="ease-in-out">
-                    <div class="col-md-4 mt-2 mb-3 ">
-                        <a href="">
-                            <img src="{{ Theme::asset()->url('images/new/new1.jpg') }}" alt="" class="img-slider"
-                                alt="">
-                        </a>
-                        <a href="">
-                            <span class="new--title font-helve font20">Gama Service và “Hội nghị gắn kết
-                                giáo dục nghề nghiệp thủ đô với thị tr</span>
-                        </a>
-                        <div class="new--time font-helve font12">
-                            <span class="new--info">Kinh Doanh</span>
-                            <span class="new--item">15/03/2021</span>
-                            <span class="new--item"> 15:00</span>
-                        </div>
-                        <span class="new--des font-helve font18">Sáng 24/4, tại Hội nghị gắn kết giáo dục nghề nghiệp
-                            thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) </span>
-                    </div>
-                    <div class="col-md-4 mt-2 mb-3">
-                        <a href="">
-                            <img src="{{ Theme::asset()->url('images/new/new1.jpg') }}" alt="" class="img-slider"
-                                alt="">
-                        </a>
-                        <a href="">
-                            <span class="new--title font-helve font20">Gama Service và “Hội nghị gắn kết
-                                giáo dục nghề nghiệp thủ đô với thị tr</span>
-                        </a>
-                        <div class="new--time font-helve font12">
-                            <span class="new--info">Kinh Doanh</span>
-                            <span class="new--item">15/03/2021</span>
-                            <span class="new--item"> 15:00</span>
-                        </div>
-                        <span class="new--des font-helve font18">Sáng 24/4, tại Hội nghị gắn kết giáo dục nghề nghiệp
-                            thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) </span>
-                    </div>
-                    <div class="col-md-4 mt-2 mb-3">
-                        <a href="">
-                            <img src="{{ Theme::asset()->url('images/new/new1.jpg') }}" alt="" class="img-slider"
-                                alt="">
-                        </a>
-                        <a href="">
-                            <span class="new--title font-helve font20">Gama Service và “Hội nghị gắn kết
-                                giáo dục nghề nghiệp thủ đô với thị tr</span>
-                        </a>
-                        <div class="new--time font-helve font12">
-                            <span class="new--info">Kinh Doanh</span>
-                            <span class="new--item">15/03/2021</span>
-                            <span class="new--item"> 15:00</span>
-                        </div>
-                        <span class="new--des font-helve font18">Sáng 24/4, tại Hội nghị gắn kết giáo dục nghề nghiệp
-                            thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) </span>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </div>
