@@ -85,15 +85,15 @@
         <div class="container">
             <div class="filter">
 
-                <div class="row">
+                <div class="row filter-title">
                     <h4 class="font-helve-bold font20 filter--title">
                         Xem tin theo
                     </h4>
                 </div>
                 <div class="row mt-3"  data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-in-out">
 
-                    <div class="col-md-3  mt-2">
-                        <select class="dropdown">
+                    <div class="col-md-3 filter--option  mt-2">
+                        <select class="dropdown new--dropdown">
                             <div class="option">
                             <option hidden>Mới nhất</option>
 
@@ -105,8 +105,8 @@
 
                     </div>
 
-                    <div class="col-md-3 mt-2">
-                        <select class="dropdown">
+                    <div class="col-md-3 filter--option mt-2">
+                        <select class="dropdown new--dropdown">
                             <option hidden>Tin tổng hợp</option>
                             <option value="1">Tin kinh doanh</option>
                             <option value="2">Tin cộng đồng</option>
@@ -114,8 +114,8 @@
 
                         </select>
                     </div>
-                    <div class="col-md-3  mt-2">
-                        <select class="dropdown">
+                    <div class="col-md-3 filter--option mt-2">
+                        <select class="dropdown new--dropdown">
                             <option hidden>Thương hiệu</option>
 
                             <option value="1">Option 1</option>

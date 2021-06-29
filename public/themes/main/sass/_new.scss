@@ -61,14 +61,12 @@
         width: 90%;
         height: 2rem;
     }
-    .row {
+    .filter-title {
         margin: 0px;
         padding: 0px;
     }
-    .col-md-3 {
-        margin: 0px;
-        padding: 0px;
-        .dropdown {
+    .filter--option {
+        .new--dropdown {
             width: 90%;
             height: 2.5rem;
             border-color: #B5C5D5;
