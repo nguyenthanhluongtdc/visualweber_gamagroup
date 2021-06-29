@@ -1,6 +1,6 @@
 {!! Theme::breadcrumb()->render() !!}
 {{-- @includeIf("theme.armcobarriers::views.modules.breadcrumb") --}}
-@dd('page->description')
+{{-- @dd('') --}}
 
 {{-- -------------------------------------- new title--------------------- --}}
 <div class="all-news-content">

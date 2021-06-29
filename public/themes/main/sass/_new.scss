@@ -46,9 +46,15 @@
     .filter--title {
         color: #0D3F75;
     }
+    option {
+        background-color: #0D3F75;
+        &:hover {
+            background-color: #315C8A;
+        }
+    }
     .new-button {
         width: 90%;
-        border: 1px solid #B5C5D5;
+        border: 1px solid #81868a;
     }
     .dropdown-menu {
         background-color: #0D3F75;
@@ -68,6 +74,9 @@
             border-color: #B5C5D5;
             @media (max-width: 767px) {
                 width: 100%;
+                option {
+                    width: 100%;
+                }
             }
             .option {
                 height: 2.5rem;
@@ -126,6 +135,28 @@
         color: #0D3F75;
         img {
             margin-left: 10px;
+        }
+    }
+}
+
+@media (max-width: 993px) {
+    .new--banner .content {
+        position: absolute;
+        top: 50%;
+        width: 80%;
+        left: 3rem;
+        z-index: 2;
+        transform: translateY(-50%);
+        padding-right: 5%;
+        color: #ffff;
+        .new--des {
+            display: none;
+        }
+        .new--time {
+            margin: 0.6rem 0rem;
+        }
+        .new--info {
+            padding: 1px 10px;
         }
     }
 }
