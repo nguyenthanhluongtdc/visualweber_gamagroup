@@ -39,10 +39,10 @@
              }
              img{
                 // transform-origin: 0 0;
-                transition: transform .5s, visibility .5s ease-in;
+                transition: transform .3s, visibility .3s ease-in;
              }
              img:hover{
-                transform: scale(2);
+                transform: scale(1.5);
              }
              h5{
                  margin-top: 25px;
