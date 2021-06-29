@@ -90,7 +90,7 @@
         }
     }
     .new--info {
-        @media (max-width: 993px) {
+        @include minAndMaxWidth (767, 993) {
             width: 7.5rem;
             display: block;
             padding: 1px 17px;
