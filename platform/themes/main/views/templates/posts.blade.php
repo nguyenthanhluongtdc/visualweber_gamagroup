@@ -22,65 +22,7 @@
         </div>
     </div>
     {{-- ---------------------------------- new banner ------------------------------ --}}
-    <div class="new-banner">
-        <div class="container">
-            <div class="new--banner">
-                <div class="main-slider owl-carousel">
-                    <div class="new--slider__item">
-                        <img src="{{ Theme::asset()->url('images/new/slide.jpg') }}" alt="" class="img-slider">
-                        <div class="fade">dfghjk</div>
-                        <div class="content">
-                            <h4 class="font-helve-bold font20">
-                                Nhật coi hồi sinh ngành chất bán dẫn là nhiệm vụ quốc gia
-                            </h4>
-                            <div class="new--time font-helve font12">
-                                <span class="new--info">Kinh Doanh</span>
-                                <span class="new--item">15/03/2021</span>
-                                <span class="new--item"> 15:00</span>
-                            </div>
-                            <span class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn
-                                là
-                                sứ mệnh quốc gia, quan trọng không kém...</span>
-                        </div>
-                    </div>
-                    <div class="new--slider__item">
-                        <img src="{{ Theme::asset()->url('images/new/slider1.jpg') }}" alt="" class="img-slider">
-                        <div class="fade"></div>
-                        <div class="content">
-                            <h4 class="font-helve-bold font20">
-                                Nhật coi hồi sinh ngành chất bán dẫn là nhiệm vụ quốc gia
-                            </h4>
-                            <div class="new--time font-helve font12">
-                                <span class="new--info">Kinh Doanh</span>
-                                <span class="new--item">15/03/2021</span>
-                                <span class="new--item"> 15:00</span>
-                            </div>
-                            <span class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn
-                                là
-                                sứ mệnh quốc gia, quan trọng không kém...</span>
-                        </div>
-                    </div>
-                    <div class="new--slider__item">
-                        <img src="{{ Theme::asset()->url('images/new/slide.jpg') }}" alt="" class="img-slider">
-                        <div class="fade"></div>
-                        <div class="content">
-                            <h4 class="font-helve-bold font20">
-                                Nhật coi hồi sinh ngành chất bán dẫn là nhiệm vụ quốc gia
-                            </h4>
-                            <div class="new--time font-helve font12">
-                                <span class="new--info">Kinh Doanh</span>
-                                <span class="new--item">15/03/2021</span>
-                                <span class="new--item"> 15:00</span>
-                            </div>
-                            <span class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn
-                                là
-                                sứ mệnh quốc gia, quan trọng không kém...</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  
     {{-- ----------------------------------- filter ---------------------------------- --}}
     <div class="new-filter">
         <div class="container">
@@ -157,7 +99,7 @@
                             thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) i Hội nghị gắn kết giáo
                             dục nghề nghiệp thủ đô 2021, </span>
                     </div>
-                    <div class="col-md-4 mt-2 mb-3">
+                    {{-- <div class="col-md-4 mt-2 mb-3">
                         <a href="">
                             <img src="{{ Theme::asset()->url('images/new/new1.jpg') }}" alt="" class="img-slider"
                                 alt="">
@@ -190,9 +132,9 @@
                         </div>
                         <span class="new--des font-helve font18">Sáng 24/4, tại Hội nghị gắn kết giáo dục nghề nghiệp
                             thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) </span>
-                    </div>
+                    </div> --}}
                 </div>
-                <div class="row mb-5" data-aos="fade-left" data-aos-duration="1500" data-aos-easing="ease-in-out">
+                {{-- <div class="row mb-5" data-aos="fade-left" data-aos-duration="1500" data-aos-easing="ease-in-out">
                     <div class="col-md-4 mt-2 mb-3 ">
                         <a href="">
                             <img src="{{ Theme::asset()->url('images/new/new1.jpg') }}" alt="" class="img-slider"
@@ -244,7 +186,7 @@
                         <span class="new--des font-helve font18">Sáng 24/4, tại Hội nghị gắn kết giáo dục nghề nghiệp
                             thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) </span>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

@@ -8,12 +8,12 @@
             <div class="row">
                 <div class="col-lg-4">
                     <h3 class="font-helve-bold font30 new-title">
-                        {{-- {!! $page -> description !!} --}}
+                        {!! $page -> description !!}
                     </h3>
                 </div>
                 <div class="col-lg-8">
                     <div class="desc font18 font-helve">
-                        {{-- {!! $page -> content!!} --}}
+                        {!! $page -> content!!}
 
                     </div>
                 </div>
@@ -26,7 +26,7 @@
             <div class="new--banner">
                 <div class="main-slider owl-carousel">
                     <div class="new--slider__item">
-                        <img src="{{ Theme::asset()->url('images/new/slide.jpg') }}" alt="" class="img-slider">
+                        <img src="{{ Theme::asset()->url('images/new/slider1.jpg') }}" alt="" class="img-slider">
                         <div class="fade">dfghjk</div>
                         <div class="content">
                             <h4 class="font-helve-bold font20">
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div class="new--slider__item">
-                        <img src="{{ Theme::asset()->url('images/new/slide.jpg') }}" alt="" class="img-slider">
+                        <img src="{{ Theme::asset()->url('images/new/slide1.jpg') }}" alt="" class="img-slider">
                         <div class="fade"></div>
                         <div class="content">
                             <h4 class="font-helve-bold font20">
@@ -136,16 +136,46 @@
     <div class="blod-new">
         <div class="container">
             <div class="new">
-                <div class="row " data-aos="fade-right" data-aos-duration="1500" data-aos-easing="ease-in-out">
+                <div class="row ">
+                        @php $postNew =  get_post_new(9);  @endphp
+                    @if($postNew->count())
+                    @foreach($postNew as $itemPost)
                     <div class="col-md-4 mt-2 mb-3 " >
+
+                    <a href="{{ $itemPost->url }}" class="post__overlay">
+                        <img src="{{ RvMedia::getImageUrl($itemPost->image) }}" alt="{{ $itemPost->name }}">
+                    </a>
+                        <a href="">
+                            <span class="new--title font-helve font20">{{ $itemPost->name }}</span>
+                        </a>
+                        <div class="new--time font-helve font12">
+                            @if (!$itemPost->categories->isEmpty())
+                                        <span class="new--info">
+                                            <a href="{{ $itemPost->categories->first()->url }}">{{ $itemPost->categories->first()->name }}</a>
+                                        </span>
+                                    @endif
+                            <span class="new--item">{{ $itemPost->created_at->format('d/m/Y H:i') }}</span>
+                            {{-- <span class="new--item"> 15:00</span> --}}
+                        </div>
+                        <span class="new--des font-helve font18">
+                            {{-- {{ $itemPost->content }} --}}
+                            {{-- @if (defined('GALLERY_MODULE_SCREEN_NAME') && !empty($galleries = gallery_meta_data($post)))
+                        {!! render_object_gallery($galleries, ($post->first_category ? $post->first_category->name : __('Uncategorized'))) !!}
+                    @endif --}}
+                 </span>
+                        </div>
+
+                            @endforeach
+                            @endif
+
+                    {{-- <div class="col-md-4 mt-2 mb-3">
                         <a href="">
                             <img src="{{ Theme::asset()->url('images/new/new1.jpg') }}" alt="" class="img-slider"
                                 alt="">
                         </a>
                         <a href="">
                             <span class="new--title font-helve font20">Gama Service và “Hội nghị gắn kết
-                                giáo dục nghề nghiệp thủ đô với thị tr Lorem ipsum dolor sit amet consectetur
-                                adipisicing</span>
+                                giáo dục nghề nghiệp thủ đô với thị tr</span>
                         </a>
                         <div class="new--time font-helve font12">
                             <span class="new--info">Kinh Doanh</span>
@@ -153,8 +183,7 @@
                             <span class="new--item"> 15:00</span>
                         </div>
                         <span class="new--des font-helve font18">Sáng 24/4, tại Hội nghị gắn kết giáo dục nghề nghiệp
-                            thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) i Hội nghị gắn kết giáo
-                            dục nghề nghiệp thủ đô 2021, </span>
+                            thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) </span>
                     </div>
                     <div class="col-md-4 mt-2 mb-3">
                         <a href="">
@@ -172,26 +201,9 @@
                         </div>
                         <span class="new--des font-helve font18">Sáng 24/4, tại Hội nghị gắn kết giáo dục nghề nghiệp
                             thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) </span>
-                    </div>
-                    <div class="col-md-4 mt-2 mb-3">
-                        <a href="">
-                            <img src="{{ Theme::asset()->url('images/new/new1.jpg') }}" alt="" class="img-slider"
-                                alt="">
-                        </a>
-                        <a href="">
-                            <span class="new--title font-helve font20">Gama Service và “Hội nghị gắn kết
-                                giáo dục nghề nghiệp thủ đô với thị tr</span>
-                        </a>
-                        <div class="new--time font-helve font12">
-                            <span class="new--info">Kinh Doanh</span>
-                            <span class="new--item">15/03/2021</span>
-                            <span class="new--item"> 15:00</span>
-                        </div>
-                        <span class="new--des font-helve font18">Sáng 24/4, tại Hội nghị gắn kết giáo dục nghề nghiệp
-                            thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) </span>
-                    </div>
+                    </div> --}}
                 </div>
-                <div class="row mb-5" data-aos="fade-left" data-aos-duration="1500" data-aos-easing="ease-in-out">
+                {{-- <div class="row mb-5" data-aos="fade-left" data-aos-duration="1500" data-aos-easing="ease-in-out">
                     <div class="col-md-4 mt-2 mb-3 ">
                         <a href="">
                             <img src="{{ Theme::asset()->url('images/new/new1.jpg') }}" alt="" class="img-slider"
@@ -243,7 +255,7 @@
                         <span class="new--des font-helve font18">Sáng 24/4, tại Hội nghị gắn kết giáo dục nghề nghiệp
                             thủ đô 2021, Gama Service đã cùng Hiệp hội Thang máy Việt Nam (VNEA) </span>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

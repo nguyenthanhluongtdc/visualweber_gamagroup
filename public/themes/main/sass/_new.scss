@@ -21,7 +21,7 @@
     .content {
         position: absolute;
         top: 65%;
-        width: 31%;
+        width: 32%;
         right: 3rem;
         z-index: 2;
         transform: translateY(-50%);
@@ -42,7 +42,7 @@
 }
 
 .filter {
-    padding: 4rem 0;
+    margin: 3rem 0;
     .filter--title {
         color: #0D3F75;
     }
@@ -85,10 +85,10 @@
 .new {
     a {
         text-decoration: none;
+        color: #fff;
     }
     img {
         width: 100%;
-        height: auto;
     }
     .new--title {
         color: #0D3F75;
@@ -111,6 +111,7 @@
             padding: 1px 17px;
         }
         padding: 4px 17px;
+        margin-right: 5px;
         background-color: #0D3F75;
         color: #fff;
     }
