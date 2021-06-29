@@ -284,3 +284,15 @@ if (!function_exists('get_posts_by_category_order')) {
         return app(PostInterface::class)->getByCategoryOrderBy($categoryId, $paginate, $limit, $order);
     }
 }
+
+if (!function_exists('get_post_new')){
+     /**
+     * @param int $limit
+     * @param array $with
+     * @return \Illuminate\Support\Collection
+     */
+    function get_post_new($limit)
+    {
+        return app(PostInterface::class)->getPostNew($limit);
+    }
+}

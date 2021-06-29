@@ -67,6 +67,29 @@ $('.about-detail-s5-slider').owlCarousel({
         }
     }
 });
+
+$('.post-relate-carousel').owlCarousel({
+    smartSpeed: 1000,
+    loop: true,
+    autoplay: false,
+    dots: false,
+    margin: 45,
+    nav: false,
+    responsive: {
+        0: {
+            items: 1
+        },
+        600: {
+            items: 2
+        },
+        1000: {
+            items: 3
+        }
+    }
+});
+
+
+
 // number count for stats, using jQuery animate
 
 

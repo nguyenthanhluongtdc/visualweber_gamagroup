@@ -320,4 +320,16 @@ class PostRepository extends RepositoriesAbstract implements PostInterface
 
         return $this->applyBeforeExecuteQuery($data)->limit($limit)->get();
     }
+
+    public function getPostNew(int $limit = 3){
+        
+        $data = $this->model
+        ->where([
+            'posts.status'      => BaseStatusEnum::PUBLISHED     
+        ])
+        ->limit($limit)
+        ->orderBy('posts.created_at', 'desc')->get();
+            return $data;
+    return $this->applyBeforeExecuteQuery($data)->get();
+    }
 }

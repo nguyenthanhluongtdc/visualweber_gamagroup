@@ -13,7 +13,7 @@
                     </span>
                 </li>
             @else
-                <li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                <li class="active link-active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                     {!! $crumb['label'] !!}
                     <meta itemprop="name" content="{{ $crumb['label'] }}" />
                     <meta itemprop="position" content="{{ $i + 1}}" />

@@ -60,7 +60,26 @@ a{
         font-size: 18px;
     }
 }
-
+.font35{
+    font-size: 35px;
+    line-height: 40px;
+    @media(max-width : 1440px){
+        font-size: 30px;
+        line-height: 35px;
+    }
+    @media(max-width : 1240px){
+        font-size: 25px;
+        line-height: 30px;
+    }
+    @media(max-width : 480px){
+        font-size: 20px;
+        line-height: 25px;
+    }
+    @media(max-width : 360px){
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
 .font50{
     font-size: 50px;
 }
@@ -103,6 +122,7 @@ a.primary-a{
 .breadcrumb-list{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     font-family: $font-helve;
     li.active{
         color: $primary-color;

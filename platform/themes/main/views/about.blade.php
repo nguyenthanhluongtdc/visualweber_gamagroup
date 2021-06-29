@@ -1,5 +1,5 @@
 {!! Theme::breadcrumb()->render() !!}
- @includeIf("theme.armcobarriers::views.modules.breadcrumb")
+
 <div class="container">
     <div class="about-section1">
         <div class="row">
