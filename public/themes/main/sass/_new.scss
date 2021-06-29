@@ -85,8 +85,16 @@
     }
     .new--time {
         margin: 1rem 0rem;
+        @media (max-width: 993px) {
+            margin: 0.2rem 0rem;
+        }
     }
     .new--info {
+        @media (max-width: 993px) {
+            width: 7.5rem;
+            display: block;
+            padding: 1px 17px;
+        }
         padding: 4px 17px;
         background-color: #0D3F75;
         color: #fff;
