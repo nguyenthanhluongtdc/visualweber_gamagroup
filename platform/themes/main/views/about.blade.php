@@ -20,6 +20,7 @@
     @if (has_field($page, 'banner_about'))
     <img src="{{ RvMedia::getImageUrl(get_field($page, 'banner_about')) }}" alt="banner">
     @endif
+
 </div>
 <div class="container">
     <div class="about-section3" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out">

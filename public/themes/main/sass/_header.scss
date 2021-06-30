@@ -8,7 +8,10 @@ a{
 .font-helve-bold{
     font-family: $font-helve-bold;
 }
-
+.font-helve-light{
+    font-family:  $font-helve-light;
+    line-height: 25px;
+}
 .font17{
     font-size: 17px;
     @media(max-width : 1440px){
@@ -281,14 +284,12 @@ a.primary-a{
     padding-left: 5%;
     display: none;
     ul{
-        
-        
-       
+           
         li{
-            
-            animation: menumobie 0.5s ease-in-out;
+            // animation: menumobie 0.5s ease-in-out;
             margin-bottom: 15px;
             position: relative;
+            display: none;
             a{
                 color: #A8A9AD;
             }
@@ -359,5 +360,5 @@ a.primary-a{
 
 @keyframes menumobie {
     from {transform: translateX(100%);}
-    to {transform: translateX(0%);}
+    to {transform: translateX(0%)}
   }
