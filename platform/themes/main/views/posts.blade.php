@@ -37,9 +37,7 @@
                                 <span class="new--item">15/03/2021</span>
                                 <span class="new--item"> 15:00</span>
                             </div>
-                            <span class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn
-                                là
-                                sứ mệnh quốc gia, quan trọng không kém...</span>
+                            <span class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn là sứ mệnh quốc gia, quan trọng không kém...</span>
                         </div>
                     </div>
                     </div>
@@ -55,9 +53,7 @@
                                 <span class="new--item">15/03/2021</span>
                                 <span class="new--item"> 15:00</span>
                             </div>
-                            <span class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn
-                                là
-                                sứ mệnh quốc gia, quan trọng không kém...</span>
+                            <span class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn là sứ mệnh quốc gia, quan trọng không kém...</span>
                         </div>
                     </div>
                     </div>
@@ -73,9 +69,7 @@
                                 <span class="new--item">15/03/2021</span>
                                 <span class="new--item"> 15:00</span>
                             </div>
-                            <span class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn
-                                là
-                                sứ mệnh quốc gia, quan trọng không kém...</span>
+                            <span class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn là sứ mệnh quốc gia, quan trọng không kém...</span>
                         </div>
                     </div>
                     </div>
