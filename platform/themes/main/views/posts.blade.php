@@ -4,7 +4,7 @@
 {{-- -------------------------------------- new title--------------------- --}}
 <div class="all-news-content">
     <div class="container">
-        <div class="new-section1">
+        <div class="about-section1">
             <div class="row">
                 <div class="col-lg-4">
                     <h3 class="font-helve-bold font30">
@@ -18,6 +18,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
     {{-- ---------------------------------- new banner ------------------------------ --}}
