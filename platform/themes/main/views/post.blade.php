@@ -1,5 +1,6 @@
 {!! Theme::breadcrumb()->render() !!}
 <div class="container">
+    
     <article class="post post-wrap">
         <div class="post-top">
             <div class="row">
@@ -28,7 +29,7 @@
     
                         <div class="post-share">
                             <ul class="left">
-                                <li class="font18">Chia sẻ</li>
+                                <li class="font18">{{ trans('Share') }}</li>
                                 <li><a href="//www.pinterest.com/pin/create/button/?url={{ Request::url() }}" target="_blank"><img src="{{ Theme::asset()->url('images/new/iconp.png') }}" alt="pinterest"></a></li>
                                 <li><a href="//www.facebook.com/sharer/sharer.php?u={{ Request::url() }}" target="_blank"><img src="{{ Theme::asset()->url('images/new/iconf.png') }}" alt="facebook"></a></li>
                                 <li><a href="mailto:boyover055@gmail.com&subject={{ Request::url() }}"><img src="{{ Theme::asset()->url('images/new/iconm.png') }}" alt="mail"></a></li>
@@ -43,10 +44,10 @@
                     
                     @php $postNew =  get_post_new(3);  @endphp
                     @if($postNew->count())
-                        <h2 class="font-helve-bold font30">Tin tức mới nhất</h2>
+                        <h2 class="font-helve-bold font30">{{ trans('Latest news') }}</h2>
                             <div class="post-new-list">
                         @foreach($postNew as $itemPost)
-                            <div class="post-new-item">
+                            <div class="post-new-item" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out">
                                 <div class="post-thumbnail">
                                     <a href="{{ $itemPost->url }}" class="post__overlay">
                                         <img src="{{ RvMedia::getImageUrl($itemPost->image) }}" alt="{{ $itemPost->name }}">
@@ -74,10 +75,10 @@
     
             @if ($relatedPosts->count())
             <div class="post-relate">
-                    <h2 class="font-helve-bold font30">Tin tức liên quan</h2>
+                    <h2 class="font-helve-bold font30">{{ trans('Related news') }}</h2>
                     <div class="post-relate-carousel owl-carousel">
                         @foreach ($relatedPosts as $relatedItem)
-                            <div class="post-relate-item">
+                            <div class="post-relate-item" data-aos="zoom-in-up" data-aos-duration="700" data-aos-easing="ease-in-out">
                                 <div class="post-thumbnail">
                                     <a href="{{ $relatedItem->url }}" class="post__overlay">
                                         <img src="{{ RvMedia::getImageUrl($relatedItem->image) }}" alt="{{ $relatedItem->name }}">
