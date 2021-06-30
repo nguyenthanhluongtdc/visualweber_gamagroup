@@ -26,7 +26,7 @@
             <div class="new--banner">
                 <div class="main-slider owl-carousel">
                     <div class="new--slider__item">
-                        <img src="{{ Theme::asset()->url('images/new/slider1.jpg') }}" alt="" class="img-slider">
+                        <img src="{{ Theme::asset()->url('images/new/slide.jpg') }}" alt="" class="img-slider">
                         <div class="fade">dfghjk</div>
                         <div class="content">
                             <h4 class="font-helve-bold font20">
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div class="new--slider__item">
-                        <img src="{{ Theme::asset()->url('images/new/slide1.jpg') }}" alt="" class="img-slider">
+                        <img src="{{ Theme::asset()->url('images/new/slider1.jpg') }}" alt="" class="img-slider">
                         <div class="fade"></div>
                         <div class="content">
                             <h4 class="font-helve-bold font20">
@@ -90,18 +90,18 @@
                         Xem tin theo
                     </h4>
                 </div>
-                <div class="row mt-3"  data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-in-out">
+                <div class="row mt-3"  >
 
                     <div class="col-md-3 filter--option  mt-2">
                        
                     <div  class="menu-container">
                         <nav>
-                        <ul class="menu">
+                        <ul class="menu font18 font-helve">
                         <li class="dropdown dropdown-1">
                             Mới nhất
                         <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="" class="img-slider">
 
-                            <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-6">
+                            <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-3 font18 font-helve">
                             <li class="dropdown_item-1">Item 1</li>
                             <li class="dropdown_item-2">Item 2</li>
                             <li class="dropdown_item-3">Item 3</li>
@@ -122,18 +122,27 @@
                             
                     <div  class="menu-container">
                         <nav>
-                        <ul class="menu">
+                        <ul class="menu font18 font-helve">
+                            
                         <li class="dropdown dropdown-1">
                             Tin tổng hợp
+                           
                         <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="" class="img-slider">
-
-                            <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-6">
+                        @php $categories =  get_all_categories();  @endphp
+                        {{-- @dd($categories) --}}
+                        @if($categories->count())
+                        @foreach($categories as $itemPost)
+                            <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-6 font18 font-helve">
                             <li class="dropdown_item-1">Tin kinh doanh</li>
                             <li class="dropdown_item-2">Tin cộng đồng</li>
                             <li class="dropdown_item-3">Tin nội bộ</li>
+                            {{-- @if (!$itemPost->name) --}}
+                            {{--  --}}
+                                    {{-- @endif --}}
                             </ul>
+                            @endforeach
+                        @endif
                         </li>
-                            
                         </ul>
                     </nav>
                     </div>
@@ -149,12 +158,12 @@
                     <div class="col-md-3 filter--option mt-2">
                         <div  class="menu-container">
                             <nav>
-                            <ul class="menu">
+                            <ul class="menu font18 font-helve">
                             <li class="dropdown dropdown-2">
                                 Thương hiệu
                                  <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="" class="img-slider">
 
-                                <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-6">
+                                <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-2 font18 font-helve">
                                 <li class="dropdown_item-1">Item 1</li>
                                 <li class="dropdown_item-2">Item 2</li>
                                 <li class="dropdown_item-3">Item 3</li>
