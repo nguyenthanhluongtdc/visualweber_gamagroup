@@ -133,22 +133,26 @@
     <div class="news-home-content container">
         <div class="row">
             <div class="col-lg-4 content-left" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
-                <h3 class="font-helve-bold font30">Tin tức<br>
-                    mới nhất</h3>
+                <h3 class="font-helve-bold font30">
+                    @if (has_field($page, 'title_news_home'))
+                        {!! get_field($page, 'title_news_home') !!}
+                    @endif
+                </h3>
                 <div class="views-all content-desktop">
                     <a href="" class="font-helve font20 primary-a">
-                        Xem tất cả
+                        {{ trans('View all') }}
                     </a>
                 </div>
 
             </div>
             <div class="content-right col-lg-8">
                 <div class="row">
+
                     @if (!empty(get_post_new(2)))
                     @foreach (get_post_new(2) as $post)
                    
                     <div class="item-right col-md-6" data-aos="zoom-in-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="30">
-                        <a href="{{ $post->slug }}" class="item-link" title="{{ $post->name }}">
+                        <a href="{{ $post->url }}" class="item-link" title="{{ $post->name }}">
                             <img src="{{ RvMedia::getImageUrl($post->image) }}" alt="{{ $post->name }}" class="img-slider">
                             <h4 class="font-helve font20">
                                 {{ $post->name }}
@@ -192,7 +196,7 @@
         </div>
         <div class="views-all content-mobie">
             <a href="" class="font-helve font20 views-news-mobie">
-                Xem tất cả
+                {{ trans('View all') }}
             </a>
         </div>
     </div>

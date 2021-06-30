@@ -750,11 +750,12 @@ html:lang(en) .language-search li.lang-en a {
 .news-home .content-right .tag-time {
   margin: 20px 0;
 }
-.news-home .content-right .tag-time .tag {
+.news-home .content-right .tag-time .tag a {
   font-size: 12px;
   background: #0D3F75;
   padding: 5px;
   color: #fff;
+  text-decoration: none;
 }
 .news-home .content-right .tag-time .time {
   font-size: 13px;
@@ -995,10 +996,10 @@ html:lang(en) .language-search li.lang-en a {
   overflow: hidden;
 }
 .about-detail-s5 .about-detail-s5-slider .item img {
-  transition: transform 0.5s, visibility 0.5s ease-in;
+  transition: transform 0.3s, visibility 0.3s ease-in;
 }
 .about-detail-s5 .about-detail-s5-slider .item img:hover {
-  transform: scale(2);
+  transform: scale(1.5);
 }
 .about-detail-s5 .about-detail-s5-slider .item h5 {
   margin-top: 25px;
@@ -1291,6 +1292,19 @@ html:lang(en) .language-search li.lang-en a {
 .post-new-item h5 a {
   color: #0D3F75;
   text-decoration: none;
+}
+
+.post-thumbnail {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.post-thumbnail img {
+  width: 100%;
+  transition: transform 0.3s, visibility 0.3s ease-in;
+}
+.post-thumbnail img:hover {
+  transform: scale(1.5);
 }
 
 @media (min-width: 1919px) {

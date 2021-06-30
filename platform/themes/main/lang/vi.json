@@ -88,5 +88,10 @@
     "You have been successfully logged out!": "Đăng xuất thành công!",
     "Youtube URL is invalid.": "Youtube URL không hợp lệ.",
     "Youtube video": "Youtube video",
-    "About" : "gioi-thieu"
+    "About" : "gioi-thieu",
+    "View all" : "Xem tất cả",
+    "See more" : "Xem thêm",
+    "Share" : "Chia sẻ",
+    "Latest news" : "Tin tức mới nhất",
+    "Related news" : "Tin tức liên quan"
 }

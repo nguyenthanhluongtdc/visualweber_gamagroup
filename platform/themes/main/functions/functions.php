@@ -6,7 +6,8 @@ register_page_template([
     'about' => 'About',
     'news-gama' => 'NEWS GAMA',
     'about-detail' => 'About-detail',
-    'posts' => "Posts"
+    'posts' => "Posts",
+    'oriented-development' => "Development",
 ]);
 
 register_sidebar([

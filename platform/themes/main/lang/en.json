@@ -91,5 +91,10 @@
     "You have been successfully logged out!": "You have been successfully logged out!",
     "Youtube URL is invalid.": "Youtube URL is invalid.",
     "Youtube video": "Youtube video",
-    "About" : "about"
+    "About" : "about",
+    "View all" : "View all",
+    "See more" : "See more",
+    "Share" : "Share",
+    "Latest news" : "Latest news",
+    "Related news" : "Related news"
 }

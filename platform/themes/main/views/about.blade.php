@@ -1,5 +1,4 @@
 {!! Theme::breadcrumb()->render() !!}
-
 <div class="container">
     <div class="about-section1">
         <div class="row">
@@ -26,13 +25,17 @@
     <div class="about-section3" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out">
         <div class="row">
             @if(!empty(get_featured_abouts(4)))
-
             <div class="col-lg-4 menu-tab">
                 <ul class="nav nav-pills font-helve font20 list-menu-tababout" role="tablist">
-                    @foreach (get_featured_abouts(4) as $key => $item)
+                    {{-- @foreach (get_featured_abouts(4) as $key => $item) --}}
+                   
+                    @foreach (get_featured_pages(100) as $key => $item)
+                    @if ($item->template == "about-detail")
+
                         <li class="nav-item">
                             <a class="nav-link {{ $loop->first ? 'active' : '' }}" data-toggle="pill" href="#tababout{{$key}}">{{ $item->name }}</a>
                         </li>
+                        @endif
                     @endforeach
                     {{-- <li class="nav-item">
                         <a class="nav-link active" data-toggle="pill" href="#tababout1">Định hướng phát triển</a>
@@ -51,7 +54,9 @@
 
             <div class="col-lg-8 content-tab">
                 <div class="tab-content">
-                    @foreach (get_featured_abouts(4) as $key => $item)
+                    {{-- @foreach (get_featured_abouts(4) as $key => $item) --}}
+                    @foreach (get_featured_pages(100) as $key => $item)
+                         @if ($item->template == "about-detail")
                         <div id="tababout{{$key}}" class="tab-pane {{ $loop->first ? 'active' : '' }}">
                             <div class="row">
                                 <div class="col-md-6 left font-helve font18">
@@ -60,7 +65,7 @@
                                     </div>
                                     <div class="views content-none-mobie">
                                         <a href="{{ $item->url }}" class="primary-a">
-                                            Xem thêm
+                                            {{ trans('See more') }}
                                         </a>
                                     </div>
                                 </div>
@@ -71,10 +76,11 @@
                             </div>
                             <div class="views content-show-mobie">
                                 <a href="{{ $item->url }}">
-                                    Xem thêm
+                                    {{ trans('See more') }}
                                 </a>
                             </div>
                         </div>
+                        @endif
                     @endforeach
                     {{-- <div id="tababout1" class="tab-pane active">
                         <div class="row">
@@ -161,7 +167,7 @@
             <div class="col-lg-4 admin-left" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
                 <h3 class="font-helve-bold font30">Hội đồng quản trị <br>GAMA Group</h3>
                 <div class="view font-helve font18 content-desktop">
-                    <a href="" class="primary-a">Xem thêm</a>
+                    <a href="" class="primary-a">{{ trans('See more') }}</a>
                 </div>
             </div>
             <div class="col-lg-8" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
@@ -247,7 +253,7 @@
             </div>
         </div>
         <div class="view font-helve font18 content-mobie">
-            <a href="">Xem thêm</a>
+            <a href="">{{ trans('See more') }}</a>
         </div>
     </div>
     

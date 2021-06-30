@@ -67,3 +67,19 @@ if (!function_exists('get_page_templates')) {
         return Template::getPageTemplates();
     }
 }
+
+if (!function_exists('get_slug_about_detail')) {
+    /**
+     * @return array
+     *
+     */
+    function get_slug_about_detail($limit)
+    {
+        $page = app(PageInterface::class)->getFirstBy(['template' => 'about-detail']);
+        if(!blank($page)) {
+            return app(PageInterface::class)->getFeaturedPages($limit);
+        }
+
+        return null;
+    }
+}

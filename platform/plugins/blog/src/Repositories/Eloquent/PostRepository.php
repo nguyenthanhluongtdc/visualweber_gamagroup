@@ -328,8 +328,8 @@ class PostRepository extends RepositoriesAbstract implements PostInterface
             'posts.status'      => BaseStatusEnum::PUBLISHED     
         ])
         ->limit($limit)
-        ->orderBy('posts.created_at', 'desc')->get();
-            return $data;
+        ->orderBy('posts.created_at', 'desc');
+           
     return $this->applyBeforeExecuteQuery($data)->get();
     }
 }
