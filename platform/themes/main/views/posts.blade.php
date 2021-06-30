@@ -93,35 +93,77 @@
                 <div class="row mt-3"  data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-in-out">
 
                     <div class="col-md-3 filter--option  mt-2">
-                        <select class="dropdown new--dropdown">
+                       
+                    <div  class="menu-container">
+                        <nav>
+                        <ul class="menu">
+                        <li class="dropdown dropdown-1">
+                            Mới nhất
+                        <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="" class="img-slider">
+
+                            <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-6">
+                            <li class="dropdown_item-1">Item 1</li>
+                            <li class="dropdown_item-2">Item 2</li>
+                            <li class="dropdown_item-3">Item 3</li>
+                            <li class="dropdown_item-4">Item 4</li>
+                            <li class="dropdown_item-5">Item 5</li>
+                            </ul>
+                        </li>
+                            
+                        </ul>
+                    </nav>
+                    </div>
+                    
+  
+
+                    </div>
+
+                    <div class="col-md-3 filter--option mt-2">
+                            
+                    <div  class="menu-container">
+                        <nav>
+                        <ul class="menu">
+                        <li class="dropdown dropdown-1">
+                            Tin tổng hợp
+                        <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="" class="img-slider">
+
+                            <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-6">
+                            <li class="dropdown_item-1">Tin kinh doanh</li>
+                            <li class="dropdown_item-2">Tin cộng đồng</li>
+                            <li class="dropdown_item-3">Tin nội bộ</li>
+                            </ul>
+                        </li>
+                            
+                        </ul>
+                    </nav>
+                    </div>
+                    
+                        {{-- <select class="dropdown new--dropdown">
                             <option hidden>Tin tổng hợp</option>
                             <option value="1">Tin kinh doanh</option>
                             <option value="2">Tin cộng đồng</option>
                             <option value="3">Tin nội bộ</option>
 
-                        </select>
-
-                    </div>
-
-                    <div class="col-md-3 filter--option mt-2">
-                        <select class="dropdown new--dropdown">
-                            <option hidden>Tin tổng hợp</option>
-                            <option value="1">Tin kinh doanh</option>
-                            <option value="2">Tin cộng đồng</option>
-                            <option value="3">Tin nội bộ</option>
-
-                        </select>
+                        </select> --}}
                     </div>
                     <div class="col-md-3 filter--option mt-2">
-                        <select class="dropdown new--dropdown">
-                            <option hidden>Thương hiệu</option>
+                        <div  class="menu-container">
+                            <nav>
+                            <ul class="menu">
+                            <li class="dropdown dropdown-2">
+                                Thương hiệu
+                                 <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="" class="img-slider">
 
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-
-
-                        </select>
+                                <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-6">
+                                <li class="dropdown_item-1">Item 1</li>
+                                <li class="dropdown_item-2">Item 2</li>
+                                <li class="dropdown_item-3">Item 3</li>
+                                </ul>
+                            </li>
+                                
+                            </ul>
+                        </nav>
+                        </div>
                     </div>
                     <div class="col-md-3"></div>
                 </div>
