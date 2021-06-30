@@ -168,7 +168,7 @@
                             
                             <span class="time"> {{ $post->created_at->format('d/m/Y H:i') }}</span>
                         </div>
-                        <p class="desc font-helve font18">
+                        <p class="desc font-helve-light font18">
                             {{ $post->description }}
                         </p>
                     </div>

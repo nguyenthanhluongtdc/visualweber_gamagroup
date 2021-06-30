@@ -23,7 +23,8 @@ $('.main-slider').owlCarousel({
 });
 
 $('.open-menu-mobie').click(function () {
-    $('.list-menu-mobie').toggle();
+    $('.list-menu-mobie').toggle("slow");
+    $('.list-menu-mobie li').show(400);
 
 });
 

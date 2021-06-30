@@ -16,10 +16,10 @@
                             @endif
                             <span class="time"> {{ $post->created_at->format('d/m/Y H:i') }}</span>      
                         </div>
-                        <div class="description font18">
+                        <div class="description font-helve font18">
                             {!! $post->description !!}
                         </div>
-                        <div class="post__content font-helve font18">
+                        <div class="post__content font-helve-light font18">
                             @if (defined('GALLERY_MODULE_SCREEN_NAME') && !empty($galleries = gallery_meta_data($post)))
                                 {!! render_object_gallery($galleries, ($post->first_category ? $post->first_category->name : __('Uncategorized'))) !!}
                             @endif

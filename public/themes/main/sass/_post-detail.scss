@@ -12,7 +12,7 @@
             color: $primary-color;
         }
         .description{
-            font-family: $font-helve-light;
+            // font-family: $font-helve-light;
             margin-bottom: 30px;
             line-height: 25px;
         }
@@ -36,26 +36,7 @@
             }
         }
     }
-    .post-meta{
-        margin: 22px 0;
-        .post-category{
-            a{
-                color: #fff;
-                font-family: $font-helve;
-                padding: 5px;
-                background: $primary-color;
-                text-decoration: none;
-                font-size: 12px;
-
-            }
-        }
-        .time{
-            font-size: 13px;
-            font-family: $font-helve;
-            margin-left: 10px;
-            color: #8F8F8F;
-        }
-    }
+    
     .post-relate{
         h2{
             color: $primary-color;
@@ -86,6 +67,26 @@
                 -webkit-box-orient: vertical;
             }
         }
+    }
+}
+.post-meta{
+    margin: 22px 0;
+    .post-category{
+        a{
+            color: #fff;
+            font-family: $font-helve;
+            padding: 5px;
+            background: $primary-color;
+            text-decoration: none;
+            font-size: 12px;
+
+        }
+    }
+    .time{
+        font-size: 13px;
+        font-family: $font-helve;
+        margin-left: 10px;
+        color: #8F8F8F;
     }
 }
 .post-new-wrap h2{
@@ -122,6 +123,43 @@
         transition: transform .3s, visibility .3s ease-in;
         &:hover{
             transform: scale(1.5);
+        }
+    }
+}
+
+
+// category post 
+
+.post-category-wrap{
+    padding: 80px 0;
+    .post-category-item{
+        margin-bottom: 30px;
+        img{
+            width: 100%;
+            max-width: 100%;
+        }
+        h5 {
+            margin-top: 30px;
+            height: 50px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            a{
+                color: $primary-color;
+                text-decoration: none;
+            }
+        }
+        .desc{
+            font-family: $font-helve-light;
+            line-height: 21px;
+            height: 65px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
         }
     }
 }
