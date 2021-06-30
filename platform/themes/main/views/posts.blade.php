@@ -26,7 +26,7 @@
             <div class="new--banner">
                 <div class="main-slider owl-carousel">
                     <div class="new--slider__item">
-                        <img src="{{ Theme::asset()->url('images/new/slide.jpg') }}" alt="" class="img-slider">
+                        <img src="{{ Theme::asset()->url('images/new/slider1.jpg') }}" alt="" class="img-slider">
                         <div class="fade">dfghjk</div>
                         <div class="content">
                             <h4 class="font-helve-bold font20">
@@ -137,7 +137,10 @@
                             <li class="dropdown_item-2">Tin cộng đồng</li>
                             <li class="dropdown_item-3">Tin nội bộ</li>
                             {{-- @if (!$itemPost->name) --}}
-                            {{--  --}}
+                            <li class="dropdown_item-1">
+                                <a href="">{{ $itemPost->nane }}</a>
+                                            {{-- <a href="{{ $itemPost->categories->first()->url }}"></a> --}}
+                                        </li>
                                     {{-- @endif --}}
                             </ul>
                             @endforeach
@@ -174,7 +177,6 @@
                         </nav>
                         </div>
                     </div>
-                    <div class="col-md-3"></div>
                 </div>
             </div>
 
