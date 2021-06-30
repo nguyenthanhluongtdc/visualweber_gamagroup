@@ -7,14 +7,14 @@
         <div class="new-section1">
             <div class="row">
                 <div class="col-lg-4">
-                    <h3 class="font-helve-bold font30 new-title">
-                        {!! $page->description !!}
+                    <h3 class="font-helve-bold font30">
+                        {!! $page -> description !!}
+                        
                     </h3>
                 </div>
                 <div class="col-lg-8">
                     <div class="desc font18 font-helve">
-                        {!! $page->content !!}
-
+                       {!! $page -> content!!}
                     </div>
                 </div>
             </div>
@@ -192,7 +192,7 @@
                                 </a>
                             </div>
                                 <a href="{{ $itemPost->url }}" class="post__overlay">
-                                    <span class="new--title font-helve font20">{{ $itemPost->name }}</span>
+                                    <h4 class="new--title font-helve font20">{{ $itemPost->name }}</h4>
                                 </a>
                                 <div class="new--time font-helve font12">
                                     @if (!$itemPost->categories->isEmpty())
