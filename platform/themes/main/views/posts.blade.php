@@ -94,13 +94,11 @@
 
                     <div class="col-md-3 filter--option  mt-2">
                         <select class="dropdown new--dropdown">
-                            <div class="option">
-                            <option hidden>Mới nhất</option>
+                            <option hidden>Tin tổng hợp</option>
+                            <option value="1">Tin kinh doanh</option>
+                            <option value="2">Tin cộng đồng</option>
+                            <option value="3">Tin nội bộ</option>
 
-                            <option class="option" value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </div>
                         </select>
 
                     </div>
@@ -145,7 +143,7 @@
                     <a href="{{ $itemPost->url }}" class="post__overlay">
                         <img src="{{ RvMedia::getImageUrl($itemPost->image) }}" alt="{{ $itemPost->name }}">
                     </a>
-                        <a href="">
+                        <a href="{{ $itemPost->url }}" class="post__overlay">
                             <span class="new--title font-helve font20">{{ $itemPost->name }}</span>
                         </a>
                         <div class="new--time font-helve font12">
@@ -156,12 +154,12 @@
                                     @endif
                             <span class="new--item">{{ $itemPost->created_at->format('d/m/Y H:i') }}</span>
                         </div>
+                        <a href="{{ $itemPost->url }}" class="post__overlay">
                         <span class="new--des font-helve font18">
-                            {{-- {{ $itemPost->content }} --}}
-                            {{-- @if (defined('GALLERY_MODULE_SCREEN_NAME') && !empty($galleries = gallery_meta_data($post)))
-                        {!! render_object_gallery($galleries, ($post->first_category ? $post->first_category->name : __('Uncategorized'))) !!}
-                    @endif --}}
+                            {{ $itemPost->description }}
+                            
                  </span>
+                </a>
                         </div>
 
                             @endforeach
@@ -188,3 +186,15 @@
         </nav>
     </div>
 </div>
+<script src="">
+    $("li").mouseover(function(){
+ $(this).find('.drop-down').slideDown(300);
+ $(this).find(".accent").addClass("animate");
+ $(this).find(".item").css("color","#FFF");
+}).mouseleave(function(){
+  $(this).find(".drop-down").slideUp(300);
+   $(this).find(".accent").removeClass("animate");
+   $(this).find(".item").css("color","#000");
+});
+
+</script>
