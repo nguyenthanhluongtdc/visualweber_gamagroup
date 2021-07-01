@@ -1,0 +1,49 @@
+img {
+    width: 100%;
+    height: auto;
+}
+
+.talent-s3 {
+    padding: 80px 0px;
+}
+
+.talent-s4 {
+    background-color: #E7E7E7;
+}
+
+.talent-s4 {
+    .career--info {
+        padding: 4rem 0 0;
+    }
+    .develop-block {
+        color: #ffff;
+        .devleop--img {
+            position: relative;
+        }
+        .develop--info {
+            position: absolute;
+            bottom: 30px;
+            padding: 0 3.8rem;
+        }
+    }
+}
+
+.job {
+    .talent-s5 {
+        position: relative;
+    }
+    .job--block {
+        position: absolute;
+        top: 0px;
+        text-align: center;
+        width: 100%;
+        .job--title {
+            width: 25rem;
+            margin: 0px auto;
+        }
+        .job--desc {
+            width: 41rem;
+            margin: 0px auto;
+        }
+    }
+}
