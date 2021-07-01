@@ -7,6 +7,7 @@ register_page_template([
     'news-gama' => 'NEWS GAMA',
     'about-detail' => 'About-detail',
     'posts' => "Posts",
+    'talent' => "Talent",
     'oriented-development' => "Development",
 ]);
 

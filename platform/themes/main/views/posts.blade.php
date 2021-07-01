@@ -129,27 +129,20 @@
                                         Tin tổng hợp 
                                         <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt=""
                                             class="img-slider">
-
-                                        <ul
-                                            class="dropdown_menu dropdown_menu--animated dropdown_menu-2 font18 font-helve">
-                                            <li class="dropdown_item-1">Tin kinh doanh</li>
+                                            {{-- @php $postNew =  getAllCategoriesWithChildren(5);  @endphp
+                                            @if($postNew->count()) --}}
+                                            {{-- @if(!empty(getAllCategoriesWithChildren())) --}}
+                                          
+                                            {{-- @foreach (postNew() as $item) --}}
+                                        <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-2 font18 font-helve">
+                                            {{-- <li class="dropdown_item-1">{{$item->name}}</li> --}}
                                             <li class="dropdown_item-2">Tin cộng đồng</li>
                                             <li class="dropdown_item-3">Tin nội bộ</li>
                                         </ul>
+                                        {{-- @endforeach
+                                        @endif --}}
                                     </li>
-                                    {{-- <li class="dropdown dropdown-1">
-                                        Tin tổng hợp
-                                        <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt=""
-                                            class="img-slider">
-                                        @php $categories =  get_all_categories();  @endphp
-                                        @if ($categories->count())
-                                            @foreach ($categories as $itemPost)
-                                                <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-6 font18 font-helve">
-                                                    <li class="dropdown_item-3">{{ !$itemPost->name }}</li>
-                                                </ul>
-                                            @endforeach
-                                        @endif
-                                    </li> --}}
+                                   
                                 </ul>
                             </nav>
                         </div>
@@ -248,7 +241,7 @@
         </nav>
     </div>
 </div>
-<script src="">
+{{-- <script src="">
     $("li").mouseover(function() {
         $(this).find('.drop-down').slideDown(300);
         $(this).find(".accent").addClass("animate");
@@ -258,4 +251,4 @@
         $(this).find(".accent").removeClass("animate");
         $(this).find(".item").css("color", "#000");
     });
-</script>
+</script> --}}
