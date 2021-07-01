@@ -125,7 +125,19 @@
                         <div class="menu-container">
                             <nav>
                                 <ul class="menu font18 font-helve">
-                                    <li class="dropdown dropdown-1">
+                                    <li class="dropdown dropdown-2">
+                                        Thương hiệu
+                                        <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt=""
+                                            class="img-slider">
+
+                                        <ul
+                                            class="dropdown_menu dropdown_menu--animated dropdown_menu-2 font18 font-helve">
+                                            <li class="dropdown_item-1">Item 1</li>
+                                            <li class="dropdown_item-2">Item 2</li>
+                                            <li class="dropdown_item-3">Item 3</li>
+                                        </ul>
+                                    </li>
+                                    {{-- <li class="dropdown dropdown-1">
                                         Tin tổng hợp
                                         <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt=""
                                             class="img-slider">
@@ -137,7 +149,7 @@
                                                 </ul>
                                             @endforeach
                                         @endif
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </nav>
                         </div>
