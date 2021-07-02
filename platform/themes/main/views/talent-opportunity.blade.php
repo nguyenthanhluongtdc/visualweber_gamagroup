@@ -180,7 +180,7 @@
         </div>
     </div>
 {{------------------------------- page ------------------------------------}}
-    <div class="container mb-5 ">
+    <div class="container mb-5 mt-5">
         <nav aria-label="Page navigation example">
             <ul class="pagination font-helve font20">
 
