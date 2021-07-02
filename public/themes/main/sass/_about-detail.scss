@@ -69,3 +69,36 @@
         
     }
  }
+
+
+
+//  admin-council 
+.admin-section1{
+    padding-top: 80px;
+    .admin-desc{
+        h3{
+            color: $primary-color;
+        }
+    }
+    .admin-content{
+        padding: 100px 0 40px 0;
+        .admin-item{
+            margin-bottom: 60px;
+            img{
+                width: 100%;
+                max-width: 100%;
+            }
+            h5.name{
+                line-height: 17px;
+                margin: 20px 0;
+            }
+            .desc{
+                font-size: 13px;
+                line-height: 17px;
+            }
+        }
+    }
+}
+.admin-section2{
+    background: #E7E7E7;
+}

@@ -10,6 +10,7 @@ register_page_template([
     'talent' => "Talent",
     'talent-detail' => "Talent-detail",
     'oriented-development' => "Development",
+    'admin-council' => "Admin Council",
 ]);
 
 register_sidebar([
