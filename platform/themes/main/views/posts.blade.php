@@ -95,29 +95,19 @@
                         <div class="menu-container">
                             <nav>
                                 <ul class="menu font18 font-helve">
-                                    <li class="dropdown dropdown-1">
-                                        Mới nhất
+                                    <li class="dropdown dropdown-2">
+                                        Tin mới nhất 
                                         <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt=""
                                             class="img-slider">
-                                            @php $postNew =  get_post_new(5);  @endphp
-                                            @if($postNew->count())
-                                            @foreach($postNew as $itemPost)
-                                        {{-- @if ($post->count()) --}}
-                                        {{-- @foreach ($post as $itemPost) --}}
-                                        <ul
-                                            class="dropdown_menu dropdown_menu--animated dropdown_menu-3 font18 font-helve">
-                                            {{-- <li class="dropdown_item-1">{{!$itemPost->name}}</li> --}}
-                                            <a href="{{ $itemPost->url }}">   <li class="dropdown_item-2">{{ $itemPost->name }}</li></a>
-                                            {{-- <li class="dropdown_item-3">Item 3</li>
-                                            <li class="dropdown_item-4">Item 4</li>
-                                            <li class="dropdown_item-5">Item 5</li> --}}
+                                            
+                                        <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-2 font18 font-helve">
+                                            <li class="dropdown_item-1">Tin kinh doanh</li>
+                                            <li class="dropdown_item-2">Tin cộng đồng</li>
+                                            <li class="dropdown_item-3">Tin nội bộ</li>
                                         </ul>
                                     </li>
-                                    @endforeach
-                            @endif
+                                 
                                 </ul>
-                                {{-- @endforeach --}}
-                                {{-- @endif --}}
                             </nav>
                         </div>
                     </div>
@@ -131,9 +121,9 @@
                                             class="img-slider">
                                             
                                         <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-2 font18 font-helve">
-                                            <li class="dropdown_item-1">Tin kinh doanh</li>
-                                            <li class="dropdown_item-2">Tin cộng đồng</li>
-                                            <li class="dropdown_item-3">Tin nội bộ</li>
+                                            <li class="dropdown_item-1">Item 1</li>
+                                            <li class="dropdown_item-2">Item 2</li>
+                                            <li class="dropdown_item-3">Item 3</li>
                                         </ul>
                                     </li>
                                     {{-- <li class="dropdown dropdown-1">
