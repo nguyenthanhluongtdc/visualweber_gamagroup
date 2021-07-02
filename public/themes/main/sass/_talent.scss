@@ -1,15 +1,21 @@
-.talent-s3 {
-    padding: 80px 0px;
+.talent-s2 {
     img {
         width: 100%;
         height: auto;
     }
 }
 
-.talent-s2 {
+.talent-s3 {
+    padding: 80px 0px;
     img {
         width: 100%;
         height: auto;
+    }
+    .talent--title {
+        color: #0D3F75;
+    }
+    .talent-des {
+        margin-top: 1rem;
     }
 }
 
@@ -20,6 +26,9 @@
 .talent-s4 {
     .career--info {
         padding: 4rem 0 0;
+        .career-title {
+            color: #0D3F75;
+        }
     }
     .develop-block {
         color: #ffff;
@@ -52,6 +61,7 @@
         text-align: center;
         width: 100%;
         .job--title {
+            color: #0D3F75;
             width: 44%;
             margin: 0px auto;
             padding: 3rem 0;
@@ -62,11 +72,58 @@
             padding: 3rem 0;
         }
         .job--buttom {
+            width: 30%;
             padding: 3rem 0;
+            margin: 0px auto;
             .job--profession {
                 background-color: #0D3F75;
                 padding: .4rem 1.5rem;
             }
+        }
+    }
+}
+
+@media (max-width: 993px) {
+    .job .job--block {
+        // position: unset;
+        .job--title {
+            // width: 100%;
+            padding: 1.5rem 0;
+        }
+        .job--desc {
+            // width: 100%;
+            padding: 1.5rem 0;
+        }
+        .job--buttom {
+            // width: 100%;
+            padding: 1.5rem 0;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .talent--info {
+        margin: 1rem 0;
+    }
+    .carrer-desc {
+        margin: 1rem 0 0;
+    }
+    .job--img {
+        display: none;
+    }
+    .job .job--block {
+        position: unset;
+        .job--title {
+            width: 100%;
+            padding: 1.5rem 0;
+        }
+        .job--desc {
+            width: 100%;
+            padding: 1.5rem 0;
+        }
+        .job--buttom {
+            width: 100%;
+            padding: 1.5rem 0;
         }
     }
 }

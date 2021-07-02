@@ -38,7 +38,7 @@
                 <div class="talent-des font-helve font20">Tôn trọng bản sắc</div>
                 <div class="talent-des font-helve font20">Môi trường chuyên nghiệp</div>
             </div>
-            <div class="col-md-4 font-helve-light font18">
+            <div class="col-md-4 talent--info font-helve-light font18">
                 <p>
                 Trong nền kinh tế phát triển với tốc độ nhanh chóng, cách duy nhất để thành công là không ngừng tiến lên phía trước. Tại GAMA Group, chúng tôi trân trọng những cá nhân đầy hoài bão, luôn nắm bắt các xu hướng với những tư duy không giới hạn. Chúng tôi cố gắng mang lại môi trường làm việc lý tưởng để tất cả có thể phát triển toàn diện tiềm năng, cùng nhau đón đầu xu hướng và dẫn dắt thị trường. 
             </p>
