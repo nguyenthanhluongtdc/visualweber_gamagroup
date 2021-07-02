@@ -193,12 +193,13 @@
                                         alt="{{ $itemPost->name }}">
                                 </a>
                             </div>
+                            <div class="new--content">
                                 <a href="{{ $itemPost->url }}" class="post__overlay">
                                     <h4 class="new--title font-helve font20">{{ $itemPost->name }}</h4>
                                 </a>
                                 <div class="new--time font-helve font12">
                                     @if (!$itemPost->categories->isEmpty())
-                                        <span class="new--info">
+                                        <span class="new--info ">
                                             <a
                                                 href="{{ $itemPost->categories->first()->url }}">{{ $itemPost->categories->first()->name }}</a>
                                         </span>
@@ -206,11 +207,12 @@
                                     <span class="new--item">{{ $itemPost->created_at->format('d/m/Y H:i') }}</span>
                                 </div>
                                 <a href="{{ $itemPost->url }}" class="post__overlay">
-                                    <span class="new--des font-helve font18">
+                                    <span class="new--des font-helve-light font18">
                                         {{ $itemPost->description }}
 
                                     </span>
                                 </a>
+                            </div>
                             </div>
 
                         @endforeach
