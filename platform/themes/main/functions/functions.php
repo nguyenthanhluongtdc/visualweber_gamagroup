@@ -8,6 +8,7 @@ register_page_template([
     'about-detail' => 'About-detail',
     'posts' => "Posts",
     'talent' => "Talent",
+    'talent-detail' => "Talent-detail",
     'oriented-development' => "Development",
 ]);
 
