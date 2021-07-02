@@ -102,3 +102,57 @@
 .admin-section2{
     background: #E7E7E7;
 }
+
+
+// lịch sử phát triển 
+.history-section1{
+    h3{
+        color: $primary-color;
+    }
+}
+.history-banner{
+    img{
+        width: 100%;
+        max-width: 100%;
+    }
+}
+.history-section2{
+    padding-top: 80px;
+    .history-item{
+        padding-left: 10%;
+        margin-bottom: 80px;
+        width: 80%;
+        .top{
+            position: relative;
+            margin-bottom: 30px;
+            .year{
+                color: $primary-color;
+                margin-bottom: 25px;
+            }
+            img{
+                width: 100%;
+                max-width: 100%;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                right: 110%;
+                top: 6px;
+                bottom: 3px;
+                background: $primary-color;
+                width: 1px;
+               
+            }
+            &::after{
+                content: '';
+                top: -5px;
+                left: -33px;
+                border: 2px solid $primary-color;
+                border-radius: 50%;
+                position: absolute;
+                width: 13px;
+                height: 13px;
+            }
+        }
+    }
+}

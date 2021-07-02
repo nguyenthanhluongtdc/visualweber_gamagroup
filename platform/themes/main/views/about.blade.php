@@ -145,18 +145,7 @@
                     <p class="desc font-helve font18">{{ get_sub_field($item, 'text_data') }}</p>
                 </div>
             @endforeach
-            {{-- <div class="col-md-4 item-coun">
-                <p class="title font-helve-bold font50"><span class="counting" data-count="15">0</span><span class="year">năm</span></p>
-                <p class="desc font-helve font18">Hoạt động</p>
-            </div>
-            <div class="col-md-4 item-coun">
-                <p class="title font-helve-bold font50 counting" data-count="99">0</p>
-                <p class="desc font-helve font18">Công ty thành viên</p>
-            </div>
-            <div class="col-md-4 item-coun">
-                <p class="title font-helve-bold font50  counting counter-number" data-count="1488142">1,488,142</p>
-                <p class="desc font-helve font18">Thang máy được lắp đặt</p>
-            </div> --}}
+           
             @endif
         </div>
     </div>
