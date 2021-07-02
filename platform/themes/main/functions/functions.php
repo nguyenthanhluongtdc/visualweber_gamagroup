@@ -12,6 +12,8 @@ register_page_template([
     'talent-opportunity' => "talent-opportunity",
     'oriented-development' => "Development",
     'admin-council' => "Admin Council",
+    'development-history' => "Development History",
+
 ]);
 
 register_sidebar([

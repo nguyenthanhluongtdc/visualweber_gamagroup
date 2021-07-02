@@ -86,15 +86,24 @@
     }
 }
 
+html:lang(vi) .footer .footer-content .end-home .language-footer li.lang-vi ,
+html:lang(vi) .language-search li.lang-vi {
+    width: 33px;
+    height: 33px;
+    background: #082647;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 html:lang(vi) .footer .footer-content .end-home .language-footer li.lang-vi a,
 html:lang(vi) .language-search li.lang-vi a{
     color: #fff;
-    padding: 5px;
-    background: #082647;
 }
 html:lang(en) .footer .footer-content .end-home .language-footer li.lang-en a,
 html:lang(en) .language-search li.lang-en a{
     color: #fff;
     padding: 5px;
     background: #082647;
+    border-radius: 5px;
 }

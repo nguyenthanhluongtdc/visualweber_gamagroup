@@ -55,7 +55,11 @@
         }
     }
 }
-
+@media(max-width: 1200px){
+    .history-section2 .history-item .top::after{
+        left: -27px;
+    }
+}
 @media(max-width : 993px){
     #page-wrap{
         overflow: hidden;
@@ -228,6 +232,18 @@
     .breadcrumb-list .link-active{
         margin-bottom: 0;
     }
+    .history-section2 .history-item{
+        width: 95%;
+    }
+    .history-section2 .history-item .top::after{
+        left: -25px;
+    }
+    .admin-section1 .admin-desc h3{
+        margin-bottom: 30px;
+    }
+    .history-section1 h3{
+        margin-bottom: 30px;
+    }
 }
 @media(max-width : 767px){
     .section4-about .item-coun{
@@ -255,7 +271,18 @@
     .post-new-item{
         width: 100%;
     }
+    .history-section2 .history-item{
+        width: 100%;
+    }
+    .history-section2 .history-item .top::after{
+        left: -55px;
+    }
 
+}
+@media(max-width: 540px){
+    .history-section2 .history-item .top::after{
+        left: -12%;
+    }
 }
 @media(max-width : 480px){
     .news-home, .section4-home, .business-areas, .about-us, .section5-about, .section4-about, .about-section3, .about-section1{
@@ -313,9 +340,7 @@
     .admin-section1 .admin-content{
         padding: 50px 0;
     }
-    .admin-section1 .admin-desc h3{
-        margin-bottom: 30px;
-    }
+    
 }
 @media(max-width: 360px){
     .main-slider .slider-item .content h1{
