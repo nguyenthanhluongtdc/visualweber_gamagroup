@@ -9,6 +9,7 @@ register_page_template([
     'posts' => "Posts",
     'talent' => "Talent",
     'talent-detail' => "Talent-detail",
+    'talent-opportunity' => "talent-opportunity",
     'oriented-development' => "Development",
     'admin-council' => "Admin Council",
 ]);
