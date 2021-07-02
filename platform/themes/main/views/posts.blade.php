@@ -247,7 +247,7 @@
         </nav>
     </div>
 </div>
-<script src="">
+{{-- <script src="">
     $("li").mouseover(function() {
         $(this).find('.drop-down').slideDown(300);
         $(this).find(".accent").addClass("animate");
@@ -257,4 +257,4 @@
         $(this).find(".accent").removeClass("animate");
         $(this).find(".item").css("color", "#000");
     });
-</script>
+</script> --}}
