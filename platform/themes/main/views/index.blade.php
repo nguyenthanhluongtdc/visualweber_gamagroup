@@ -2,13 +2,13 @@
 @include('theme.main::views/pages/home/section/main-slide')
 <div class="about-us">
     <div class="abouut-us-content container">
-        <div class="row">
-            <div class="col-md-4" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
+        <div class="row_wrap">
+            <div class="content-md4" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
                 @if (has_field($page, 'title_section1'))
                     <h3 class="font-helve-bold font30">{!! get_field($page, 'title_section1') !!}</h3>
                 @endif
             </div>
-            <div class="col-md-8 font-helve content-right font18" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
+            <div class="content-md8 font-helve content-right font18" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
                 @if (has_field($page, 'content_section1'))
                     {!! get_field($page, 'content_section1') !!}
                 @endif
@@ -20,8 +20,8 @@
 {{-- lĩnh vực kinh doanh --}}
 <div class="business-areas">
     <div class="business-areas-content container">
-        <div class="row">
-            <div class="col-lg-4 content-left" data-aos="zoom-out-right" data-aos-duration="700" data-aos-easing="ease-in-out">
+        <div class="row_wrap">
+            <div class="content-md4 content-left" data-aos="zoom-out-right" data-aos-duration="700" data-aos-easing="ease-in-out">
                 @if (has_field($page, 'title_section1'))
                     <h3 class="font-helve-bold font30">
                         {!! get_field($page, 'title_section2') !!}
@@ -33,7 +33,7 @@
                     </a>
                 </div> --}}
             </div>
-            <div class="col-lg-8 content-right">
+            <div class="content-md8 content-right">
                 <div class="row">
                     <div class="col-md-7" data-aos="zoom-out-up" data-aos-duration="700" data-aos-easing="ease-in-out">
                         <div class="tab-content">
@@ -131,8 +131,8 @@
 {{-- tin tức --}}
 <div class="news-home">
     <div class="news-home-content container">
-        <div class="row">
-            <div class="col-lg-4 content-left" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
+        <div class="row_wrap">
+            <div class="content-md4 content-left" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
                 <h3 class="font-helve-bold font30">
                     @if (has_field($page, 'title_news_home'))
                         {!! get_field($page, 'title_news_home') !!}
@@ -145,13 +145,13 @@
                 </div>
 
             </div>
-            <div class="content-right col-lg-8">
-                <div class="row">
+            <div class="content-right content-md8">
+                <div class="row_wrap">
 
                     @if (!empty(get_post_new(2)))
                     @foreach (get_post_new(2) as $post)
                    
-                    <div class="item-right col-md-6" data-aos="zoom-in-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="30">
+                    <div class="item-right" data-aos="zoom-in-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="30">
                         <a href="{{ $post->url }}" class="item-link" title="{{ $post->name }}">
                             <img src="{{ RvMedia::getImageUrl($post->image) }}" alt="{{ $post->name }}" class="img-slider">
                             <h4 class="font-helve font20">
