@@ -21,3 +21,22 @@
     font-family: $font-helve;
     border-bottom: 1px solid #dee2e6;
 }
+
+.opportunity--item {
+    color: #0D3F75;
+    margin-bottom: 2rem;
+}
+
+.opportunity--title {
+    color: #0D3F75;
+    margin: 2rem 0;
+}
+
+.Recruitment--buttom {
+    padding: 1.5rem 0;
+    .Recruitment--profession {
+        background-color: #0D3F75;
+        padding: .4rem 1.5rem;
+        border-radius: 0%;
+    }
+}
