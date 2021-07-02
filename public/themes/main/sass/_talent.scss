@@ -36,26 +36,37 @@
 
 .job {
     .talent-s5 {
+        text-align: center;
         position: relative;
+    }
+    .job--img {
+        img {
+            width: 100%;
+            height: auto;
+            margin-top: 5rem;
+        }
     }
     .job--block {
         position: absolute;
-        top: 0px;
+        top: 3rem;
         text-align: center;
         width: 100%;
         .job--title {
-            width: 25rem;
+            width: 44%;
             margin: 0px auto;
-        }
-        .job--img {
-            img {
-                width: 100%;
-                height: auto;
-            }
+            padding: 3rem 0;
         }
         .job--desc {
-            width: 41rem;
+            width: 66%;
             margin: 0px auto;
+            padding: 3rem 0;
+        }
+        .job--buttom {
+            padding: 3rem 0;
+            .job--profession {
+                background-color: #0D3F75;
+                padding: .4rem 1.5rem;
+            }
         }
     }
 }

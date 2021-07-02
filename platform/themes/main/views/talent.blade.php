@@ -105,14 +105,14 @@
 
 
 {{--------------------------- cơ hội làm việc -------------- --}}
-{{-- <div class="job">
+<div class="job">
     <div class="container talent-s5">
         <div class="job--img">
             <img src="{{ Theme::asset()->url('images/talent/map.jpg') }}" alt="">
         </div>
         <div class="job--block">
-            <div class="job--title font-helve-bold font30">
-                <h3>Cơ hội việc làm tại GAMA Group
+            <div class="job--title">
+                <h3 class=" font-helve-bold font30">Cơ hội việc làm tại GAMA Group
                     luôn dành cho mọi người?</h3>
             </div>
             <div class="job--desc font-helve-light font18">
@@ -126,4 +126,4 @@
         </div>
 
     </div>
-</div> --}}
+</div>
