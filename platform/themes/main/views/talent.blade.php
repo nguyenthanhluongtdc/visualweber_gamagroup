@@ -54,7 +54,7 @@
     <div class="container">
         <div class="row career--info">
             <div class="col-md-4">
-                <h3 class="career-title font-helve-bold font20">Phát triển <br> sự nghiệp</h3>
+                <h3 class="career-title font-helve-bold font30">Phát triển <br> sự nghiệp</h3>
             </div>
             <div class="col-md-8">
                 <div class="carrer-desc font-helve-light font18">
