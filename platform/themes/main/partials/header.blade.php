@@ -67,7 +67,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item nav-link dropdown dmenu">
+                <li class="nav-item dropdown dmenu">
                     <div class="search-btn c-search-toggler"><i class="fa fa-search close-search"></i></div>
                 </li>
             </ul>
