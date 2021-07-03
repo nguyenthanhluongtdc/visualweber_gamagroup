@@ -70,6 +70,10 @@
                         margin-bottom: 2%;
                         img{
                             max-width: 80%;
+                            opacity: 0.15;
+                            &:hover{
+                                opacity: 1;
+                            }
                         }
                     }
                 }
