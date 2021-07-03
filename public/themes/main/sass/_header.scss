@@ -7,12 +7,18 @@ a{
     flex-wrap: wrap;
     .content-md4{
         width: 370px;
+        @media(max-width : 1680px){
+            width: 30%;
+        }
         @media(max-width: 995px){
             width: 100%;
         }
     }
     .content-md8{
         width: 770px;
+        @media(max-width : 1680px){
+            width: 70%;
+        }
         @media(max-width: 995px){
             width: 100%;
         }
