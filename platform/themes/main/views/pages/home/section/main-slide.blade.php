@@ -3,10 +3,10 @@
         <img src="{{ Theme::asset()->url('images/homepage/slider.jpg') }}" alt="" class="img-slider">
         <div class="fade"></div>
         <div class="content">
-            <h1 class="font-helve-bold font30">
+            <h2 class="font-helve-bold font30">
                 GamaGroup tài trợ đề án xây dựng Đà Nẵng <br>
                 trở thành Trung tâm Tài chính quy mô khu vực.
-            </h1>
+            </h2>
             <a href="" class="font-helve font17">Xem tiếp</a>
         </div>
     </div>
@@ -14,10 +14,10 @@
         <img src="{{ Theme::asset()->url('images/homepage/slider.jpg') }}" alt="" class="img-slider">
         <div class="fade"></div>
         <div class="content">
-            <h1 class="font-helve-bold font30">
+            <h2 class="font-helve-bold font30">
                 GamaGroup tài trợ đề án xây dựng Đà Nẵng <br>
                 trở thành Trung tâm Tài chính quy mô khu vực.
-            </h1>
+            </h2>
             <a href="" class="font-helve font17">Xem tiếp</a>
         </div>
     </div>
@@ -25,10 +25,10 @@
         <img src="{{ Theme::asset()->url('images/homepage/slider.jpg') }}" alt="" class="img-slider">
         <div class="fade"></div>
         <div class="content">
-            <h1 class="font-helve-bold font30">
+            <h2 class="font-helve-bold font30">
                 GamaGroup tài trợ đề án xây dựng Đà Nẵng <br>
                 trở thành Trung tâm Tài chính quy mô khu vực.
-            </h1>
+            </h2>
             <a href="" class="font-helve font17">Xem tiếp</a>
         </div>
     </div>

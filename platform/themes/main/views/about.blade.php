@@ -1,15 +1,15 @@
 {!! Theme::breadcrumb()->render() !!}
 <div class="container">
     <div class="about-section1">
-        <div class="row">
-            <div class="col-lg-4">
+        <div class="row_wrap">
+            <div class="content-md4">
                 <h3 class="font-helve-bold font30">
                     {!! $page -> description !!}
                     
                 </h3>
             </div>
-            <div class="col-lg-8">
-                <div class="desc font18 font-helve">
+            <div class="content-md8">
+                <div class="desc font18 font-helve-light">
                    {!! $page -> content!!}
                 </div>
             </div>
@@ -24,9 +24,9 @@
 </div>
 <div class="container">
     <div class="about-section3" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out">
-        <div class="row">
+        <div class="row_wrap">
             @if(!empty(get_featured_abouts(4)))
-            <div class="col-lg-4 menu-tab">
+            <div class="content-md4 menu-tab">
                 <ul class="nav nav-pills font-helve font20 list-menu-tababout" role="tablist">
                     {{-- @foreach (get_featured_abouts(4) as $key => $item) --}}
                    
@@ -53,14 +53,14 @@
                 </ul>
             </div>
 
-            <div class="col-lg-8 content-tab">
+            <div class="content-md8 content-tab">
                 <div class="tab-content">
                     {{-- @foreach (get_featured_abouts(4) as $key => $item) --}}
                     @foreach (get_featured_pages(100) as $key => $item)
                          @if ($item->template == "about-detail")
                         <div id="tababout{{$key}}" class="tab-pane {{ $loop->first ? 'active' : '' }}">
                             <div class="row">
-                                <div class="col-md-6 left font-helve font18">
+                                <div class="col-md-6 left font-helve-light font18">
                                     <div class="content desc-right">
                                         {{ $item->description}}
                                     </div>
@@ -153,15 +153,15 @@
 
 <div class="container">
     <div class="section5-about">
-        <div class="row">
-            <div class="col-lg-4 admin-left" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
+        <div class="row_wrap">
+            <div class="content-md4 admin-left" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
                 <h3 class="font-helve-bold font30">Hội đồng quản trị <br>GAMA Group</h3>
                 <div class="view font-helve font18 content-desktop">
                     <a href="" class="primary-a">{{ trans('See more') }}</a>
                 </div>
             </div>
-            <div class="col-lg-8" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
-                <div class="desc-right font-helve font18">
+            <div class="content-md8" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
+                <div class="desc-right font-helve-light font18">
                     Do tính lây nhiễm cao trong đợt dịch này, người bệnh phải được điều
                     trị tại các bệnh viện chỉ chuyên tiếp nhận Covid-19, không bố trí lẫn
                     lộn trong một bệnh viện đa khoa, ngoại trừ mô hình "bệnh viện tách đôi".

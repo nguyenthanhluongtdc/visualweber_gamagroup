@@ -8,7 +8,7 @@
                     <h3 class="font-helve-bold font30">{!! get_field($page, 'title_section1') !!}</h3>
                 @endif
             </div>
-            <div class="content-md8 font-helve content-right font18" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
+            <div class="content-md8 font-helve-light content-right font18" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
                 @if (has_field($page, 'content_section1'))
                     {!! get_field($page, 'content_section1') !!}
                 @endif
@@ -44,7 +44,7 @@
 
                                         <h5 class="font-helve-bold">{{ get_sub_field($item, 'tab_menu') }}</h5>
                                         @if (has_sub_field($item, 'tab_content'))
-                                            <div class="desc font-helve font18">
+                                            <div class="desc font-helve-light font18">
                                                 {!! get_sub_field($item, 'tab_content') !!}
                                             </div>
                                         @endif
@@ -209,7 +209,7 @@
             <div class="content-title" >
                 <h5 class="title font-helve-bold font30">Lịch sử <br> phát triển</h5>
                 <div class="content-none ">
-                    <p class="desc font-helve font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công
+                    <p class="desc font-helve-light font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công
                         Thương tính hạn chế xuất khẩu loại thép mà trong nước có nhu cầu.</p>
                     <a href=""><img src="{{ Theme::asset()->url('images/homepage/iconright.png') }}" alt=""></a>
                 </div>
@@ -221,7 +221,7 @@
             <div class="content-title" >
                 <h5 class="title font-helve-bold font30">Nhân tài</h5>
                 <div class="content-none ">
-                    <p class="desc font-helve font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công
+                    <p class="desc font-helve-light font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công
                         Thương tính hạn chế xuất khẩu loại thép mà trong nước có nhu cầu.</p>
                     <a href=""><img src="{{ Theme::asset()->url('images/homepage/iconright.png') }}" alt=""></a>
                 </div>
@@ -233,7 +233,7 @@
             <div class="content-title" >
                 <h5 class="title font-helve-bold font30">Định hướng <br> phát triển</h5>
                 <div class="content-none ">
-                    <p class="desc font-helve font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công
+                    <p class="desc font-helve-light font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công
                         Thương tính hạn chế xuất khẩu loại thép mà trong nước có nhu cầu.</p>
                     <a href=""><img src="{{ Theme::asset()->url('images/homepage/iconright.png') }}" alt=""></a>
                 </div>
