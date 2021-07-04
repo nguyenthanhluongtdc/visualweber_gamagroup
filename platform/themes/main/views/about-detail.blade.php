@@ -1,15 +1,15 @@
 {!! Theme::breadcrumb()->render() !!}
 <div class="about-detail-s1 padding80">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
+        <div class="row_wrap">
+            <div class="content-md4">
                 <h3 class="font-helve-bold font30">
                     @if (has_field($page, 'title_section1_about_detail'))
                         {!! get_field($page, 'title_section1_about_detail') !!}
                     @endif
                 </h3>
             </div>
-            <div class="col-lg-8 font-helve font18">
+            <div class="content-md8 font-helve-light font18">
                 @if (has_field($page, 'description_section1'))
                     {!! get_field($page, 'description_section1') !!}
                 @endif
@@ -25,20 +25,20 @@
 </div>
 <div class="about-detail-s3 padding80">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4 left" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
+        <div class="row_wrap">
+            <div class="content-md4 left" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
                 <h3 class="font-helve-bold font30">
                     @if (has_field($page, 'title_section2_about_detail'))
                         {!! get_field($page, 'title_section2_about_detail') !!}
                     @endif
                 </h3>
-                <div class="desc font-helve font18">
+                <div class="desc font-helve-light font18">
                     @if (has_field($page, 'content_section2_about_detail'))
                         {!! get_field($page, 'content_section2_about_detail') !!}
                     @endif
                 </div>
             </div>
-            <div class="col-lg-8 right" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
+            <div class="content-md8 right" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
                 @if (has_field($page, 'image_section2'))
                     <img src="{{ RvMedia::getImageUrl(get_field($page, 'image_section2')) }}"
                         alt="{!! get_field($page, 'title_section2_about_detail') !!}">
@@ -53,15 +53,15 @@
 <div class="about-detail-s5 padding80">
     <div class="container">
         <div class="top">
-            <div class="row">
-                <div class="col-md-4" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
+            <div class="row_wrap">
+                <div class="content-md4" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
                     <h3 class="font-helve-bold font30">
                         @if (has_field($page, 'title_section4_about_detail'))
                             {!! get_field($page, 'title_section4_about_detail') !!}
                         @endif
                     </h3>
                 </div>
-                <div class="col-md-8 font-helve font18" data-aos="fade-left" data-aos-duration="700"
+                <div class="content-md8 font-helve-light font18" data-aos="fade-left" data-aos-duration="700"
                     data-aos-easing="ease-in-out">
                     @if (has_field($page, 'description_section4'))
                             {!! get_field($page, 'description_section4') !!}

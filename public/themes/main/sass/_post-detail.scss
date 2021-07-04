@@ -1,5 +1,5 @@
 .post-wrap{
-    padding: 105px 0;
+    padding: 100px 0;
     .post-content{
         img{
             max-width: 100%;
@@ -33,6 +33,20 @@
             }
             .right{
                 color: $primary-color;
+            }
+        }
+        .post__content{
+            p{
+                margin-bottom: 35px;
+                @media(max-width : 1680px){
+                    margin-bottom: 30px;
+                }
+                @media(max-width : 995px){
+                    margin-bottom: 25px;
+                }
+                @media(max-width : 767px){
+                    margin-bottom: 20px;
+                }
             }
         }
     }

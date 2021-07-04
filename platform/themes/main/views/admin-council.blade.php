@@ -2,15 +2,15 @@
 <div class="admin-section1">
     <div class="container">
         <div class="admin-desc">
-            <div class="row">
-                <div class="col-lg-4">
+            <div class="row_wrap">
+                <div class="content-md4">
                     @if (has_field($page, 'title_admin'))
                         <h3 class="font-helve-bold font30">
                             {!! get_field($page, 'title_admin') !!}
                         </h3>
                     @endif
                 </div>
-                <div class="col-lg-8">
+                <div class="content-md8">
                     @if (has_field($page, 'desc_admin'))
                         <div class="desc font-helve-light font18">
                             {!! get_field($page, 'desc_admin') !!}
@@ -48,15 +48,15 @@
 <div class="admin-section2 about-detail-s5 padding80">
     <div class="container">
         <div class="top">
-            <div class="row">
-                <div class="col-md-4" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
+            <div class="row_wrap">
+                <div class="content-md4" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
                     <h3 class="font-helve-bold font30">
                         @if (has_field($page, 'title_community'))
                             {!! get_field($page, 'title_community') !!}
                         @endif
                     </h3>
                 </div>
-                <div class="col-md-8 font-helve font18" data-aos="fade-left" data-aos-duration="700"
+                <div class="content-md8 font-helve-light font18" data-aos="fade-left" data-aos-duration="700"
                     data-aos-easing="ease-in-out">
                     @if (has_field($page, 'desc_community'))
                         {!! get_field($page, 'desc_community') !!}

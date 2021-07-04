@@ -43,7 +43,7 @@
            <div class="col-md-2">
 
            </div>
-           <div class="col-lg-8 coppy-right">
+           <div class="col-lg-8 coppy-right font-helve-light">
             © Copyright GAMAGROUP. All rights reserved. 
            </div>
            <div class="col-lg-2">

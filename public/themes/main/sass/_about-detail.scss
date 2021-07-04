@@ -13,7 +13,7 @@
 .about-detail-s3{
     .left{
         .desc{
-            width: 87%;
+            width: 100%;
         }
         
     }
@@ -121,7 +121,13 @@
     .history-item{
         padding-left: 10%;
         margin-bottom: 80px;
-        width: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        @media(max-width : 1919px){
+            width: 80%;
+        }
         .top{
             position: relative;
             margin-bottom: 30px;
@@ -130,8 +136,11 @@
                 margin-bottom: 25px;
             }
             img{
-                width: 100%;
+                width: 280px;
                 max-width: 100%;
+                @media(max-width : 1919px){
+                    width: 100%;
+                }
             }
             &::before{
                 content: '';
@@ -146,12 +155,27 @@
             &::after{
                 content: '';
                 top: -5px;
-                left: -33px;
+                left: -35px;
                 border: 2px solid $primary-color;
                 border-radius: 50%;
                 position: absolute;
                 width: 13px;
                 height: 13px;
+                @media(max-width : 1919px){
+                    left: -29px;
+                }
+                @media(max-width : 1680px){
+                    left: -32px;
+                }
+                @media(max-width : 995px){
+                    left: -35px;
+                }
+            }
+        }
+        .bottom{
+            width: 280px;
+            @media(max-width : 1919px){
+                width: 100%;
             }
         }
     }

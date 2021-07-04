@@ -1,15 +1,15 @@
 {!! Theme::breadcrumb()->render() !!}
 <div class="history-section1 padding80">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
+        <div class="row_wrap">
+            <div class="content-md4">
                 @if (has_field($page, 'title_history'))
                     <h3 class="font-helve-bold font30">
                         {!! get_field($page, 'title_history') !!}
                     </h3>
                 @endif
             </div>
-            <div class="col-lg-8">
+            <div class="content-md8">
                 @if (has_field($page, 'desc_history'))
                     <div class="desc font18 font-helve-light">
                         {!! get_field($page, 'desc_history') !!}
@@ -26,10 +26,10 @@
 </div>
 <div class="history-section2">
     <div class="container">
-        <div class="row">
+        <div class="row_wrap">
             @if (has_field($page, 'list_history'))
                 @foreach (get_field($page, 'list_history') as $item)      
-                    <div class="col-md-4">
+                    <div class="col4">
                         <div class="history-item">
                             <div class="top">
                                 <div class="top-content">
@@ -76,8 +76,8 @@
 
 <div class="container">
     <div class="section5-about">
-        <div class="row">
-            <div class="col-lg-4 admin-left" data-aos="fade-right" data-aos-duration="700"
+        <div class="row_wrap">
+            <div class="content-md4 admin-left" data-aos="fade-right" data-aos-duration="700"
                 data-aos-easing="ease-in-out">
                 @if (has_field($page, 'title_admin_history'))
                     <h3 class="font-helve-bold font30">
@@ -88,9 +88,9 @@
                     <a href="" class="primary-a">{{ trans('See more') }}</a>
                 </div>
             </div>
-            <div class="col-lg-8" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
+            <div class="content-md8" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
                 @if (has_field($page, 'desc_admin_history'))
-                    <div class="desc-right font-helve font18">
+                    <div class="desc-right font-helve-light font18">
                         {!! get_field($page, 'desc_admin_history') !!}
                     </div>
                 @endif

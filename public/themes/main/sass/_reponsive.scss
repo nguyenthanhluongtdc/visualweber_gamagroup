@@ -60,11 +60,7 @@
         overflow: hidden;
     }
 }
-@media(max-width: 1200px){
-    .history-section2 .history-item .top::after{
-        left: -27px;
-    }
-}
+
 @media(max-width : 995px){
   
     .header-desktop{
@@ -238,9 +234,7 @@
     .history-section2 .history-item{
         width: 95%;
     }
-    .history-section2 .history-item .top::after{
-        left: -25px;
-    }
+    
     .admin-section1 .admin-desc h3{
         margin-bottom: 30px;
     }
@@ -279,6 +273,9 @@
     }
     .history-section2 .history-item .top::after{
         left: -55px;
+    }
+    .history-section2 .history-item .top{
+        width: 100%;
     }
 
 }

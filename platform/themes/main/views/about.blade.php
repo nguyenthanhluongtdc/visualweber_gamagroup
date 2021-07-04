@@ -60,12 +60,12 @@
                          @if ($item->template == "about-detail")
                         <div id="tababout{{$key}}" class="tab-pane {{ $loop->first ? 'active' : '' }}">
                             <div class="row">
-                                <div class="col-md-6 left font-helve-light font18">
-                                    <div class="content desc-right">
+                                <div class="col-md-6 left font18">
+                                    <div class="content desc-right font-helve-light">
                                         {{ $item->description}}
                                     </div>
                                     <div class="views content-none-mobie">
-                                        <a href="{{ $item->url }}" class="primary-a">
+                                        <a href="{{ $item->url }}" class="primary-a font-helve">
                                             {{ trans('See more') }}
                                         </a>
                                     </div>

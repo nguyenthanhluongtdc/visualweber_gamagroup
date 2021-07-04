@@ -6,7 +6,7 @@ a{
     justify-content: space-between;
     flex-wrap: wrap;
     .content-md4{
-        width: 370px;
+        width: 310px;
         @media(max-width : 1680px){
             width: 30%;
         }
@@ -20,6 +20,18 @@ a{
             width: 70%;
         }
         @media(max-width: 995px){
+            width: 100%;
+        }
+    }
+    .col4{
+        width: 28%;
+        @media(max-width : 1680px){
+            width: 32%;
+        }
+        @media(max-width : 995px){
+            width: 48%;
+        }
+        @media(max-width : 767px){
             width: 100%;
         }
     }
