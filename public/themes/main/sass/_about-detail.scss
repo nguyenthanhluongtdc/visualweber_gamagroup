@@ -27,6 +27,28 @@
         }
     }
 }
+.about-detail-s4{
+    background: #E7E7E7;
+    padding: 80px 0 20px 0;
+    @media(max-width : 995px){
+        padding: 40px 0 10px 0;
+    }
+    .about-detail-s4-item{
+        margin-bottom: 60px;
+        @media(max-width : 995px){
+            margin-bottom: 30px;
+        }
+        img{
+            mix-blend-mode: darken;
+        }
+        .title{
+            margin: 30px 0;
+        }
+    }
+    .about-detail-s4-item:nth-child(4){
+            margin-top: -10px; 
+    }
+}
  .about-detail-s5{
      .about-detail-s5-slider{
          margin-top: 100px;

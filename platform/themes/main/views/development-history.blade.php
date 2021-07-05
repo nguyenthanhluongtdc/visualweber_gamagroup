@@ -2,11 +2,9 @@
 <div class="history-section1 padding80">
     <div class="container">
         <div class="row_wrap">
-            <div class="content-md4">
+            <div class="font-helve-bold font30 title-primary pri-color">
                 @if (has_field($page, 'title_history'))
-                    <h3 class="font-helve-bold font30">
                         {!! get_field($page, 'title_history') !!}
-                    </h3>
                 @endif
             </div>
             <div class="content-md8">
@@ -79,11 +77,13 @@
         <div class="row_wrap">
             <div class="content-md4 admin-left" data-aos="fade-right" data-aos-duration="700"
                 data-aos-easing="ease-in-out">
-                @if (has_field($page, 'title_admin_history'))
-                    <h3 class="font-helve-bold font30">
+                <div class="font-helve-bold font30 title-primary pri-color">
+                    @if (has_field($page, 'title_admin_history'))
+                    
                         {!! get_field($page, 'title_admin_history') !!}
-                    </h3>
-                @endif
+                    @endif
+                </div>
+                
                 <div class="view font-helve font18 content-desktop">
                     <a href="" class="primary-a">{{ trans('See more') }}</a>
                 </div>

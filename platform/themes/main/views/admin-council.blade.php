@@ -3,11 +3,9 @@
     <div class="container">
         <div class="admin-desc">
             <div class="row_wrap">
-                <div class="content-md4">
+                <div class="content-md4 font-helve-bold font30 title-primary pri-color">
                     @if (has_field($page, 'title_admin'))
-                        <h3 class="font-helve-bold font30">
                             {!! get_field($page, 'title_admin') !!}
-                        </h3>
                     @endif
                 </div>
                 <div class="content-md8">
@@ -50,11 +48,11 @@
         <div class="top">
             <div class="row_wrap">
                 <div class="content-md4" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
-                    <h3 class="font-helve-bold font30">
+                    <div class="content-md4 font-helve-bold font30 title-primary pri-color">
                         @if (has_field($page, 'title_community'))
                             {!! get_field($page, 'title_community') !!}
                         @endif
-                    </h3>
+                    </div>
                 </div>
                 <div class="content-md8 font-helve-light font18" data-aos="fade-left" data-aos-duration="700"
                     data-aos-easing="ease-in-out">

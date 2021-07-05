@@ -2,11 +2,10 @@
 <div class="container">
     <div class="about-section1">
         <div class="row_wrap">
-            <div class="content-md4">
-                <h3 class="font-helve-bold font30">
+            <div class="content-md4 font-helve-bold font30 title-primary pri-color">
+                
                     {!! $page -> description !!}
                     
-                </h3>
             </div>
             <div class="content-md8">
                 <div class="desc font18 font-helve-light">
@@ -155,7 +154,9 @@
     <div class="section5-about">
         <div class="row_wrap">
             <div class="content-md4 admin-left" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
-                <h3 class="font-helve-bold font30">Hội đồng quản trị <br>GAMA Group</h3>
+                <div class="font-helve-bold font30 title-primary pri-color">
+                    Hội đồng quản trị <br>GAMA Group
+                </div>
                 <div class="view font-helve font18 content-desktop">
                     <a href="" class="primary-a">{{ trans('See more') }}</a>
                 </div>
