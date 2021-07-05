@@ -1,7 +1,7 @@
 {!! Theme::breadcrumb()->render() !!}
 <div class="container">
     
-    <article class="post post-wrap">
+    <article class="post post-wrap padding80">
         <div class="post-top">
             <div class="row">
                 <div class="col-lg-8">

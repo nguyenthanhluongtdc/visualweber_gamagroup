@@ -37,6 +37,9 @@ a{
     }
 
 }
+.pri-color{
+    color: $primary-color;
+}
 .font-helve{
     font-family: $font-helve;
     line-height: 25px;
@@ -227,7 +230,7 @@ a.primary-a{
                 align-items: center;
                 list-style: none;
                 li{
-                    margin-right: 62px;
+                    margin-right: 60px;
                     @media(max-width:1919px){
                         margin-right: 55px;
                     }

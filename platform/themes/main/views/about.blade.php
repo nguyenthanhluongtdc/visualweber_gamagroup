@@ -30,13 +30,13 @@
                 <ul class="nav nav-pills font-helve font20 list-menu-tababout" role="tablist">
                     {{-- @foreach (get_featured_abouts(4) as $key => $item) --}}
                    
-                    @foreach (get_featured_pages(100) as $key => $item)
-                    @if ($item->template == "about-detail")
+                    @foreach (get_featured_pages(5) as $key => $item)
+                    {{-- @if ($item->template == "about-detail") --}}
 
                         <li class="nav-item">
                             <a class="nav-link {{ $loop->first ? 'active' : '' }}" data-toggle="pill" href="#tababout{{$key}}">{{ $item->name }}</a>
                         </li>
-                        @endif
+                        {{-- @endif --}}
                     @endforeach
                     {{-- <li class="nav-item">
                         <a class="nav-link active" data-toggle="pill" href="#tababout1">Định hướng phát triển</a>
@@ -57,7 +57,7 @@
                 <div class="tab-content">
                     {{-- @foreach (get_featured_abouts(4) as $key => $item) --}}
                     @foreach (get_featured_pages(100) as $key => $item)
-                         @if ($item->template == "about-detail")
+                         {{-- @if ($item->template == "about-detail") --}}
                         <div id="tababout{{$key}}" class="tab-pane {{ $loop->first ? 'active' : '' }}">
                             <div class="row">
                                 <div class="col-md-6 left font18">
@@ -81,7 +81,7 @@
                                 </a>
                             </div>
                         </div>
-                        @endif
+                        {{-- @endif --}}
                     @endforeach
                     {{-- <div id="tababout1" class="tab-pane active">
                         <div class="row">

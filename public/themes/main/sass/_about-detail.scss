@@ -180,3 +180,70 @@
         }
     }
 }
+
+
+// thành tựu 
+.section1-achievement .content-md4{
+    color: $primary-color;
+}
+.banner-achievement{
+    img{
+        width: 100%;
+        max-width: 100%;
+    }
+}
+.section2-achievement{
+    padding: 80px 0 0px 0;
+    @media(max-width : 995px){
+        padding: 40px 0 0px 0;
+    }
+    .achievement-item{
+        padding-left: 10%;
+        position: relative;
+        margin-bottom: 60px;
+        @media(max-width : 995px){
+            margin-bottom: 30px;
+        }
+        img{
+            width: 280px;
+            height: 160px;
+            @media(max-width : 1919px){
+                width: 90%;
+                height: auto;
+            }
+            @media(max-width : 480px){
+                width: 100%;
+            }
+        }
+        .desc{
+            margin-top: 30px;
+            width: 280px;
+            @media(max-width : 1919px){
+                width: 90%;
+            }
+            @media(max-width : 480px){
+                width: 100%;
+            }
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            right: 100%;
+            top: 0;
+            height: 80%;
+            background: #2680EB;
+            width: 1px;
+        }
+    }
+}
+
+.section4-about-achievement{
+    background: none;
+}
+.community-achievement{
+    padding-bottom: 80px;
+    @media(max-width : 995px){
+        padding-bottom: 40px;
+    }
+
+}
