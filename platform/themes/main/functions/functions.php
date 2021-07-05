@@ -13,6 +13,7 @@ register_page_template([
     'oriented-development' => "Development",
     'admin-council' => "Admin Council",
     'development-history' => "Development History",
+    'achievement' => "Achievement",
 
 ]);
 
