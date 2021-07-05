@@ -25,7 +25,7 @@
                         @endif
                     </div>
                     <div class=" Recruitment--buttom font-helve font18">
-                        <a data-fancybox="hello" data-src="#hello" href="javascript:;"
+                        <a data-fancybox="poup" data-src="#poup" href="javascript:;"
                             class="btn btn-primary Recruitment--profession">Cơ hội nghề nghiệp</a>
                     </div>
                 </div>
@@ -36,10 +36,10 @@
                         @endif
                     </div>
                     <div class=" Recruitment--buttom font-helve font18">
-                        <a href="" class="btn btn-primary Recruitment--profession">Cơ hội nghề nghiệp</a>
+                        <a data-fancybox="poup1" data-src="#poup1" class="btn btn-primary Recruitment--profession">Cơ hội nghề nghiệp</a>
                     </div>
                 </div>
-                <div id="hello" class="poup">
+                <div id="poup" class="poup">
                     <div class="poup--block">
                         <div class="poup--block__img">
                             <img src="{{ Theme::asset()->url('images/talent/two-woman.jpg') }}" alt="two-woman">
@@ -76,7 +76,43 @@
                     </div>
 
                 </div>
+                <div id="poup1" class="poup">
+                    <div class="poup--block">
+                        <div class="poup--block__img">
+                            <img src="{{ Theme::asset()->url('images/talent/two-woman.jpg') }}" alt="two-woman">
+                        </div>
+                        <div class="poup--block__form">
+                            <form action="" method="post">
+                                <div class="poup--title font-helve-light font18">
+                                    <p>Bạn đang ứng tuyển vào vị trí: </p>
+                                    <h2 class=" font-helve font20">
+                                        Chuyên Viên Kỹ Thuật Cấp Cao ERP
+                                    </h2>
+                                </div>
+                                
+                                <div class="poup--form font-helve font18 ">
+                                    <p class=" font-helve-light font18">
+                                        Vui lòng bổ sung các thông tin cá nhân của bạn để ứng tuyển
+                                    </p>
+    
+                                    <input type="text" value="" name="hi1" class="form-control" placeholder="Họ Tên" />
+    
+                                    <input type="text" value="" name="hi2" class="form-control" placeholder="Email" />
+                                    <input type="text" value="" name="hi2" class="form-control"
+                                        placeholder="Số Điện Thoại " />
+                                    <input type="text" value="" name="hi2" class="form-control" placeholder="Địa chỉ " />
+    
+                                </div>
+                               
+                                <div class=" Recruitment--buttom font-helve font18">
+                                    <a href="" class="btn btn-primary Recruitment--profession">Đính kèm CV ứng tuyển</a>
+                                </div>
+                            </form>
+                        </div>
 
+                    </div>
+
+                </div>
             </div>
             <div class="col-md-8 talent--desc">
                 <h3 class="opportunity--item font-helve-bold font20">
