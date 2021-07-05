@@ -120,11 +120,11 @@
                                         <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt=""
                                             class="img-slider">
                                             
-                                        <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-2 font18 font-helve">
-                                            <li class="dropdown_item-1">Item 1</li>
-                                            <li class="dropdown_item-2">Item 2</li>
-                                            <li class="dropdown_item-3">Item 3</li>
-                                        </ul>
+                                            <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-2 font18 font-helve">
+                                                <li class="dropdown_item-1">Tin kinh doanh</li>
+                                                <li class="dropdown_item-2">Tin cộng đồng</li>
+                                                <li class="dropdown_item-3">Tin nội bộ</li>
+                                            </ul>
                                     </li>
                                     {{-- <li class="dropdown dropdown-1">
                                         Tin tổng hợp
