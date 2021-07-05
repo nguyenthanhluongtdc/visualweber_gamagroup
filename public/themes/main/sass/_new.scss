@@ -227,11 +227,23 @@
         margin: 0px 0.3rem;
         a {
             color: #0D3F75;
+            border-radius: 0;
             img {
                 margin-left: 10px;
             }
         }
     }
+}
+
+.page-item:last-child .page-link {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.page-item:first-child .page-link {
+    margin-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 @media (max-width: 993px) {

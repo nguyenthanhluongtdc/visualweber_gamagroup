@@ -25,12 +25,12 @@
     </div>
 
     {{----------------------------- filter-talent-opportunity ----------------}}
-    <div class="new-filter">
+    <div class="talent-filter">
         <div class="container">
-            <div class="filter">
+            <div class="filteres">
                 <div class="row mt-3">
 
-                    <div class="col-md-2 filter--option  mt-2">
+                    <div class="col-md-3 filteres--option  mt-2">
 
                         <div class="menu-container">
                             <nav>
@@ -51,7 +51,7 @@
                             </nav>
                         </div>
                     </div>
-                    <div class="col-md-3 filter--option mt-2">
+                    <div class="col-md-3 filter--elemet mt-2">
                         <div class="menu-container">
                             <nav>
                                 <ul class="menu font18 font-helve">
@@ -79,7 +79,7 @@
 
                         </select> --}}
                     </div>
-                    <div class="col-md-3 filter--option mt-2">
+                    <div class="col-md-3 filter--elemet mt-2">
                         <div class="menu-container">
                             <nav>
                                 <ul class="menu font18 font-helve">
@@ -100,7 +100,7 @@
                             </nav>
                         </div>
                     </div>
-                    <div class="col-md-4 filter--option mt-2">
+                    <div class="col-md-3 filter--elemet mt-2">
                         <div class="menu-container">
                             <nav>
                                 <ul class="menu font18 font-helve">
@@ -180,7 +180,9 @@
         </div>
     </div>
 {{------------------------------- page ------------------------------------}}
-    <div class="container mb-5 mt-5">
+<div class="gama--naviga">
+
+    <div class="container ">
         <nav aria-label="Page navigation example">
             <ul class="pagination font-helve font20">
 
@@ -195,4 +197,5 @@
             </ul>
         </nav>
     </div>
+</div>
 </div>
