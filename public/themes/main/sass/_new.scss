@@ -44,18 +44,20 @@
             margin: 1.6rem 0rem;
         }
         .new--info {
-            padding: 4px 17px;
+            font-size: 12px;
+            padding: 4px 5px;
             background-color: #0D3F75;
             color: #fff;
         }
         .new--item {
+            font-size: 13px;
             color: #8F8F8F;
         }
     }
 }
 
 .filter {
-    margin: 3rem 0;
+    padding: 80px 0 70px;
     .filter--title {
         color: #0D3F75;
     }
@@ -149,6 +151,8 @@
         padding: 0px;
     }
     .filter--option {
+        flex: 0 0 27.5%;
+        max-width: 27.5%;
         .new--dropdown {
             width: 90%;
             height: 2.5rem;
@@ -213,12 +217,15 @@
     }
 }
 
-.page-item {
-    margin: 0px 0.3rem;
-    a {
-        color: #0D3F75;
-        img {
-            margin-left: 10px;
+.gama--naviga {
+    padding: 30px 0px 130px;
+    .page-item {
+        margin: 0px 0.3rem;
+        a {
+            color: #0D3F75;
+            img {
+                margin-left: 10px;
+            }
         }
     }
 }

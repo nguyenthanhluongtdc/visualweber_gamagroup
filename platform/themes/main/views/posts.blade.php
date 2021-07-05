@@ -4,13 +4,13 @@
 {{-- -------------------------------------- new title--------------------- --}}
 <div class="all-news-content">
     <div class="container">
-        <div class="about-section1">
+        <div class="new-section1">
             <div class="row">
                 <div class="col-lg-4">
-                    <h3 class="font-helve-bold font30">
+                    <h1 class="new-title font-helve-bold font30">
                         {!! $page -> description !!}
                         
-                    </h3>
+                    </h1>
                 </div>
                 <div class="col-lg-8">
                     <div class="desc font18 font-helve">
@@ -33,12 +33,12 @@
                             <h4 class="font-helve-bold font20">
                                 Nhật coi hồi sinh ngành chất bán dẫn là nhiệm vụ quốc gia
                             </h4>
-                            <div class="new--time font-helve font12">
+                            <div class="new--time font-helve ">
                                 <span class="new--info">Kinh Doanh</span>
                                 <span class="new--item">15/03/2021</span>
                                 <span class="new--item"> 15:00</span>
                             </div>
-                            <span class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn là sứ mệnh quốc gia, quan trọng không kém...</span>
+                            <p class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn là sứ mệnh quốc gia, quan trọng không kém...</p>
                         </div>
                     </div>
                     </div>
@@ -84,9 +84,9 @@
             <div class="filter">
 
                 <div class="row filter-title">
-                    <h4 class="font-helve-bold font20 filter--title">
+                    <h2 class="font-helve-bold font20 filter--title">
                         Xem tin theo
-                    </h4>
+                    </h2 >
                 </div>
                 <div class="row mt-3">
 
@@ -195,7 +195,7 @@
                             </div>
                             <div class="new--content">
                                 <a href="{{ $itemPost->url }}" class="post__overlay">
-                                    <h4 class="new--title font-helve font20">{{ $itemPost->name }}</h4>
+                                    <h3 class="new--title font-helve font20">{{ $itemPost->name }}</h3>
                                 </a>
                                 <div class="new--time font-helve font12">
                                     @if (!$itemPost->categories->isEmpty())
@@ -207,10 +207,10 @@
                                     <span class="new--item">{{ $itemPost->created_at->format('d/m/Y H:i') }}</span>
                                 </div>
                                 <a href="{{ $itemPost->url }}" class="post__overlay">
-                                    <span class="new--des font-helve-light font18">
+                                    <p class="new--des font-helve-light font18">
                                         {{ $itemPost->description }}
 
-                                    </span>
+                                    </p>
                                 </a>
                             </div>
                             </div>
@@ -223,21 +223,24 @@
         </div>
     </div>
     {{-- ---------------------------------- phân trang  ------------------------- --}}
-    <div class="container mb-5 ">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination font-helve font20">
+   <div class="gama--naviga">
 
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Trang tiếp <img
-                            src="{{ Theme::asset()->url('images/new/next.png') }}" alt=""></a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+       <div class="container ">
+           <nav aria-label="Page navigation example">
+               <ul class="pagination font-helve font20">
+   
+                   <li class="page-item"><a class="page-link" href="#">1</a></li>
+                   <li class="page-item"><a class="page-link" href="#">2</a></li>
+                   <li class="page-item"><a class="page-link" href="#">3</a></li>
+                   <li class="page-item"><a class="page-link" href="#">4</a></li>
+                   <li class="page-item">
+                       <a class="page-link" href="#">Trang tiếp <img
+                               src="{{ Theme::asset()->url('images/new/next.png') }}" alt=""></a>
+                   </li>
+               </ul>
+           </nav>
+       </div>
+   </div>
 </div>
 {{-- <script src="">
     $("li").mouseover(function() {
