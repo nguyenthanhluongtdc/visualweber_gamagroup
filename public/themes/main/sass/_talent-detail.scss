@@ -15,5 +15,10 @@
     .Recruitment--title {
         color: #0D3F75;
     }
-    .talent--desc {}
+    .talent--desc {
+        ol,
+        ul {
+            list-style: disc;
+        }
+    }
 }
