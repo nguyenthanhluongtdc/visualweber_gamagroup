@@ -6,7 +6,7 @@
     @media (max-width: 480px) {
         padding: 40px 0;
     }
-    h3 {
+    h1 {
         @media (max-width: 993px) {
             margin-bottom: 30px;
         }
@@ -153,6 +153,10 @@
     .filter--option {
         flex: 0 0 27.5%;
         max-width: 27.5%;
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
         .new--dropdown {
             width: 90%;
             height: 2.5rem;
@@ -195,9 +199,9 @@
     }
     .new--info {
         @include minAndMaxWidth (767, 993) {
-            width: 7.5rem;
-            display: block;
-            padding: 1px 15px;
+            // width: 7.5rem;
+            // display: block;
+            // padding: 1px 15px;
         }
         padding: 4px 15px;
         margin-right: 5px;
