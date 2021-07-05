@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 talent--desc">
                 <h3 class="opportunity--item font-helve-bold font20">
                     @if (has_field($page, 'title_admin_16252171762'))
                                 {!! get_field($page, 'title_admin_16252171762') !!}
