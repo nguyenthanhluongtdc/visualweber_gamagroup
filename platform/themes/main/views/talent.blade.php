@@ -2,13 +2,13 @@
 
 <div class="all-news-content">
     <div class="container">
-        <div class="about-section1">
+        <div class="new-section1">
             <div class="row">
                 <div class="col-lg-4">
-                    <h3 class="font-helve-bold font30">
+                    <h1 class="new-title font-helve-bold font30">
                         {!! $page -> description !!}
                         
-                    </h3>
+                    </h1>
                 </div>
                 <div class="col-lg-8">
                     <div class="desc font18 font-helve">
@@ -54,12 +54,12 @@
     <div class="container">
         <div class="row career--info">
             <div class="col-md-4">
-                <h3 class="career-title font-helve-bold font30">Phát triển <br> sự nghiệp</h3>
+                <h2 class="career-title font-helve-bold font30">Phát triển <br> sự nghiệp</h2>
             </div>
             <div class="col-md-8">
-                <div class="carrer-desc font-helve-light font18">
+                <p class="carrer-desc font-helve-light font18">
                     Chúng tôi luôn có niềm tin mãnh liệt vào nội lực của mỗi cá nhân, đó là nhân tố đã khẳng định vị thế của GAMA Group ngày hôm nay. GAMA Group nhận ra rằng chính sự đa dạng, sức sáng tạo và nguồn năng lượng, cùng những nỗ lực của nhân viên đã mang sức mạnh đến cho tập đoàn. Vì thế, chúng tôi không ngừng đầu tư và phát triển nhân tài, tạo động lực để họ thăng tiến và phát triển sự nghiệp.
-                </div>
+                </p>
             </div>
         </div>
         <div class="row develop-block">
@@ -68,7 +68,7 @@
                     <div class="section4-item" >
                         <img src="{{ Theme::asset()->url('images/talent/44.jpg') }}" alt="">
                         <div class="content-title" >
-                            <h5 class="title font-helve-bold font25">Phát triển bản thân</h5>
+                            <h3 class="title font-helve-bold font25">Phát triển bản thân</h3>
                             <div class="content-none ">
                                 <p class="desc font-helve-light font18">GAMA Group là môi trường làm việc đa văn hóa với những con người xuất phát các quốc gia khác nhau trên thế giới như Pháp, Phillipines… Tại đây, chúng tôi cố gắng cống hiến tinh hoa của mỗi dân tộc tạo nên môi trường làm việc năng động, cùng nhiều cơ hội thử thách giới hạn bản thân.</p>
                             </div>
@@ -78,7 +78,7 @@
                     <div class="section4-item">
                         <img src="{{ Theme::asset()->url('images/talent/45.jpg') }}" alt="">
                         <div class="content-title" >
-                            <h5 class="title font-helve-bold font25">Bồi dưỡng nhân tài</h5>
+                            <h3 class="title font-helve-bold font25">Bồi dưỡng nhân tài</h3>
                             <div class="content-none ">
                                 <p class="desc font-helve-light font18">Khi trở thành thành viên của đại gia đình GAMA Group, cơ hội sẽ không chỉ mở ra ở khía cạnh công việc. Với tầm nhìn chiến lược cùng tâm huyết của một tập thể, chúng tôi luôn có chính sách hỗ trợ mỗi thành viên phát triển và hoàn thiện bản thân.</p>
                             </div>
@@ -106,7 +106,7 @@
 
 {{--------------------------- cơ hội làm việc -------------- --}}
 <div class="job">
-    <div class="container talent-s5">
+    <div class="container talent-s5" >
         <div class="job--img">
             <img src="{{ Theme::asset()->url('images/talent/map.jpg') }}" alt="">
         </div>
