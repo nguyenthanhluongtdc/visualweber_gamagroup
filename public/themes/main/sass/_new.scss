@@ -88,6 +88,14 @@
     .dropdown-item {
         padding: 1rem 1.5rem;
     }
+    .filter--option {
+        flex: 0 0 27.5%;
+        max-width: 27.5%;
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
 }
 
 .new {

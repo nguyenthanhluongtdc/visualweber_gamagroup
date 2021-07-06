@@ -128,7 +128,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3  mt-2">
+                <div class="col-md-3 filter--option  mt-2">
                     <div class="dropdown">
                         <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
