@@ -158,7 +158,7 @@
 {{-- ----------------------------table ---------------------------- --}}
 <div class="opportunity-table">
     <div class="container">
-        <h3 class="opportunity--title item font-helve-bold font20">
+        <h3 class="opportunity--title item font-helve-bold font30">
             @if (has_field($page, 'title_cac_vi_tri_khac'))
                 {!! get_field($page, 'title_cac_vi_tri_khac') !!}
             @endif
