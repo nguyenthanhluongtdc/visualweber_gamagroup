@@ -14,7 +14,8 @@ register_page_template([
     'admin-council' => "Admin Council",
     'development-history' => "Development History",
     'achievement' => "Achievement",
-    'business-areas' => "Business Areas"
+    'business-areas' => "Business Areas",
+    'gama-service' => "Gama Service"
 
 ]);
 
