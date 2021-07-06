@@ -2,7 +2,7 @@
 <div class="business-section1 padding80">
     <div class="container">
         <div class="row_wrap">
-            <div class="content-md4 font-helve-bold font30 tile-ri pri-color">
+            <div class="content-md4 font-helve-bold font30 title-primary pri-color">
                 @if (has_field($page, 'title_business'))
                   {!! get_field($page, 'title_business') !!}
                 @endif
@@ -26,13 +26,19 @@
             <div class="content-md4">
               <ul class="nav nav-pills list-business-tab font-helve font20" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
+                  <a class="nav-link active" data-toggle="pill" href="#home">Gama Service</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="pill" href="#menu1">Menu 1</a>
+                  <a class="nav-link" data-toggle="pill" href="#menu1">DepaLift</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
+                  <a class="nav-link" data-toggle="pill" href="#menu2">GamaLift</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#menu3">NipponLift</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="pill" href="#menu4">Gama Leasing</a>
                 </li>
               </ul>
             </div>
@@ -77,7 +83,7 @@
     <div class="row">
         @if (has_field($page, 'company_business'))
         @foreach (get_field($page, 'company_business') as $item)
-            <div class="col-md-4 item-coun pri-color" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-in-out">
+            <div class="col-md-4 item-coun title-primary pri-color" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-in-out">
                 <p class="title font-helve-bold font50">{{ get_sub_field($item, 'number_company_business') }}</p>
                 <p class="desc font-helve font18">{{ get_sub_field($item, 'text_company_business') }}</p>
             </div>

@@ -13,6 +13,20 @@
                         <a class="purple child" href="{{ blank($child->url) ? 'javascript:;' : Language::getLocalizedURL(app()->getLocale(),$child->url) }}" target="{{ @$child->target }}">
                             <i class='d-none d-md-block {{ trim(@$child->icon_font) }}'></i> <span>{{ @$child->title }}</span>
                         </a>
+
+                        @if ($child->has_child)
+                        <ul class="sub-menu-3">
+                            <div class="fixed"></div>
+                            @forelse ($child->child as $key => $grandChild)
+                                <li class="item-menu-drop-3 @if (!blank(@$grandChild->url)) {{ Language::getLocalizedURL(app()->getLocale(),$grandChild->url) == Request::url() ? 'active child_menu' : ''}} @endif">
+                                    <a class="purple child-3" href="{{ blank($grandChild->url) ? 'javascript:;' : Language::getLocalizedURL(app()->getLocale(),$grandChild->url) }}" target="{{ @$grandChild->target }}">
+                                        <i class='d-none d-md-block {{ trim(@$grandChild->icon_font) }}'></i> <span>{{ @$grandChild->title }}</span>
+                                    </a>
+                                </li>
+                                @empty  
+                            @endforelse
+                        </ul>
+                        @endif
                     </li>
                 @empty
                 @endforelse

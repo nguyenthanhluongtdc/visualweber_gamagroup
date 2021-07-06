@@ -1,0 +1,40 @@
+.gama-service-banner{
+    img{
+        width: 100%;
+        max-width: 100%;
+    }
+}
+.gama-service-s2{
+    .gama-service-s2-items{
+        margin-top: 50px;
+        .service-item{
+            width: 350px;
+            @media(max-width : 1919px){
+                width: 100%;
+            }
+            img{
+                width: 100%;
+            }
+            h5{
+                margin: 30px 0;
+            }
+        }
+    }
+}
+
+
+.gama-service-s3{
+    background: #E7E7E7;
+    .content{
+        p{
+            margin-bottom: 40px;
+        }
+        a{
+            display: inline-block;
+            padding: 12px 57px;
+            background: $primary-color;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}

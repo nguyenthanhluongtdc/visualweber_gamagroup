@@ -7,8 +7,8 @@
     .list-business-tab{
         display: flex;
         flex-direction: column;
-        list-style: disc;
         border: none;
+        margin-left: 10px;
         li {
             margin-bottom: 20px;
             a {
@@ -21,6 +21,14 @@
                 font-family: $font-helve-bold;
                 background-color: none;
             }
+            ::before {
+                content: "\2022";  
+                color: $primary-color; 
+                font-weight: bold; 
+                display: inline-block; 
+                width: 20px;
+                margin-left: -10px;
+              }
         }
     }
 
@@ -42,7 +50,7 @@
     }
 }
 .business-section3{
-    padding: 60px;
+    padding: 60px 0;
     background: #E7E7E7;
 }
 .business-section4{

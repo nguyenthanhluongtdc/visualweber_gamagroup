@@ -257,7 +257,7 @@ a.primary-a {
                 align-items: center;
                 list-style: none;
                 li {
-                    margin-right: 60px;
+                    margin-right: 57px;
                     @media(max-width: 1919px) {
                         margin-right: 55px;
                     }
@@ -270,9 +270,8 @@ a.primary-a {
                         position: absolute;
                         top: 164%;
                         width: max-content;
-                        padding: 10px;
                         z-index: 5;
-                        padding: 30px;
+                        padding: 30px 50px 30px 30px;
                         left: -30px;
                         display: flex;
                         flex-direction: column;
@@ -281,6 +280,7 @@ a.primary-a {
                         li {
                             margin-right: 0;
                             margin-bottom: 25px;
+                            position: relative;
                         }
                         li:last-child {
                             margin-bottom: 0;
@@ -288,6 +288,38 @@ a.primary-a {
                         .item-menu-drop:hover {
                             a.child {
                                 color: #fff;
+                            }
+                            .sub-menu-3{
+                                display: block;
+                            }
+                        }
+                        .sub-menu-3{
+                            position: absolute;
+                            left: calc(100% + 50px);
+                            top: -30px;
+                            width: max-content;
+                            padding: 30px;
+                            display: none;
+                            &::after{
+                                content: '';
+                                position: absolute;
+                                right: 100%;
+                                top: 0;
+                                background: transparent;
+                                width: 50px;
+                                height: 50px;
+                            }
+                            li{
+                                margin-right: 0;
+                                margin-bottom: 25px;
+                            }
+                            li:last-child {
+                                margin-bottom: 0;
+                            }
+                            .item-menu-drop-3:hover {
+                                a.child-3 {
+                                    color: #fff;
+                                }
                             }
                         }
                     }
