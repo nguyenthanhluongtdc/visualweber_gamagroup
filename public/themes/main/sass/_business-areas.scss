@@ -1,0 +1,68 @@
+.business-banner img{
+    width: 100%;
+    max-width: 100%;
+}
+
+.business-section2{
+    .list-business-tab{
+        display: flex;
+        flex-direction: column;
+        list-style: disc;
+        border: none;
+        li {
+            margin-bottom: 20px;
+            a {
+                color: black;
+                padding: 0;
+                }
+            a.active{
+                color: $primary-color;
+                background: none;
+                font-family: $font-helve-bold;
+                background-color: none;
+            }
+        }
+    }
+
+    .list-business-content{
+        .content{
+            width: 92%;
+            strong{
+                font-family: $font-helve;
+            }
+        }
+        .content-wrap{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .views{
+               margin-bottom: 10px;
+            }
+        }
+    }
+}
+.business-section3{
+    padding: 60px;
+    background: #E7E7E7;
+}
+.business-section4{
+    padding: 40px 0;
+    .padding50{
+        padding-top: 50px;
+    }
+    .content-left{
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .link{
+        margin-top: 50px;
+        padding-bottom: 80px;
+        a{
+            text-decoration: none;
+            padding: 12px 32px;
+            background: $primary-color;
+            color: #fff;
+        }
+    }
+}
