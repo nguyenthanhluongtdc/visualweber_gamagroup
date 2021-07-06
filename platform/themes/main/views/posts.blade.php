@@ -1,5 +1,4 @@
 {!! Theme::breadcrumb()->render() !!}
-{{-- @includeIf("theme.armcobarriers::views.modules.breadcrumb") --}}
 
 {{-- -------------------------------------- new title--------------------- --}}
 <div class="all-news-content">
@@ -100,8 +99,8 @@
 
                     <div class="menu-container">
                         <div class="dropdown">
-                            <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Thương hiệu
                                 <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
 
@@ -128,14 +127,6 @@
                             <a class="dropdown-item" href="#">Item 1</a>
                         </div>
                     </div>
-
-                    {{-- <select class="dropdown new--dropdown">
-                            <option hidden>Tin tổng hợp</option>
-                            <option value="1">Tin kinh doanh</option>
-                            <option value="2">Tin cộng đồng</option>
-                            <option value="3">Tin nội bộ</option>
-
-                        </select> --}}
                 </div>
                 <div class="col-md-3  mt-2">
                     <div class="dropdown">
@@ -222,14 +213,3 @@
         </div>
     </div>
 </div>
-{{-- <script src="">
-    $("li").mouseover(function() {
-        $(this).find('.drop-down').slideDown(300);
-        $(this).find(".accent").addClass("animate");
-        $(this).find(".item").css("color", "#FFF");
-    }).mouseleave(function() {
-        $(this).find(".drop-down").slideUp(300);
-        $(this).find(".accent").removeClass("animate");
-        $(this).find(".item").css("color", "#000");
-    });
-</script> --}}
