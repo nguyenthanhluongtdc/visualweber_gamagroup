@@ -30,13 +30,13 @@
             <div class="filteres">
                 <div class="row mt-3">
 
-                    <div class="col-md-3 filteres--option  mt-2">
+                    <div class="col-md-3 filteres--option font-helve font18  mt-2">
 
                         <div class="menu-container">
                             <div class="dropdown">
                                 <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Thương hiệu
+                                    Mới nhất
                                     <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
     
                                 </button>
@@ -48,12 +48,29 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 filter--elemet mt-2">
+                    <div class="col-md-3 filter--elemet font-helve font18 mt-2">
                         <div class="menu-container">
                             <div class="dropdown">
                                 <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Thương hiệu
+                                    Vị trí ứng tuyển
+                                    <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
+    
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Maketing</a>
+                                    <a class="dropdown-item" href="#">HR</a>
+                                    <a class="dropdown-item" href="#">Trợ Lý</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 filter--elemet font-helve font18 mt-2">
+                        <div class="menu-container">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Công ty
                                     <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
     
                                 </button>
@@ -65,29 +82,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 filter--elemet mt-2">
+                    <div class="col-md-3 filter--elemet font-helve font18 mt-2">
                         <div class="menu-container">
                             <div class="dropdown">
                                 <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Thương hiệu
-                                    <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
-    
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Item 1</a>
-                                    <a class="dropdown-item" href="#">Item 1</a>
-                                    <a class="dropdown-item" href="#">Item 1</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 filter--elemet mt-2">
-                        <div class="menu-container">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Thương hiệu
+                                    Địa chỉ làm việc
                                     <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
     
                                 </button>
