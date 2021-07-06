@@ -271,7 +271,7 @@ a.primary-a {
                         top: 164%;
                         width: max-content;
                         z-index: 5;
-                        padding: 30px 50px 30px 30px;
+                        padding: 30px;
                         left: -30px;
                         display: flex;
                         flex-direction: column;
@@ -295,7 +295,7 @@ a.primary-a {
                         }
                         .sub-menu-3{
                             position: absolute;
-                            left: calc(100% + 50px);
+                            left: calc(100% + 30px);
                             top: -30px;
                             width: max-content;
                             padding: 30px;
