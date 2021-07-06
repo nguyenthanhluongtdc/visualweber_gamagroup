@@ -2,19 +2,23 @@
 <div class="business-section1 padding80">
     <div class="container">
         <div class="row_wrap">
-            <div class="content-md4 font-helve-bold font30 title-pri pri-color">
-                Lĩnh vực <br>
-                Kinh doanh
+            <div class="content-md4 font-helve-bold font30 tile-ri pri-color">
+                @if (has_field($page, 'title_business'))
+                  {!! get_field($page, 'title_business') !!}
+                @endif
             </div>
             <div class="content-md8 font-helve-light font18">
-                Tại GAMA Group, chúng tôi quan niệm thành công chỉ đến với những những ai biết tận dụng tối đa tiềm năng, bứt phá mọi giới hạn. Với các lĩnh vực chủ 
-                đạo và không ngừng mở rộng trong tương lai, chúng tôi vẫn sẽ tiếp tục hành trình mang những trải nghiệm phong phú đến Việt Nam.
+                  @if (has_field($page, 'desc_business'))
+                  {!! get_field($page, 'desc_business') !!}
+                @endif
             </div>
         </div>
     </div>
 </div>
 <div class="business-banner">
-    <img src="{{ Theme::asset()->url('images/business/845.jpg') }}" alt="">
+  @if (has_field($page, 'banner_business'))
+  <img src="{{ RvMedia::getImageUrl(get_field($page, 'banner_business')) }}" alt="banner">
+  @endif
 </div>
 <div class="business-section2 padding80">
     <div class="container">
@@ -71,11 +75,11 @@
 <div class="business-section3">
   <div class="container">
     <div class="row">
-        @if (has_field($page, 'data_company'))
-        @foreach (get_field($page, 'data_company') as $item)
-            <div class="col-md-4 item-coun" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-in-out">
-                <p class="title font-helve-bold font50">{{ get_sub_field($item, 'number_data') }}</p>
-                <p class="desc font-helve font18">{{ get_sub_field($item, 'text_data') }}</p>
+        @if (has_field($page, 'company_business'))
+        @foreach (get_field($page, 'company_business') as $item)
+            <div class="col-md-4 item-coun pri-color" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-in-out">
+                <p class="title font-helve-bold font50">{{ get_sub_field($item, 'number_company_business') }}</p>
+                <p class="desc font-helve font18">{{ get_sub_field($item, 'text_company_business') }}</p>
             </div>
         @endforeach
        
@@ -86,16 +90,17 @@
 <div class="business-section4">
     <div class="container">
       <div class="row_wrap">
+        @if (has_field($page, 'work_business_title'))
         <div class="content-md4 font-helve-bold font30 tile-ri pri-color">
           <div class="padding50">
-            Cơ hội việc làm tại <br>
-            Gama Group
+            {!! get_field($page, 'work_business_title') !!}
           </div>
         </div>
+        @endif
+        @if (has_field($page, 'work_business_desc'))
         <div class="content-md8 content-left" style="background-image: url('{{ Theme::asset()->url('images/business/map.png') }}')">
             <div class="top-content font-helve-light font18 padding50">
-              Sự phát triển của GAMA Group trên thị trường luôn đi cùng với những cơ hội việc đa dạng mở ra cho tất cả mọi người. Bạn đam mê công nghệ? Truyền thông? Kết 
-              cấu hạ tầng? Hay bạn có tư duy kinh doanh và tin vào giá trị những con số? Hãy đến với chúng tôi! 
+              {!! get_field($page, 'work_business_desc') !!}
             </div>
             <div class="link">
               <a href="" class="font-helve font18">
@@ -103,6 +108,7 @@
               </a>
             </div>
         </div>
+        @endif
       </div>
     </div>
 </div>
