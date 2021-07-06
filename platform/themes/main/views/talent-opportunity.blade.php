@@ -18,7 +18,7 @@
             </div>
         </div>
         </div>
-    </div>s
+    </div>
 {{-- ------------------------banner talent-opportunity ----------------}}
     <div class="opportunity-s2">
         <img src="{{ Theme::asset()->url('images/talent/banner2.jpg') }}" alt="" class="img-slider">
