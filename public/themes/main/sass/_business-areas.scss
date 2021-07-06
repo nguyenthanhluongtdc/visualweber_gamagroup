@@ -38,6 +38,9 @@
             strong{
                 font-family: $font-helve;
             }
+            p{
+                margin-bottom: 30px;
+            }
         }
         .content-wrap{
             display: flex;
@@ -52,6 +55,9 @@
 .business-section3{
     padding: 60px 0;
     background: #E7E7E7;
+    .title{
+        margin-bottom: 10px;
+    }
 }
 .business-section4{
     padding: 40px 0;
