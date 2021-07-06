@@ -33,92 +33,70 @@
                     <div class="col-md-3 filteres--option  mt-2">
 
                         <div class="menu-container">
-                            <nav>
-                                <ul class="menu font18 font-helve">
-                                    <li class="dropdown dropdown-2">
-                                    Mới nhất
-                                        <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt=""
-                                            class="img-slider">
-                                            
-                                        <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-2 font18 font-helve">
-                                            <li class="dropdown_item-1">Tin kinh doanh</li>
-                                            <li class="dropdown_item-2">Tin cộng đồng</li>
-                                            <li class="dropdown_item-3">Tin nội bộ</li>
-                                        </ul>
-                                    </li>
-                                   
-                                </ul>
-                            </nav>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Thương hiệu
+                                    <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
+    
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Item 1</a>
+                                    <a class="dropdown-item" href="#">Item 1</a>
+                                    <a class="dropdown-item" href="#">Item 1</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 filter--elemet mt-2">
                         <div class="menu-container">
-                            <nav>
-                                <ul class="menu font18 font-helve">
-                                    <li class="dropdown dropdown-2">
-                                        vị trí ứng tuyển
-                                        <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt=""
-                                            class="img-slider">
-                                            
-                                        <ul class="dropdown_menu dropdown_menu--animated dropdown_menu-2 font18 font-helve">
-                                            <li class="dropdown_item-1">Maketing</li>
-                                            <li class="dropdown_item-2">HR</li>
-                                            <li class="dropdown_item-3">Trợ lý</li>
-                                        </ul>
-                                    </li>
-                                   
-                                </ul>
-                            </nav>
-                        </div>
-
-                        {{-- <select class="dropdown new--dropdown">
-                            <option hidden>Tin tổng hợp</option>
-                            <option value="1">Tin kinh doanh</option>
-                            <option value="2">Tin cộng đồng</option>
-                            <option value="3">Tin nội bộ</option>
-
-                        </select> --}}
-                    </div>
-                    <div class="col-md-3 filter--elemet mt-2">
-                        <div class="menu-container">
-                            <nav>
-                                <ul class="menu font18 font-helve">
-                                    <li class="dropdown dropdown-2">
-                                        Công ty
-                                        <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt=""
-                                            class="img-slider">
-
-                                        <ul
-                                            class="dropdown_menu dropdown_menu--animated dropdown_menu-2 font18 font-helve">
-                                            <li class="dropdown_item-1">Item 1</li>
-                                            <li class="dropdown_item-2">Item 2</li>
-                                            <li class="dropdown_item-3">Item 3</li>
-                                        </ul>
-                                    </li>
-
-                                </ul>
-                            </nav>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Thương hiệu
+                                    <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
+    
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Item 1</a>
+                                    <a class="dropdown-item" href="#">Item 1</a>
+                                    <a class="dropdown-item" href="#">Item 1</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 filter--elemet mt-2">
                         <div class="menu-container">
-                            <nav>
-                                <ul class="menu font18 font-helve">
-                                    <li class="dropdown dropdown-2">
-                                         Địa điểm làm viêc
-                                        <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt=""
-                                            class="img-slider">
-
-                                        <ul
-                                            class="dropdown_menu dropdown_menu--animated dropdown_menu-2 font18 font-helve">
-                                            <li class="dropdown_item-1">Item 1</li>
-                                            <li class="dropdown_item-2">Item 2</li>
-                                            <li class="dropdown_item-3">Item 3</li>
-                                        </ul>
-                                    </li>
-
-                                </ul>
-                            </nav>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Thương hiệu
+                                    <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
+    
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Item 1</a>
+                                    <a class="dropdown-item" href="#">Item 1</a>
+                                    <a class="dropdown-item" href="#">Item 1</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 filter--elemet mt-2">
+                        <div class="menu-container">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Thương hiệu
+                                    <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
+    
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Item 1</a>
+                                    <a class="dropdown-item" href="#">Item 1</a>
+                                    <a class="dropdown-item" href="#">Item 1</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
