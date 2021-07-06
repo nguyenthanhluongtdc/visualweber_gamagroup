@@ -10,6 +10,7 @@ register_page_template([
     'talent' => "Talent",
     'talent-detail' => "Talent-detail",
     'talent-opportunity' => "talent-opportunity",
+    'partner' => "Partner",
     'oriented-development' => "Development",
     'admin-council' => "Admin Council",
     'development-history' => "Development History",
