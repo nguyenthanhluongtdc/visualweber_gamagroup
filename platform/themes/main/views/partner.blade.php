@@ -35,12 +35,15 @@
                 <div class="talent-des font-helve font20">Tôn trọng bản sắc</div>
                 <div class="talent-des font-helve font20">Môi trường chuyên nghiệp</div>
             </div>
-            <div class="col-md-4 talent--info font-helve-light font18">
+            <div class="col-md-4 d-flex align-items-start flex-column justify-content-between talent--info font-helve-light font18">
                 <p>
                     @if (has_field($page, 'desc_thang_may_orona'))
                         {!! get_field($page, 'desc_thang_may_orona') !!}
                     @endif
                 </p>
+                <div class="views font-helve font18">
+                    <a href="" class="primary-a">Xem thêm</a>
+                </div>
             </div>
             <div class="col-md-4">
                 <img src="{{ Theme::asset()->url('images/partner/group36.jpg') }}" alt="" class="img-slider">
@@ -97,6 +100,7 @@
                     {!! get_field($page, 'desc_tam_nhin_vuon_xa') !!}
                 @endif
                 </div>
+                
             </div>
             <div class="col-md-8">
                 <img src="{{ Theme::asset()->url('images/partner/adult.jpg') }}" alt="" class="img-slider">
