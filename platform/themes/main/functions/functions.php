@@ -11,6 +11,7 @@ register_page_template([
     'talent-detail' => "Talent-detail",
     'talent-opportunity' => "talent-opportunity",
     'partner' => "Partner",
+    'partner-detail' => "Partner-detail",
     'oriented-development' => "Development",
     'admin-council' => "Admin Council",
     'development-history' => "Development History",
