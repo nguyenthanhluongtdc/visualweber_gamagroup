@@ -24,15 +24,71 @@
 
 .partner-s3 {
     padding: 80px 0px;
-    img {
-        width: 100%;
-        height: auto;
+    @media (max-width: 767px) {
+        img {
+            width: 100%;
+            height: auto;
+        }
     }
-    .talent--title {
-        color: #0D3F75;
+    .partner-title {
+        ul {
+            list-style-type: disc;
+            li {
+                padding: 0 0 20px 0;
+            }
+            li:first-child {
+                font-family: $font-helve;
+                color: #0D3F75;
+            }
+        }
     }
     .talent-des {
         margin-top: 1rem;
+    }
+    .content-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .views {
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    .partner-views {
+        margin-bottom: 10px;
+    }
+    a.primary-b {
+        padding: 10px 30px;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+        text-decoration: none;
+        transition: ease-out 0.3s;
+        position: relative;
+        z-index: 1;
+        &:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+        &::before {
+            transition: 0.5s all ease;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 50%;
+            bottom: 0;
+            opacity: 0;
+            content: '';
+            background: $primary-color;
+        }
+        &:hover::before {
+            transition: 0.5s all ease;
+            left: 0;
+            right: 0;
+            opacity: 1;
+            z-index: -1;
+        }
     }
 }
 

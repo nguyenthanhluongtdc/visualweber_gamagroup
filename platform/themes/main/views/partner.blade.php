@@ -22,32 +22,58 @@
 </div>
 
 <div class="opportunity-s2">
-    <img src="{{ Theme::asset()->url('images/talent/banner2.jpg') }}" alt="" class="img-slider">
+     @if (has_field($page, 'banner_doi_tac'))
+  <img src="{{ RvMedia::getImageUrl(get_field($page, 'banner_doi_tac')) }}" alt="banner">
+  @endif
 </div>
 
 
 {{-- ---------------------- talent dẫn lỗi tiên phong -------------------- --}}
 <div class="partner-s3">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h3 class="talent--title  font-helve-bold font20">Dẫn lối tiên phong</h3>
-                <div class="talent-des font-helve font20">Tôn trọng bản sắc</div>
-                <div class="talent-des font-helve font20">Môi trường chuyên nghiệp</div>
+        <div class="row_wrap">
+            <div class="col-md4 partner-title font-helve-light font20">
+                @if (has_field($page, 'title_thang_may_gia_dinh_orona'))
+                {!! get_field($page, 'title_thang_may_gia_dinh_orona') !!}
+            @endif
             </div>
-            <div class="col-md-4 d-flex align-items-start flex-column justify-content-between talent--info font-helve-light font18">
+            <div class="content-md8">
+                <div class="tab-content list-business-content">
+                  <div id="home" class="container tab-pane active">
+                    <div class="row">
+                      <div class="col-md-6 content-wrap">
+                        <div class="content font-helve-light font18">
+                            @if (has_field($page, 'desc_thang_may_orona'))
+                            {!! get_field($page, 'desc_thang_may_orona') !!}
+                        @endif
+                        </div>
+                        <div class="views content-none-mobie">
+                          <a href="#" class="primary-a font-helve">
+                              {{ trans('See more') }}
+                          </a>
+                      </div>
+                      </div>
+                      <div class="col-md-6">
+                         <img src="{{ Theme::asset()->url('images/partner/group36.jpg') }}" alt="" class="img-slider">
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            {{-- <div class="col-md-4 d-flex align-items-start flex-column justify-content-between talent--info font-helve-light font18">
                 
                     @if (has_field($page, 'desc_thang_may_orona'))
                         {!! get_field($page, 'desc_thang_may_orona') !!}
                     @endif
                
-                 <div class="views font-helve font18">
-            <a href="" class="primary-a">Xem thêm</a>
-        </div>
+                 <div class="partner-views font-helve font18">
+            <a href="" class="primary-b">Xem thêm</a>
+        </div> --}}
             </div>
-            <div class="col-md-4">
+            {{-- <div class="col-md-4">
                 <img src="{{ Theme::asset()->url('images/partner/group36.jpg') }}" alt="" class="img-slider">
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
@@ -57,30 +83,16 @@
 <div class="partner--info">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <div class="partner--info__number font-helve-bold font50">
-                    15 năm
+            @if (has_field($page, 'partner'))
+            @foreach (get_field($page, 'partner') as $item)
+                <div class="col-md-4 item-coun title-primary pri-color" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-in-out">
+                    <p class="title font-helve-bold font50">{{ get_sub_field($item, 'number_partner') }}</p>
+                    <p class="desc font-helve font18">{{ get_sub_field($item, 'text_partner') }}</p>
                 </div>
-                <div class="partner--infor__title font-helve font18">
-                    Hoạt Động
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="partner--info__number font-helve-bold font50">
-                    99
-                </div>
-                <div class="partner--infor__title font-helve font18">
-                    Công ty thành viên
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="partner--info__number font-helve-bold font50">
-                    1,488,142
-                </div>
-                <div class="partner--infor__title font-helve font18">
-                    Thang máy được lắp đặt
-                </div>
-            </div>
+            @endforeach
+           
+            @endif
+          
         </div>
     </div>
 </div>
