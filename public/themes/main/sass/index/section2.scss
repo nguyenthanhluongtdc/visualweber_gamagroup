@@ -88,10 +88,11 @@
             ul li{
                 position: relative;
                 margin-bottom: 20px;
+                padding-left: 20px;
                 &::after{
                     position: absolute;
                     content: '';
-                    right: 103%;
+                    right: 100%;
                     width: 5px;
                     height: 2px;
                     background: #A8A9AD;
