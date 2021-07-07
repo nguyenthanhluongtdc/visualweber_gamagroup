@@ -41,7 +41,7 @@
 
 
     <header class="header header-desktop" id="header">
-        <div class="header-top">
+            <div class="header-top">
             <a class="header-logo" href="{{ route('public.index') }}">
                 <img src="{{ theme::asset()->url('images/logo.png') }}" alt="logo">
             </a>
