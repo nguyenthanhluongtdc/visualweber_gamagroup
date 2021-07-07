@@ -47,18 +47,3 @@
     </div>
 </div>
 
-<div class="business-section3">
-    <div class="container">
-      <div class="row">
-          @if (has_field($page, 'company_business'))
-          @foreach (get_field($page, 'company_business') as $item)
-              <div class="col-md-4 item-coun pri-color" data-aos="fade-up" data-aos-duration="900" data-aos-easing="ease-in-out">
-                  <p class="title font-helve-bold font50">{{ get_sub_field($item, 'number_company_business') }}</p>
-                  <p class="desc font-helve font18">{{ get_sub_field($item, 'text_company_business') }}</p>
-              </div>
-          @endforeach
-         
-          @endif
-      </div>
-  </div>
-  </div>
