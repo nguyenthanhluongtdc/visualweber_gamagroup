@@ -1,0 +1,9 @@
+{
+    "name": "Services",
+    "namespace": "Platform\\Services\\",
+    "provider": "Platform\\Services\\Providers\\ServicesServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module services"
+}

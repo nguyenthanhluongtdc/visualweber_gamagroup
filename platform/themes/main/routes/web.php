@@ -1,6 +1,9 @@
 <?php
 
 // Custom routes
+
+use Platform\Services\Models\Services;
+
 Route::group(['namespace' => 'Theme\Gama\Http\Controllers', 'middleware' => ['web', 'core']], function () {
     Route::group(apply_filters(BASE_FILTER_GROUP_PUBLIC_ROUTE, []), function () {
 
@@ -11,7 +14,10 @@ Route::group(['namespace' => 'Theme\Gama\Http\Controllers', 'middleware' => ['we
             'as' => 'about-detail',
             'uses' => 'GamaController@getAbout',
         ]);
-
+        Route::get(\SlugHelper::getPrefix(Services::class, 'linh-vuc-hoat-dong') . '/{slug}', [
+            'as' => 'gama-service',
+            'uses' => 'GamaController@getService',
+        ]);
 
         Route::get('ajax/search', 'GamaController@getSearch')->name('public.ajax.search');
 
