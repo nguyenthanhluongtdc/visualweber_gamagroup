@@ -4,7 +4,25 @@
         max-width: 100%;
     }
 }
+.gama-service-s1{
+    .content-md8{
+        strong{
+            font-family: $font-helve;
+        }
+    }
+}
 .gama-service-s2{
+    .content-md8 {
+        strong{
+            font-family: $font-helve;
+        }
+        p{
+            margin-bottom: 30px;
+        }
+        p:last-child{
+            margin-bottom: 0;
+        }
+    }
     .gama-service-s2-items{
         margin-top: 50px;
         .service-item{

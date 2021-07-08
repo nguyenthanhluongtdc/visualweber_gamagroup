@@ -153,7 +153,9 @@
                    
                     <div class="item-right" data-aos="zoom-in-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="30">
                         <a href="{{ $post->url }}" class="item-link" title="{{ $post->name }}">
+                            <div class="post-thumbnail">
                             <img src="{{ RvMedia::getImageUrl($post->image) }}" alt="{{ $post->name }}" class="img-slider">
+                            </div>
                             <h4 class="font-helve font20">
                                 {{ $post->name }}
                             </h4>
@@ -211,7 +213,7 @@
                 <div class="content-none ">
                     <p class="desc font-helve-light font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công
                         Thương tính hạn chế xuất khẩu loại thép mà trong nước có nhu cầu.</p>
-                    <a href=""><img src="{{ Theme::asset()->url('images/homepage/iconright.png') }}" alt=""></a>
+                    <a href="{{ get_slug_development_history() }}"><img src="{{ Theme::asset()->url('images/homepage/iconright.png') }}" alt=""></a>
                 </div>
 
             </div>

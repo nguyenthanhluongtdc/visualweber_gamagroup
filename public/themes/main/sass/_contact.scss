@@ -1,0 +1,167 @@
+.section1-map{
+    display: flex;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #EFEFEF;
+    .left{
+        width: 370px;
+        ul{
+            display: flex;
+            flex-direction: column;
+            border: none;
+           
+            li{
+                a{
+
+                    background: #E7E7E7;
+                    padding: 30px ;
+                    border-radius: 0;
+                    p.title{
+                        margin-bottom: 29px;
+                        color: $primary-color;
+                    }
+                    span{
+                        color: black;
+                    }
+                    .icon2{
+                        display: block;
+                    }
+                    .icon1{
+                        display: none;
+                    }
+                    .address{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 20px;
+                    }
+                    .address:last-child{
+                        margin-bottom: 0;
+                    }
+                    .icon{
+                        margin-right: 14px;
+                    }
+                    .icon-loca{
+                        margin-right: 17px; 
+                    }
+                }
+                a.active{
+                    background: $primary-color;
+                    border-radius: 0;
+                    color: #fff;
+                    .icon1{
+                        display: block;
+
+                    }
+                    .icon2{
+                        display: none;
+                    }
+                    p.title{
+                        color: #fff;
+                    }
+                    span{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .right{
+        width: 770px;
+        
+        iframe{
+            width: 100%;
+            height: 508px;
+        }
+    }
+}
+
+.contact-section2{
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #EFEFEF;
+    form{
+        .contact-top{
+            display: flex;
+            justify-content: space-between;
+            .form-contact-left{
+                width: 300px;
+                .contact-form-item{
+                    margin-bottom: 20px;
+                    input{
+                        width: 100%;
+                        height: 41px;
+                        padding: 0 15px;
+                        font-family: $font-helve-light;
+                        outline: none;
+                    }
+                }
+            }
+            .form-contact-right{
+                width: 425px;
+                textarea{
+                    width: 100%;
+                    height: 163px;
+                    outline: none;
+                    font-family: $font-helve-light;
+                    padding: 15px;
+                }
+            }
+        }
+        .contact-bottom{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .left{
+               
+            }
+            .right{
+                button{
+                    color: #fff;
+                    padding: 12px 21px;
+                    background: $primary-color;
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+.contact-section3{
+    padding-bottom: 80px;
+    .content-md4{
+        .selectpicker{
+            width: 100%;
+            padding: 10px 25px;
+            border-color: #707070;
+            margin: 35px 0;
+            outline: none;
+            -moz-appearance:none; /* Firefox */
+            -webkit-appearance:none; /* Safari and Chrome */
+            appearance:none;
+            position: relative;
+            
+            background: transparent;
+            background-repeat: no-repeat;
+            background-position-x: 94%;
+            background-position-y: 50%;
+        }
+       
+        .address-left{
+            .item{
+                display: flex;
+                margin-bottom: 20px;
+                .icon{
+                    margin-right: 14px;
+                }
+                .icon-loca{
+                    margin-right: 17px;
+                }
+                .font16{
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

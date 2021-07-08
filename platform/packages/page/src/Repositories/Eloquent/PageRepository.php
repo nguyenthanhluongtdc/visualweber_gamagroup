@@ -5,7 +5,7 @@ namespace Platform\Page\Repositories\Eloquent;
 use Platform\Base\Enums\BaseStatusEnum;
 use Platform\Page\Repositories\Interfaces\PageInterface;
 use Platform\Support\Repositories\Eloquent\RepositoriesAbstract;
-
+use SlugHelper;
 class PageRepository extends RepositoriesAbstract implements PageInterface
 {
 

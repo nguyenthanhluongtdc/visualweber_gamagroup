@@ -73,13 +73,29 @@ if (!function_exists('get_slug_about_detail')) {
      * @return array
      *
      */
-    function get_slug_about_detail($limit)
+    function get_slug_about_detail()
     {
         $page = app(PageInterface::class)->getFirstBy(['template' => 'about-detail']);
         if(!blank($page)) {
-            return app(PageInterface::class)->getFeaturedPages($limit);
+            return $page->slugable->key ?? null;
         }
 
         return null;
     }
 }
+if (!function_exists('get_slug_development_history')) {
+    /**
+     * @return array
+     *
+     */
+    function get_slug_development_history()
+    {
+        $page = app(PageInterface::class)->getFirstBy(['template' => 'development-history']);
+        if(!blank($page)) {
+            return $page->slugable->key ?? null;
+        }
+
+        return null;
+    }
+}
+

@@ -17,7 +17,8 @@ register_page_template([
     'development-history' => "Development History",
     'achievement' => "Achievement",
     'business-areas' => "Business Areas",
-    'gama-service' => "Gama Service"
+    'gama-service' => "Gama Service",
+    'contact' => "Contact",
 
 ]);
 
