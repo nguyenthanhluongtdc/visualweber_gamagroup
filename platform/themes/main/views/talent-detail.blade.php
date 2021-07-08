@@ -27,7 +27,7 @@
                     </div>
                     <div class=" Recruitment--buttom font-helve font18">
                         <a data-fancybox="poup" data-src="#poup" href="javascript:;"
-                            class="btn btn-primary Recruitment--profession">Cơ hội nghề nghiệp</a>
+                            class="btn btn-primary Recruitment--profession">Nộp CV ứng tuyển</a>
                     </div>
                 </div>
                 <div class="Recruitment Recruitment--item2Recruitment--item2 font-helve-light font18 ">
@@ -37,7 +37,7 @@
                         @endif
                     </div>
                     <div class=" Recruitment--buttom font-helve font18">
-                        <a data-fancybox="poup1" data-src="#poup1" class="btn btn-primary Recruitment--profession">Cơ hội nghề nghiệp</a>
+                        <a data-fancybox="poup1" data-src="#poup1" class="btn btn-primary Recruitment--profession">Nộp CV ứng tuyển</a>
                     </div>
                 </div>
                 <div id="poup" class="poup">
