@@ -7,4 +7,10 @@
     .partner-orona__item {
         margin-top: 70px;
     }
+    .partner-orona__item:first-child {
+        margin-top: 0px;
+    }
+    .partner-orona__item:nth-child(2) {
+        margin-top: 0px;
+    }
 }
