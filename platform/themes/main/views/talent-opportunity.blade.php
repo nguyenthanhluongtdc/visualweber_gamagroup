@@ -21,7 +21,10 @@
     </div>
 {{-- ------------------------banner talent-opportunity ----------------}}
     <div class="opportunity-s2">
-        <img src="{{ Theme::asset()->url('images/talent/banner2.jpg') }}" alt="" class="img-slider">
+        @if (has_field($page, 'banner_co_hoi_lam_viec'))
+        <img src="{{ RvMedia::getImageUrl(get_field($page, 'banner_co_hoi_lam_viec')) }}" alt="banner">
+    @endif
+
     </div>
 
     {{----------------------------- filter-talent-opportunity ----------------}}

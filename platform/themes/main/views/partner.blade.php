@@ -115,7 +115,10 @@
                 
             </div>
             <div class="col-md-8">
-                <img src="{{ Theme::asset()->url('images/partner/adult.jpg') }}" alt="" class="img-slider">
+                @if (has_field($page, 'img_tam_nhin_vuon_xa'))
+                <img src="{{ RvMedia::getImageUrl(get_field($page, 'img_tam_nhin_vuon_xa')) }}" alt="banner">
+            @endif
+        
             </div>
         </div>
     </div>
