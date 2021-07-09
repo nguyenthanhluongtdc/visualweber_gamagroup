@@ -128,7 +128,16 @@ $('.counting').each(function () {
 });
 
 
-
+$('#select-contact').on('change', function (e) {
+    var optionSelected = $("option:selected", this);
+    var valueSelected = this.value;
+    var contact = $('select[id="select-contact"] :selected').attr('class');
+    for  (let i=1; i<100; i++){
+        if (contact == 'contact'+i){
+            $('.contact').hide().filter('.' + 'contact-show'+i).show()    
+        }
+    }
+});
 
 
 
