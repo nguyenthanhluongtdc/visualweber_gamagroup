@@ -22,11 +22,11 @@
 
 {{------------------------talent  banner  -------------}}
 <div class="talent-s2">
-    <img src="{{ Theme::asset()->url('images/talent/banner.png') }}" alt="" class="img-slider">
+    {{-- <img src="{{ Theme::asset()->url('images/talent/banner.png') }}" alt="" class="img-slider"> --}}
 
-    {{-- @if (has_field($page, 'image_banner'))
-        <img src="{{ RvMedia::getImageUrl(get_field($page, 'image_banner')) }}" alt="banner">
-    @endif --}}
+    @if (has_field($page, 'banner_nhan_tai'))
+        <img src="{{ RvMedia::getImageUrl(get_field($page, 'banner_nhan_tai')) }}" alt="banner">
+    @endif
 </div>
 
 {{------------------------ talent dẫn lỗi tiên phong ----------------------}}
@@ -54,12 +54,18 @@
     <div class="container">
         <div class="row career--info">
             <div class="col-md-4">
-                <h2 class="career-title font-helve-bold font30">Phát triển <br> sự nghiệp</h2>
+                <h2 class="career-title font-helve-bold font30">
+                    @if (has_field($page, 'title_nhan_tai_su_phat_trien'))
+                    {!! get_field($page, 'title_nhan_tai_su_phat_trien') !!}
+                @endif
+                </h2>
             </div>
             <div class="col-md-8">
-                <p class="carrer-desc font-helve-light font18">
-                    Chúng tôi luôn có niềm tin mãnh liệt vào nội lực của mỗi cá nhân, đó là nhân tố đã khẳng định vị thế của GAMA Group ngày hôm nay. GAMA Group nhận ra rằng chính sự đa dạng, sức sáng tạo và nguồn năng lượng, cùng những nỗ lực của nhân viên đã mang sức mạnh đến cho tập đoàn. Vì thế, chúng tôi không ngừng đầu tư và phát triển nhân tài, tạo động lực để họ thăng tiến và phát triển sự nghiệp.
-                </p>
+                <div class="carrer-desc font-helve-light font18">
+                    @if (has_field($page, 'desc_nhan_tai_su_phat_trien'))
+                    {!! get_field($page, 'desc_nhan_tai_su_phat_trien') !!}
+                @endif
+                </div>
             </div>
         </div>
         <div class="row develop-block">
@@ -106,22 +112,27 @@
 
 {{--------------------------- cơ hội làm việc -------------- --}}
 <div class="job">
-    <div class="container talent-s5" >
+    <div class="container talent-s5">
         <div class="job--img">
-            <img src="{{ Theme::asset()->url('images/talent/map.jpg') }}" alt="">
+            @if (has_field($page, 'img_nhan_tai_co_hoi_lam_viec'))
+            <img src="{{ RvMedia::getImageUrl(get_field($page, 'img_nhan_tai_co_hoi_lam_viec')) }}" alt="banner">
+        @endif
         </div>
         <div class="job--block">
             <div class="job--title">
-                <h3 class=" font-helve-bold font30">Cơ hội việc làm tại GAMA Group
-                    luôn dành cho mọi người?</h3>
+                <h3 class=" font-helve-bold font30">
+                    @if (has_field($page, 'title_nhan_tai_co_hoi_lam_viec'))
+                    {!! get_field($page, 'title_nhan_tai_co_hoi_lam_viec') !!}
+                @endif
+                </h3>
             </div>
             <div class="job--desc font-helve-light font18">
-                <p>
-                    Sự phát triển của GAMA Group trên thị trường luôn đi cùng với những cơ hội việc đa dạng mở ra cho tất cả mọi người. Bạn đam mê công nghệ? Truyền thông? Kết cấu hạ tầng? Hay bạn có tư duy kinh doanh và tin vào giá trị những con số? Hãy đến với chúng tôi! 
-                </p>
+                @if (has_field($page, 'desc_nhan_tai_co_hoi_lam_viec'))
+                {!! get_field($page, 'desc_nhan_tai_co_hoi_lam_viec') !!}
+            @endif
             </div>
             <div class="job--buttom font-helve font18">
-                <a href="" class="btn btn-primary job--profession">Cơ hội nghề nghiệp</a>
+                <a href="/co-hoi-lam-viec" class="btn btn-primary job--profession">Cơ hội nghề nghiệp</a>
             </div>
         </div>
 
