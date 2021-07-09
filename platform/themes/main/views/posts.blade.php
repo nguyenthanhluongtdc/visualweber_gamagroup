@@ -101,7 +101,7 @@
                         <div class="dropdown">
                             <button class="btn btn-secondary  font-helve font18 " type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Thương hiệu
+                               Mới nhất
                                 <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
 
                             </button>
@@ -117,14 +117,14 @@
                     <div class="dropdown">
                         <button class="btn btn-secondary font-helve font18 " type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            Thương hiệu
+                            Tin tổng hợp
                             <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
 
                         </button>
                         <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Item 1</a>
-                            <a class="dropdown-item" href="#">Item 1</a>
-                            <a class="dropdown-item" href="#">Item 1</a>
+                            <a class="dropdown-item" href="#">Tin kinh doanh</a>
+                            <a class="dropdown-item" href="#">Tin cộng đồng</a>
+                            <a class="dropdown-item" href="#">Tin nội bộ</a>
                         </div>
                     </div>
                 </div>
