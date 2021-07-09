@@ -11,7 +11,7 @@
                     </h1>
                 </div>
                 <div class="col-lg-8">
-                    <div class="desc font18 font-helve">
+                    <div class="desc font18 font-helve-light">
                        {!! $page -> content!!}
                     </div>
                 </div>

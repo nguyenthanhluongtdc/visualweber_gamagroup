@@ -12,7 +12,7 @@
                     </h1>
                 </div>
                 <div class="col-lg-8">
-                    <div class="desc font18 font-helve">
+                    <div class="desc font-helve-light font18">
                         {!! $page->content !!}
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                                 <span class="new--item">15/03/2021</span>
                                 <span class="new--item"> 15:00</span>
                             </div>
-                            <p class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn là
+                            <p class="new--des font18 font-helve-light">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn là
                                 sứ mệnh quốc gia, quan trọng không kém...</p>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                                 <span class="new--item">15/03/2021</span>
                                 <span class="new--item"> 15:00</span>
                             </div>
-                            <span class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn
+                            <span class="new--des font18 font-helve-light">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn
                                 là sứ mệnh quốc gia, quan trọng không kém...</span>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                                 <span class="new--item">15/03/2021</span>
                                 <span class="new--item"> 15:00</span>
                             </div>
-                            <span class="new--des font18 font-helve">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn
+                            <span class="new--des font18 font-helve-light">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn
                                 là sứ mệnh quốc gia, quan trọng không kém...</span>
                         </div>
                     </div>
@@ -99,13 +99,13 @@
 
                     <div class="menu-container">
                         <div class="dropdown">
-                            <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                            <button class="btn btn-secondary  font-helve font18 " type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Thương hiệu
                                 <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
 
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="#">Item 1</a>
                                 <a class="dropdown-item" href="#">Item 1</a>
                                 <a class="dropdown-item" href="#">Item 1</a>
@@ -115,13 +115,13 @@
                 </div>
                 <div class="col-md-3 filter--option mt-2">
                     <div class="dropdown">
-                        <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        <button class="btn btn-secondary font-helve font18 " type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             Thương hiệu
                             <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
 
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Item 1</a>
                             <a class="dropdown-item" href="#">Item 1</a>
                             <a class="dropdown-item" href="#">Item 1</a>
@@ -130,13 +130,13 @@
                 </div>
                 <div class="col-md-3 filter--option  mt-2">
                     <div class="dropdown">
-                        <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        <button class="btn btn-secondary font-helve font18 " type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             Thương hiệu
                             <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
 
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Item 1</a>
                             <a class="dropdown-item" href="#">Item 1</a>
                             <a class="dropdown-item" href="#">Item 1</a>

@@ -11,7 +11,7 @@
                     </h1>
                 </div>
                 <div class="col-lg-8">
-                    <div class="desc font18 font-helve">
+                    <div class="desc font18 font-helve-light">
                        {!! $page -> content!!}
                     </div>
                 </div>
@@ -34,13 +34,13 @@
 
                         <div class="menu-container">
                             <div class="dropdown">
-                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                                <button class="btn btn-secondary font-helve font18 " type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Mới nhất
                                     <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
     
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Item 1</a>
                                     <a class="dropdown-item" href="#">Item 1</a>
                                     <a class="dropdown-item" href="#">Item 1</a>
@@ -51,13 +51,13 @@
                     <div class="col-md-3 filter--elemet font-helve font18 mt-2">
                         <div class="menu-container">
                             <div class="dropdown">
-                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                                <button class="btn btn-secondary font-helve font18 " type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Vị trí ứng tuyển
                                     <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
     
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Maketing</a>
                                     <a class="dropdown-item" href="#">HR</a>
                                     <a class="dropdown-item" href="#">Trợ Lý</a>
@@ -68,13 +68,13 @@
                     <div class="col-md-3 filter--elemet font-helve font18 mt-2">
                         <div class="menu-container">
                             <div class="dropdown">
-                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                                <button class="btn btn-secondary font-helve font18 " type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Công ty
                                     <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
     
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Item 1</a>
                                     <a class="dropdown-item" href="#">Item 1</a>
                                     <a class="dropdown-item" href="#">Item 1</a>
@@ -84,14 +84,14 @@
                     </div>
                     <div class="col-md-3 filter--elemet font-helve font18 mt-2">
                         <div class="menu-container">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                            <div class="dropdown ">
+                                <button class="btn btn-secondary font-helve font18" type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Địa chỉ làm việc
                                     <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
     
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Item 1</a>
                                     <a class="dropdown-item" href="#">Item 1</a>
                                     <a class="dropdown-item" href="#">Item 1</a>

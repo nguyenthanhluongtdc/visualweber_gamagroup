@@ -12,7 +12,7 @@
                     </h1>
                 </div>
                 <div class="col-lg-8">
-                    <div class="desc font18 font-helve">
+                    <div class="desc font-helve-light font18 ">
                         {!! $page->content !!}
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                     {!! get_field($page, 'title_tam_nhin_vuon_xa') !!}
                 @endif
             </div>
-                <div class="vision--partner__desc font-helve font18">
+                <div class="vision--partner__desc font-helve-light font18">
                     @if (has_field($page, 'desc_tam_nhin_vuon_xa'))
                     {!! get_field($page, 'desc_tam_nhin_vuon_xa') !!}
                 @endif

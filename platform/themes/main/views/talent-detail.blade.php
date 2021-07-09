@@ -18,7 +18,8 @@
 <div class="Recruitment-s1">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 d-flex align-items-start flex-column justify-content-between">
+            
+            <div class="col-md-4 overflow-auto ">
                 <div class="Recruitment Recruitment--item1 font-helve-light font18 ">
                     <div class="Recruitment--adree">
                         @if (has_field($page, 'title_admin_16252012931'))
@@ -29,17 +30,7 @@
                         <a data-fancybox="poup" data-src="#poup" href="javascript:;"
                             class="btn btn-primary Recruitment--profession">Nộp CV ứng tuyển</a>
                     </div>
-                </div>
-                <div class="Recruitment Recruitment--item2Recruitment--item2 font-helve-light font18 ">
-                    <div class="Recruitment--adree">
-                        @if (has_field($page, 'title_admin_16252012931'))
-                            {!! get_field($page, 'title_admin_16252012931') !!}
-                        @endif
-                    </div>
-                    <div class=" Recruitment--buttom font-helve font18">
-                        <a data-fancybox="poup1" data-src="#poup1" class="btn btn-primary Recruitment--profession">Nộp CV ứng tuyển</a>
-                    </div>
-                </div>
+            </div>
                 <div id="poup" class="poup">
                     <div class="poup--block">
                         <div class="poup--block__img">
@@ -77,43 +68,7 @@
                     </div>
 
                 </div>
-                <div id="poup1" class="poup">
-                    <div class="poup--block">
-                        <div class="poup--block__img">
-                            <img src="{{ Theme::asset()->url('images/talent/two-woman.jpg') }}" alt="two-woman">
-                        </div>
-                        <div class="poup--block__form">
-                            <form action="" method="post">
-                                <div class="poup--title font-helve-light font18">
-                                    <p>Bạn đang ứng tuyển vào vị trí: </p>
-                                    <h2 class=" font-helve font20">
-                                        Chuyên Viên Kỹ Thuật Cấp Cao ERP
-                                    </h2>
-                                </div>
-                                
-                                <div class="poup--form font-helve font18 ">
-                                    <p class=" font-helve-light font18">
-                                        Vui lòng bổ sung các thông tin cá nhân của bạn để ứng tuyển
-                                    </p>
-    
-                                    <input type="text" value="" name="hi1" class="form-control" placeholder="Họ Tên" />
-    
-                                    <input type="text" value="" name="hi2" class="form-control" placeholder="Email" />
-                                    <input type="text" value="" name="hi2" class="form-control"
-                                        placeholder="Số Điện Thoại " />
-                                    <input type="text" value="" name="hi2" class="form-control" placeholder="Địa chỉ " />
-    
-                                </div>
-                               
-                                <div class=" Recruitment--buttom font-helve font18">
-                                    <a href="" class="btn btn-primary Recruitment--profession">Đính kèm CV ứng tuyển</a>
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
-
-                </div>
+               
             </div>
             <div class="col-md-8 talent--desc">
                 <h3 class="opportunity--item font-helve-bold font20">

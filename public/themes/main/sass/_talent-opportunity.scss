@@ -57,6 +57,10 @@
         display: flex;
         justify-content: space-between;
         text-align: center;
+        img {
+            width: 8px;
+            height: 5px;
+        }
     }
     .btn-secondary {
         background-color: transparent;
