@@ -197,7 +197,7 @@
             </div>
         </div>
         <div class="views-all content-mobie">
-            <a href="" class="font-helve font20 views-news-mobie">
+            <a href="{{ get_slug_posts() }}" class="font-helve font20 views-news-mobie">
                 {{ trans('View all') }}
             </a>
         </div>

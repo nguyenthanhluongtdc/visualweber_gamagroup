@@ -299,7 +299,10 @@ class PostRepository extends RepositoriesAbstract implements PostInterface
         }
 
         $data = $this->model
-            ->where('posts.status', BaseStatusEnum::PUBLISHED)
+            ->where([
+                'posts.status'      => BaseStatusEnum::PUBLISHED,
+                'posts.is_featured' => 1,
+            ])
             ->join('post_categories', 'post_categories.post_id', '=', 'posts.id')
             ->join('categories', 'post_categories.category_id', '=', 'categories.id')
             ->whereIn('post_categories.category_id', $categoryId)

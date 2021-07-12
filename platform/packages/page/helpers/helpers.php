@@ -116,4 +116,20 @@ if (!function_exists('get_slug_talent_opportunity')) {
     }
 }
 
+if (!function_exists('get_slug_posts')) {
+    /**
+     * @return array
+     *
+     */
+    function get_slug_posts()
+    {
+        $page = app(PageInterface::class)->getFirstBy(['template' => 'Posts']);
+        if(!blank($page)) {
+            return $page->slugable->key ?? null;
+        }
+
+        return null;
+    }
+}
+
 

@@ -296,3 +296,14 @@ if (!function_exists('get_post_new')){
         return app(PostInterface::class)->getPostNew($limit);
     }
 }
+
+if (!function_exists('get_category_default')) {
+    /**
+     * @param bool $convertToList
+     * @return array
+     */
+    function get_category_default()
+    {
+       return app(CategoryInterface::class)->getModel()->where('is_default', 1)->take(1)->get();
+    }
+}

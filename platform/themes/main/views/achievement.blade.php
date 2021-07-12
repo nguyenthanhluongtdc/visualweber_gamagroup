@@ -1,3 +1,5 @@
+
+{!! Theme::breadcrumb()->render() !!}
 <div class="content-achievement">
         <div class="container">
             <div class="section1-achievement padding80">
@@ -80,32 +82,27 @@
                     </div>
                 </div>
                 <div class="about-detail-s5-slider owl-carousel" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-easing="ease-in-out">
-                    <div class="item">
-                        <a href="">
-                            <div class="img"><img src="{{ Theme::asset()->url('images/about/s5a.jpg') }}" alt=""></div>
-                        </a>
-                        <h5 class="font-helve font20"><a href="">Trao tặng vật tư, thiết bị y tế hỗ trợ Chính phủ và nhân dân
-                                Cam-pu-chia</a></h5>
-                    </div>
-                    <div class="item">
-                        <a href="">
-                            <div class="img"><img src="{{ Theme::asset()->url('images/about/s5b.jpg') }}" alt=""></div>
-                        </a>
-                        <h5 class="font-helve font20"><a href="">Trao tặng vật tư, thiết bị y tế hỗ trợ Chính phủ và nhân dân
-                                Cam-pu-chia</a></h5>
-                    </div>
-                    <div class="item">
-                        <a href="">
-                            <div class="img"><img src="{{ Theme::asset()->url('images/about/s5c.jpg') }}" alt=""></div>
-                        </a>
-                        <h5 class="font-helve font20"><a href="">Trao tặng vật tư, thiết bị y tế hỗ trợ Chính phủ và nhân dân
-                                Cam-pu-chia</a></h5>
-                    </div>
-                </div>
-                <div class="views font-helve font18">
-                    <a href="" class="primary-a">Xem thêm</a>
-                </div>
+                data-aos-easing="ease-in-out">
+                @php $category = get_category_default(); 
+                
+                $listPost = get_posts_by_category_order($category[0]->id , 12 , 12, ['posts.created_at' => 'desc']);
+                @endphp
+                
+                @if (!empty( $listPost))
+                        @foreach ($listPost as $item)
+                        <div class="item">
+                            <a href="{{ $item->url }}">
+                                <div class="img"> <img src="{{ RvMedia::getImageUrl($item->image) }}" alt="{{ $item->name }}"></div>
+                            </a>
+                            <h5 class="font-helve font20"><a href="{{ $item->url }}">{{ $item->name }}</a></h5>
+                        </div>
+                        @endforeach
+                @endif
+                
+            </div>
+            <div class="views font-helve font18">
+                <a href="{{ get_slug_posts() }}" class="primary-a"> {{ trans('See more') }}</a>
+            </div>
             </div>
         </div>
 
