@@ -139,7 +139,7 @@
                     @endif
                 </h3>
                 <div class="views-all content-desktop">
-                    <a href="" class="font-helve font20 primary-a">
+                    <a href="{{ get_slug_posts() }}" class="font-helve font20 primary-a">
                         {{ trans('View all') }}
                     </a>
                 </div>
@@ -203,10 +203,24 @@
         </div>
     </div>
 </div>
-
+@if (has_field($page, 'list_item_home_bottom'))
 <div class="section4-home">
     <div class="section4-content container" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out">
-        <div class="section4-item" >
+
+        @foreach (get_field($page, 'list_item_home_bottom') as $item)
+            <div class="section4-item" >
+                <img src="{{ RvMedia::getImageUrl(get_sub_field($item, 'image_item_home_bottom')) }}" alt="{!! get_sub_field($item, 'title_item_home_bottom') !!}">
+                <div class="content-title" >
+                    <h5 class="title font-helve-bold font30">{!! get_sub_field($item, 'title_item_home_bottom') !!}</h5>
+                    <div class="content-none ">
+                        <p class="desc font-helve-light font18">{!! get_sub_field($item, 'desc_item_home_bottom') !!}</p>
+                        <a href="{{ get_sub_field($item, 'link_item_home_bottom') }}"><img src="{{ Theme::asset()->url('images/homepage/iconright.png') }}" alt="icon"></a>
+                    </div>
+
+                </div>
+            </div>
+        @endforeach
+        {{-- <div class="section4-item" >
             <img src="{{ Theme::asset()->url('images/homepage/end1.jpg') }}" alt="">
             <div class="content-title" >
                 <h5 class="title font-helve-bold font30">Lịch sử <br> phát triển</h5>
@@ -241,6 +255,7 @@
                 </div>
 
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
+@endif
