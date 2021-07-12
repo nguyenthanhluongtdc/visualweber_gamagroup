@@ -136,6 +136,7 @@
                         padding: 0 15px;
                         font-family: $font-helve-light;
                         outline: none;
+                        border: 1px solid #E1E1E1;
                     }
                 }
             }
@@ -153,6 +154,7 @@
                     outline: none;
                     font-family: $font-helve-light;
                     padding: 15px;
+                    border: 1px solid #E1E1E1;
                 }
             }
         }
@@ -203,7 +205,7 @@
         .selectpicker{
             width: 100%;
             padding: 10px 25px;
-            border-color: #707070;
+            border: 1px solid #E1E1E1;
             margin: 35px 0;
             @media(max-width : 767px){
                 margin: 0 0 25px 0;

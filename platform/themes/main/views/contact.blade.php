@@ -68,10 +68,11 @@
 
     <div class="contact-section2">
         <div class="row_wrap">
+            @if (has_field($page, 'title_send_us_contact'))
             <div class="content-md4 font30 font-helve-bold title-primary pri-color">
-                Gửi thư cho <br>
-                chúng tôi
+                {!! get_field($page, 'title_send_us_contact') !!}
             </div>
+            @endif
             <div class="content-md8">
                 {!! Form::open(['route' => 'public.send.contact', 'method' => 'POST', 'class' => 'contact-form']) !!}
 
@@ -99,11 +100,13 @@
                     </div>
 
                     <div class="contact-bottom">
+                        @if (has_field($page, 'desc_agree_contact'))
                         <div class="left customcheck">
                             <input type="checkbox" id="agree" name="agree" value="Bike" class="agree"  checked="checked">
-                            <label for="agree" class="font-helve pri-color"> Tôi muốn nhận bản tin từ GAMA Group</label>
+                            <label for="agree" class="font-helve pri-color"> {{ get_field($page, 'desc_agree_contact') }}</label>
                             <span class="checkmark"></span>
                         </div>
+                        @endif
                         <div class="right">
                             <button type="submit" class="contact-button font18 font-helve">{{ __('Send') }}</button>
                         </div>
