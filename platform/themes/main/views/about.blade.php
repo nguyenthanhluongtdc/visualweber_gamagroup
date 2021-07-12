@@ -154,21 +154,39 @@
     <div class="section5-about">
         <div class="row_wrap">
             <div class="content-md4 admin-left" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
+                @if (has_field($page, 'title_admin_about'))
                 <div class="font-helve-bold font30 title-primary pri-color">
-                    Hội đồng quản trị <br>GAMA Group
+                    {!! get_field($page, 'title_admin_about') !!}
                 </div>
+                @endif
                 <div class="view font-helve font18 content-desktop">
                     <a href="" class="primary-a">{{ trans('See more') }}</a>
                 </div>
             </div>
             <div class="content-md8" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
+                @if (has_field($page, 'desc_admin_about'))
                 <div class="desc-right font-helve-light font18">
-                    Do tính lây nhiễm cao trong đợt dịch này, người bệnh phải được điều
-                    trị tại các bệnh viện chỉ chuyên tiếp nhận Covid-19, không bố trí lẫn
-                    lộn trong một bệnh viện đa khoa, ngoại trừ mô hình "bệnh viện tách đôi".
+                    {!! get_field($page, 'desc_admin_about') !!}
                 </div>
+                @endif
                 <div class="list-admin-slider owl-carousel">
-                    <div class="admin-item">
+                    @if (has_field($page, 'list_admin_about'))
+                    @foreach (get_field($page, 'list_admin_about') as $item)
+                        <div class="admin-item">
+                            <a href="{{  RvMedia::getImageUrl(get_sub_field($item, 'image_admin_item_about'))  }}" data-fancybox="hdqtabout"
+                                data-caption="Johna than Hạnh Nguyễn">
+                                <img src="{{ RvMedia::getImageUrl(get_sub_field($item, 'image_admin_item_about')) }}" alt="{!! get_sub_field($item, 'name_admin_item_about') !!}">
+                            </a>
+                            <h5 class="name font-helve font18">
+                                {!! get_sub_field($item, 'name_admin_item_about') !!}
+                            </h5>
+                            <p class="desc">
+                                {!! get_sub_field($item, 'desc_admin_item_about') !!}
+                            </p>
+                        </div>
+                    @endforeach
+                    @endif
+                    {{-- <div class="admin-item">
                         <a href="{{ Theme::asset()->url('images/about/qt1.jpg') }}" data-fancybox="hdqt"
                             data-caption="Johna than Hạnh Nguyễn">
                             <img src="{{ Theme::asset()->url('images/about/qt1.jpg') }}" alt="">
@@ -238,7 +256,7 @@
                         <p class="desc">
                             TỔNG GIÁM ĐỐC TẬP ĐOÀN
                         </p>
-                    </div>
+                    </div> --}}
     
                 </div>
             </div>

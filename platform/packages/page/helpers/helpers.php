@@ -99,3 +99,21 @@ if (!function_exists('get_slug_development_history')) {
     }
 }
 
+
+if (!function_exists('get_slug_talent_opportunity')) {
+    /**
+     * @return array
+     *
+     */
+    function get_slug_talent_opportunity()
+    {
+        $page = app(PageInterface::class)->getFirstBy(['template' => 'talent-opportunity']);
+        if(!blank($page)) {
+            return $page->slugable->key ?? null;
+        }
+
+        return null;
+    }
+}
+
+
