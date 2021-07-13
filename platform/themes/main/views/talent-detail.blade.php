@@ -6,20 +6,21 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="new-title font-helve-bold font30">
-                        {!! $page -> description !!}
-                        
+                        {!! $page->description !!}
+
                     </h1>
                 </div>
             </div>
         </div>
-        </div>
     </div>
+</div>
 {{-- ------------------------- nội dung trang tuyển dụng -------------- --}}
 <div class="Recruitment-s1">
     <div class="container">
         <div class="row">
-            
-            <div class="col-md-4 overflow-auto ">
+
+            <div class="col-md-4 ">
+                <div class="sticky-top">
                 <div class="Recruitment Recruitment--item1 font-helve-light font18 ">
                     <div class="Recruitment--adree">
                         @if (has_field($page, 'title_admin_16252012931'))
@@ -30,7 +31,7 @@
                         <a data-fancybox="poup" data-src="#poup" href="javascript:;"
                             class="btn btn-primary Recruitment--profession">Nộp CV ứng tuyển</a>
                     </div>
-            </div>
+                </div>
                 <div id="poup" class="poup">
                     <div class="poup--block">
                         <div class="poup--block__img">
@@ -38,44 +39,46 @@
                         </div>
                         <div class="poup--block__form">
                             <form action="" method="post">
-                               
+
                                 <div class="poup--title font-helve-light font18">
                                     <p>Bạn đang ứng tuyển vào vị trí: </p>
                                     <h2 class=" font-helve font20">
                                         Chuyên Viên Kỹ Thuật Cấp Cao ERP
                                     </h2>
                                 </div>
-                                
+
                                 <div class="poup--form font-helve font18 ">
                                     <p class=" font-helve-light font18">
                                         Vui lòng bổ sung các thông tin cá nhân của bạn để ứng tuyển
                                     </p>
                                     <input type="text" name="name" class="form-control" placeholder="Họ Tên" />
-                                    <input type="text"  name="email" class="form-control" placeholder="Email" />
-                                    <input type="text"name="phone" class="form-control"
-                                        placeholder="Số Điện Thoại " />
-                                    <input type="text"  name="address" class="form-control" placeholder="Địa chỉ " />
+                                    <input type="text" name="email" class="form-control" placeholder="Email" />
+                                    <input type="text" name="phone" class="form-control" placeholder="Số Điện Thoại " />
+                                    <input type="text" name="address" class="form-control" placeholder="Địa chỉ " />
                                 </div>
-                               
+
                                 <div class=" Recruitment--buttom font-helve font18" for="cv_upload">
                                     {{-- <div class="form-group"> --}}
-                                        <label class=" cv-upload" for="cv_upload">
-                                            <span class="btn btn-primary Recruitment--profession">Đính kèm CV ứng tuyển</span> 
-                                        </label>
-                                        <input type="file" name="cv" required id="cv_upload" class="form-control-file d-none">
-                                {{-- </div> --}}
-                                <div class=" Recruitment font-helve font18" style="background-color:#0D3F75 ;width:30%;color:#ffffff">
-                                    <a href="" class="btn btn-submint Recruitment--profession">ĐĂNG KÝ</a>
+                                    <label class=" cv-upload" for="cv_upload">
+                                        <span class="btn btn-primary Recruitment--profession">Đính kèm CV ứng
+                                            tuyển</span>
+                                    </label>
+                                    <input type="file" name="cv" required id="cv_upload"
+                                        class="form-control-file d-none">
+                                    {{-- </div> --}}
+                                    <div class=" Recruitment font-helve font18"
+                                        style="background-color:#0D3F75 ;width:30%;color:#ffffff">
+                                        <a href="" class="btn btn-submint Recruitment--profession">ĐĂNG KÝ</a>
+                                    </div>
                                 </div>
-                            </div>
-                             
+
                             </form>
                         </div>
 
                     </div>
 
                 </div>
-               
+            </div>
             </div>
             <div class="col-md-8 talent--desc">
                 <h3 class="opportunity--item font-helve-bold font20">
@@ -174,7 +177,7 @@
                 </tr>
             </tbody>
         </table>
-        <div class="Recruitment--buttom font-helve font18">
+        <div class="Recruitment--buttom xem-them font-helve font18">
             <a href="" class="btn btn-primary Recruitment--profession">Xem thêm</a>
         </div>
     </div>
