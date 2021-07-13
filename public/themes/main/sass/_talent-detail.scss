@@ -1,4 +1,9 @@
 .Recruitment-s1 {
+    .Recruitment--item1 {
+        position: sticky;
+        top: 0;
+        position: -webkit-sticky;
+    }
     .Recruitment {
         .Recruitment--adree {
             line-height: 2rem;

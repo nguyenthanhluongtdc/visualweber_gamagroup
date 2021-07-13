@@ -122,9 +122,14 @@
 
                         </button>
                         <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Tin kinh doanh</a>
+                            @if(!empty(get_all_categories()))
+                            @foreach (get_all_categories() as $item)
+                            <a class="dropdown-item" href="">{{$item->name}}</a>
+                            @endforeach
+                            @endif
+                            {{-- <a class="dropdown-item" href="#">Tin kinh doanh</a>
                             <a class="dropdown-item" href="#">Tin cộng đồng</a>
-                            <a class="dropdown-item" href="#">Tin nội bộ</a>
+                            <a class="dropdown-item" href="#">Tin nội bộ</a> --}}
                         </div>
                     </div>
                 </div>
