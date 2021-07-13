@@ -37,7 +37,8 @@
                             <img src="{{ Theme::asset()->url('images/talent/two-woman.jpg') }}" alt="two-woman">
                         </div>
                         <div class="poup--block__form">
-                            <form action="" method="post">
+                            <form action="{{route('public.send.recruitment')}}" method="post">
+                               
                                 <div class="poup--title font-helve-light font18">
                                     <p>Bạn đang ứng tuyển vào vị trí: </p>
                                     <h2 class=" font-helve font20">
@@ -49,19 +50,25 @@
                                     <p class=" font-helve-light font18">
                                         Vui lòng bổ sung các thông tin cá nhân của bạn để ứng tuyển
                                     </p>
-    
-                                    <input type="text" value="" name="hi1" class="form-control" placeholder="Họ Tên" />
-    
-                                    <input type="text" value="" name="hi2" class="form-control" placeholder="Email" />
-                                    <input type="text" value="" name="hi2" class="form-control"
+                                    <input type="text" name="name" class="form-control" placeholder="Họ Tên" />
+                                    <input type="text"  name="email" class="form-control" placeholder="Email" />
+                                    <input type="text"name="phone" class="form-control"
                                         placeholder="Số Điện Thoại " />
-                                    <input type="text" value="" name="hi2" class="form-control" placeholder="Địa chỉ " />
-    
+                                    <input type="text"  name="address" class="form-control" placeholder="Địa chỉ " />
                                 </div>
                                
-                                <div class=" Recruitment--buttom font-helve font18">
-                                    <a href="" class="btn btn-primary Recruitment--profession">Đính kèm CV ứng tuyển</a>
+                                <div class=" Recruitment--buttom font-helve font18" for="cv_upload">
+                                    {{-- <div class="form-group"> --}}
+                                        <label class=" cv-upload" for="cv_upload">
+                                            <span class="btn btn-primary Recruitment--profession">Đính kèm CV ứng tuyển</span> 
+                                        </label>
+                                        <input type="file" name="cv" required id="cv_upload" class="form-control-file d-none">
+                                {{-- </div> --}}
+                                <div class=" Recruitment font-helve font18" style="background-color:#0D3F75 ;width:30%;color:#ffffff">
+                                    <a href="" class="btn btn-submint Recruitment--profession">ĐĂNG KÝ</a>
                                 </div>
+                            </div>
+                             
                             </form>
                         </div>
 

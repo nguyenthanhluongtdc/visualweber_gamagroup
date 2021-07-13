@@ -32,12 +32,24 @@
     margin: 70px 0 40px;
 }
 
+.poup--title {
+    h2 {
+        margin-top: 15px;
+    }
+}
+
 .Recruitment--buttom {
-    padding: 15px 0 100px;
+    // padding: 15px 0 100px;
+    display: flex;
     .Recruitment--profession {
+        color: #ffff;
         background-color: #0D3F75;
         padding: .4rem 1.5rem;
+        // margin-left: 10px;
         border-radius: 0%;
+    }
+    .btn {
+        margin-right: 10px;
     }
 }
 
