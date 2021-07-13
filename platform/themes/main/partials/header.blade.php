@@ -77,7 +77,10 @@
         <div class="container header-mobie-content">
             <div class="left">
                 <a class="header-logo" href="{{ route('public.index') }}">
-                    <img src="{{ theme::asset()->url('images/logo.png') }}" alt="logo">
+                    @if (theme_option('logo'))
+                        <img src="{{ RvMedia::getImageUrl(theme_option('logo')) }}" alt="{{ theme_option('site_title') }}">
+                    @endif
+                   
                 </a>
             </div>
             <div class="right">

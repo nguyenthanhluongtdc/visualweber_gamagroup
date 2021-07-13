@@ -5,7 +5,7 @@
                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="bread-link">
                     <a href="{{ $crumb['url'] }}" itemprop="item" title="{{ $crumb['label'] }}">
                         {{ $crumb['label'] }}
-                        <meta itemprop="name" content="{{ $crumb['label'] }}" />
+                        <meta itemprop="name" content="{{ $crumb['label']  }}" />
                     </a>
                     <meta itemprop="position" content="{{ $i + 1}}" />
                     <span class="icon">
@@ -22,3 +22,5 @@
         @endforeach
     </ul>
 </div>
+
+
