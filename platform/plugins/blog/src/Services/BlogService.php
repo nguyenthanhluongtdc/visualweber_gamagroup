@@ -70,7 +70,7 @@ class BlogService
                         route('posts.edit', $post->id));
                 }
 
-                Theme::breadcrumb()->add(__('Home'), route('public.index'));
+                Theme::breadcrumb()->add(__('Home'), route('public.index'))->add(__('Blog'), get_slug_posts());
 
                 $category = $post->categories->first();
                 if ($category) {
@@ -123,7 +123,7 @@ class BlogService
                     ->getByCategory($allRelatedCategoryIds, theme_option('number_of_posts_in_a_category', 12));
 
                 Theme::breadcrumb()
-                    ->add(__('Home'), route('public.index'))
+                    ->add(__('Home'), route('public.index'))->add(__('Blog'), get_slug_posts())
                     ->add($category->name, $category->url);
 
                 do_action(BASE_ACTION_PUBLIC_RENDER_SINGLE, CATEGORY_MODULE_SCREEN_NAME, $category);
