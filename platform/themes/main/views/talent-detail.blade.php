@@ -37,7 +37,7 @@
                             <img src="{{ Theme::asset()->url('images/talent/two-woman.jpg') }}" alt="two-woman">
                         </div>
                         <div class="poup--block__form">
-                            <form action="{{route('public.send.recruitment')}}" method="post">
+                            <form action="" method="post">
                                
                                 <div class="poup--title font-helve-light font18">
                                     <p>Bạn đang ứng tuyển vào vị trí: </p>
