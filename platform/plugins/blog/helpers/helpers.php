@@ -204,9 +204,9 @@ if (!function_exists('get_categories')) {
         $repo = app(CategoryInterface::class);
 
         $categories = $repo->getCategories(Arr::get($args, 'select', ['*']), [
-            'categories.created_at' => 'DESC',
-            'categories.is_default' => 'DESC',
-            'categories.order'      => 'ASC',
+            'created_at' => 'DESC',
+            'is_default' => 'DESC',
+            'order'      => 'ASC',
         ]);
 
         $categories = sort_item_with_children($categories);
@@ -260,50 +260,5 @@ if (!function_exists('get_post_formats')) {
     function get_post_formats($convertToList = false)
     {
         return PostFormat::getPostFormats($convertToList);
-    }
-}
-if (!function_exists('get_category_order')) {
-    /**
-     * @param bool $convertToList
-     * @return array
-     */
-    function get_category_order()
-    {
-       return app(CategoryInterface::class)->getModel()->where('order', 2)->take(1)->get();
-    }
-}
-if (!function_exists('get_posts_by_category_order')) {
-    /**
-     * @param int $categoryId
-     * @param int $paginate
-     * @param int $limit
-     * @return \Illuminate\Support\Collection
-     */
-    function get_posts_by_category_order($categoryId, $paginate = 12, $limit = 0, $order = [])
-    {
-        return app(PostInterface::class)->getByCategoryOrderBy($categoryId, $paginate, $limit, $order);
-    }
-}
-
-if (!function_exists('get_post_new')){
-     /**
-     * @param int $limit
-     * @param array $with
-     * @return \Illuminate\Support\Collection
-     */
-    function get_post_new($limit)
-    {
-        return app(PostInterface::class)->getPostNew($limit);
-    }
-}
-
-if (!function_exists('get_category_default')) {
-    /**
-     * @param bool $convertToList
-     * @return array
-     */
-    function get_category_default()
-    {
-       return app(CategoryInterface::class)->getModel()->where('is_default', 1)->take(1)->get();
     }
 }
