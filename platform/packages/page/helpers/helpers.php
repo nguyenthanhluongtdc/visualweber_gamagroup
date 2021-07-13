@@ -24,17 +24,6 @@ if (!function_exists('get_page_by_slug')) {
         return app(PageInterface::class)->getBySlug($slug, true);
     }
 }
-if (!function_exists('get_slug_by_template')) {
-    /**
-     * @param $template
-     * @return mixed
-     *
-     */
-    function get_slug_by_template($template)
-    {
-        return app(PageInterface::class)->getByTemplate($template);
-    }
-}
 
 if (!function_exists('get_all_pages')) {
     /**
@@ -67,69 +56,3 @@ if (!function_exists('get_page_templates')) {
         return Template::getPageTemplates();
     }
 }
-
-if (!function_exists('get_slug_about_detail')) {
-    /**
-     * @return array
-     *
-     */
-    function get_slug_about_detail()
-    {
-        $page = app(PageInterface::class)->getFirstBy(['template' => 'about-detail']);
-        if(!blank($page)) {
-            return $page->slugable->key ?? null;
-        }
-
-        return null;
-    }
-}
-if (!function_exists('get_slug_development_history')) {
-    /**
-     * @return array
-     *
-     */
-    function get_slug_development_history()
-    {
-        $page = app(PageInterface::class)->getFirstBy(['template' => 'development-history']);
-        if(!blank($page)) {
-            return $page->slugable->key ?? null;
-        }
-
-        return null;
-    }
-}
-
-
-if (!function_exists('get_slug_talent_opportunity')) {
-    /**
-     * @return array
-     *
-     */
-    function get_slug_talent_opportunity()
-    {
-        $page = app(PageInterface::class)->getFirstBy(['template' => 'talent-opportunity']);
-        if(!blank($page)) {
-            return $page->slugable->key ?? null;
-        }
-
-        return null;
-    }
-}
-
-if (!function_exists('get_slug_posts')) {
-    /**
-     * @return array
-     *
-     */
-    function get_slug_posts()
-    {
-        $page = app(PageInterface::class)->getFirstBy(['template' => 'Posts']);
-        if(!blank($page)) {
-            return $page->slugable->key ?? null;
-        }
-
-        return null;
-    }
-}
-
-
