@@ -96,4 +96,6 @@ interface PostInterface extends RepositoryInterface
      * @return array
      */
     public function getRelatedCategoryIds($model);
+    public function getByCategoryOrderBy($categoryId, $paginate = 12, $limit = 0, $orders = []);
+    public function getPostNew(int $limit = 3);
 }

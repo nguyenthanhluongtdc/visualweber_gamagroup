@@ -9,7 +9,9 @@
            <div class="col-lg-8 menu-footer">
                <div class="row ">
                    <div class="col-md-6">
-                        <ul class="list-menu-footer font-helve font18">
+
+                            {!! dynamic_sidebar('footer_sidebar') !!}
+                        {{-- <ul class="list-menu-footer font-helve font18">
                             <li class="active"><a href="">Trang chủ</a></li>
                             <li><a href="">Lĩnh vực kinh doanh</a></li>
                             <li><a href="">Đối tác</a></li>
@@ -17,7 +19,7 @@
                             <li><a href="">Giới thiệu</a></li>
                             <li><a href="">Liên hệ</a></li>
                             <li><a href="">Tin tức</a></li>
-                        </ul>
+                        </ul> --}}
                         {{-- {!! Menu::renderMenuLocation('main-menu', [
                             'options' => ['class' => 'menu sub-menu--slideLeft'],
                             'view' => 'main-menu',

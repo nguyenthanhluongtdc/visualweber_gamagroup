@@ -16,7 +16,7 @@ register_page_template([
     'admin-council' => "Admin Council",
     'development-history' => "Development History",
     'achievement' => "Achievement",
-    'business-areas' => "Business Areas",
+    'business-areas' => "Business-Areas",
     'gama-service' => "Gama Service",
     'contact' => "Contact",
 
@@ -31,6 +31,11 @@ register_sidebar([
 register_sidebar([
     'id'          => 'footer_sidebar',
     'name'        => __('Footer sidebar'),
+    'description' => __('Area for footer widgets'),
+]);
+register_sidebar([
+    'id'          => 'footer_mid_category',
+    'name'        => __('Footer Mid category'),
     'description' => __('Area for footer widgets'),
 ]);
 

@@ -1,4 +1,26 @@
-{!! Theme::breadcrumb()->render() !!}
+<div class="breadcrumb-wrap">
+    <ul class="breadcrumb-list container font-helve-light" itemscope itemtype="http://schema.org/BreadcrumbList">
+       
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="bread-link">
+                   <a href="{{ route('public.index') }}">{{__('Home')}}</a>
+                    <span class="icon">
+                        <i class="fas fa-angle-right"></i>
+                    </span>
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="bread-link">
+                    <a href="{{ route('public.index') }}/{{ get_slug_business() }}">{{__('Business Areas')}}</a>
+                     <span class="icon">
+                         <i class="fas fa-angle-right"></i>
+                     </span>
+                 </li>
+        
+                <li class="active link-active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    {{ $service->name }}
+                </li>
+       
+    </ul>
+</div>
+
 <div class="gama-service-s1 padding80">
     <div class="container">
         <div class="row_wrap">

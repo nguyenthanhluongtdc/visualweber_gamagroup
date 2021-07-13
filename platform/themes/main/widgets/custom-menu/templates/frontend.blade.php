@@ -1,5 +1,5 @@
 @if ($sidebar == 'footer_sidebar')
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    
         <aside class="widget widget--transparent widget__footer">
             @else
                 <aside class="widget widget--transparent">
@@ -11,11 +11,11 @@
                         {!!
                             Menu::generateMenu([
                                 'slug'    => $config['menu_id'],
-                                'options' => ['class' => ($config['menu_id'] == 'social' ? 'social social--simple social--widget' : 'list list--fadeIn') . ($sidebar == 'footer_sidebar' ? ' list--light' : '') ]
+                                'options' => ['class' => ($config['menu_id'] == 'social' ? 'social social--simple social--widget' : 'list-menu-footer font-helve font18') . ($sidebar == 'footer_sidebar' ? ' list--light' : '') ]
                             ])
                         !!}
                     </div>
                 </aside>
         @if ($sidebar == 'footer_sidebar')
-    </div>
+   
 @endif

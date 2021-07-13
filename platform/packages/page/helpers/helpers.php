@@ -56,3 +56,18 @@ if (!function_exists('get_page_templates')) {
         return Template::getPageTemplates();
     }
 }
+if (!function_exists('get_slug_business')) {
+    /**
+     * @return array
+     *
+     */
+    function get_slug_business()
+    {
+        $page = app(PageInterface::class)->getFirstBy(['template' => 'Business-Areas']);
+        if(!blank($page)) {
+            return $page->slugable->key ?? null;
+        }
+
+        return null;
+    }
+}
