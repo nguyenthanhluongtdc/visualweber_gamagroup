@@ -282,34 +282,6 @@ if [ -d "$SCRIPT_PATH/../data/DoctrineModule" ]; then
   [ ! -d "$SCRIPT_PATH/../data/DoctrineMongoODMModule/Proxy"  ] && $MKDIR -m $FDMODE -p $SCRIPT_PATH/../data/DoctrineMongoODMModule/Proxy && touch $SCRIPT_PATH/../data/DoctrineMongoODMModule/Proxy/.gitignore && echo -e "*\n!.gitignore"$'\r' > $SCRIPT_PATH/../data/DoctrineMongoODMModule/Proxy/.gitignore
 fi
 
-## ($CD $SCRIPT_PATH/../ && $FIND $SCRIPT_PATH/../ -type d -exec touch {}/index.html \;)
-
-## get last composer
-## if [ -f composer.phar ]; then
-  ## $PHP $PHPCOPTS composer.phar config --global discard-changes true
-##   $PHP $PHPCOPTS composer.phar self-update
-## else
-##   if [ $HASCURL == 1 ]; then
-##     curl -sS https://getcomposer.org/installer | $PHP
-##   else
-##     $PHP $PHPCOPTS -r "eval('?>'.file_get_contents('https://getcomposer.org/installer'));"
-##   fi
-## fi
-
-## install or update with composer
-## if [ -f composer.lock ]; then
-  ## $PHP $PHPCOPTS composer.phar config --global discard-changes true
-  ## echo "$PHP $PHPCOPTS composer.phar config --global discard-changes true"
-##   $PHP $PHPCOPTS composer.phar $DEVMODE update -o -a
-##   echo "$PHP $PHPCOPTS composer.phar $DEVMODE update -o -a"
-  ########### $PHP $PHPCOPTS composer.phar $DEVMODE update -o -a;
-## else
-  ## $PHP $PHPCOPTS composer.phar config --global discard-changes true
-  ## echo "$PHP $PHPCOPTS composer.phar config --global discard-changes true"
-##   $PHP $PHPCOPTS composer.phar $DEVMODE install -o -a
-##   echo "$PHP $PHPCOPTS composer.phar $DEVMODE install -o -a"
-## fi
-
 ## for laravel
 if [ -f "$SCRIPT_PATH/../artisan" ]; then
   ## ($CD $SCRIPT_PATH/ && $PHP artisan vendor:publish --tag=public --force)
