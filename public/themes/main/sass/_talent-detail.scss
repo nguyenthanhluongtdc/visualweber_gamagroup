@@ -33,6 +33,20 @@
     display: none;
     width: 100%;
     max-width: 1000px;
+    @media(max-width: 800px) {
+        max-width: 500px;
+        .poup--block {
+            grid-template-columns: 1fr !important;
+        }
+        img {
+            display: none;
+        }
+        form {
+            .btn-submint {
+                margin-top: 10px;
+            }
+        }
+    }
     h2 {
         color: #0D3F75;
     }
@@ -42,7 +56,7 @@
         &__form {
             flex-direction: column;
             justify-content: space-between;
-            padding: 40px;
+            padding: 50px;
         }
         img {
             height: 100%;
