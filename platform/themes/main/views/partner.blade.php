@@ -29,7 +29,7 @@
 
 
 {{-- ---------------------- talent dẫn lỗi tiên phong -------------------- --}}
-<div class="business-section2 padding80">
+{{-- <div class="business-section2 padding80">
     <div class="container">
         <div class="row_wrap">
             <div class="content-md4">
@@ -77,8 +77,8 @@
             @endif
         </div>
     </div>
-</div>
-{{-- <div class="partner-s3">
+</div> --}}
+<div class="partner-s3">
     <div class="container">
         <div class="row_wrap">
             <div class="col-md4 partner-title font-helve-light font20">
@@ -115,7 +115,7 @@
           
         </div>
     </div>
-</div> --}}
+</div>
 
 {{-- -------------------------------- danh sách số  ----------------- --}}
 
