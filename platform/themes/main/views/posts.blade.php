@@ -21,65 +21,43 @@
     </div>
 </div>
 {{-- ---------------------------------- new banner ------------------------------ --}}
+@php 
+ $category_news = get_category_order()[0];
+ $category_news_list = get_posts_by_category_order($category_news->id, 3 ,5,  ['posts.created_at' => 'desc']);
+@endphp
+
+@if (!empty($category_news_list))
 <div class="new-banner">
     <div class="container">
         <div class="new--banner">
             <div class="main-slider owl-carousel">
-                <div class="new--slider__item">
-                    <img src="{{ Theme::asset()->url('images/new/slide.jpg') }}" alt="" class="img-slider">
-                    <div class="content">
-                        <div class="content--infor">
-                            <h4 class="font-helve-bold font20">
-                                Nhật coi hồi sinh ngành chất bán dẫn là nhiệm vụ quốc gia
-                            </h4>
-                            <div class="new--time font-helve ">
-                                <span class="new--info">Kinh Doanh</span>
-                                <span class="new--item">15/03/2021</span>
-                                <span class="new--item"> 15:00</span>
+                @foreach ($category_news_list as $item)
+                    <div class="new--slider__item">
+                        <img src="{{ RvMedia::getImageUrl($item->image) }}" alt="{{ $item->name }}">
+                        <div class="content">
+                            <div class="content--infor">
+                                <h4 class="font-helve-bold font20">
+                                   <a href="">{{ $item->name }}</a>
+                                </h4>
+                                <div class="post-meta">
+                                    @if (!$item->categories->isEmpty())
+                                        <span class="post-category">
+                                            <a href="{{ $item->categories->first()->url }}">{{ $item->categories->first()->name }}</a>
+                                        </span>
+                                    @endif
+                                    <span class="time"> {{ $item->created_at->format('d/m/Y H:i') }}</span>      
+                                </div>
+                                <div class="new--des font18 font-helve-light">{{ $item->description}}</div>
                             </div>
-                            <p class="new--des font18 font-helve-light">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn là
-                                sứ mệnh quốc gia, quan trọng không kém...</p>
                         </div>
                     </div>
-                </div>
-                <div class="new--slider__item">
-                    <img src="{{ Theme::asset()->url('images/new/slide.jpg') }}" alt="" class="img-slider">
-                    <div class="content">
-                        <div class="content--infor">
-                            <h4 class="font-helve-bold font20">
-                                Nhật coi hồi sinh ngành chất bán dẫn là nhiệm vụ quốc gia
-                            </h4>
-                            <div class="new--time font-helve font12">
-                                <span class="new--info">Kinh Doanh</span>
-                                <span class="new--item">15/03/2021</span>
-                                <span class="new--item"> 15:00</span>
-                            </div>
-                            <span class="new--des font18 font-helve-light">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn
-                                là sứ mệnh quốc gia, quan trọng không kém...</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="new--slider__item">
-                    <img src="{{ Theme::asset()->url('images/new/slide.jpg') }}" alt="" class="img-slider">
-                    <div class="content">
-                        <div class="content--infor">
-                            <h4 class="font-helve-bold font20">
-                                Nhật coi hồi sinh ngành chất bán dẫn là nhiệm vụ quốc gia
-                            </h4>
-                            <div class="new--time font-helve font12">
-                                <span class="new--info">Kinh Doanh</span>
-                                <span class="new--item">15/03/2021</span>
-                                <span class="new--item"> 15:00</span>
-                            </div>
-                            <span class="new--des font18 font-helve-light">Nhật Bản cho biết việc hồi sinh ngành chất bán dẫn
-                                là sứ mệnh quốc gia, quan trọng không kém...</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
         </div>
     </div>
 </div>
+@endif
 {{-- ----------------------------------- filter ---------------------------------- --}}
 <div class="new-filter">
     <div class="container">

@@ -78,13 +78,29 @@ if (!function_exists('get_posts_by_category_order')) {
     }
 }
 
-if (!function_exists('get_category_slider')) {
+if (!function_exists('get_category_order')) {
     /**
      * @param bool $convertToList
      * @return array
      */
-    function get_category_slider()
+    function get_category_order()
     {
        return app(CategoryInterface::class)->getModel()->where('order', 1)->take(1)->get();
+    }
+}
+
+if (!function_exists('get_slug_admin')) {
+    /**
+     * @return array
+     *
+     */
+    function get_slug_admin()
+    {
+        $page = app(PageInterface::class)->getFirstBy(['template' => 'Admin-Council']);
+        if(!blank($page)) {
+            return $page->slugable->key ?? null;
+        }
+
+        return null;
     }
 }

@@ -13,7 +13,7 @@ register_page_template([
     'partner' => "Partner",
     'partner-detail' => "Partner-detail",
     'oriented-development' => "Development",
-    'admin-council' => "Admin Council",
+    'admin-council' => "Admin-Council",
     'development-history' => "Development History",
     'achievement' => "Achievement",
     'business-areas' => "Business-Areas",

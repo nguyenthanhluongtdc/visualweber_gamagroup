@@ -76,8 +76,11 @@ a {
 
 .font18 {
     font-size: 18px;
-    @media(max-width: 1440px) {
+    @media(max-width: 1900px) {
         font-size: 16px;
+    }
+    @media(max-width: 1440px) {
+        font-size: 15px;
     }
     @media(max-width: 480px) {
         font-size: 15px;
@@ -89,14 +92,18 @@ a {
 
 .font20 {
     font-size: 20px;
-    @media(max-width: 1440px) {
+    line-height: 30px;
+    @media(max-width: 19000px) {
         font-size: 18px;
+        line-height: 25px;
     }
     @media(max-width: 480px) {
         font-size: 16px;
+        line-height: 22px;
     }
     @media(max-width: 360px) {
         font-size: 15px;
+        line-height: 20px;
     }
 }
 
@@ -116,9 +123,13 @@ a {
 .font30 {
     font-size: 30px;
     line-height: 32px;
-    @media(max-width: 1500px) {
+    @media(max-width: 1900px) {
         font-size: 25px;
         line-height: 27px;
+    }
+    @media(max-width: 1440px) {
+        font-size: 23px;
+        line-height: 25px;
     }
     @media(max-width: 1240px) {
         font-size: 20px;

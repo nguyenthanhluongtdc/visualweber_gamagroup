@@ -149,7 +149,6 @@
         </div>
     </div>
 </div>
-
 <div class="container">
     <div class="section5-about">
         <div class="row_wrap">
@@ -160,7 +159,7 @@
                 </div>
                 @endif
                 <div class="view font-helve font18 content-desktop">
-                    <a href="" class="primary-a">{{ trans('See more') }}</a>
+                    <a href="{{ get_slug_admin() }}" class="primary-a">{{ trans('See more') }}</a>
                 </div>
             </div>
             <div class="content-md8" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
