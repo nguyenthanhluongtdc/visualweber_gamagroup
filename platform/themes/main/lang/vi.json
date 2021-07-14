@@ -56,7 +56,7 @@
     "Resend email verification successfully!": "Gửi lại email xác thực thành công!",
     "Reset Password": "Khôi phục mật khẩu",
     "Search result": "Kết quả tìm kiếm",
-    "Search result for: ": "Search result for: ",
+    "Search result for: ": "Kết quả tìm kiếm từ khóa: ",
     "Security": "Bảo mật",
     "Select menu": "Lựa chọn menu",
     "Send": "Gửi thư",
@@ -97,5 +97,7 @@
     "Send successfully" : "Gửi thư thành công!",
     "career opportunities" : "Cơ hội nghề nghiệp",
     "Blog" : "Tin tức",
-    "Business Areas" : "Lĩnh vực kinh doanh"
+    "Business Areas" : "Lĩnh vực kinh doanh",
+    "Next" : "Trang tiếp",
+    "Prev" : "Trang trước"
 }

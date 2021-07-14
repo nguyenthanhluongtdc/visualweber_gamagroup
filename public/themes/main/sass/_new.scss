@@ -178,6 +178,26 @@
     border-bottom-left-radius: 0;
 }
 
+
+.page-content .blod-new{
+    padding-bottom: 80px;
+}
+.page-content .page-item{
+    margin-right: 10px;
+    
+   
+}
+.page-content .page-item .page-link{
+    color: $primary-color;
+    font-family: $font-helve;
+    font-size: 18px;
+    padding: 12px 15px;
+    border: 1px solid #CAD5E1;
+}
+.page-content .page-item.active .page-link{
+    background: $primary-color;
+    color: #fff;
+}
 @media (max-width: 993px) {
     .new--banner {
         .content--infor {

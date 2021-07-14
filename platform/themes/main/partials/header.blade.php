@@ -66,11 +66,21 @@
                         <span>EN</span>
                     </a>
                 </li>
-
+               
                 <li class="nav-item dropdown dmenu">
-                    <div class="search-btn c-search-toggler"><i class="fa fa-search close-search"></i></div>
+                    <div class="search-btn c-search-toggler open-search">
+                        <i class="fa fa-search"></i>
+                        <form action="{{ route('public.search') }}" method="get" class="form-search">
+                            <input type="text" name="q" placeholder="{{ __('Type to search...') }}" class="input-search-home" autocomplete="off">
+                            <button class="search-btn c-search-toggler close-search" type="submit">
+                            <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
                 </li>
+               
             </ul>
+           
         </div>
     </header>
     <header class="header-mobie">
@@ -99,7 +109,17 @@
                     </li>
 
                     <li class="">
-                        <div class="search-btn c-search-toggler"><i class="fa fa-search close-search"></i></div>
+                        <div class="search-btn search-btn-mobie c-search-toggler">
+                        <i class="fa fa-search"></i>
+                        <form action="{{ route('public.search') }}" method="get" class="form-search-mobie">
+                            <div class="wrap">
+                                <input type="text" name="q" placeholder="{{ __('Type to search...') }}" class="input-search-home" autocomplete="off">
+                            <button class="search-btn c-search-toggler close-search" type="submit">
+                            <i class="fa fa-search"></i>
+                            </button>
+                                </div>
+                        </form>
+                    </div>
                     </li>
                     <li class="open-menu-mobie"><i class="fas fa-bars"></i></li>
                 </ul>

@@ -7,7 +7,7 @@
             <div class="post-category-item col-md-4">
                 <div class="post-thumbnail">
                     <a href="{{ $post->url }}" class="post__overlay">
-                        <img src="{{ RvMedia::getImageUrl($post->image) }}" alt="{{ $post->name }}">
+                        <img src="{{ RvMedia::getImageUrl($post->image,'medium', false, RvMedia::getDefaultImage()) }}" alt="{{ $post->name }}">
                     </a>
                 </div>
                 <h5 class="font-helve font20"><a href="{{ $post->url }}" class="post__title"> {{ $post->name }}</a></h5>
@@ -24,6 +24,9 @@
                 </div>
             </div>
         @endforeach
+        <div class="page-pagination text-right">
+            {!! $posts->withQueryString()->links() !!}
+        </div>
         </div>
     </div>
 </div>

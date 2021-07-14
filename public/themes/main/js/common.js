@@ -140,6 +140,20 @@ $('#select-contact').on('change', function (e) {
 });
 
 
+$('.open-search').click(function(){
+    $('.form-search').css('visibility', 'inherit');
+})
+$('.close-search').click(function(){
+    $('.form-search').css('visibility', 'hidden');
+})
+
+
+$('.search-btn-mobie').click(function(){
+    $('.form-search-mobie').show();
+})
+$('.close-search').click(function(){
+    $('.form-search-mobie').hide();
+})
 
 
 

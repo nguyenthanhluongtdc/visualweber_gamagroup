@@ -158,13 +158,13 @@
         <div class="container">
             <div class="new">
                 <div class="row ">
-                    @php $posts  =  get_post_new(9);  @endphp
+                    @php $posts  =  get_all_posts();  @endphp
                     @if ($posts->count())
                         @foreach ($posts as $itemPost)
                             <div class="col-md-4 mt-2 mb-3 ">
                                 <div class="post-thumbnail">
                                     <a href="{{ $itemPost->url }}" class="post__overlay ">
-                                        <img src="{{ RvMedia::getImageUrl($itemPost->image) }}"
+                                        <img src="{{ RvMedia::getImageUrl($itemPost->image,'medium', false, RvMedia::getDefaultImage()) }}"
                                             alt="{{ $itemPost->name }}">
                                     </a>
                                 </div>
@@ -193,13 +193,16 @@
 
                         @endforeach
                     @endif
+                    
                 </div>
-
+                <div class="page-pagination text-right">
+                    {!! $posts->withQueryString()->links() !!}
+                </div>
             </div>
         </div>
     </div>
     {{-- ---------------------------------- phân trang  ------------------------- --}}
-    <div class="gama--naviga">
+    {{-- <div class="gama--naviga">
 
         <div class="container ">
             <nav aria-label="Page navigation example">
@@ -216,5 +219,5 @@
                 </ul>
             </nav>
         </div>
-    </div>
+    </div> --}}
 </div>
