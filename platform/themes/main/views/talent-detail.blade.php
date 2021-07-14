@@ -55,16 +55,18 @@
                                     <input type="text" name="email" class="form-control" placeholder="Email" />
                                     <input type="text" name="phone" class="form-control" placeholder="Số Điện Thoại " />
                                     <input type="text" name="address" class="form-control" placeholder="Địa chỉ " />
-                                </div>
 
-                                <div class=" Recruitment--buttom font-helve font18" for="cv_upload">
-                                    {{-- <div class="form-group"> --}}
                                     <label class=" cv-upload" for="cv_upload">
-                                        <span class="btn btn-primary Recruitment--profession">Đính kèm CV ứng
+                                        <span class="btn btn-primary Recruitment--cv">Đính kèm CV ứng
                                             tuyển</span>
                                     </label>
                                     <input type="file" name="cv" required id="cv_upload"
                                         class="form-control-file d-none">
+                                </div>
+
+                                <div class=" Recruitment--buttom font-helve font18" for="cv_upload">
+                                    {{-- <div class="form-group"> --}}
+                                    
                                     {{-- </div> --}}
                                     <div class=" Recruitment font-helve font18"
                                         style="background-color:#0D3F75 ;width:30%;color:#ffffff">
