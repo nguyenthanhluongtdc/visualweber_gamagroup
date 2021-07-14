@@ -76,7 +76,7 @@
                         <div class="content-title" >
                             <h3 class="title font-helve-bold font25">Phát triển bản thân</h3>
                             <div class="content-none ">
-                                <p class="desc font-helve-light font18">GAMA Group là môi trường làm việc đa văn hóa với những con người xuất phát các quốc gia khác nhau trên thế giới như Pháp, Phillipines… Tại đây, chúng tôi cố gắng cống hiến tinh hoa của mỗi dân tộc tạo nên môi trường làm việc năng động, cùng nhiều cơ hội thử thách giới hạn bản thân.</p>
+                                <p class="desc font-helve-light font18">Gama Group là môi trường làm việc đa văn hóa với những con người xuất phát các quốc gia khác nhau trên thế giới như Pháp, Phillipines… Tại đây, chúng tôi cố gắng cống hiến tinh hoa của mỗi dân tộc tạo nên môi trường làm việc năng động, cùng nhiều cơ hội thử thách giới hạn bản thân.</p>
                             </div>
             
                         </div>
@@ -86,7 +86,7 @@
                         <div class="content-title" >
                             <h3 class="title font-helve-bold font25">Bồi dưỡng nhân tài</h3>
                             <div class="content-none ">
-                                <p class="desc font-helve-light font18">Khi trở thành thành viên của đại gia đình GAMA Group, cơ hội sẽ không chỉ mở ra ở khía cạnh công việc. Với tầm nhìn chiến lược cùng tâm huyết của một tập thể, chúng tôi luôn có chính sách hỗ trợ mỗi thành viên phát triển và hoàn thiện bản thân.</p>
+                                <p class="desc font-helve-light font18">Khi trở thành thành viên của đại gia đình Gama Group, cơ hội sẽ không chỉ mở ra ở khía cạnh công việc. Với tầm nhìn chiến lược cùng tâm huyết của một tập thể, chúng tôi luôn có chính sách hỗ trợ mỗi thành viên phát triển và hoàn thiện bản thân.</p>
                             </div>
             
                         </div>
@@ -96,7 +96,7 @@
                         <div class="content-title" >
                             <h5 class="title font-helve-bold font25">Nắm bắt cơ hội</h5>
                             <div class="content-none ">
-                                <p class="desc font-helve-light font18">Khi trở thành thành viên của đại gia đình GAMA Group, cơ hội sẽ không chỉ mở ra ở khía cạnh công việc. Với tầm nhìn chiến lược cùng tâm huyết của một tập thể, chúng tôi luôn có chính sách hỗ trợ mỗi thành viên phát triển và hoàn thiện bản thân.</p>
+                                <p class="desc font-helve-light font18">Khi trở thành thành viên của đại gia đình Gama Group, cơ hội sẽ không chỉ mở ra ở khía cạnh công việc. Với tầm nhìn chiến lược cùng tâm huyết của một tập thể, chúng tôi luôn có chính sách hỗ trợ mỗi thành viên phát triển và hoàn thiện bản thân.</p>
                             </div>
             
                         </div>

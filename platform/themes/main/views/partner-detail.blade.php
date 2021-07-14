@@ -89,7 +89,7 @@
                         <br>
                         đầu tư</h3>
                     <div class="content-none ">
-                        <p class="desc font-helve-light font18">Cùng điểm qua các tin tức mới nhất về những dự án đầu tư của GAMA Group.
+                        <p class="desc font-helve-light font18">Cùng điểm qua các tin tức mới nhất về những dự án đầu tư của Gama Group.
                         </p>
                     </div>
 
@@ -99,9 +99,9 @@
                 <img src="{{ Theme::asset()->url('images/partner/group38.jpg') }}" alt="" class="img-slider">
                 <div class="content-title">
                     <h3 class="title font-helve-bold font30">Trở thành đối tác <br>
-                        GAMA Group</h3>
+                        Gama Group</h3>
                     <div class="content-none ">
-                        <p class="desc font-helve-light font18">GAMA Group luôn đảm bảo nguồn tài nguyên dồi dào dành
+                        <p class="desc font-helve-light font18">Gama Group luôn đảm bảo nguồn tài nguyên dồi dào dành
                             cho từng doanh nghiệp mới tham gia danh mục đầu tư.
                         </p>
                     </div>

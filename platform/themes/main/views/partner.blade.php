@@ -29,7 +29,56 @@
 
 
 {{-- ---------------------- talent dẫn lỗi tiên phong -------------------- --}}
-<div class="partner-s3">
+<div class="business-section2 padding80">
+    <div class="container">
+        <div class="row_wrap">
+            <div class="content-md4">
+                @if (!empty(get_featured_service(10)))
+                    <ul class="nav nav-pills list-business-tab font-helve font20" role="tablist">
+                        @foreach (get_featured_service(10) as $key => $item)
+                            <li class="nav-item">
+                                <a class="nav-link {{ $loop->first ? 'active' : '' }}" data-toggle="pill"
+                                    href="#tabservice{{ $key }}">{{ $item->name }}</a>
+                            </li>
+                        @endforeach
+
+                    </ul>
+                @endif
+            </div>
+
+            @if (!empty(get_featured_service(10)))
+                <div class="content-md8">
+                    <div class="tab-content list-business-content">
+                        @foreach (get_featured_service(10) as $key => $item)
+                            <div id="tabservice{{ $key }}" class="container tab-pane {{ $loop->first ? 'active' : '' }}">
+                                <div class="row">
+
+                                    <div class="col-md-6 content-wrap">
+                                        <div class="content font-helve-light font18">
+                                           {!! $item->content !!}
+                                        </div>
+                                        <div class="views content-none-mobie">
+                                            <a href="{{ $item->url }}" class="primary-a font-helve">
+                                                {{ trans('See more') }}
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <img src="{{ Theme::asset()->url('images/partner/group36.jpg') }}" alt="" class="img-slider">
+
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                        
+                    </div>
+                </div>
+            @endif
+        </div>
+    </div>
+</div>
+{{-- <div class="partner-s3">
     <div class="container">
         <div class="row_wrap">
             <div class="col-md4 partner-title font-helve-light font20">
@@ -61,22 +110,12 @@
                 
                 </div>
               </div>
-            {{-- <div class="col-md-4 d-flex align-items-start flex-column justify-content-between talent--info font-helve-light font18">
-                
-                    @if (has_field($page, 'desc_thang_may_orona'))
-                        {!! get_field($page, 'desc_thang_may_orona') !!}
-                    @endif
-               
-                 <div class="partner-views font-helve font18">
-            <a href="" class="primary-b">Xem thêm</a>
-        </div> --}}
+            
             </div>
-            {{-- <div class="col-md-4">
-                <img src="{{ Theme::asset()->url('images/partner/group36.jpg') }}" alt="" class="img-slider">
-            </div> --}}
+          
         </div>
     </div>
-</div>
+</div> --}}
 
 {{-- -------------------------------- danh sách số  ----------------- --}}
 
@@ -134,7 +173,7 @@
                     <h3 class="title font-helve-bold font30">Tin tức <br>
                         đầu tư</h3>
                     <div class="content-none ">
-                        <p class="desc font-helve-light font18">Cùng điểm qua các tin tức mới nhất về những dự án đầu tư của GAMA Group</p>
+                        <p class="desc font-helve-light font18">Cùng điểm qua các tin tức mới nhất về những dự án đầu tư của Gama Group</p>
                     </div>
     
                 </div>
@@ -143,9 +182,9 @@
                 <img src="{{ Theme::asset()->url('images/partner/group38.jpg') }}" alt="" class="img-slider">
                 <div class="content-title" >
                     <h3 class="title font-helve-bold font30">Trở thành đối tác <br>
-                        GAMA Group</h3>
+                        Gama Group</h3>
                     <div class="content-none ">
-                        <p class="desc font-helve-light font18">GAMA Group luôn đảm bảo nguồn tài nguyên dồi dào dành cho từng doanh nghiệp mới tham gia danh mục đầu tư.
+                        <p class="desc font-helve-light font18">Gama Group luôn đảm bảo nguồn tài nguyên dồi dào dành cho từng doanh nghiệp mới tham gia danh mục đầu tư.
                         </p>
                     </div>
     
