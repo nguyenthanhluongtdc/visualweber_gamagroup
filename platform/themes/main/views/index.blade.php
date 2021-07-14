@@ -27,11 +27,7 @@
                         {!! get_field($page, 'title_section2') !!}
                     </h3>
                 @endif
-                {{-- <div class="views-all-logo content-desktop">
-                    <a href="" class="font18 font-helve">
-                        {{ get_field($page, 'view_all_brand') }}
-                    </a>
-                </div> --}}
+               
             </div>
             <div class="content-md8 content-right">
                 <div class="row">
@@ -154,7 +150,12 @@
                     <div class="item-right" data-aos="zoom-in-up" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-delay="30">
                         <a href="{{ $post->url }}" class="item-link" title="{{ $post->name }}">
                             <div class="post-thumbnail">
-                            <img src="{{ RvMedia::getImageUrl($post->image) }}" alt="{{ $post->name }}" class="img-slider">
+                            @if (empty($post->image) )
+                            <img src="{{ Theme::asset()->url('images/homepage/images.png') }}" alt=""
+                            class="img-slider">
+                            @else
+                            <img src="{{ RvMedia::getImageUrl($post->image,'medium', false, RvMedia::getDefaultImage()) }}" alt="{{ $post->name }}" class="img-slider">
+                            @endif
                             </div>
                             <h4 class="font-helve font20">
                                 {{ $post->name }}
@@ -164,7 +165,7 @@
                         <div class="tag-time font-helve">
                             @if (!$post->categories->isEmpty())
                             <span class="tag">
-                                <a href="{{ $post->categories->last()->url }}">{{ $post->categories->last()->name }}</a>
+                                <a href="{{ $post->categories->first()->url }}">{{ $post->categories->first()->name }}</a>
                             </span>
                              @endif
                             
@@ -176,23 +177,7 @@
                     </div>
                     @endforeach
                     @endif
-                    {{-- <div class="item-right col-md-6">
-                        <a href="" class="item-link">
-                            <img src="{{ Theme::asset()->url('images/homepage/item2.jpg') }}" alt=""
-                                class="img-slider">
-                            <h4 class="font-helve font20">Bộ Công Thương: Không có chuyện
-                                'doanh nghiệp thép bắt tay làm giá'
-                            </h4>
-                        </a>
-                        <div class="tag-time font-helve">
-                            <span class="tag">Cộng đồng</span>
-                            <span class="time">15/03/2021 15:00</span>
-                        </div>
-                        <p class="desc font-helve font18">
-                            Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công Thương tính hạn chế xuất
-                            khẩu loại thép mà trong nước có nhu cầu.
-                        </p>
-                    </div> --}}
+                   
                 </div>
             </div>
         </div>
@@ -220,42 +205,7 @@
                 </div>
             </div>
         @endforeach
-        {{-- <div class="section4-item" >
-            <img src="{{ Theme::asset()->url('images/homepage/end1.jpg') }}" alt="">
-            <div class="content-title" >
-                <h5 class="title font-helve-bold font30">Lịch sử <br> phát triển</h5>
-                <div class="content-none ">
-                    <p class="desc font-helve-light font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công
-                        Thương tính hạn chế xuất khẩu loại thép mà trong nước có nhu cầu.</p>
-                    <a href="{{ get_slug_development_history() }}"><img src="{{ Theme::asset()->url('images/homepage/iconright.png') }}" alt=""></a>
-                </div>
-
-            </div>
-        </div>
-        <div class="section4-item">
-            <img src="{{ Theme::asset()->url('images/homepage/end2.jpg') }}" alt="">
-            <div class="content-title" >
-                <h5 class="title font-helve-bold font30">Nhân tài</h5>
-                <div class="content-none ">
-                    <p class="desc font-helve-light font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công
-                        Thương tính hạn chế xuất khẩu loại thép mà trong nước có nhu cầu.</p>
-                    <a href=""><img src="{{ Theme::asset()->url('images/homepage/iconright.png') }}" alt=""></a>
-                </div>
-
-            </div>
-        </div>
-        <div class="section4-item">
-            <img src="{{ Theme::asset()->url('images/homepage/end3.jpg') }}" alt="">
-            <div class="content-title" >
-                <h5 class="title font-helve-bold font30">Định hướng <br> phát triển</h5>
-                <div class="content-none ">
-                    <p class="desc font-helve-light font18">Ngoài yêu cầu doanh nghiệp thép tăng công suất sản xuất, Bộ Công
-                        Thương tính hạn chế xuất khẩu loại thép mà trong nước có nhu cầu.</p>
-                    <a href=""><img src="{{ Theme::asset()->url('images/homepage/iconright.png') }}" alt=""></a>
-                </div>
-
-            </div>
-        </div> --}}
+        
     </div>
 </div>
 @endif

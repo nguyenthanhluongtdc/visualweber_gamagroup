@@ -77,3 +77,14 @@ if (!function_exists('get_posts_by_category_order')) {
         return app(PostInterface::class)->getByCategoryOrderBy($categoryId, $paginate, $limit, $order);
     }
 }
+
+if (!function_exists('get_category_slider')) {
+    /**
+     * @param bool $convertToList
+     * @return array
+     */
+    function get_category_slider()
+    {
+       return app(CategoryInterface::class)->getModel()->where('order', 1)->take(1)->get();
+    }
+}
