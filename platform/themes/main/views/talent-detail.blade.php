@@ -47,8 +47,8 @@
                                     </h2>
                                 </div>
 
-                                <div class="poup--form font-helve font18 ">
-                                    <p class=" font-helve-light font18">
+                                <div class="poup--form font-helve  ">
+                                    <p class=" font-helve-light font16">
                                         Vui lòng bổ sung các thông tin cá nhân của bạn để ứng tuyển
                                     </p>
                                     <input type="text" name="name" class="form-control" placeholder="Họ Tên" />
