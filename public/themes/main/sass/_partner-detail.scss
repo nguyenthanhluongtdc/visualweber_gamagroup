@@ -28,7 +28,12 @@
     }
     
 }
-
+.title-link-partner{
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+}
 .xem-them {
     margin: 40px 0 100px;
 }
@@ -46,5 +51,24 @@
                 margin-bottom: 0;
             }
         }
+    }
+}
+
+.partner--s1__item .wrap-item{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    img{
+        width: 100%;
+        max-width: 100%;   
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 2px;
+        background: rgba(0,0,0, 0.5);
     }
 }

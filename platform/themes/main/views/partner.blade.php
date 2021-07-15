@@ -163,32 +163,28 @@
 </div>
 
 {{-- banner footer --}}
+@if (has_field($page, 'two_page_bottom_parter'))
+
 <div class="partner-s1">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 partner--s1__item">
-                <img src="{{ Theme::asset()->url('images/partner/group37.jpg') }}" alt="" class="img-slider">
-                <div class="content-title" >
-                    <h3 class="title font-helve-bold font30">Tin tức <br>
-                        đầu tư</h3>
-                    <div class="content-none ">
-                        <p class="desc font-helve-light font18">Cùng điểm qua các tin tức mới nhất về những dự án đầu tư của Gama Group</p>
+            @foreach (get_field($page, 'two_page_bottom_parter') as $item)
+                <div class="col-md-6 partner--s1__item">
+                    <div class="wrap-item">
+                        <img src="{{ RvMedia::getImageUrl(get_sub_field($item, 'img_two_page_bottom_parter')) }}" alt="{!! get_sub_field($item, 'title_two_page_bottom_parter') !!}" class="img-slider">
+                    <div class="content-title">
+                        <h3 class="title font-helve-bold font30 title-link-partner"><a href="{{ get_sub_field($item, 'link_two_page_bottom_parter') }}">{!! get_sub_field($item, 'title_two_page_bottom_parter') !!}</a></h3>
+                        <div class="content-none ">
+                            <p class="desc font-helve-light font18">{!! get_sub_field($item, 'desc_two_page_bottom_parter') !!}
+                            </p>
+                        </div>
+
                     </div>
-    
-                </div>
-            </div>
-            <div class="col-md-6 partner--s1__item">
-                <img src="{{ Theme::asset()->url('images/partner/group38.jpg') }}" alt="" class="img-slider">
-                <div class="content-title" >
-                    <h3 class="title font-helve-bold font30">Trở thành đối tác <br>
-                        Gama Group</h3>
-                    <div class="content-none ">
-                        <p class="desc font-helve-light font18">Gama Group luôn đảm bảo nguồn tài nguyên dồi dào dành cho từng doanh nghiệp mới tham gia danh mục đầu tư.
-                        </p>
                     </div>
-    
                 </div>
-            </div>
+            @endforeach
+            
         </div>
     </div>
 </div>
+@endif
