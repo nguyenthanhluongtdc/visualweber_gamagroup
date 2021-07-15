@@ -1,19 +1,40 @@
-{!! Theme::breadcrumb()->render() !!}
+<div class="breadcrumb-wrap">
+    <ul class="breadcrumb-list container font-helve-light" itemscope itemtype="http://schema.org/BreadcrumbList">
+       
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="bread-link">
+                   <a href="{{ route('public.index') }}">{{__('Home')}}</a>
+                    <span class="icon">
+                        <i class="fas fa-angle-right"></i>
+                    </span>
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="bread-link">
+                    <a href="{{ route('public.index') }}/{{ get_slug_partner() }}">{{__('Partner')}}</a>
+                     <span class="icon">
+                         <i class="fas fa-angle-right"></i>
+                     </span>
+                 </li>
+        
+                <li class="active link-active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    {{ $partner->name }}
+                </li>
+       
+    </ul>
+</div>
+
 
 {{-- --------------------------------------đối tác--------------------- --}}
 <div class="all-news-content">
     <div class="container">
-        <div class="new-section1">
-            <div class="row">
-                <div class="col-lg-4">
-                    <h1 class="new-title font-helve-bold font30">
-                        {!! $page->description !!}
-
-                    </h1>
+        <div class="new-section1 section1-partner">
+            <div class="row_wrap">
+                <div class="content-md4">
+                    <div class="new-title font-helve-bold font30 title-primary pri-color">
+                       {!! get_field($partner, 'name_partner_detail') !!}
+                    </div>
                 </div>
-                <div class="col-lg-8">
+                <div class="content-md8">
                     <div class="desc font18 font-helve-light">
-                        {!! $page->content !!}
+                        {!! get_field($partner, 'desc_partner_detail') !!}
                     </div>
                 </div>
             </div>
@@ -21,14 +42,16 @@
     </div>
 </div>
 
-<div class="new-banner">
+
+    
+<div class="partner-banner">
     <div class="container">
         <div class="new--banner">
             <div class="main-slider owl-carousel">
-                @if (has_field($page, 'banner_doi_tac_orona'))
-                @foreach (get_field($page, 'banner_doi_tac_orona') as $item)
+                @if (has_field($partner, 'slider_banner_partner_detail'))
+                @foreach (get_field($partner, 'slider_banner_partner_detail') as $item)
                  <div class="new--slider__item">
-                 <img src="{{ RvMedia::getImageUrl(get_sub_field($item, 'img_partner_orona')) }}" alt="banner">
+                 <img src="{{ RvMedia::getImageUrl(get_sub_field($item, 'hinh_banner_item')) }}" alt="banner">
                 </div>
                  @endforeach
                 @endif
@@ -43,17 +66,17 @@
     <div class="container">
         <div class="row">
             <h2 class="col-md-4 partner-title  font-helve-bold font30">
-                @if (has_field($page, 'title_dat_diem_thang_may'))
-                    {!! get_field($page, 'title_dat_diem_thang_may') !!}
+                @if (has_field($partner, 'title_section2_partner_detail'))
+                    {!! get_field($partner, 'title_section2_partner_detail') !!}
                 @endif
             </h2>
             <div class="col-md-8">
                 <div class="row partner-orona__item">
-                    @if (has_field($page, 'title_danh_sach_uu_diem_thang_may'))
-                    @foreach (get_field($page, 'title_danh_sach_uu_diem_thang_may') as $item)
+                    @if (has_field($partner, 'list_section2_partner_detail'))
+                    @foreach (get_field($partner, 'list_section2_partner_detail') as $item)
                     <div class="col-md-6 partner-orona__item ">
-                        <h3 class="partner-title font-helve-bold font20">{{ get_sub_field($item, 'title_uu_diem_thang_may') }}</h3>
-                        <div class="font-helve font18"> {!! get_sub_field($item, 'desc_uu_diem_thang_may') !!}</div>
+                        <h3 class="partner-title font-helve-bold font20">{{ get_sub_field($item, 'title_item_section2_partner_detail') }}</h3>
+                        <div class="font-helve font18"> {!! get_sub_field($item, 'desc_item_section2_partner_detail') !!}</div>
                     </div>
                     @endforeach
                     @endif
@@ -63,26 +86,25 @@
     </div>
 </div>
 
-
+@if (has_field($partner, 'section3_partner_detail'))
 
 <div class="partner-s1">
     <div class="container">
         <div class="row">
-            {{-- @if (has_field($page, 'banner_footer'))
-            @foreach (get_field($page, 'banner_footer') as $item)
-            <div class="col-md-6 partner--s1__item">
-                <img src="{{ RvMedia::getImageUrl(get_sub_field($item, 'img_banner_footer')) }}" alt="banner">
-                <div class="content-title">
-                    <h3 class="title font-helve-bold font30">{{ get_sub_field($item, 'title_banner_footer') }}</h3>
-                    <div class="content-none desc font-helve-light font18 ">
-                       {!! get_sub_field($item, 'desc_banner_footer') !!}
-                    </div>
+            @foreach (get_field($partner, 'section3_partner_detail') as $item)
+                <div class="col-md-6 partner--s1__item">
+                    <img src="{{ RvMedia::getImageUrl(get_sub_field($item, 'img_section3_partner_detail')) }}" alt="{!! get_sub_field($item, 'title_section3_partner_detail') !!}" class="img-slider">
+                    <div class="content-title">
+                        <h3 class="title font-helve-bold font30">{!! get_sub_field($item, 'title_section3_partner_detail') !!}</h3>
+                        <div class="content-none ">
+                            <p class="desc font-helve-light font18">{!! get_sub_field($item, 'desc_section3_partner_detail') !!}
+                            </p>
+                        </div>
 
+                    </div>
                 </div>
-            </div>
             @endforeach
-            @endif --}}
-            <div class="col-md-6 partner--s1__item">
+            {{-- <div class="col-md-6 partner--s1__item">
                 <img src="{{ Theme::asset()->url('images/partner/group37.jpg') }}" alt="" class="img-slider">
                 <div class="content-title">
                     <h3 class="title font-helve-bold font30">Tin tức
@@ -107,7 +129,8 @@
                     </div>
 
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
+@endif

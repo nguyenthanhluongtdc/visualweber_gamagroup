@@ -104,3 +104,19 @@ if (!function_exists('get_slug_admin')) {
         return null;
     }
 }
+
+if (!function_exists('get_slug_partner')) {
+    /**
+     * @return array
+     *
+     */
+    function get_slug_partner()
+    {
+        $page = app(PageInterface::class)->getFirstBy(['template' => 'Partner']);
+        if(!blank($page)) {
+            return $page->slugable->key ?? null;
+        }
+
+        return null;
+    }
+}

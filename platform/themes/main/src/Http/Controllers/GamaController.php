@@ -13,6 +13,7 @@ use Platform\Theme\Events\RenderingHomePageEvent;
 use Platform\Theme\Events\RenderingSiteMapEvent;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
+use Platform\Partner\Models\Partner;
 use Platform\Services\Models\Services;
 use Theme;
 use Response;
@@ -184,5 +185,28 @@ class GamaController extends PublicController
         SeoHelper::setTitle($data['service']->name)->setDescription($data['service']->description);
 
         return Theme::scope('gama-service', $data)->render();
+    }
+
+    public function getPartner($slug)
+    {
+        $slug = SlugHelper::getSlug($slug, SlugHelper::getPrefix(Partner::class, 'doi-tac'));
+        if (!$slug) {
+            abort(404);
+        }
+
+        $data['partner'] = $slug->reference;
+
+        if (blank($data)) {
+            abort(404);
+        }
+
+        // Theme::breadcrumb()
+        //     ->add(__('Trang chủ'), url('/'))
+        //     ->add(__('Giới thiệu'), url(get_slug_by_template('About')))
+        //     ->add($data['about']->name, $data['about']->url);
+
+        SeoHelper::setTitle($data['partner']->name)->setDescription($data['partner']->description);
+
+        return Theme::scope('partner-detail', $data)->render();
     }
 }
