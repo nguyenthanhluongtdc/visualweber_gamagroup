@@ -1,25 +1,50 @@
 .partner-orona {
     padding: 80px 0;
+    @media(max-width : 995px){
+        padding: 40px 0;
+    }
+    
     .partner-title {
         color: #0D3F75;
         margin-bottom: 20px;
     }
     .partner-orona__item {
         margin-top: 70px;
+        @media(max-width : 1680px){
+            margin-top: 50px;
+        }
+        @media(max-width : 995px){
+            margin-top: 30px;
+        }
     }
     .partner-orona__item:first-child {
         margin-top: 0px;
     }
     .partner-orona__item:nth-child(2) {
         margin-top: 0px;
-    }
-    @media(max-width: 767px) {
-        .partner-orona__item:nth-child(2) {
-            margin-top: 70px;
+        @media(max-width : 995px){
+            margin-top: 30px;
         }
     }
+    
 }
 
 .xem-them {
     margin: 40px 0 100px;
+}
+
+.section1-partner{
+    .content-md8{
+        .desc{
+            p {
+                margin-bottom: 30px;
+                strong{
+                    font-family: $font-helve;
+                }
+            }
+            p:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
 }

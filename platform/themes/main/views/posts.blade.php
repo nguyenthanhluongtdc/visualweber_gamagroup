@@ -150,7 +150,15 @@
                                     <a href="{{ $itemPost->url }}" class="post__overlay">
                                         <h3 class="new--title font-helve font20">{{ $itemPost->name }}</h3>
                                     </a>
-                                    <div class="new--time font-helve font12">
+                                    <div class="post-meta">
+                                        @if (!$itemPost->categories->isEmpty())
+                                            <span class="post-category">
+                                                <a href="{{ $itemPost->categories->first()->url }}">{{ $itemPost->categories->first()->name }}</a>
+                                            </span>
+                                        @endif
+                                        <span class="time"> {{ $itemPost->created_at->format('d/m/Y H:i') }}</span>      
+                                    </div>
+                                    {{-- <div class="new--time font-helve font12">
                                         @if (!$itemPost->categories->isEmpty())
                                             <span class="new--info ">
                                                 <a
@@ -159,7 +167,7 @@
                                         @endif
                                         <span
                                             class="new--item">{{ $itemPost->created_at->format('d/m/Y H:i') }}</span>
-                                    </div>
+                                    </div> --}}
                                     <a href="{{ $itemPost->url }}" class="post__overlay">
                                         <p class="new--des font-helve-light font18">
                                             {{ $itemPost->description }}

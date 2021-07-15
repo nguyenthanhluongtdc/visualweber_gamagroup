@@ -27,15 +27,14 @@
   @endif
 </div>
 
-
 {{-- ---------------------- talent dẫn lỗi tiên phong -------------------- --}}
-{{-- <div class="business-section2 padding80">
+<div class="business-section2 padding80">
     <div class="container">
         <div class="row_wrap">
             <div class="content-md4">
-                @if (!empty(get_featured_service(10)))
+                @if (!empty(get_featured_partner(10)))
                     <ul class="nav nav-pills list-business-tab font-helve font20" role="tablist">
-                        @foreach (get_featured_service(10) as $key => $item)
+                        @foreach (get_featured_partner(10) as $key => $item)
                             <li class="nav-item">
                                 <a class="nav-link {{ $loop->first ? 'active' : '' }}" data-toggle="pill"
                                     href="#tabservice{{ $key }}">{{ $item->name }}</a>
@@ -46,10 +45,10 @@
                 @endif
             </div>
 
-            @if (!empty(get_featured_service(10)))
+            @if (!empty(get_featured_partner(10)))
                 <div class="content-md8">
                     <div class="tab-content list-business-content">
-                        @foreach (get_featured_service(10) as $key => $item)
+                        @foreach (get_featured_partner(10) as $key => $item)
                             <div id="tabservice{{ $key }}" class="container tab-pane {{ $loop->first ? 'active' : '' }}">
                                 <div class="row">
 
@@ -65,7 +64,7 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <img src="{{ Theme::asset()->url('images/partner/group36.jpg') }}" alt="" class="img-slider">
+                                        <img src="{{ RvMedia::getImageUrl($item->image) }}" alt="{{ $item->name }}">
 
                                     </div>
                                 </div>
@@ -77,8 +76,8 @@
             @endif
         </div>
     </div>
-</div> --}}
-<div class="partner-s3">
+</div>
+{{-- <div class="partner-s3">
     <div class="container">
         <div class="row_wrap">
             <div class="col-md4 partner-title font-helve-light font20">
@@ -115,7 +114,7 @@
           
         </div>
     </div>
-</div>
+</div> --}}
 
 {{-- -------------------------------- danh sách số  ----------------- --}}
 

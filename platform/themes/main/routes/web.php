@@ -2,6 +2,7 @@
 
 // Custom routes
 
+use Platform\Partner\Models\Partner;
 use Platform\Services\Models\Services;
 
 Route::group(['namespace' => 'Theme\Gama\Http\Controllers', 'middleware' => ['web', 'core']], function () {
@@ -18,7 +19,10 @@ Route::group(['namespace' => 'Theme\Gama\Http\Controllers', 'middleware' => ['we
             'as' => 'gama-service',
             'uses' => 'GamaController@getService',
         ]);
-
+        Route::get(\SlugHelper::getPrefix(Partner::class, 'doi-tac') . '/{slug}', [
+            'as' => 'partner-detail',
+            'uses' => 'GamaController@getPartner',
+        ]);
         Route::get('ajax/search', 'GamaController@getSearch')->name('public.ajax.search');
 
     });
