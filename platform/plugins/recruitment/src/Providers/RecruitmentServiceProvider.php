@@ -52,7 +52,7 @@ class RecruitmentServiceProvider extends ServiceProvider
 
         });
         add_shortcode('recruitment-form', 'Recruitment form', 'Custom form', function($shortCode) {
-            return view('plugins/recruitment-contact::form', [
+            return view('plugins/recruitment::form', [
                     'company'    => $shortCode->company,
                     'post'       => $shortCode->post,
                     'company_email'       => $shortCode->company_email,

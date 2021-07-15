@@ -18,7 +18,6 @@ return [
         'contact_phone'   => 'Contact phone',
         'contact_address' => 'Contact address',
         'contact_content' => 'Contact content',
-        'contact_job'   => 'Contact job',
         'contact_cv' => 'Contact cv',
 
     ],
