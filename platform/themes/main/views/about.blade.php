@@ -261,7 +261,7 @@
             </div>
         </div>
         <div class="view font-helve font18 content-mobie">
-            <a href="">{{ trans('See more') }}</a>
+            <a href="{{ get_slug_admin() }}">{{ trans('See more') }}</a>
         </div>
     </div>
     

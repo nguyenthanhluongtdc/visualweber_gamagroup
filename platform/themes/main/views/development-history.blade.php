@@ -85,7 +85,7 @@
                 </div>
                 
                 <div class="view font-helve font18 content-desktop">
-                    <a href="" class="primary-a">{{ trans('See more') }}</a>
+                    <a href="{{ get_slug_admin() }}" class="primary-a">{{ trans('See more') }}</a>
                 </div>
             </div>
             <div class="content-md8" data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
@@ -117,7 +117,7 @@
             </div>
         </div>
         <div class="view font-helve font18 content-mobie">
-            <a href="">{{ trans('See more') }}</a>
+            <a href="{{ get_slug_admin() }}">{{ trans('See more') }}</a>
         </div>
     </div>
 

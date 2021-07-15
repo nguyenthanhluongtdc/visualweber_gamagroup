@@ -59,6 +59,11 @@
                                         <img src="{{ RvMedia::getImageUrl($item->image) }}" alt="{{ $item->name }}">
                                     </div>
                                 </div>
+                                <div class="views content-show-mobie font18 font-helve">
+                                    <a href="{{ $item->url }}">
+                                        {{ trans('See more') }}
+                                    </a>
+                                </div>
                             </div>
                         @endforeach
                         
