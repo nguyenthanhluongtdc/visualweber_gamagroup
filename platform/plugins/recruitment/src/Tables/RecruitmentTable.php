@@ -35,7 +35,7 @@ class RecruitmentTable extends TableAbstract
     public function __construct(DataTables $table, UrlGenerator $urlGenerator, RecruitmentInterface $recruitmentRepository)
     {
         $this->repository = $recruitmentRepository;
-        $this->setOption('id', 'plugins-recruitment-table');
+        // $this->setOption('id', 'plugins-recruitment-table');
         parent::__construct($table, $urlGenerator);
 
         if (!Auth::user()->hasAnyPermission(['recruitment.edit', 'recruitment.destroy'])) {
@@ -57,6 +57,9 @@ class RecruitmentTable extends TableAbstract
                 }
                 return Html::link(route('recruitment.edit', $item->id), $item->name);
             })
+            ->editColumn('cv', function ($item) {
+                return $this->displayThumbnail($item->image);
+            })
             ->editColumn('checkbox', function ($item) {
                 return $this->getCheckbox($item->id);
             })
@@ -70,7 +73,12 @@ class RecruitmentTable extends TableAbstract
                 return $this->getOperations('recruitment.edit', 'recruitment.destroy', $item);
             });
 
-        return $this->toJson($data);
+            return apply_filters(BASE_FILTER_GET_LIST_DATA, $data, $this->repository->getModel())
+            ->addColumn('operations', function ($item) {
+                return $this->getOperations('recruitment.edit', 'recruitment.destroy', $item);
+            })
+            ->escapeColumns([])
+            ->make(true);
     }
 
     /**
@@ -78,14 +86,12 @@ class RecruitmentTable extends TableAbstract
      */
     public function query()
     {
-        $query = $this->repository->getModel()
-            ->select([
-               'recruitments.id',
-               'recruitments.name',
-               'recruitments.email',
-               'recruitments.created_at',
-               'recruitments.status',
-           ]);
+        $query = $this->repository->getModel()->select([
+            'id',
+            'name',
+            'created_at',
+            'status',
+        ]);
 
         return $this->applyScopes($query);
     }
@@ -96,21 +102,23 @@ class RecruitmentTable extends TableAbstract
     public function columns()
     {
         return [
-            'recruitments.id' => [
+            'id' => [
                 'name'  => 'recruitments.id',
                 'title' => trans('core/base::tables.id'),
                 'width' => '20px',
             ],
-            'recruitments.name' => [
+            'name' => [
                 'name'  => 'recruitments.name',
                 'title' => trans('core/base::tables.name'),
                 'class' => 'text-left',
             ],
-            'recruitments.created_at' => [
+            'created_at' => [
+                'name'  => 'app_recruitment_contacts.created_at',
                 'title' => trans('core/base::tables.created_at'),
                 'width' => '100px',
             ],
-            'recruitments.status' => [
+            'status' => [
+                'name'  => 'app_recruitment_contacts.status',
                 'title' => trans('core/base::tables.status'),
                 'width' => '100px',
             ],
@@ -139,7 +147,7 @@ class RecruitmentTable extends TableAbstract
     public function getBulkChanges(): array
     {
         return [
-            'name' => [
+            'recruitments.name' => [
                 'title'    => trans('core/base::tables.name'),
                 'type'     => 'text',
                 'validate' => 'required|max:120',

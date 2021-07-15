@@ -19,14 +19,6 @@ class RecruitmentForm extends FormAbstract
             ->setupModel(new Recruitment)
             ->setValidatorClass(RecruitmentRequest::class)
             ->withCustomFields()
-            ->add('name', 'text', [
-                'label'      => trans('core/base::forms.name'),
-                'label_attr' => ['class' => 'control-label required'],
-                'attr'       => [
-                    'placeholder'  => trans('core/base::forms.name_placeholder'),
-                    'data-counter' => 120,
-                ],
-            ])
             ->add('status', 'customSelect', [
                 'label'      => trans('core/base::tables.status'),
                 'label_attr' => ['class' => 'control-label required'],
@@ -35,6 +27,15 @@ class RecruitmentForm extends FormAbstract
                 ],
                 'choices'    => BaseStatusEnum::labels(),
             ])
-            ->setBreakFieldPoint('status');
+            ->setBreakFieldPoint('status')
+            ->addMetaBoxes([
+                'information' => [
+                    'title'      => __('Thông tin người ứng tuyển'),
+                    'content'    => view('plugins/recruitment-contact::contact-info', ['contact' => $this->getModel()])->render(),
+                    'attributes' => [
+                        'style' => 'margin-top: 0',
+                    ],
+                ],
+            ]);
     }
 }
