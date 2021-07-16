@@ -83,6 +83,35 @@
     }
 }
 
+
+.posts-form-fiter{
+    margin-top: 15px;
+    form{
+        select{
+            width: 290px;
+            height: 45px;
+            border: 1px solid #E3E9EF;
+            outline: none;
+            padding: 0 12px;
+            margin-right: 30px;
+            -moz-appearance:none; /* Firefox */
+            -webkit-appearance:none; /* Safari and Chrome */
+            appearance:none;
+            position: relative;
+            
+            background: transparent;
+            background-repeat: no-repeat;
+            background-position-x: 94%;
+            background-position-y: 50%;
+        }
+        select.active{
+            color: red;
+        }
+
+    }
+}
+
+
 .filter {
     padding: 80px 0 70px;
     .filter--title {
@@ -193,7 +222,11 @@
         }
     }
 }
-
+.serach-no-item{
+    min-height: 50vh;
+    background: #fff;
+    border: none;
+}
 .page-item:last-child .page-link {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
