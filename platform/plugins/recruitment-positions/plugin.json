@@ -1,0 +1,9 @@
+{
+    "name": "RecruitmentPositions",
+    "namespace": "Platform\\RecruitmentPositions\\",
+    "provider": "Platform\\RecruitmentPositions\\Providers\\RecruitmentPositionsServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module recruitment_positions"
+}
