@@ -18,7 +18,25 @@
 <div class="Recruitment-s1">
     <div class="container">
         <div class="row">
-
+            @if(session()->has('success_msg') || session()->has('error_msg') || isset($errors))
+                @if (session()->has('success_msg'))
+                    <div class="alert alert-success">
+                        <span class="m-b-0">Gửi thành công</span>
+                    </div>
+                @endif
+                @if (session()->has('error_msg'))
+                    <div class="alert alert-danger">
+                        <p>{{ session('error_msg') }}</p>
+                    </div>
+                @endif
+                @if (isset($errors) && count($errors))
+                    <div class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <span>{{ $error }}</span> <br>
+                        @endforeach
+                    </div>
+                @endif
+            @endif
             <div class="col-md-4 ">
                 <div class="sticky-top">
                 <div class="Recruitment Recruitment--item1 font-helve-light font18 ">
