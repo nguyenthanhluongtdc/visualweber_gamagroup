@@ -100,7 +100,7 @@ class BlogServiceProvider extends ServiceProvider
                     'id'          => 'cms-plugins-blog-tags',
                     'priority'    => 3,
                     'parent_id'   => 'cms-plugins-blog',
-                    'name'        => 'plugins/blog::tags.menu_name',
+                    'name'        => 'Brands',
                     'icon'        => null,
                     'url'         => route('tags.index'),
                     'permissions' => ['tags.index'],

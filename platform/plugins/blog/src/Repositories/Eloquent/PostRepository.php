@@ -5,6 +5,10 @@ namespace Platform\Blog\Repositories\Eloquent;
 use Platform\Base\Enums\BaseStatusEnum;
 use Platform\Blog\Repositories\Interfaces\PostInterface;
 use Platform\Support\Repositories\Eloquent\RepositoriesAbstract;
+use Platform\Blog\Repositories\Interfaces\CategoryInterface;
+use Platform\Blog\Repositories\Interfaces\TagInterface;
+
+
 use Eloquent;
 use Exception;
 use Illuminate\Database\Query\Builder;
@@ -327,5 +331,68 @@ class PostRepository extends RepositoriesAbstract implements PostInterface
             return $this->applyBeforeExecuteQuery($data)->get();
     }
 
+
+
+    public function getAll($paginate = 10, $active = true)
+    {
+        $data = $this->model->select('posts.*');
+        if (request()->has('selectorder')) {
+            if(request()->selectorder == 1){
+                $data->orderBy('posts.created_at', 'desc');
+            }
+            if(request()->selectorder == 2){
+                $data->orderBy('posts.created_at', 'asc');
+            }
+        }
+        if (request()->has('selectcategory')) {
+            $selectcategorys = app(CategoryInterface::class)->getFeaturedCategories(100);
+            if(!empty($selectcategorys)){
+                    if(request()->selectcategory == 0){
+                        $data->where('posts.status', BaseStatusEnum::PUBLISHED);
+                    } 
+                   
+                foreach($selectcategorys as $key=>$item){
+                        if(request()->selectcategory == $key+1){
+                            $data->where('posts.status', BaseStatusEnum::PUBLISHED)
+                            ->join('post_categories', 'post_categories.post_id', '=', 'posts.id')
+                            ->join('categories', 'post_categories.category_id', '=', 'categories.id')
+                            ->whereIn('post_categories.category_id',[$item->id])
+                            ->distinct()
+                            ->with('slugable');
+                        } 
+                }
+            }
+           
+        }
+
+        if (request()->has('selectbrand')) {
+            $selectbrands = app(TagInterface::class)->getAllTags();
+            if(!empty($selectbrands)){
+                    if(request()->selectbrand == 0){
+                        $data->where('posts.status', BaseStatusEnum::PUBLISHED);
+                    } 
+                   
+                foreach($selectbrands as $key=>$item){
+                        if(request()->selectbrand == $key+1){
+                            $data->where('posts.status', BaseStatusEnum::PUBLISHED)
+                            ->join('post_tags', 'post_tags.post_id', '=', 'posts.id')
+                            ->join('tags', 'post_tags.tag_id', '=', 'tags.id')
+                            ->whereIn('post_tags.tag_id',[$item->id])
+                            ->distinct()
+                            ->with('slugable');
+                        } 
+                }
+            }
+           
+        }
+        if ($active) {
+            $data = $data->orderBy('posts.created_at', 'desc');
+        }
+    
+        
+        
+
+        return $this->applyBeforeExecuteQuery($data)->paginate($paginate);
+    }
    
 }

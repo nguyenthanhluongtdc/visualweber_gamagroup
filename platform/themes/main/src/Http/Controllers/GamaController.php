@@ -200,11 +200,6 @@ class GamaController extends PublicController
             abort(404);
         }
 
-        // Theme::breadcrumb()
-        //     ->add(__('Trang chủ'), url('/'))
-        //     ->add(__('Giới thiệu'), url(get_slug_by_template('About')))
-        //     ->add($data['about']->name, $data['about']->url);
-
         SeoHelper::setTitle($data['partner']->name)->setDescription($data['partner']->description);
 
         return Theme::scope('partner-detail', $data)->render();

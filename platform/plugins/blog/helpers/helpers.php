@@ -264,3 +264,16 @@ if (!function_exists('get_post_formats')) {
 }
 
 
+if (!function_exists('get_all_post_fiter')) {
+    /**
+     * @return \Illuminate\Support\Collection
+     * @throws Exception
+     */
+    function get_all_post_fiter($pageinate = 10)
+    {
+        $fields = app(PostInterface::class)
+            ->getAll($pageinate, ['created_at' => 'desc']);
+
+        return $fields;
+    }
+}

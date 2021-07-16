@@ -87,7 +87,10 @@
 .posts-form-fiter{
     margin-top: 15px;
     form{
-        select{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        select.ui.dropdown{
             width: 290px;
             height: 45px;
             border: 1px solid #E3E9EF;
@@ -98,11 +101,22 @@
             -webkit-appearance:none; /* Safari and Chrome */
             appearance:none;
             position: relative;
-            
+            color: $primary-color;
             background: transparent;
             background-repeat: no-repeat;
             background-position-x: 94%;
             background-position-y: 50%;
+            option{
+                background: $primary-color;
+                height: 45px!important;
+                color: #fff;
+                padding: 12px 0;
+                font-weight: normal;
+                line-height: 50px;
+                &:hover{
+                    color: #315C8A;
+                }
+            }
         }
         select.active{
             color: red;

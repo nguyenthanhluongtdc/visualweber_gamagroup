@@ -37,7 +37,7 @@
                         <div class="content">
                             <div class="content--infor">
                                 <h4 class="font-helve-bold font20">
-                                   <a href="">{{ $item->name }}</a>
+                                   <a href="{{ $item->url }}">{{ $item->name }}</a>
                                 </h4>
                                 <div class="post-meta">
                                     @if (!$item->categories->isEmpty())
@@ -71,7 +71,35 @@
                     </h2>
                 </div>
             </div>
-            <div class="row mt-3">
+          
+            <div class="select posts-form-fiter">
+                <form id="posts-form" action="#" method="get">
+                    <select name="selectorder" id="selectorder" name="selectorder" class="font18 font-helve ui fluid dropdown" style="background-image: url('{{ Theme::asset()->url('images/contact/down.png') }}')">
+                        <option {{request()->selectorder == 1 ? "selected" : ""}} value="1" class="option">{{__('Latest')}}</option>
+                        <option {{request()->selectorder == 2 ? "selected" : ""}} value="2">{{__('Oldest')}}</option>
+                    </select>
+                   
+                    @if(!empty(get_featured_categories(10)))
+                    <select name="selectcategory" id="selectcategory" name="selectcategory" class="font18 font-helve ui fluid dropdown" style="background-image: url('{{ Theme::asset()->url('images/contact/down.png') }}')">
+                        <option value="0" selected {{request()->selectcategory == 0 }} >{{__('General News')}}</option>
+                        @foreach (get_featured_categories(10) as $key => $item)
+                            
+                            <option {{request()->selectcategory == $key+1 ? "selected" : ""}} value="{{$key+1}}">{{$item->name}}</option>
+                        @endforeach
+                    </select>
+                    @endif
+
+                    <select name="selectbrand" id="selectbrand" name="selectbrand" class="font18 font-helve ui fluid dropdown" style="background-image: url('{{ Theme::asset()->url('images/contact/down.png') }}')"> 
+                        <option selected {{request()->selectcategory == 0 }}>{{__('Brands')}}</option>
+                        @foreach (get_all_tags() as $key => $item)
+                            <option {{request()->selectbrand == $key+1 ? "selected" : ""}} value="{{$key+1}}">{{$item->name}}</option>
+                        @endforeach
+                    </select>
+                </form>
+            </div>
+
+
+            {{-- <div class="row mt-3">
 
                 <div class="col-md-3 filter--option  mt-2">
 
@@ -105,9 +133,9 @@
                             <a class="dropdown-item" href="">{{$item->name}}</a>
                             @endforeach
                             @endif
-                            {{-- <a class="dropdown-item" href="#">Tin kinh doanh</a>
+                            <a class="dropdown-item" href="#">Tin kinh doanh</a>
                             <a class="dropdown-item" href="#">Tin cộng đồng</a>
-                            <a class="dropdown-item" href="#">Tin nội bộ</a> --}}
+                            <a class="dropdown-item" href="#">Tin nội bộ</a>
                         </div>
                     </div>
                 </div>
@@ -126,17 +154,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>
-
     {{-- ---------------------------------- new ---------------------------------------- --}}
     <div class="blod-new">
         <div class="container">
             <div class="new">
                 <div class="row ">
-                    @php $posts  =  get_all_posts();  @endphp
+                    @php $posts  =  get_all_post_fiter(12);  @endphp
                     @if ($posts->count())
                         @foreach ($posts as $itemPost)
                             <div class="col-md-4 mt-2 mb-3 ">

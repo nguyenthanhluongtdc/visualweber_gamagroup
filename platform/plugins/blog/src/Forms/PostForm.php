@@ -105,11 +105,11 @@ class PostForm extends FormAbstract
                 'label_attr' => ['class' => 'control-label'],
             ])
             ->add('tag', 'tags', [
-                'label'      => trans('plugins/blog::posts.form.tags'),
+                'label'      => 'brand',
                 'label_attr' => ['class' => 'control-label'],
                 'value'      => $tags,
                 'attr'       => [
-                    'placeholder' => trans('plugins/blog::base.write_some_tags'),
+                    'placeholder' => 'write name brand',
                     'data-url'    => route('tags.all'),
                 ],
             ])

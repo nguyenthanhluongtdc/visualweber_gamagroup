@@ -155,5 +155,14 @@ $('.close-search').click(function(){
     $('.form-search-mobie').hide();
 })
 
+$('#posts-form select').on('change', function(){
+    $(this).closest('form').submit();
+});
+
+$('.dropdown')
+  .dropdown({
+    action: 'combo'
+  })
+;
 
 

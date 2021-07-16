@@ -24,7 +24,7 @@
 <div class="container">
     <div class="about-section3" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out">
         <div class="row_wrap">
-            @if(!empty(get_featured_abouts(4)))
+            @if(!empty(get_featured_pages(5)))
             <div class="content-md4 menu-tab">
                 <ul class="nav nav-pills font-helve font20 list-menu-tababout" role="tablist">
                     {{-- @foreach (get_featured_abouts(4) as $key => $item) --}}
