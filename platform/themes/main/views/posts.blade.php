@@ -206,6 +206,11 @@
 
                         @endforeach
                     @endif
+                    @if ($posts->count() == 0)
+                            <div class="container font18 font-helve">
+                                {{__('No data')}}
+                            </div>
+                    @endif
                     
                 </div>
                 <div class="page-pagination text-right">
