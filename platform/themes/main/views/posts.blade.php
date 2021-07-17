@@ -71,16 +71,16 @@
                     </h2>
                 </div>
             </div>
-           
+          
             <div class="select posts-form-fiter">
                 <form id="posts-form" action="#" method="get">
-                    <select name="selectorder" id="selectorder" name="selectorder" class="font18 font-helve ui fluid dropdown" style="background-image: url('{{ Theme::asset()->url('images/contact/down.png') }}')">
+                    <select name="selectorder" id="selectorder" name="selectorder" class="font18 font-helve js-example-disabled-results" style="background-image: url('{{ Theme::asset()->url('images/contact/down.png') }}')">
                         <option {{request()->selectorder == 1 ? "selected" : ""}} value="1" class="option">{{__('Latest')}}</option>
                         <option {{request()->selectorder == 2 ? "selected" : ""}} value="2">{{__('Oldest')}}</option>
                     </select>
                    
                     @if(!empty(get_featured_categories(10)))
-                    <select name="selectcategory" id="selectcategory" name="selectcategory" class="font18 font-helve ui fluid dropdown" style="background-image: url('{{ Theme::asset()->url('images/contact/down.png') }}')">
+                    <select name="selectcategory" id="selectcategory" name="selectcategory" class="font18 font-helve js-example-disabled-results" style="background-image: url('{{ Theme::asset()->url('images/contact/down.png') }}')">
                         <option value="0" selected {{request()->selectcategory == 0 }} >{{__('General News')}}</option>
                         @foreach (get_featured_categories(10) as $key => $item)
                             
@@ -89,7 +89,7 @@
                     </select>
                     @endif
 
-                    <select name="selectbrand" id="selectbrand" name="selectbrand" class="font18 font-helve ui fluid dropdown" style="background-image: url('{{ Theme::asset()->url('images/contact/down.png') }}')"> 
+                    <select name="selectbrand" id="selectbrand" name="selectbrand" class="font18 font-helve js-example-disabled-results" style="background-image: url('{{ Theme::asset()->url('images/contact/down.png') }}')"> 
                         <option selected {{request()->selectcategory == 0 }}>{{__('Brands')}}</option>
                         @foreach (get_all_tags() as $key => $item)
                             <option {{request()->selectbrand == $key+1 ? "selected" : ""}} value="{{$key+1}}">{{$item->name}}</option>

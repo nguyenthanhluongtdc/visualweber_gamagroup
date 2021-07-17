@@ -83,6 +83,38 @@
     }
 }
 
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{
+    background: #315C8A;
+    height: 45px;
+    background: $primary-color;
+    color: #fff;
+    font-family: $font-helve;
+    display: flex;
+    align-items: center;
+}
+.select2-results__option, .select2-results__option--selectable{
+    height: 45px;
+    background: $primary-color;
+    color: #fff;
+    font-family: $font-helve;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    
+}
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable:hover{
+    background: #315C8A;
+    padding: 0 18px;
+}
+.select2-container--default .select2-results__option--selected{
+background: $primary-color;
+}
+.select2-container .select2-results .select2-results__options .select2-results__option.select2-results__option--selectable{
+    
+}
+.select2-container--open .select2-dropdown--below{
+    border: none;
+}
 
 .posts-form-fiter{
     margin-top: 15px;
@@ -90,7 +122,29 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        select.ui.dropdown{
+        .select2-container{
+            margin-right: 30px;
+            font-family: $font-helve;
+        }
+        .select2-container .select2-selection--single{
+            height: 45px;
+            border: 1px solid #D9E1E9;
+            border-radius: 0;
+        }
+        .select2-container .select2-selection--single .select2-selection__rendered{
+            height: 45px;
+            display: flex;
+            align-items: center;
+            color: $primary-color;
+            padding: 0 15px;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow{
+            height: 45px;
+            display: flex;
+            align-items: center;
+        }
+       
+        select{
             width: 290px;
             height: 45px;
             border: 1px solid #E3E9EF;
@@ -118,7 +172,7 @@
                 }
             }
         }
-        select.active{
+        .select2-selection__rendered{
             color: red;
         }
 

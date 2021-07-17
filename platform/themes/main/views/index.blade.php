@@ -154,7 +154,9 @@
                             <img src="{{ Theme::asset()->url('images/homepage/images.png') }}" alt=""
                             class="img-slider">
                             @else
-                            <img src="{{ RvMedia::getImageUrl($post->image,'medium', false, RvMedia::getDefaultImage()) }}" alt="{{ $post->name }}" class="img-slider">
+                            <img 
+                                srcset="{{ RvMedia::getImageUrl($post->image,'news_thumbnail', false, RvMedia::getDefaultImage()) }}" 
+                                src="{{ RvMedia::getImageUrl($post->image,'news_thumbnail', false, RvMedia::getDefaultImage()) }}" alt="{{ $post->name }}" class="img-slider">
                             @endif
                             </div>
                             <h4 class="font-helve font20">

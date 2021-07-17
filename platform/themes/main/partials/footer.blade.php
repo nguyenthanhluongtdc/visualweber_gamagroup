@@ -37,9 +37,9 @@
            <div class="col-lg-2 footer-right">
                <p>Liên kết với chúng tôi</p>
                <ul>
-                   <li><a href=""><img src="{{ theme::asset()->url('images/homepage/iconfb.png') }}" alt="facebook"></a></li>
-                   <li><a href=""><img src="{{ theme::asset()->url('images/homepage/iconyt.png') }}" alt="youtube"></a></li>
-                   <li><a href=""><img src="{{ theme::asset()->url('images/homepage/iconistar.png') }}" alt="instargram"></a></li>
+                   <li><a href="{{ theme_option('facebook') }}" target="_blank"><img src="{{ theme::asset()->url('images/homepage/iconfb.png') }}" alt="facebook" ></a></li>
+                   <li><a href="{{ theme_option('youtube') }}" target="_blank"><img src="{{ theme::asset()->url('images/homepage/iconyt.png') }}" alt="youtube" ></a></li>
+                   <li><a href="{{ theme_option('instagram') }}" target="_blank"><img src="{{ theme::asset()->url('images/homepage/iconistar.png') }}" alt="instargram" ></a></li>
                </ul>
            </div>
        </div>

@@ -166,6 +166,10 @@ $('.dropdown')
 ;
 
 
+$(".js-example-disabled-results").select2({
+    minimumResultsForSearch: Infinity
+});
+
 
 
 

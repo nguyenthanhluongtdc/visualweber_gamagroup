@@ -99,20 +99,7 @@ app()->booted(function () {
                 ],
             ],
         ])
-        ->setField([
-            'id'         => 'twitter',
-            'section_id' => 'opt-text-subsection-social',
-            'type'       => 'text',
-            'label'      => 'Twitter',
-            'attributes' => [
-                'name'    => 'twitter',
-                'value'   => null,
-                'options' => [
-                    'class'       => 'form-control',
-                    'placeholder' => 'https://twitter.com/@username',
-                ],
-            ],
-        ])
+        
         ->setField([
             'id'         => 'youtube',
             'section_id' => 'opt-text-subsection-social',
@@ -124,6 +111,20 @@ app()->booted(function () {
                 'options' => [
                     'class'       => 'form-control',
                     'placeholder' => 'https://youtube.com/@channel-url',
+                ],
+            ],
+        ])
+        ->setField([
+            'id'         => 'instagram',
+            'section_id' => 'opt-text-subsection-social',
+            'type'       => 'text',
+            'label'      => 'Instagram',
+            'attributes' => [
+                'name'    => 'instagram',
+                'value'   => null,
+                'options' => [
+                    'class'       => 'form-control',
+                    'placeholder' => 'https://instagram.com/@username',
                 ],
             ],
         ])

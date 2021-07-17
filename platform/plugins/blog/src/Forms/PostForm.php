@@ -103,6 +103,7 @@ class PostForm extends FormAbstract
             ->add('image', 'mediaImage', [
                 'label'      => trans('core/base::forms.image'),
                 'label_attr' => ['class' => 'control-label'],
+                'label' => __('Kích thước ảnh 1920x650, dung lượng ảnh dưới 500KB'),
             ])
             ->add('tag', 'tags', [
                 'label'      => 'brand',

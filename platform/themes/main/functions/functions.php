@@ -40,6 +40,17 @@ register_sidebar([
 ]);
 
 RvMedia::setUploadPathAndURLToPublic();
-RvMedia::addSize('featured', 565, 375)->addSize('medium', 540, 360);
+RvMedia::addSize('featured', 565, 375)
+    ->addSize('medium', 540, 360)
+    // ->addSize('news_thumbnail_listing', 360, 240) // suy nghi ky nha em, vi no tao ra nhieu thumb se nang may chu lam. nhung tot cho SEO neu size chuan
+    ->addSize('news_thumbnail', 365, 250);
 
 
+theme_option()
+->setSection([ // Set section with no field
+    'title' => __('Link '),
+    'desc' => __('Giới thiệu về chúng tôi'),
+    'id' => 'opt-text-subsection-aboutus',
+    'subsection' => true,
+    'icon' => 'fa fa-building',
+]);
