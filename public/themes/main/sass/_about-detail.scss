@@ -214,6 +214,9 @@
         max-width: 100%;
     }
 }
+.section4-about-achievement{
+    background-color: #E7E7E7;
+}
 .section2-achievement{
     padding: 80px 0 0px 0;
     @media(max-width : 995px){
@@ -260,7 +263,12 @@
 }
 
 .section4-about-achievement{
-    background: none;
+    padding: 60px;
+    margin-bottom: 80px;
+    @media(max-width : 995px){
+        padding: 30px;
+        margin-bottom: 40px;
+    }
     p.title{
         margin-bottom: 10px;
     }

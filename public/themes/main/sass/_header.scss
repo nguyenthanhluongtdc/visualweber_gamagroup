@@ -608,4 +608,9 @@ button.search-btn:hover.input-search-home{
     .header .header-menu .main-menu ul li.menu-big.active::after, .header .header-menu .main-menu ul li.menu-big:hover::after {
         bottom: -17px;
     }
+    select#select-contact {
+        option{
+            font-family: $font-helve-light;
+        }
+    }
   }

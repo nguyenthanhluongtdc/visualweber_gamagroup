@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <div class="section4-about-achievement padding80">
+        <div class="section4-about-achievement">
             <div class="container">
                 <div class="row">
                     @if (has_field($page, 'achievement_company'))
