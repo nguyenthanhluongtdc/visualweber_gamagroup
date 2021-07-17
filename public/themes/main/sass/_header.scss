@@ -611,6 +611,10 @@ button.search-btn:hover.input-search-home{
     select#select-contact {
         option{
             font-family: $font-helve-light;
+            font: -moz-pull-down-menu;
         }
+    }
+    .contact-section3 .content-md4 .selectpicker{
+        font-family: $font-helve-light;
     }
   }
