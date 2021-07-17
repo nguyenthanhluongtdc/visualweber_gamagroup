@@ -18,6 +18,9 @@ register_page_template([
     'achievement' => "Achievement",
     'business-areas' => "Business-Areas",
     'gama-service' => "Gama Service",
+    'leading-way'=>"Leading Way",
+    'respect-version'=>'Respect-version',
+    'professional-environment'=>'Professional-environment',
     'contact' => "Contact",
 
 ]);
