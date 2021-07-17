@@ -603,3 +603,9 @@ button.search-btn:hover.input-search-home{
         transform: translateX(0%)
     }
 }
+
+@-moz-document url-prefix() {
+    .header .header-menu .main-menu ul li.menu-big.active::after, .header .header-menu .main-menu ul li.menu-big:hover::after {
+        bottom: -17px;
+    }
+  }
