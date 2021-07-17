@@ -171,5 +171,10 @@ $(".js-example-disabled-results").select2({
 });
 
 
+$(".view-posts-mobie").click(function(){
+    $(".posts-form-fiter").toggle(300);
+});
+
+
 
 

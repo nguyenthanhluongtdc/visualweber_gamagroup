@@ -74,8 +74,9 @@ class ServicesServiceProvider extends ServiceProvider
                             Block::class => trans('plugins/services::services.name'),
                         ];
                     });
-            }
+            }   
 
+           
         });
     }
 }

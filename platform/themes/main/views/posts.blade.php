@@ -66,9 +66,14 @@
             <div class="row filter-title">
                 <div class="container">
 
-                    <h2 class="font-helve-bold font20 filter--title">
+                    <h2 class="font-helve-bold font20 filter--title view-posts-deskop">
                         Xem tin theo
                     </h2>
+                    <div class="view-posts-mobie">
+                        <div class="wrap-view font18 font-helve-bold pri-color">
+                            <span>Xem tin theo</span> <span class="icon"><i class="fas fa-angle-down"></i></span>
+                        </div>
+                    </div>
                 </div>
             </div>
           
@@ -169,7 +174,7 @@
                             <div class="col-md-4 mt-2 mb-3 ">
                                 <div class="post-thumbnail">
                                     <a href="{{ $itemPost->url }}" class="post__overlay ">
-                                        <img src="{{ RvMedia::getImageUrl($itemPost->image,'medium', false, RvMedia::getDefaultImage()) }}"
+                                        <img src="{{ RvMedia::getImageUrl($itemPost->image,'news_thumbnail', false, RvMedia::getDefaultImage()) }}"
                                             alt="{{ $itemPost->name }}">
                                     </a>
                                 </div>

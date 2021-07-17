@@ -53,22 +53,28 @@ class PartnerServiceProvider extends ServiceProvider
     \SlugHelper::registerModule(Partner::class, 'Partners');
     \SlugHelper::setPrefix(Partner::class, 'doi-tac');
     
-
     $this->app->booted(function () {
-        
-        if (defined('ABOUT_MODULE_SCREEN_NAME')) {
-           
+        // if (defined('LANGUAGE_MODULE_SCREEN_NAME')) {
+        //     Language::registerModule([Partner::class]);
+        // }
+
+        if (defined('CUSTOM_FIELD_MODULE_SCREEN_NAME')) {
             \CustomField::registerModule(Partner::class)
-            ->registerRule('basic', trans('plugins/partner::partner.name'), Partner::class, function () {
+                ->registerRule('basic', trans('plugins/partner::partner.name'), Partner::class, function () {
                     return $this->app->make(PartnerInterface::class)->pluck('name', 'id');
                 })
                 ->expandRule('other', trans('plugins/custom-field::rules.model_name'), 'model_name', function () {
                     return [
-                        Partner::class => trans('plugins/partner::partner.name'),
+                        Block::class => trans('plugins/partner::partner.name'),
                     ];
                 });
-         }
+        }
+
+        $this->app->register(HookServiceProvider::class);
     });
+
+
+   
     }
 
     

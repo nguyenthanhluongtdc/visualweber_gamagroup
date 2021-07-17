@@ -115,7 +115,9 @@ background: $primary-color;
 .select2-container--open .select2-dropdown--below{
     border: none;
 }
-
+.view-posts-mobie{
+    display: none;
+}
 .posts-form-fiter{
     margin-top: 15px;
     form{
@@ -146,6 +148,9 @@ background: $primary-color;
        
         select{
             width: 290px;
+            @media(max-width: 480px){
+                width: 100%;
+            }
             height: 45px;
             border: 1px solid #E3E9EF;
             outline: none;
@@ -172,9 +177,7 @@ background: $primary-color;
                 }
             }
         }
-        .select2-selection__rendered{
-            color: red;
-        }
+        
 
     }
 }
