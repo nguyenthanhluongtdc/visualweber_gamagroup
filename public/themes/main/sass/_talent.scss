@@ -43,36 +43,46 @@
     }
 }
 
-.job {
+.opp-job {
+    padding: 60px 0;
     .talent-s5 {
-        text-align: center;
         position: relative;
     }
-    .job--img {
-        img {
-            width: 100%;
-            height: auto;
-            margin-top: 5rem;
+    .job-title {
+        color: #0D3F75;
+        margin-top: 30px;
+    }
+    .block-job {
+        margin-top: 30px;
+        top: 0;
+        position: absolute;
+    }
+    .job--buttom {
+        width: 30%;
+        padding: 3rem 0;
+        // margin: 0px auto;
+        .job--profession {
+            background-color: #0D3F75;
+            padding: .4rem 1.5rem;
+            border-radius: 0%;
         }
     }
-    .job--block {
-        position: absolute;
-        top: 3rem;
+}
+
+@media (max-width: 767px) {
+    .opp-job {
         text-align: center;
-        width: 100%;
-        .job--title {
-            color: #0D3F75;
-            width: 44%;
-            margin: 0px auto;
-            padding: 3rem 0;
+        padding: 30px 0;
+        .block-job {
+            top: 0;
+            position: unset;
         }
-        .job--desc {
-            width: 66%;
-            margin: 0px auto;
-            padding: 3rem 0;
+        .job--img {
+            display: none;
         }
         .job--buttom {
-            width: 30%;
+            width: 70%;
+            margin: 0 auto;
             padding: 3rem 0;
             margin: 0px auto;
             .job--profession {
@@ -85,46 +95,27 @@
 }
 
 @media (max-width: 993px) {
-    .job .job--block {
-        // position: unset;
-        .job--title {
-            // width: 100%;
-            padding: 1.5rem 0;
+    .opp-job {
+        padding: 30px 0;
+        .job-title {
+            margin-top: 30px;
         }
-        .job--desc {
-            // width: 100%;
-            padding: 1.5rem 0;
+        .block-job {
+            margin-top: 30px;
+            top: 0;
+            position: unset;
         }
-        .job--buttom {
-            // width: 100%;
-            padding: 1.5rem 0;
-        }
-    }
-}
-
-@media (max-width: 767px) {
-    .talent--info {
-        margin: 1rem 0;
-    }
-    .carrer-desc {
-        margin: 1rem 0 0;
-    }
-    .job--img {
-        display: none;
-    }
-    .job .job--block {
-        position: unset;
-        .job--title {
-            width: 100%;
-            padding: 1.5rem 0;
-        }
-        .job--desc {
-            width: 100%;
-            padding: 1.5rem 0;
+        .job--img {
+            display: none;
         }
         .job--buttom {
-            width: 100%;
-            padding: 1.5rem 0;
+            width: 70%;
+            padding: 3rem 0;
+            .job--profession {
+                background-color: #0D3F75;
+                padding: .4rem 1.5rem;
+                border-radius: 0%;
+            }
         }
     }
 }
