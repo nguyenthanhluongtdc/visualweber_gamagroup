@@ -111,7 +111,7 @@
 
 
 {{--------------------------- cơ hội làm việc -------------- --}}
-<div class="job">
+{{-- <div class="job">
     <div class="container talent-s5">
         <div class="job--img">
             @if (has_field($page, 'img_nhan_tai_co_hoi_lam_viec'))
@@ -137,4 +137,33 @@
         </div>
 
     </div>
+</div> --}}
+
+<div class="job-opp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+            <h2 class="job-title font-helve-bold font30" >
+                 @if (has_field($page, 'title_nhan_tai_co_hoi_lam_viec'))
+                    {!! get_field($page, 'title_nhan_tai_co_hoi_lam_viec') !!}
+                @endif
+            </h2>
+ 
+           </div>
+           <div class="col-md-8">
+            @if (has_field($page, 'img_nhan_tai_co_hoi_lam_viec'))
+            <img src="{{ RvMedia::getImageUrl(get_field($page, 'img_nhan_tai_co_hoi_lam_viec')) }}" alt="banner">
+        @endif
+                <div class="job-desc font-helve-light font18">
+                    @if (has_field($page, 'desc_nhan_tai_co_hoi_lam_viec'))
+                    {!! get_field($page, 'desc_nhan_tai_co_hoi_lam_viec') !!}
+                @endif
+                </div>
+                <div class="job--buttom font-helve font18">
+                    <a href="/co-hoi-lam-viec" class="btn btn-primary job--profession">Cơ hội nghề nghiệp</a>
+                </div>
+           </div>
+        </div>
+    </div>
 </div>
+

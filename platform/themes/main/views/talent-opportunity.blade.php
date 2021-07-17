@@ -1,5 +1,4 @@
 {!! Theme::breadcrumb()->render() !!}
-
 <div class="all-news-content">
     <div class="container">
         <div class="new-section1">

@@ -1,0 +1,9 @@
+{
+    "name": "RecruitmentPost",
+    "namespace": "Platform\\RecruitmentPost\\",
+    "provider": "Platform\\RecruitmentPost\\Providers\\RecruitmentPostServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module recruitment_post"
+}

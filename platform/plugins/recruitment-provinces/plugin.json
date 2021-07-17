@@ -1,0 +1,9 @@
+{
+    "name": "RecruitmentProvinces",
+    "namespace": "Platform\\RecruitmentProvinces\\",
+    "provider": "Platform\\RecruitmentProvinces\\Providers\\RecruitmentProvincesServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module recruitment_provinces"
+}

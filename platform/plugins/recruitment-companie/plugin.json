@@ -1,0 +1,9 @@
+{
+    "name": "RecruitmentCompanie",
+    "namespace": "Platform\\RecruitmentCompanie\\",
+    "provider": "Platform\\RecruitmentCompanie\\Providers\\RecruitmentCompanieServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module recruitment_companie"
+}

@@ -204,4 +204,28 @@ class GamaController extends PublicController
 
         return Theme::scope('partner-detail', $data)->render();
     }
+    
+    public function getTalent($slug)
+    {
+        $slug = SlugHelper::getSlug($slug, SlugHelper::getPrefix(Partner::class, 'nhan-tai'));
+        if (!$slug) {
+            abort(404);
+        }
+
+        $data['talent'] = $slug->reference;
+
+        if (blank($data)) {
+            abort(404);
+        }
+
+        // Theme::breadcrumb()
+        //     ->add(__('Trang chủ'), url('/'))
+        //     ->add(__('Giới thiệu'), url(get_slug_by_template('About')))
+        //     ->add($data['about']->name, $data['about']->url);
+
+        SeoHelper::setTitle($data['talent']->name)->setDescription($data['talent']->description);
+
+        return Theme::scope('talent-opportunity', $data)->render();
+    }
+
 }

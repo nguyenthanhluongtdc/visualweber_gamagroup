@@ -40,9 +40,16 @@ class RecruitmentServiceProvider extends ServiceProvider
             // }
 
             dashboard_menu()->registerItem([
-                'id'          => 'cms-plugins-recruitment',
+                'id'          => 'cms-plugins-recruitment-parent',
                 'priority'    => 5,
                 'parent_id'   => null,
+                'name'        => 'plugins/recruitment::recruitment.name',
+                'icon'        => 'fas fa-users',
+            ])
+            ->registerItem([
+                'id'          => 'cms-plugins-recruitment',
+                'priority'    => 1,
+                'parent_id'   => 'cms-plugins-recruitment-parent',
                 'name'        => 'plugins/recruitment::recruitment.name',
                 'icon'        => 'fa fa-list',
                 'url'         => route('recruitment.index'),
