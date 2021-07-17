@@ -48,7 +48,7 @@
         <div class="top">
             <div class="row_wrap">
                 <div class="content-md4" data-aos="fade-right" data-aos-duration="700" data-aos-easing="ease-in-out">
-                    <div class="content-md4 font-helve-bold font30 title-primary pri-color">
+                    <div class="font-helve-bold font30 title-primary pri-color">
                         @if (has_field($page, 'title_community'))
                             {!! get_field($page, 'title_community') !!}
                         @endif

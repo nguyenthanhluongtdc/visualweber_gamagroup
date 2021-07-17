@@ -41,12 +41,13 @@
 
 
     <header class="header header-desktop" id="header">
+        <div class="header-deskop-wrap">
             <div class="header-top">
             <a class="header-logo" href="{{ route('public.index') }}">
                 <img src="{{ theme::asset()->url('images/logo.png') }}" alt="logo">
             </a>
         </div>
-        <div class="header-menu container">
+        <div class="header-menu container header-menu-wrap">
             <nav class="main-menu">
                 {!! Menu::renderMenuLocation('main-menu', [
     'options' => ['class' => 'menu sub-menu--slideLeft'],
@@ -66,31 +67,39 @@
                         <span>EN</span>
                     </a>
                 </li>
-               
+
                 <li class="nav-item dropdown dmenu">
                     <div class="search-btn c-search-toggler open-search">
                         <i class="fa fa-search"></i>
-                        <form action="{{ route('public.search') }}" method="get" class="form-search">
-                            <input type="text" name="q" placeholder="{{ __('Type to search...') }}" class="input-search-home" autocomplete="off">
-                            <button class="search-btn c-search-toggler close-search" type="submit">
-                            <i class="fa fa-search"></i>
-                            </button>
-                        </form>
+
                     </div>
                 </li>
-               
+                
             </ul>
-           
+            
         </div>
+        <div class="search-deskop">
+                <form action="{{ route('public.search') }}" method="get" class="form-search container">
+                    <input type="text" name="q" placeholder="{{ __('Type to search...') }}" class="input-search-home"
+                        autocomplete="off">
+
+                        <div class="closer-search">
+                    <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                </form>
+               
+            </div>
     </header>
     <header class="header-mobie">
         <div class="container header-mobie-content">
             <div class="left">
                 <a class="header-logo" href="{{ route('public.index') }}">
                     @if (theme_option('logo'))
-                        <img src="{{ RvMedia::getImageUrl(theme_option('logo')) }}" alt="{{ theme_option('site_title') }}">
+                        <img src="{{ RvMedia::getImageUrl(theme_option('logo')) }}"
+                            alt="{{ theme_option('site_title') }}">
                     @endif
-                   
+
                 </a>
             </div>
             <div class="right">
@@ -110,16 +119,9 @@
 
                     <li class="">
                         <div class="search-btn search-btn-mobie c-search-toggler">
-                        <i class="fa fa-search"></i>
-                        <form action="{{ route('public.search') }}" method="get" class="form-search-mobie">
-                            <div class="wrap">
-                                <input type="text" name="q" placeholder="{{ __('Type to search...') }}" class="input-search-home" autocomplete="off">
-                            <button class="search-btn c-search-toggler close-search" type="submit">
                             <i class="fa fa-search"></i>
-                            </button>
-                                </div>
-                        </form>
-                    </div>
+                            
+                        </div>
                     </li>
                     <li class="open-menu-mobie"><i class="fas fa-bars"></i></li>
                 </ul>
@@ -131,6 +133,17 @@
 ]) !!}
             </nav>
         </div>
+        <div class="search-mobie-wrap">
+            <form action="{{ route('public.search') }}" method="get" class="form-search-mobie container">
+                                <div class="wrap">
+                                    <input type="text" name="q" placeholder="{{ __('Type to search...') }}"
+                                        class="input-search-home" autocomplete="off">
+                                    <div class="c-search-toggler close-search">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </div>
+                            </form>
+            </div>
     </header>
 
     <div id="page-wrap">

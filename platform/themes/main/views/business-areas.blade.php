@@ -108,7 +108,7 @@
                         {!! get_field($page, 'work_business_desc') !!}
                     </div>
                     <div class="link">
-                        <a href="{{ get_slug_talent_opportunity() }}" class="font-helve font18">
+                        <a href="{{ get_slug_job() }}" class="font-helve font18">
                             {{__('career opportunities')}}
                         </a>
                     </div>

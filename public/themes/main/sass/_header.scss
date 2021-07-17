@@ -408,65 +408,109 @@ a.primary-a {
         justify-content: center;
     }
 }
-.form-search{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 33px;
-    height: 33px;
-    width: 250px;
-    border: none;
-    outline: none;
-    font-family: $font-helve-light;
-    display: flex;
-    // display: none;
-    visibility: hidden;
-    .input-search-home{
-       width: 100%;
-       padding: 0 10px;
-       outline: none;
-       
-    }
-    button{
-        border: none;
-        outline: none;
-        
-    }
+.header-deskop-wrap{
+    position: relative;
+    height: 100%;
     
 }
+.search-deskop{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    display: none;
+    background: $primary-color;
+    .form-search{
+        position: relative;
+        font-family: $font-helve-light;
+        display: flex;
+        margin: 0 auto;
+        height: 75%;
+        // display: none;
+        .input-search-home{
+           width: 100%;
+           padding: 0 20px;
+           outline: none;
+           height: 100%;
+           background: $primary-color;
+           border: 1px solid #fff;
+           color: #fff;
+           
+        }
+        button{
+            border: none;
+            outline: none;
+            
+        }
+        
+    }
+    .closer-search{
+        position: absolute;
+        left: 103%;
+        top: 5px;
+        color: #fff;
+        font-size: 30px;
+    }
+}
+
 button.search-btn:hover.input-search-home{
     display: block;
   }
 
-.search-btn-mobie{
+
+.header-mobie{
     position: relative;
-}
-.form-search-mobie{
-    position: absolute;
-    top: -7px;
-    right: 0;
-    width: 200px;
-    font-size: 13px;
-    font-family: $font-helve-light;
-    display: none;
-    .wrap{
-        display: flex;
-        align-items: center;
-        input{
+    .search-mobie-wrap{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+       display: none;
+        .form-search-mobie{
             width: 100%;
-            border: none;
-            outline: none;
-            padding: 0 10px;
-            height: 30px;
-        }
-        button{
-            height: 30px;
+            font-size: 13px;
+            font-family: $font-helve-light;
             background: $primary-color;
-            border: 1px solid #fff;
-            outline: none;
+            height: 40px;
+            .wrap{
+                display: flex;
+                align-items: center;
+                input{
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    padding: 0 10px;
+                    height: 30px;
+                    background: $primary-color;
+                    color: #fff;
+                    border: 1px solid #fff;
+                }
+                .close-search{
+                    height: 30px;
+                    background: $primary-color;
+                    border: 1px solid #fff;
+                    outline: none;
+                    border: none;
+                    width: 40px;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                }
+            }
         }
     }
 }
+
+.search-btn-mobie{
+    position: relative;
+}
+
 .list-menu-mobie {
     // display: none;
     position: fixed;

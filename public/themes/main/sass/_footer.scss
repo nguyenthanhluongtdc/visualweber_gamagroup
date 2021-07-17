@@ -83,6 +83,12 @@
             color: #fff;
             font-family: $font-helve-light;
         }
+        .footer-mid .list-menu-footer{
+            flex-direction: column;
+            li{
+                width: 100%;
+            }
+        }
     }
 }
 

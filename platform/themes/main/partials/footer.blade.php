@@ -25,10 +25,13 @@
                             'view' => 'main-menu',
                         ]) !!} --}}
                    </div>
-                   <ul class="col-md-6 link-another font18 font-helve">
+                   <div class="col-md-6 footer-mid">
+                   {!! dynamic_sidebar('footer_mid_category') !!}
+                   </div>
+                   {{-- <ul class="col-md-6 link-another font18 font-helve">
                         <li><a href="">Câu hỏi thường gặp</a></li>
                         <li><a href="">Quy định bảo mật</a></li>
-                   </ul>
+                   </ul> --}}
                </div>
            </div>
            <div class="col-lg-2 footer-right">

@@ -141,18 +141,18 @@ $('#select-contact').on('change', function (e) {
 
 
 $('.open-search').click(function(){
-    $('.form-search').css('visibility', 'inherit');
+    $('.search-deskop').show();
 })
-$('.close-search').click(function(){
-    $('.form-search').css('visibility', 'hidden');
+$('.closer-search').click(function(){
+    $('.search-deskop').hide(300);
 })
 
 
 $('.search-btn-mobie').click(function(){
-    $('.form-search-mobie').show();
+    $('.search-mobie-wrap').show(200);
 })
 $('.close-search').click(function(){
-    $('.form-search-mobie').hide();
+    $('.search-mobie-wrap').hide();
 })
 
 $('#posts-form select').on('change', function(){
@@ -164,5 +164,8 @@ $('.dropdown')
     action: 'combo'
   })
 ;
+
+
+
 
 

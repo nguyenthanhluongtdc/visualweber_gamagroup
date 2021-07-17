@@ -120,3 +120,19 @@ if (!function_exists('get_slug_partner')) {
         return null;
     }
 }
+
+if (!function_exists('get_slug_job')) {
+    /**
+     * @return array
+     *
+     */
+    function get_slug_job()
+    {
+        $page = app(PageInterface::class)->getFirstBy(['template' => 'talent-opportunity']);
+        if(!blank($page)) {
+            return $page->slugable->key ?? null;
+        }
+
+        return null;
+    }
+}

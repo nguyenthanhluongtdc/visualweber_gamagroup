@@ -41,3 +41,5 @@ register_sidebar([
 
 RvMedia::setUploadPathAndURLToPublic();
 RvMedia::addSize('featured', 565, 375)->addSize('medium', 540, 360);
+
+
