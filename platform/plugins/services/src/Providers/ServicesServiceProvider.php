@@ -56,20 +56,26 @@ class ServicesServiceProvider extends ServiceProvider
         \SlugHelper::setPrefix(Services::class, 'linh-vuc-kinh-doanh');
         
 
+       
+
+
         $this->app->booted(function () {
-            
-            if (defined('ABOUT_MODULE_SCREEN_NAME')) {
-               
+            if (defined('LANGUAGE_MODULE_SCREEN_NAME')) {
+                \Language::registerModule([Services::class]);
+            }
+
+            if (defined('CUSTOM_FIELD_MODULE_SCREEN_NAME')) {
                 \CustomField::registerModule(Services::class)
-                ->registerRule('basic', trans('plugins/services::services.name'), Services::class, function () {
+                    ->registerRule('basic', trans('plugins/services::services.name'), Services::class, function () {
                         return $this->app->make(ServicesInterface::class)->pluck('name', 'id');
                     })
                     ->expandRule('other', trans('plugins/custom-field::rules.model_name'), 'model_name', function () {
                         return [
-                            Services::class => trans('plugins/services::services.name'),
+                            Block::class => trans('plugins/services::services.name'),
                         ];
                     });
-             }
+            }
+
         });
     }
 }
