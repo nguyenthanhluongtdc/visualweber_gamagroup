@@ -30,21 +30,108 @@
 </div>
 
 {{------------------------ talent dẫn lỗi tiên phong ----------------------}}
-<div class="talent-s3">
+{{-- <div class="business-section2 padding80">
+    <div class="container">
+        <div class="row_wrap">
+            <div class="content-md4">
+                @if (has_field($page, 'menu_nhan_tai'))
+                    <ul class="nav nav-pills list-business-tab font-helve font20" role="tablist">
+                        @foreach (get_field($page, 'menu_nhan_tai') as $key => $item)
+                            <li class="nav-item">
+                                <li class="nav-item">
+                                    <a class="nav-link {{ $loop->first ? 'active' : '' }}" data-toggle="tab"
+                                        href="#tab{{ $key }}">{{ get_sub_field($item, 'title_menu_nhan_tai') }}</a>
+                                </li>
+                            @endforeach
+                        @endif
+
+                    </ul>
+               
+            </div>
+
+                <div class="content-md8">
+                    <div class="tab-content list-business-content">
+                        @if (has_field($page, 'menu_nhan_tai'))
+                        @foreach (get_field($page, 'menu_nhan_tai') as $key => $item)
+                            <div id="tab{{ $key }}" class="container tab-pane {{ $loop->first ? 'active' : '' }}">
+                                <div class="row">
+
+                                    <div class="col-md-6 content-wrap">
+                                        <div class="content font-helve-light font18">
+                                            @if (has_sub_field($item, 'desc_menu_nhan_tai'))
+                                            <div class="desc font-helve-light font18">
+                                                {!! get_sub_field($item, 'desc_menu_nhan_tai') !!}
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        @if (has_sub_field($item, 'img_menu_nhan_tai'))
+                                <img src="{{ RvMedia::getImageUrl(get_sub_field($item, 'img_menu_nhan_tai')) }}"
+                                >
+                                @endif
+                                    </div>
+                                </div>
+                                <div class="views content-show-mobie font18 font-helve">
+                                    <a href="{{ $item->url }}">
+                                        {{ trans('See more') }}
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
+                        
+                    </div>
+                </div>
+        </div>
+    </div>
+</div> --}}
+
+
+<div class="business-section3 padding80">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <h3 class="talent--title font-helve-bold font20">Dẫn lối tiên phong</h3>
-                <div class="talent-des font-helve font20">Tôn trọng bản sắc</div>
-                <div class="talent-des font-helve font20">Môi trường chuyên nghiệp</div>
+            <div class="col-md-4 danloi">
+                <ul class="nav nav-pills list-business-tab font-helve font20" role="tablist" role="tablist">
+                    @if (has_field($page, 'menu_nhan_tai'))
+                        @foreach (get_field($page, 'menu_nhan_tai') as $key => $item)
+                            <li class="nav-item">
+                                <a class="nav-link {{ $loop->first ? 'active' : '' }}" data-toggle="tab"
+                                    href="#tab{{ $key }}">{{ get_sub_field($item, 'title_menu_nhan_tai') }}</a>
+                            </li>
+                        @endforeach
+                    @endif
+
+                </ul>
             </div>
-            <div class="col-md-4 talent--info font-helve-light font18">
-                <p>
-                Trong nền kinh tế phát triển với tốc độ nhanh chóng, cách duy nhất để thành công là không ngừng tiến lên phía trước. Tại GAMA Group, chúng tôi trân trọng những cá nhân đầy hoài bão, luôn nắm bắt các xu hướng với những tư duy không giới hạn. Chúng tôi cố gắng mang lại môi trường làm việc lý tưởng để tất cả có thể phát triển toàn diện tiềm năng, cùng nhau đón đầu xu hướng và dẫn dắt thị trường. 
-            </p>
-            </div>
-            <div class="col-md-4">
-                <img src="{{ Theme::asset()->url('images/talent/126.png') }}" alt="" class="img-slider">
+            <div class="col-md-8 talent--info font-helve-light font18">
+                <div class="tab-content">
+                    @if (has_field($page, 'menu_nhan_tai'))
+                        @foreach (get_field($page, 'menu_nhan_tai') as $key => $item)
+                            <div id="tab{{ $key }}"
+                                class="tab-pane content-tab {{ $loop->first ? 'active' : '' }}">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        @if (has_sub_field($item, 'desc_menu_nhan_tai'))
+                                        <div class="desc font-helve-light font18">
+                                            {!! get_sub_field($item, 'desc_menu_nhan_tai') !!}
+                                        </div>
+                                    @endif
+                                    </div>
+                                    <div class="col-md-6">
+                                        @if (has_sub_field($item, 'img_menu_nhan_tai'))
+                                        <img src="{{ RvMedia::getImageUrl(get_sub_field($item, 'img_menu_nhan_tai')) }}"
+                                        >
+                                        @endif
+                                    </div>
+                                </div>
+                               
+
+                             
+                            
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
             </div>
         </div>
     </div>
@@ -111,33 +198,7 @@
 
 
 {{--------------------------- cơ hội làm việc -------------- --}}
-{{-- <div class="job">
-    <div class="container talent-s5">
-        <div class="job--img">
-            @if (has_field($page, 'img_nhan_tai_co_hoi_lam_viec'))
-            <img src="{{ RvMedia::getImageUrl(get_field($page, 'img_nhan_tai_co_hoi_lam_viec')) }}" alt="banner">
-        @endif
-        </div>
-        <div class="job--block">
-            <div class="job--title">
-                <h3 class=" font-helve-bold font30">
-                    @if (has_field($page, 'title_nhan_tai_co_hoi_lam_viec'))
-                    {!! get_field($page, 'title_nhan_tai_co_hoi_lam_viec') !!}
-                @endif
-                </h3>
-            </div>
-            <div class="job--desc font-helve-light font18">
-                @if (has_field($page, 'desc_nhan_tai_co_hoi_lam_viec'))
-                {!! get_field($page, 'desc_nhan_tai_co_hoi_lam_viec') !!}
-            @endif
-            </div>
-            <div class="job--buttom font-helve font18">
-                <a href="/co-hoi-lam-viec" class="btn btn-primary job--profession">Cơ hội nghề nghiệp</a>
-            </div>
-        </div>
 
-    </div>
-</div> --}}
 
 <div class="opp-job">
     <div class="container">

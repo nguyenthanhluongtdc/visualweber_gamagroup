@@ -5,17 +5,58 @@
     }
 }
 
-.talent-s3 {
-    padding: 80px 0px;
-    img {
-        width: 100%;
-        height: auto;
+.business-section3 {
+    background-color: transparent;
+    .list-business-tab {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        margin-left: 10px;
+        li {
+            list-style-type: none;
+            margin-bottom: 20px;
+            a {
+                color: black;
+                padding: 0;
+            }
+            a.active {
+                color: $primary-color;
+                background: none;
+                font-family: $font-helve-bold;
+                background-color: none;
+            }
+             ::before {
+                content: "\2022";
+                color: $primary-color;
+                font-weight: bold;
+                display: inline-block;
+                width: 20px;
+                margin-left: -10px;
+            }
+        }
     }
-    .talent--title {
-        color: #0D3F75;
-    }
-    .talent-des {
-        margin-top: 1rem;
+    .list-business-content {
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+        .content {
+            width: 92%;
+            strong {
+                font-family: $font-helve;
+            }
+            p {
+                margin-bottom: 30px;
+            }
+        }
+        .content-wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .views {
+                margin-bottom: 10px;
+            }
+        }
     }
 }
 
