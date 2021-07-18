@@ -107,6 +107,7 @@
                         {!! get_field($page, 'title_admin_16252171762') !!}
                     @endif
                 </h3>
+                {{-- content --}}
                 <div class="desc--overview font-helve-light font18">
                     @if (has_field($page, 'desc_admin_16252162962'))
                         {!! get_field($page, 'desc_admin_16252162962') !!}
@@ -118,10 +119,10 @@
                         {!! get_field($page, 'title_mo_ta') !!}
                     @endif
                 </h3>
+                {{-- content --}}
+
                 <div class="desc--overview font-helve-light font18">
-                    @if (has_field($page, 'desc_mo_ta'))
-                        {!! get_field($page, 'desc_mo_ta') !!}
-                    @endif
+                    {{-- {!!$RecruitmentPost->name!!} --}}
                 </div>
                 <hr>
                 <h3 class="opportunity--title font-helve-bold font20">
@@ -129,6 +130,8 @@
                         {!! get_field($page, 'title_trach_nhiem') !!}
                     @endif
                 </h3>
+                {{-- content --}}
+
                 <div class="desc--overview item font-helve-light font18">
                     @if (has_field($page, 'desc_trach_nhiem'))
                         {!! get_field($page, 'desc_trach_nhiem') !!}
@@ -160,42 +163,19 @@
                 </tr>
             </thead>
             <tbody class="font-helve font18">
+                @if(!empty(get_all_recruitments(5)))
+                @foreach (get_all_recruitments(5) as $item)
                 <tr class="font-helve font18">
-                    <td>Kế toán thanh toán</td>
-                    <td>Depalift</td>
-                    <td>Tp. Hồ Chí Minh</td>
-                    <td>30.04.2021</td>
+                    {{-- {{route('moi-truong-lam-viec',$item->slugable)}} --}}
+                    <td><a href="">{{$item->name}}</a></td>
+                    <td>{{$item->company}}</td>
+                    <td>{{$item->location}}</td>
+                    <td>{{$item->expire}}</td>
+                   
                 </tr>
-                <tr>
-                    <td>chuyên viên kĩ thuật cấp cao</td>
-                    <td>Depalift</td>
-                    <td>Tp. Hà nội</td>
-                    <td>30.04.2021</td>
-                </tr>
-                <tr>
-                    <td>Kế toán thanh toán</td>
-                    <td>Depalift</td>
-                    <td>Tp. Hồ Chí Minh</td>
-                    <td>30.04.2021</td>
-                </tr>
-                <tr>
-                    <td>chuyên viên kĩ thuật cấp cao</td>
-                    <td>Depalift</td>
-                    <td>Tp. Hà nội</td>
-                    <td>30.04.2021</td>
-                </tr>
-                <tr>
-                    <td>Kế toán thanh toán</td>
-                    <td>Depalift</td>
-                    <td>Tp. Hồ Chí Minh</td>
-                    <td>30.04.2021</td>
-                </tr>
-                <tr>
-                    <td>chuyên viên kĩ thuật cấp cao</td>
-                    <td>Depalift</td>
-                    <td>Tp. Hà nội</td>
-                    <td>30.04.2021</td>
-                </tr>
+                @endforeach
+                @endif
+               
             </tbody>
         </table>
         <div class="Recruitment--buttom xem-them font-helve font18">

@@ -35,6 +35,7 @@ Route::group(['namespace' => 'Theme\Gama\Http\Controllers', 'middleware' => ['we
             'as' => 'talent-opportunity',
             'uses' => 'GamaController@getTalent',
         ]);
+        Route::get('/moi-truong-lam-viec/{slug}', 'RecruitmentPostController@show')->name('RecruitmentPost');
         Route::get('ajax/search', 'GamaController@getSearch')->name('public.ajax.search');
 
     });

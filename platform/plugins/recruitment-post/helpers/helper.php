@@ -18,5 +18,30 @@ if (!function_exists('get_companies_for_form')) {
         return $companies;
     }
 }
+if (!function_exists('get_all_recruitments')) {
+    /**
+     * @return \Illuminate\Support\Collection
+     * @throws Exception
+     */
+    function get_all_recruitments($pageinate = 10)
+    {
+        $fields = app(RecruitmentPostInterface::class)
+            ->getAll($pageinate, ['status' => BaseStatusEnum::PUBLISHED]);
 
+        return $fields;
+    }
+}
+if (!function_exists('get_all_recruitments_for_filter')) {
+    /**
+     * @return \Illuminate\Support\Collection
+     * @throws Exception
+     */
+    function get_all_recruitments_for_filter()
+    {
+        $fields = app(RecruitmentInterface::class)
+            ->getAllForFilter();
+
+        return $fields;
+    }
+}
 

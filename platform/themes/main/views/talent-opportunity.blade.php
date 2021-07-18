@@ -120,42 +120,22 @@
                 </thead>
                 <tbody class="font-helve font18">
                   <tr class="font-helve font18">
-                    <td>Kế toán thanh toán</td>
-                    <td>Depalift</td>
-                    <td>Tp. Hồ Chí Minh</td>
-                    <td>30.04.2021</td>
-                  </tr>
-                  <tr>
-                    <td>chuyên viên kĩ thuật cấp cao</td>
-                    <td>Depalift</td>
-                    <td>Tp. Hà nội</td>
-                    <td>30.04.2021</td>
-                  </tr>
-                  <tr>
-                    <td>Kế toán thanh toán</td>
-                    <td>Depalift</td>
-                    <td>Tp. Hồ Chí Minh</td>
-                    <td>30.04.2021</td>
-                  </tr>
-                  <tr>
-                    <td>chuyên viên kĩ thuật cấp cao</td>
-                    <td>Depalift</td>
-                    <td>Tp. Hà nội</td>
-                    <td>30.04.2021</td>
-                  </tr>
-                  <tr>
-                    <td>Kế toán thanh toán</td>
-                    <td>Depalift</td>
-                    <td>Tp. Hồ Chí Minh</td>
-                    <td>30.04.2021</td>
-                  </tr>
-                  <tr>
-                    <td>chuyên viên kĩ thuật cấp cao</td>
-                    <td>Depalift</td>
-                    <td>Tp. Hà nội</td>
-                    <td>30.04.2021</td>
-                  </tr>
-                </tbody>
+                    <tbody class="font-helve font18">
+                        @if(!empty(get_all_recruitments(5)))
+                        @foreach (get_all_recruitments(5) as $item)
+                        <tr class="font-helve font18">
+                            {{-- {{route('moi-truong-lam-viec',$item->slugable)}} --}}
+                            <td><a href=" moi-truong-lam-viec">{{$item->name}}</a></td>
+                            <td>{{$item->company}}</td>
+                            <td>{{$item->location}}</td>
+                            <td>{{$item->expire}}</td>
+                           
+                        </tr>
+                        @endforeach
+                        @endif
+                       
+                    </tbody>
+                 
               </table>
         </div>
     </div>
