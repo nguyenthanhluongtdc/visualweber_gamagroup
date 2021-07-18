@@ -124,7 +124,6 @@
                         @if(!empty(get_all_recruitments(5)))
                         @foreach (get_all_recruitments(5) as $item)
                         <tr class="font-helve font18">
-                            {{-- {{route('moi-truong-lam-viec',$item->slugable)}} --}}
                             <td><a href=" moi-truong-lam-viec">{{$item->name}}</a></td>
                             <td>{{$item->company}}</td>
                             <td>{{$item->location}}</td>
