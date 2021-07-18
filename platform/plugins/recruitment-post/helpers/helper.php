@@ -18,6 +18,22 @@ if (!function_exists('get_companies_for_form')) {
         return $companies;
     }
 }
+
+if (!function_exists('get_address_for_form')) {
+    /**
+     * @return \Illuminate\Support\Collection
+     * @throws Exception
+     */
+    function get_address_for_form()
+    {
+        $address = app(RecruitmentProvincesInterface::class)
+            ->getAddForForm(['status' => BaseStatusEnum::PUBLISHED]);
+
+        return $address;
+    }
+}
+
+
 if (!function_exists('get_all_recruitments')) {
     /**
      * @return \Illuminate\Support\Collection
@@ -38,7 +54,7 @@ if (!function_exists('get_all_recruitments_for_filter')) {
      */
     function get_all_recruitments_for_filter()
     {
-        $fields = app(RecruitmentInterface::class)
+        $fields = app(RecruitmentPostInterface::class)
             ->getAllForFilter();
 
         return $fields;

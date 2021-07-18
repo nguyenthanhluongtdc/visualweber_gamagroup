@@ -207,7 +207,7 @@ class GamaController extends PublicController
     
     public function getTalent($slug)
     {
-        $slug = SlugHelper::getSlug($slug, SlugHelper::getPrefix(Partner::class, 'nhan-tai'));
+        $slug = SlugHelper::getSlug($slug, SlugHelper::getPrefix(RecruitmentPost::class, 'nhan-tai'));
         if (!$slug) {
             abort(404);
         }
@@ -225,7 +225,7 @@ class GamaController extends PublicController
 
         SeoHelper::setTitle($data['talent']->name)->setDescription($data['talent']->description);
 
-        return Theme::scope('talent-opportunity', $data)->render();
+        return Theme::scope('talent-detail', $data)->render();
     }
 
 }

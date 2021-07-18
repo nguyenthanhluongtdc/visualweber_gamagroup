@@ -24,7 +24,7 @@ class RecruitmentPostForm extends FormAbstract
         }
         $companies = [0 => trans('plugins/blog::categories.none')] + $companies;
 
-
+       
         $this
             ->setupModel(new RecruitmentPost)
             ->setValidatorClass(RecruitmentPostRequest::class)

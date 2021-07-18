@@ -29,80 +29,48 @@
     {{----------------------------- filter-talent-opportunity ----------------}}
     <div class="talent-filter">
         <div class="container">
+            
             <div class="filteres">
-                <div class="row mt-3">
+                <div class="select talent-form-fiter">
+                <form id="recruitment-form" action="#" method="get">
+                    <select class="selectorder font18 font-helve js-example-disabled-results" name="selectorder" id="selectorder">
+                        <option {{request()->selectorder == 1 ? "selected" : ""}} value="1" class="option">{{__('Latest')}}</option>
+                        <option {{request()->selectorder == 2 ? "selected" : ""}} value="2">{{__('Oldest')}}</option>
+                    </select>
 
-                    <div class="col-md-3 filteres--option font-helve font18  mt-2">
+                    <select class="selectposition font-helve js-example-disabled-results" name="selectposition" id="selectposition">
+                        <option selected disabled>{{__('Vị trí ứng tuyển')}}</option>
+                        <option value="0">{{__('Tất cả')}}</option>
+                        @if(!empty(get_all_recruitments_for_filter()))
+                        @foreach (get_all_recruitments_for_filter() as $item)
+                        <option {{request()->selectposition == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
+                        @endif
+    
+                    </select>
+                    <select class="selectcompany font-helve js-example-disabled-results" name="selectcompany" id="selectcompany">
+                        <option selected disabled>{{__('Công ty')}}</option>
+                        <option value="0">{{__('Tất cả')}}</option>
+                        @if(!empty(get_companies_for_form()))
+                        @foreach (get_companies_for_form() as $item)
+                        <option {{request()->selectcompany == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
+                        @endif
+                    </select>
 
-                        <div class="menu-container">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary font-helve font18 " type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Mới nhất
-                                    <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
-    
-                                </button>
-                                <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Item 1</a>
-                                    <a class="dropdown-item" href="#">Item 1</a>
-                                    <a class="dropdown-item" href="#">Item 1</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 filter--elemet font-helve font18 mt-2">
-                        <div class="menu-container">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary font-helve font18 " type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Vị trí ứng tuyển
-                                    <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
-    
-                                </button>
-                                <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Maketing</a>
-                                    <a class="dropdown-item" href="#">HR</a>
-                                    <a class="dropdown-item" href="#">Trợ Lý</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 filter--elemet font-helve font18 mt-2">
-                        <div class="menu-container">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary font-helve font18 " type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Công ty
-                                    <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
-    
-                                </button>
-                                <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Item 1</a>
-                                    <a class="dropdown-item" href="#">Item 1</a>
-                                    <a class="dropdown-item" href="#">Item 1</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 filter--elemet font-helve font18 mt-2">
-                        <div class="menu-container">
-                            <div class="dropdown ">
-                                <button class="btn btn-secondary font-helve font18" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Địa chỉ làm việc
-                                    <img src="{{ Theme::asset()->url('images/new/dropdown.png') }}" alt="">
-    
-                                </button>
-                                <div class="dropdown-menu font-helve font18" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Item 1</a>
-                                    <a class="dropdown-item" href="#">Item 1</a>
-                                    <a class="dropdown-item" href="#">Item 1</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <select class="selectaddress font-helve js-example-disabled-results" name="selectaddress" id="selectaddress">
+                        <option selected disabled>{{__('Địa chỉ làm việc')}}</option>
+                        <option value="0">{{__('Tất cả')}}</option>
+                        @if(!empty(get_address_for_form()))
+                        @foreach (get_address_for_form() as $item)
+                        <option {{request()->selectaddress == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
+                        @endif
+                    </select>
+                </form>
+            
             </div>
+        </div>
 
         </div>
     </div>
@@ -118,13 +86,14 @@
                     <th scope="col">Hạn nộp hồ sơ</th>
                   </tr>
                 </thead>
+
                 <tbody class="font-helve font18">
                   <tr class="font-helve font18">
                     <tbody class="font-helve font18">
                         @if(!empty(get_all_recruitments(5)))
                         @foreach (get_all_recruitments(5) as $item)
                         <tr class="font-helve font18">
-                            <td><a href=" moi-truong-lam-viec">{{$item->name}}</a></td>
+                            <td><a href="{{ $item->url }}">{{$item->name}}</a></td>
                             <td>{{$item->company}}</td>
                             <td>{{$item->location}}</td>
                             <td>{{$item->expire}}</td>

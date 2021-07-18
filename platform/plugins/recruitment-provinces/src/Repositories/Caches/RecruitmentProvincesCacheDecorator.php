@@ -7,5 +7,11 @@ use Platform\RecruitmentProvinces\Repositories\Interfaces\RecruitmentProvincesIn
 
 class RecruitmentProvincesCacheDecorator extends CacheAbstractDecorator implements RecruitmentProvincesInterface
 {
-
+ /**
+     * {@inheritDoc}
+     */
+    public function getAddForForm($active = true)
+    {
+        return $this->getDataIfExistCache(__FUNCTION__, func_get_args());
+    }
 }

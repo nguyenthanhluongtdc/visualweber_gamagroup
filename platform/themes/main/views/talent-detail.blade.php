@@ -1,12 +1,14 @@
 {!! Theme::breadcrumb()->render() !!}
 
+
+
 <div class="all-news-content">
     <div class="container">
         <div class="new-section1">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="new-title font-helve-bold font30">
-                        {!! $page->description !!}
+                        {!! $talent->name !!}
 
                     </h1>
                 </div>
@@ -42,9 +44,17 @@
                 <div class="sticky-top">
                 <div class="Recruitment Recruitment--item1 font-helve-light font18 ">
                     <div class="Recruitment--adree">
-                        @if (has_field($page, 'title_admin_16252012931'))
+                        <ul>
+                            <li>Công ty: {!! $talent->company !!}</li>
+                            <li>Địa chỉ: {!! $talent->location !!}</li>
+                            <li>Phong ban: {!! $talent->department !!}</li>
+                            <li>Loại hợp đồng: {!! $talent->type !!}</li>
+                            <li>Thiết bị, công cụ: {!! $talent->timework !!}</li>
+                            <li>Hạn nộp hồ sơ: {!! $talent->expire !!}</li>
+                        </ul>
+                        {{-- @if (has_field($page, 'title_admin_16252012931'))
                             {!! get_field($page, 'title_admin_16252012931') !!}
-                        @endif
+                        @endif --}}
                     </div>
                     <div class=" Recruitment--buttom font-helve font18">
                         <a data-fancybox="poup" data-src="#poup" href="javascript:;"
@@ -103,39 +113,41 @@
             </div>
             <div class="col-md-8 talent--desc">
                 <h3 class="opportunity--item font-helve-bold font20">
-                    @if (has_field($page, 'title_admin_16252171762'))
+                    Tổng quan công việc
+                    {{-- @if (has_field($page, 'title_admin_16252171762'))
                         {!! get_field($page, 'title_admin_16252171762') !!}
-                    @endif
+                    @endif --}}
                 </h3>
                 {{-- content --}}
                 <div class="desc--overview font-helve-light font18">
-                    @if (has_field($page, 'desc_admin_16252162962'))
-                        {!! get_field($page, 'desc_admin_16252162962') !!}
-                    @endif
+                    {!! $talent->experience !!}
                 </div>
                 <hr>
                 <h3 class="opportunity--title font-helve-bold font20">
-                    @if (has_field($page, 'title_mo_ta'))
+                    Mô tả
+                    {{-- @if (has_field($page, 'title_mo_ta'))
                         {!! get_field($page, 'title_mo_ta') !!}
-                    @endif
+                    @endif --}}
                 </h3>
                 {{-- content --}}
 
                 <div class="desc--overview font-helve-light font18">
-                    {{-- {!!$RecruitmentPost->name!!} --}}
+                    {!! $talent->describe !!}
                 </div>
                 <hr>
                 <h3 class="opportunity--title font-helve-bold font20">
-                    @if (has_field($page, 'title_trach_nhiem'))
+                    Trách nhiệm
+                    {{-- @if (has_field($page, 'title_trach_nhiem'))
                         {!! get_field($page, 'title_trach_nhiem') !!}
-                    @endif
+                    @endif --}}
                 </h3>
                 {{-- content --}}
 
                 <div class="desc--overview item font-helve-light font18">
-                    @if (has_field($page, 'desc_trach_nhiem'))
+                    {!! $talent->Responsibility !!}
+                    {{-- @if (has_field($page, 'desc_trach_nhiem'))
                         {!! get_field($page, 'desc_trach_nhiem') !!}
-                    @endif
+                    @endif --}}
                 </div>
             </div>
         </div>
@@ -148,9 +160,7 @@
 <div class="opportunity-table">
     <div class="container">
         <h3 class="opportunity--title item font-helve-bold font30">
-            @if (has_field($page, 'title_cac_vi_tri_khac'))
-                {!! get_field($page, 'title_cac_vi_tri_khac') !!}
-            @endif
+            Các vị trí khác
         </h3>
 
         <table class="table table-hover font-helve font18">
@@ -167,7 +177,7 @@
                 @foreach (get_all_recruitments(5) as $item)
                 <tr class="font-helve font18">
                     {{-- {{route('moi-truong-lam-viec',$item->slugable)}} --}}
-                    <td><a href="">{{$item->name}}</a></td>
+                    <td><a href="{{ $item->url }}">{{$item->name}}</a></td>
                     <td>{{$item->company}}</td>
                     <td>{{$item->location}}</td>
                     <td>{{$item->expire}}</td>

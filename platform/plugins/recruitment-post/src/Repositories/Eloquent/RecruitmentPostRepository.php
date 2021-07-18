@@ -18,6 +18,14 @@ class RecruitmentPostRepository extends RepositoriesAbstract implements Recruitm
     public function getAll($paginate = 10, $active = true)
     {
         $data = $this->model->select('recruitment_posts.*');
+        if (request()->has('selectorder')) {
+            if(request()->selectorder == 1){
+                $data->orderBy('recruitment.created_at', 'desc');
+            }
+            if(request()->selectorder == 2){
+                $data->orderBy('recruitment.created_at', 'asc');
+            }
+        }
         if (request()->has('province')) {
             $provinces = app(RecruitmentCompanieInterface::class)->getByProvince(request()->province);
             $provinceArr = [];

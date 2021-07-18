@@ -23,19 +23,12 @@ Route::group(['namespace' => 'Theme\Gama\Http\Controllers', 'middleware' => ['we
             'as' => 'partner-detail',
             'uses' => 'GamaController@getPartner',
         ]);
-        Route::get(\SlugHelper::getPrefix(Partner::class, 'doi-tac') . '/{slug}', [
-            'as' => 'partner-detail',
-            'uses' => 'GamaController@getPartner',
-        ]);
-        Route::get(\SlugHelper::getPrefix(Partner::class, 'moi-truong-lam-viec') . '/{slug}', [
-            'as' => 'partner-detail',
-            'uses' => 'GamaController@getPartnerDetail',
-        ]);
-        Route::get(\SlugHelper::getPrefix(Partner::class, 'nhan-tai') . '/{slug}', [
-            'as' => 'talent-opportunity',
+       
+        Route::get(\SlugHelper::getPrefix(RecruitmentPost::class, 'nhan-tai') . '/{slug}', [
+            'as' => 'talent-detail',
             'uses' => 'GamaController@getTalent',
         ]);
-        Route::get('/moi-truong-lam-viec/{slug}', 'RecruitmentPostController@show')->name('RecruitmentPost');
+        // Route::get('/moi-truong-lam-viec/{slug}', 'RecruitmentPostController@show')->name('RecruitmentPost');
         Route::get('ajax/search', 'GamaController@getSearch')->name('public.ajax.search');
 
     });
