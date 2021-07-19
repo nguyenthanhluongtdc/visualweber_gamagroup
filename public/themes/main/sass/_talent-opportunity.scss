@@ -129,9 +129,7 @@
         .selectorder {
             width: 15%;
         }
-       
         .select2-container {
-            margin-right: 30px;
             font-family: $font-helve;
         }
         .select2-container .select2-selection--single {
@@ -186,3 +184,36 @@
         }
     }
 }
+
+.talent-form-fiter {
+    @media(max-width: 767px) {
+        form {
+            display: block;
+            .selectorder {
+                width: 100%;
+            }
+            .select2-selection {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+// .talent-form-fiter {
+//     @media(max-width: 987px) {
+//         form {
+//             display: block;
+//             .selectorder {
+//                 width: 100%;
+//             }
+//             .select2-selection {
+//                 width: 100%;
+//                 margin-bottom: 15px;
+//             }
+//             .select {
+//                 width: 400px;
+//             }
+//         }
+//     }
+// }

@@ -38,7 +38,7 @@ class RecruitmentPostForm extends FormAbstract
                 ],
             ])
             ->add('experience', 'editor', [
-                'label'      => trans('core/base::forms.name'),
+                'label'      => trans('Tổng quan công việc'),
                 'label_attr' => ['class' => 'control-label required'],
                 'attr'       => [
                     'placeholder'  => trans('core/base::forms.name_placeholder'),
@@ -46,7 +46,7 @@ class RecruitmentPostForm extends FormAbstract
                 ],
             ])
             ->add('describe', 'editor', [
-                'label'      => trans('core/base::forms.name'),
+                'label'      => trans('Mô tả'),
                 'label_attr' => ['class' => 'control-label required'],
                 'attr'       => [
                     'placeholder'  => trans('core/base::forms.name_placeholder'),
@@ -54,7 +54,7 @@ class RecruitmentPostForm extends FormAbstract
                 ],
             ])
             ->add('Responsibility', 'editor', [
-                'label'      => trans('core/base::forms.name'),
+                'label'      => trans('Trách nhiệm'),
                 'label_attr' => ['class' => 'control-label required'],
                 'attr'       => [
                     'placeholder'  => trans('core/base::forms.name_placeholder'),
@@ -62,15 +62,15 @@ class RecruitmentPostForm extends FormAbstract
                 ],
             ])
             ->add('expire', 'text', [
-                'label'      => trans('core/base::forms.name'),
+                'label'      => trans('Hạn nộp hồ sơ'),
                 'label_attr' => ['class' => 'control-label required'],
                 'attr'          => [
                     'class'            => 'form-control datepicker',
                     'data-date-format' => 'dd/mm/yyyy',
                 ],
-                'wrapper'    => [
-                    'class' => 'form-group col-md-6',
-                ],
+                // 'wrapper'    => [
+                //     'class' => 'form-group col-md-6',
+                // ],
                 'default_value' => now(config('app.timezone'))->format('d/m/Y'),
             ])
 
