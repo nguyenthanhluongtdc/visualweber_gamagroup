@@ -61,7 +61,7 @@ if (!function_exists('get_category_default')) {
      */
     function get_category_default()
     {
-       return app(CategoryInterface::class)->getModel()->where('is_default', 1)->take(1)->get();
+       return app(CategoryInterface::class)->getModel()->where('order', 2)->take(1)->get();
     }
 }
 
@@ -136,3 +136,4 @@ if (!function_exists('get_slug_job')) {
         return null;
     }
 }
+

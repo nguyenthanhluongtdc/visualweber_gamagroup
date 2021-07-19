@@ -20,6 +20,31 @@ if (!function_exists('get_featured_posts')) {
     }
 }
 
+if (!function_exists('get_post_about')) {
+    /**
+     * @param int $limit
+     * @param array $with
+     * @return \Illuminate\Support\Collection
+     */
+    function get_post_about($limit, array $with = [])
+    {
+        return app(PostInterface::class)->getPostAbout($limit, $with);
+    }
+}
+if (!function_exists('get_post_news')) {
+    /**
+     * @param int $limit
+     * @param array $with
+     * @return \Illuminate\Support\Collection
+     */
+    function get_post_news($limit, array $with = [])
+    {
+        return app(PostInterface::class)->getPostNews($limit, $with);
+    }
+}
+
+
+
 if (!function_exists('get_latest_posts')) {
     /**
      * @param int $limit

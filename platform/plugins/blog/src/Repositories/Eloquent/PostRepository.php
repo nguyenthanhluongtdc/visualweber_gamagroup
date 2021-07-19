@@ -33,6 +33,43 @@ class PostRepository extends RepositoriesAbstract implements PostInterface
         return $this->applyBeforeExecuteQuery($data)->get();
     }
 
+
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPostAbout(int $limit = 5, array $with = [])
+    {
+        $data = $this->model
+            ->where([
+                'status'      => BaseStatusEnum::PUBLISHED,
+                'show_slider_page_about' => 1,
+            ])
+            ->limit($limit)
+            ->with(array_merge(['slugable'], $with))
+            ->orderBy('created_at', 'desc');
+
+        return $this->applyBeforeExecuteQuery($data)->get();
+    }
+
+     /**
+     * {@inheritDoc}
+     */
+    public function getPostNews(int $limit = 5, array $with = [])
+    {
+        $data = $this->model
+            ->where([
+                'status'      => BaseStatusEnum::PUBLISHED,
+                'show_slider_page_news' => 1,
+            ])
+            ->limit($limit)
+            ->with(array_merge(['slugable'], $with))
+            ->orderBy('created_at', 'desc');
+
+        return $this->applyBeforeExecuteQuery($data)->get();
+    }
+
+
     /**
      * {@inheritDoc}
      */

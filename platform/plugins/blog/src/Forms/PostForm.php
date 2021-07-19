@@ -71,7 +71,17 @@ class PostForm extends FormAbstract
                 ],
             ])
             ->add('is_featured', 'onOff', [
-                'label'         => trans('core/base::forms.is_featured'),
+                'label'         => __('Slider trang chủ'),
+                'label_attr'    => ['class' => 'control-label'],
+                'default_value' => false,
+            ])
+            ->add('show_slider_page_news', 'onOff', [
+                'label'         => __('Slider trang Tin tức'),
+                'label_attr'    => ['class' => 'control-label'],
+                'default_value' => false,
+            ])
+            ->add('show_slider_page_about', 'onOff', [
+                'label'         => __('Slider trang Giới thiệu detail'),
                 'label_attr'    => ['class' => 'control-label'],
                 'default_value' => false,
             ])

@@ -15,6 +15,20 @@ interface PostInterface extends RepositoryInterface
     public function getFeatured(int $limit = 5, array $with = []);
 
     /**
+     * @param int $limit
+     * @param array $with
+     * @return mixed
+     */
+    public function getPostAbout(int $limit = 5, array $with = []);
+
+
+     /**
+     * @param int $limit
+     * @param array $with
+     * @return mixed
+     */
+    public function getPostNews(int $limit = 5, array $with = []);
+    /**
      * @param array $filters
      * @return mixed
      */
