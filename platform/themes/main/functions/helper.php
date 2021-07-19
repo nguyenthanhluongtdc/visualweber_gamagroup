@@ -40,6 +40,21 @@ if (!function_exists('get_slug_posts')) {
         return null;
     }
 }
+if (!function_exists('get_slug_talent_detail')) {
+    /**
+     * @return array
+     *
+     */
+    function get_slug_talent_detail()
+    {
+        $page = app(PageInterface::class)->getFirstBy(['template' => 'talent-opportunity']);
+        if(!blank($page)) {
+            return $page->slugable->key ?? null;
+        }
+
+        return null;
+    }
+}
 
 if (!function_exists('get_post_new')){
     /**

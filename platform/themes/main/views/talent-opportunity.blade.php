@@ -105,9 +105,13 @@
                     </tbody>
                  
               </table>
+              {{-- <div class="page-pagination text-right">
+                {!! $posts->withQueryString()->links() !!}
+            </div> --}}
         </div>
     </div>
 {{------------------------------- page ------------------------------------}}
+
 <div class="gama--naviga">
 
     <div class="container ">

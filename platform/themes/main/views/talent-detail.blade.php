@@ -79,7 +79,7 @@
                             <img src="{{ Theme::asset()->url('images/talent/two-woman.jpg') }}" alt="two-woman">
                         </div>
                         <div class="poup--block__form">
-                            <form action="{{route('recruitment.send')}}" enctype="multipart/form-data" method="post">
+                            <form action="{{route('recruitment.send')}}" enctype="multipart/form-data" method="post"  id="register-form" >
                                 @csrf
                                 <div class="poup--title font-helve-light font18">
                                     <p>Bạn đang ứng tuyển vào vị trí: </p>
@@ -92,7 +92,7 @@
                                     <p class=" font-helve-light font16">
                                         Vui lòng bổ sung các thông tin cá nhân của bạn để ứng tuyển
                                     </p>
-                                    <input type="text" name="name" required class="form-control" placeholder="Họ Tên" />
+                                    <input type="text" name="name"  class="form-control" placeholder="Họ Tên" />
                                     <input type="text" name="email" required class="form-control" placeholder="Email" />
                                     <input type="text" name="phone" required class="form-control" placeholder="Số Điện Thoại " />
                                     <input type="text" name="address" required class="form-control" placeholder="Địa chỉ " />
@@ -125,43 +125,39 @@
             </div>
             </div>
             <div class="col-md-8 talent--desc">
-                <h3 class="opportunity--item font-helve-bold font20">
-                    Tổng quan công việc
-                    {{-- @if (has_field($page, 'title_admin_16252171762'))
-                        {!! get_field($page, 'title_admin_16252171762') !!}
-                    @endif --}}
-                </h3>
-                {{-- content --}}
-                <div class="desc--overview font-helve-light font18">
-                    {!! $talent->experience !!}
+                <div class="opportunity1">
+                    <h3 class="opportunity--item font-helve-bold font20">
+                        Tổng quan công việc
+                    </h3>
+                    <div class="desc--overview font-helve-light font18">
+                        {!! $talent->experience !!}
+                    </div>
                 </div>
+                
                 <hr>
-                <h3 class="opportunity--title font-helve-bold font20">
-                    Mô tả
-                    {{-- @if (has_field($page, 'title_mo_ta'))
-                        {!! get_field($page, 'title_mo_ta') !!}
-                    @endif --}}
-                </h3>
-                {{-- content --}}
 
-                <div class="desc--overview font-helve-light font18">
-                    {!! $talent->describe !!}
+                <div class="opportunity">
+                    <h3 class="opportunity--title font-helve-bold font20">
+                        Mô tả
+                       
+                    </h3>
+    
+                    <div class="desc--overview font-helve-light font18">
+                        {!! $talent->describe !!}
+                    </div>
                 </div>
+                
                 <hr>
-                <h3 class="opportunity--title font-helve-bold font20">
-                    Trách nhiệm
-                    {{-- @if (has_field($page, 'title_trach_nhiem'))
-                        {!! get_field($page, 'title_trach_nhiem') !!}
-                    @endif --}}
-                </h3>
-                {{-- content --}}
-
-                <div class="desc--overview item font-helve-light font18">
-                    {!! $talent->Responsibility !!}
-                    {{-- @if (has_field($page, 'desc_trach_nhiem'))
-                        {!! get_field($page, 'desc_trach_nhiem') !!}
-                    @endif --}}
+                <div class="opportunity">
+                    <h3 class="opportunity--title font-helve-bold font20">
+                        Trách nhiệm
+                    </h3>
+                    <div class="desc--overview item font-helve-light font18">
+                        {!! $talent->Responsibility !!}
+                      
+                    </div>
                 </div>
+               
             </div>
         </div>
         <hr>
@@ -201,8 +197,11 @@
                
             </tbody>
         </table>
+       
+        
         <div class="Recruitment--buttom xem-them font-helve font18">
-            <a href="" class="btn btn-primary Recruitment--profession">Xem thêm</a>
+            <a href="/{{ get_slug_talent_detail() }}" class="primary-a">{{ trans('See more') }}</a>
+
         </div>
     </div>
 </div>
@@ -215,4 +214,33 @@
             $('#file_path').append($('#cv_upload').val().replace(/C:\\fakepath\\/i, ''))
         }
     })
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script >
+     $(document).ready(function($) {
+        
+        $("#register-form").validate({
+        rules: {
+            name: "required",                    
+            email:"required",
+            phone:"required",
+            address:"required"
+        //    city: "required",
+         
+        },
+        messages: {
+            name: "Please enter your Name",                   
+            name: "Please enter your Email",                   
+            name: "Please enter your Phone",                   
+            name: "Please enter your address",                   
+           
+        },
+         errorPlacement: function(error, element) 
+        submitHandler: function(form) {
+            form.submit();
+        }
+        
+    });
+});
 </script>
