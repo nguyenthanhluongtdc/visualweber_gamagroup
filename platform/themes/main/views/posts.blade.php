@@ -22,8 +22,7 @@
 </div>
 {{-- ---------------------------------- new banner ------------------------------ --}}
 @php 
- $category_news = get_category_order()[0];
- $category_news_list = get_posts_by_category_order($category_news->id, 3 ,5,  ['posts.created_at' => 'desc']);
+ $category_news_list = get_post_news(10);
 @endphp
 
 @if (!empty($category_news_list))

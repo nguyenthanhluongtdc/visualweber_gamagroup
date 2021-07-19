@@ -71,6 +71,8 @@ class Post extends BaseModel
         'status',
         'author_id',
         'author_type',
+        'show_slider_page_news' , 
+        'show_slider_page_about',
     ];
 
     /**

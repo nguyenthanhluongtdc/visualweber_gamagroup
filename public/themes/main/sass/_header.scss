@@ -348,8 +348,8 @@ a.primary-a {
                     .sub-menu-drop::before {
                         position: absolute;
                         content: '';
-                        top: -30px;
-                        height: 50px;
+                        top: -20px;
+                        height: 40px;
                         background: transparent;
                         width: 70%;
                         left: 0;
@@ -358,6 +358,7 @@ a.primary-a {
                 li.menu-big:hover .sub-menu-drop {
                     display: block;
                 }
+
                 li.menu-big.active,
                 li.menu-big:hover {
                     a.menu-link {
@@ -374,6 +375,7 @@ a.primary-a {
                         left: 0;
                     }
                 }
+                
             }
         }
     }
@@ -618,3 +620,11 @@ button.search-btn:hover.input-search-home{
         font-family: $font-helve-light;
     }
   }
+
+
+  .page-another p{
+    margin-bottom: 20px;
+}
+.page-another strong{
+    font-family: $font-helve;
+}
