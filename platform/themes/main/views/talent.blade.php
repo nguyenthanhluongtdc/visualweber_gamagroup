@@ -200,7 +200,7 @@
 {{--------------------------- cơ hội làm việc -------------- --}}
 
 
-<div class="opp-job">
+{{-- <div class="opp-job">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -230,5 +230,30 @@
            </div>
         </div>
     </div>
+</div> --}}
+<div class="business-section4">
+    <div class="container">
+        <div class="row_wrap">
+            @if (has_field($page, 'title_nhan_tai_co_hoi_lam_viec'))
+                <div class="content-md4 font-helve-bold font30 tile-ri pri-color">
+                    <div class="padding50">
+                        {!! get_field($page, 'title_nhan_tai_co_hoi_lam_viec') !!}
+                    </div>
+                </div>
+            @endif
+            @if (has_field($page, 'desc_nhan_tai_co_hoi_lam_viec'))
+                <div class="content-md8 content-left"
+                    style="background-image: url('{{ Theme::asset()->url('images/business/map.png') }}')">
+                    <div class="top-content font-helve-light font18 padding50">
+                        {!! get_field($page, 'desc_nhan_tai_co_hoi_lam_viec') !!}
+                    </div>
+                    <div class="link">
+                        <a href="{{ get_slug_job() }}" class="font-helve font18">
+                            {{__('career opportunities')}}
+                        </a>
+                    </div>
+                </div>
+            @endif
+        </div>
+    </div>
 </div>
-
