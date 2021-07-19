@@ -24,7 +24,14 @@ class RecruitmentPostForm extends FormAbstract
         }
         $companies = [0 => trans('plugins/blog::categories.none')] + $companies;
 
-       
+        $listCity = get_address_for_form();
+        $city = [];
+        if(!empty($listCity)){
+            foreach ($listCity as $row) {
+                $city[$row->id] = $row->name;
+            }
+        }
+        $city = [0 => trans('plugins/blog::categories.none')] + $city;
         $this
             ->setupModel(new RecruitmentPost)
             ->setValidatorClass(RecruitmentPostRequest::class)
@@ -91,13 +98,21 @@ class RecruitmentPostForm extends FormAbstract
                     'data-counter' => 120,
                 ],
             ])
-            ->add('location', 'text', [
+            ->add('location', 'customSelect', [
                 'label'      => __('Địa điểm làm việc'),
                 'label_attr' => ['class' => 'control-label required'],
                 'attr'       => [
-                    'data-counter' => 120,
+                    'class' => 'select-search-full',
                 ],
+                'choices'    => $city,
             ])
+            // ->add('location', 'text', [
+            //     'label'      => __('Địa điểm làm việc'),
+            //     'label_attr' => ['class' => 'control-label required'],
+            //     'attr'       => [
+            //         'data-counter' => 120,
+            //     ],
+            // ])
             ->add('type', 'customRadio', [
                 'label' => __('Loại hợp đồng'),
                 'label_attr' => ['class' => 'control-label'],

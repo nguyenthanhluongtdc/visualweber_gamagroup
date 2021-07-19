@@ -20,24 +20,24 @@ class RecruitmentPostRepository extends RepositoriesAbstract implements Recruitm
         $data = $this->model->select('recruitment_posts.*');
         if (request()->has('selectorder')) {
             if(request()->selectorder == 1){
-                $data->orderBy('recruitment.created_at', 'desc');
+                $data->orderBy('recruitment_posts.created_at', 'desc');
             }
             if(request()->selectorder == 2){
-                $data->orderBy('recruitment.created_at', 'asc');
+                $data->orderBy('recruitment_posts.created_at', 'asc');
             }
         }
-        if (request()->has('province')) {
-            $provinces = app(RecruitmentCompanieInterface::class)->getByProvince(request()->province);
-            $provinceArr = [];
-            if(!empty($provinces)){
-                foreach($provinces as $item){
-                    array_push($provinceArr, $item->id);
-                }
-            }
-            if(request()->province != 0){
-                $data->whereIn('company', $provinceArr);
-            }
-        }
+        // if (request()->has('selectaddress')) {
+        //     $provinces = app(RecruitmentCompanieInterface::class)->getByProvince(request()->selectaddress);
+        //     $provinceArr = [];
+        //     if(!empty($provinces)){
+        //         foreach($provinces as $item){
+        //             array_push($provinceArr, $item->id);
+        //         }
+        //     }
+        //     if(request()->selectaddress != 0){
+        //         $data->whereIn('company', $provinceArr);
+        //     }
+        // }
         if (request()->has('country')) {
             $provinces = app(RecruitmentProvincesInterface::class)->getByCountry(request()->country);
             $provinceArr = [];
@@ -66,16 +66,22 @@ class RecruitmentPostRepository extends RepositoriesAbstract implements Recruitm
             $data->where('field', request()->field);
             }
         }
-        if (request()->has('company')) {
-            if(request()->company != 0){
-            $data->where('company', request()->company);
+        if (request()->has('selectcompany')) {
+            if(request()->selectcompany != 0){
+            $data->where('company', request()->selectcompany);
             }
         }
-        if (request()->has('position')) {
-            if(request()->position != 0){
-            $data->where('id', request()->position);
+        if (request()->has('selectaddress')) {
+            if(request()->selectaddress != 0){
+            $data->where('location', request()->selectaddress);
             }
         }
+        if (request()->has('selectposition')) {
+            if(request()->selectposition != 0){
+            $data->where('id', request()->selectposition);
+            }
+        }
+     
         // $data
         // ->orderBy('recruitment_posts.is_featured', 'DESC')
         // ->orderBy('recruitment_posts.order', 'ASC')

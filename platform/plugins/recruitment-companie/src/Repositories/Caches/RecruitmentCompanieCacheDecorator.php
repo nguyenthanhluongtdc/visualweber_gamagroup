@@ -15,4 +15,11 @@ class RecruitmentCompanieCacheDecorator extends CacheAbstractDecorator implement
     {
         return $this->getDataIfExistCache(__FUNCTION__, func_get_args());
     }
+     /**
+     * {@inheritDoc}
+     */
+    public function getByProvince($provinceId, $active = true)
+    {
+        return $this->getDataIfExistCache(__FUNCTION__, func_get_args());
+    }
 }
