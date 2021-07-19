@@ -83,10 +83,9 @@
                 </div>
                 <div class="about-detail-s5-slider owl-carousel" data-aos="fade-up" data-aos-duration="1000"
                 data-aos-easing="ease-in-out">
-                @php $category = get_category_default(); 
-                
-                $listPost = get_posts_by_category_order($category[0]->id , 12 , 12, ['posts.created_at' => 'desc']);
-                @endphp
+                @php
+            $listPost = get_post_about(10);
+            @endphp
                 
                 @if (!empty( $listPost))
                         @foreach ($listPost as $item)
