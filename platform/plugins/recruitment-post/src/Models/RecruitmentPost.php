@@ -5,6 +5,11 @@ namespace Platform\RecruitmentPost\Models;
 use Platform\Base\Traits\EnumCastable;
 use Platform\Base\Enums\BaseStatusEnum;
 use Platform\Base\Models\BaseModel;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Platform\RecruitmentCompany\Models\RecruitmentCompany;
+use Platform\RecruitmentCompany\Http\Controllers\RecruitmentCompanyController;
+
+
 
 class RecruitmentPost extends BaseModel
 {
@@ -40,4 +45,11 @@ class RecruitmentPost extends BaseModel
     protected $casts = [
         'status' => BaseStatusEnum::class,
     ];
+     /**
+     * @return BelongsTo
+     */
+    public function companies() :BelongsTo
+    {
+        return $this->belongsTo(RecruitmentCompany::class, 'company');
+    }
 }

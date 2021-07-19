@@ -26,7 +26,7 @@ class Recruitment extends BaseModel
         'email',
         'phone',
         'address',
-        // 'job',
+        'job',
         'cv',
     ];
 

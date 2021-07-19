@@ -48,7 +48,19 @@
                             <li>Công ty: {!! $talent->company !!}</li>
                             <li>Địa chỉ: {!! $talent->location !!}</li>
                             <li>Phong ban: {!! $talent->department !!}</li>
-                            <li>Loại hợp đồng: {!! $talent->type !!}</li>
+                            <li>Loại hợp đồng: 
+                                @if($talent->type == 0)
+                                {{__('Nhân viên chính thức')}}
+                            @elseif($talent->type == 1)
+                                {{__('Nhân viên thời vụ')}}
+                            @elseif($talent->type == 2)
+                                {{__('Bán thời gian')}}
+                            @elseif($talent->type == 3)
+                                {{__('Thực tập')}}
+                            @elseif($talent->type == 4)
+                                {{__('Khác')}}
+                            @endif
+                            </li>
                             <li>Thiết bị, công cụ: {!! $talent->timework !!}</li>
                             <li>Hạn nộp hồ sơ: {!! $talent->expire !!}</li>
                         </ul>
@@ -84,6 +96,7 @@
                                     <input type="text" name="email" required class="form-control" placeholder="Email" />
                                     <input type="text" name="phone" required class="form-control" placeholder="Số Điện Thoại " />
                                     <input type="text" name="address" required class="form-control" placeholder="Địa chỉ " />
+                                    <input type="text" name="job"  class="form-control d-none"  />
                             
                                     <label class=" cv-upload" for="cv_upload">
                                         <span class="btn btn-primary Recruitment--cv">Đính kèm CV ứng

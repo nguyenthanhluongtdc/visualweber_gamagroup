@@ -131,6 +131,7 @@ class RecruitmentController extends BaseController
 
     public function sendContact(RecruitmentRequest $request,BaseHttpResponse $response)
     {
+
         try {
             $originalName = $request->file('cv')->getClientOriginalName();
             $filename = \Str::random(5).'-'.\Str::slug($request->post).'-'.$originalName;
@@ -140,11 +141,13 @@ class RecruitmentController extends BaseController
             $contact->fill([
                 'cv' => $filename,
             ]);
+            
             app(RecruitmentInterface::class)->createOrUpdate($contact);
             event(new SentContactEvent($contact));
             if ($request->hasFile('cv')) {
                 $request->file('cv')->storeAs('cv', $filename, 'file_cv');
             }
+            dd($request);
             // EmailHandler::setModule(CONTACT_MODULE_SCREEN_NAME)
             //         ->setVariableValues([
             //             'contact_name'    => $contact->name ?? 'N/A',
@@ -155,6 +158,7 @@ class RecruitmentController extends BaseController
             //         ->sendUsingTemplate('email');
             //         EmailHandler::send('content', 'Tuyển dụng gamagroup', ['name' => 'gamagroup', 'to' =>$request->company_email]);
             return $response->setMessage(__('Gửi thành công!'));
+
         } catch (Exception $exception) {
             info($exception->getMessage());
             return $response
