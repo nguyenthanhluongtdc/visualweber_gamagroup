@@ -8,16 +8,24 @@ use Platform\Base\Enums\BaseStatusEnum;
 
 class ServicesRepository extends RepositoriesAbstract implements ServicesInterface
 {
-    public function getServiceFeatured(int $limit = 5){
-        
+    
+
+     /**
+     * {@inheritDoc}
+     */
+    public function getServiceFeatured(int $limit = 5, array $with = [])
+    {
         $data = $this->model
-        ->where([
-            'app_services.status'      => BaseStatusEnum::PUBLISHED,
-            'app_services.is_featured' => 1,
-        ])
-        ->limit($limit)
-        ->orderBy('app_services.created_at', 'desc')->get();
-            return $data;
-    return $this->applyBeforeExecuteQuery($data)->get();
+            ->where([
+                'status'      => BaseStatusEnum::PUBLISHED,
+                'is_featured' => 1,
+            ])
+            ->limit($limit)
+            ->with(array_merge(['slugable'], $with))
+            ->orderBy('created_at', 'desc');
+
+        return $this->applyBeforeExecuteQuery($data)->get();
     }
+
+
 }
