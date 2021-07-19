@@ -32,6 +32,7 @@
     <div class="container">
         <div class="row_wrap">
             <div class="content-md4">
+               
                 @if (!empty(get_featured_partner(10)))
                     <ul class="nav nav-pills list-business-tab font-helve font20" role="tablist">
                         @foreach (get_featured_partner(10) as $key => $item)
