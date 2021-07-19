@@ -71,7 +71,7 @@ class ServicesServiceProvider extends ServiceProvider
                     })
                     ->expandRule('other', trans('plugins/custom-field::rules.model_name'), 'model_name', function () {
                         return [
-                            Block::class => trans('plugins/services::services.name'),
+                            Services::class => trans('plugins/services::services.name'),
                         ];
                     });
             }   

@@ -50,7 +50,7 @@ class PartnerServiceProvider extends ServiceProvider
             ]);
         });
         \SeoHelper::registerModule(Partner::class);
-    \SlugHelper::registerModule(Partner::class, 'Partners');
+    \SlugHelper::registerModule(Partner::class, 'Partner');
     \SlugHelper::setPrefix(Partner::class, 'doi-tac');
     
     $this->app->booted(function () {
@@ -65,7 +65,7 @@ class PartnerServiceProvider extends ServiceProvider
                 })
                 ->expandRule('other', trans('plugins/custom-field::rules.model_name'), 'model_name', function () {
                     return [
-                        Block::class => trans('plugins/partner::partner.name'),
+                        Partner::class => trans('plugins/partner::partner.name'),
                     ];
                 });
         }

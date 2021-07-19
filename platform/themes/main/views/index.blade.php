@@ -207,6 +207,22 @@
                 </div>
             </div>
         @endforeach
+
+        {{-- <div class="test-item">
+            <img src="{{ Theme::asset()->url('images/homepage/end2.jpg') }}">
+        </div>
+        <div class="test-item">
+            <img src="{{ Theme::asset()->url('images/homepage/end2.jpg') }}">
+        </div>
+        <div class="test-item">
+            <img src="{{ Theme::asset()->url('images/homepage/end2.jpg') }}">
+        </div>
+        <div class="test-item">
+            <img src="{{ Theme::asset()->url('images/homepage/end2.jpg') }}">
+        </div>
+        <div class="test-item">
+            <img src="{{ Theme::asset()->url('images/homepage/end2.jpg') }}">
+        </div> --}}
         
     </div>
 </div>
