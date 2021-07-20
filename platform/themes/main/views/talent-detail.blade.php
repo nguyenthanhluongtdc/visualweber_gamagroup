@@ -111,12 +111,10 @@
                                     </div>
                                     <div class="form-group __group">
                                         <input type="text" name="job"  class="form-control d-none"  />
-<div class="errorTxt text-danger pt-2"></div>
-
                                     </div>
 
                                         <label class=" cv-upload" for="cv_upload">
-                                            <span class="btn btn-primary Recruitment--cv">Đính kèm CV ứng
+                                            <span class="btn btn-primary Recruitment--cv mt-0">Đính kèm CV ứng
                                                 tuyển</span>
                                         </label>
                                     <span id="file_path" class="d-block pt-2"></span>
