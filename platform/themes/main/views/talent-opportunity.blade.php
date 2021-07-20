@@ -119,12 +119,12 @@
         @if(!empty($recruitments))
         @if(count($recruitments) == 0)
 
-            <div class="d-flex mt-1">
+            <div class="d-flex justify-content-center">
                 <h5 class="font-helve font18">{{ trans('no data') }}</h5>
             </div>
             @endif
             @if(!empty($recruitments))
-            <div class="d-flex mt-1 mb-3">
+            <div class="d-flex justify-content-center">
                 {!! $recruitments->links() !!}
             </div>
             @endif
