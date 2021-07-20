@@ -53,9 +53,7 @@
                             <li>{{ trans('Equipment and tools') }}: {!! $talent->timework !!}</li>
                             <li>{{ trans('the deadline for submission') }}: {!! $talent->expire !!}</li>
                         </ul>
-                        {{-- @if (has_field($page, 'title_admin_16252012931'))
-                            {!! get_field($page, 'title_admin_16252012931') !!}
-                        @endif --}}
+                     
                     </div>
                     <div class=" Recruitment--buttom font-helve font18">
                         <a data-fancybox="poup" data-src="#poup" href="javascript:;"
@@ -185,7 +183,6 @@
                 @if(!empty(get_all_recruitments(5)))
                 @foreach (get_all_recruitments(5) as $item)
                 <tr class="font-helve font18">
-                    {{-- {{route('moi-truong-lam-viec',$item->slugable)}} --}}
                     <td><a href="{{ $item->url }}">{{$item->name}}</a></td>
                     <td>{{!empty($item->companies) ? $item->companies->name : "None"}}</td>
                             <td>{{!empty($item->city) ? $item->city->name : "None"}}</td>
@@ -217,16 +214,14 @@
 <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
 
 @if(session()->has('success_msg') || session()->has('error_msg') || isset($errors))
-    {{-- <div class="mb-3"> --}}
+   
         @if (session()->has('success_msg'))
             <script>
                 $(document).ready(function() {
                     alertify.success("{{ session('success_msg') }}");
                 })
             </script>
-            {{-- <div class="alert alert-success">
-                <span class="font-helve m-b-0">{{ session('success_msg') }}</span>
-            </div> --}}
+
         @endif
         @if (session()->has('error_msg'))
             <script>
@@ -234,16 +229,7 @@
                     alertify.error("{{ session('error_msg') }}");
                 })
             </script>
-            {{-- <div class="alert alert-danger">
-                <span class="font-helve">{{ session('error_msg') }}</span>
-            </div> --}}
+            
         @endif
-        {{-- @if (isset($errors) && count($errors))
-            <div class="alert alert-danger">
-                @foreach ($errors->all() as $error)
-                    <span class="font-helve">{{ $error }}</span> <br>
-                @endforeach
-            </div>
-        @endif --}}
-    {{-- </div> --}}
+       
 @endif
