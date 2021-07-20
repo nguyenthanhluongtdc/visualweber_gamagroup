@@ -17,7 +17,7 @@ class RecruitmentPostForm extends FormAbstract
     {
         $listCompanies = get_companies_for_form();
         $companies = [];
-        if(!empty($listCompanies)){
+        if (!empty($listCompanies)) {
             foreach ($listCompanies as $row) {
                 $companies[$row->id] = $row->name;
             }
@@ -26,7 +26,7 @@ class RecruitmentPostForm extends FormAbstract
 
         $listCity = get_address_for_form();
         $city = [];
-        if(!empty($listCity)){
+        if (!empty($listCity)) {
             foreach ($listCity as $row) {
                 $city[$row->id] = $row->name;
             }
@@ -82,7 +82,7 @@ class RecruitmentPostForm extends FormAbstract
             ])
 
 
-        
+
             ->add('company', 'customSelect', [
                 'label'      => __('Công ty'),
                 'label_attr' => ['class' => 'control-label required'],
@@ -106,23 +106,15 @@ class RecruitmentPostForm extends FormAbstract
                 ],
                 'choices'    => $city,
             ])
-            // ->add('location', 'text', [
-            //     'label'      => __('Địa điểm làm việc'),
-            //     'label_attr' => ['class' => 'control-label required'],
-            //     'attr'       => [
-            //         'data-counter' => 120,
-            //     ],
-            // ])
-            ->add('type', 'customRadio', [
-                'label' => __('Loại hợp đồng'),
-                'label_attr' => ['class' => 'control-label'],
-                'choices' => [
-                    [1, __('Chính thức')],
-                    [2, __('Nhân viên thời vụ')],
-                    [3, __('Bán thời gian')],
-                    [4, __('Thực tập')],
-                    [5, __('Khác')],
+            ->add('candidate_position_id', 'customSelect', [
+                'label' => __('plugins/candidate-position::candidate-position.name'),
+                'label_attr' => ['class' => 'control-label required'],
+                'attr'       => [
+                    'class' => 'form-control select-full',
                 ],
+                'choices' => array_merge([
+                    "" => "Choose",
+                ], get_candidate_position()->pluck('name', 'id')->toArray() ?? []),
             ])
             ->add('timework', 'text', [
                 'label'      => __('Thiết bị, công cụ'),
@@ -130,11 +122,8 @@ class RecruitmentPostForm extends FormAbstract
                 'attr'       => [
                     'data-counter' => 120,
                 ],
-            ])
-            ;
-
-
-            $this
+            ]);
+        $this
             ->add('status', 'customSelect', [
                 'label'      => trans('core/base::tables.status'),
                 'label_attr' => ['class' => 'control-label required'],

@@ -1,0 +1,9 @@
+{
+    "name": "CandidatePosition",
+    "namespace": "Platform\\CandidatePosition\\",
+    "provider": "Platform\\CandidatePosition\\Providers\\CandidatePositionServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module candidate_position"
+}

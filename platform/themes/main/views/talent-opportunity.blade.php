@@ -1,4 +1,9 @@
 {!! Theme::breadcrumb()->render() !!}
+
+@php
+    $recruitments = get_all_recruitments(request('limit', 5))
+@endphp
+
 <div class="all-news-content">
     <div class="container">
         <div class="new-section1">
@@ -6,7 +11,7 @@
                 <div class="col-lg-4">
                     <h1 class="new-title font-helve-bold font30">
                         {!! $page -> description !!}
-                        
+
                     </h1>
                 </div>
                 <div class="col-lg-8">
@@ -29,7 +34,7 @@
     {{----------------------------- filter-talent-opportunity ----------------}}
     <div class="talent-filter">
         <div class="container">
-            
+
             <div class="filteres">
                 <div class="select talent-form-fiter">
                 <form id="recruitment-form" action="#" method="get">
@@ -38,15 +43,12 @@
                         <option {{request()->selectorder == 2 ? "selected" : ""}} value="2">{{__('Oldest')}}</option>
                     </select>
 
-                    <select class="selectposition font-helve js-example-disabled-results" name="selectposition" id="selectposition">
+                    <select class="selectposition font-helve js-example-disabled-results" name="candidate-position" id="selectposition">
                         <option selected disabled>{{__('Vị trí ứng tuyển')}}</option>
-                        <option value="0">{{__('Tất cả')}}</option>
-                        @if(!empty(get_all_recruitments_for_filter()))
-                        @foreach (get_all_recruitments_for_filter() as $item)
-                        <option {{request()->selectposition == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->name}}</option>
+                        <option value="">{{__("plugins/candidate-position::candidate-position.name")}}</option>
+                        @foreach (get_candidate_position() as $item)
+                            <option {{request()->get('candidate-position') == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->name}}</option>
                         @endforeach
-                        @endif
-    
                     </select>
                     <select class="selectcompany font-helve js-example-disabled-results" name="selectcompany" id="selectcompany">
                         <option selected disabled>{{__('Công ty')}}</option>
@@ -68,7 +70,7 @@
                         @endif
                     </select>
                 </form>
-            
+
             </div>
         </div>
 
@@ -90,21 +92,21 @@
                 <tbody class="font-helve font18">
                   <tr class="font-helve font18">
                     <tbody class="font-helve font18">
-                        @if(!empty(get_all_recruitments(5)))
-                        @foreach (get_all_recruitments(5) as $item)
+                        @if(!empty($recruitments))
+                        @foreach ($recruitments as $item)
                         <tr class="font-helve font18">
                             <td><a href="{{ $item->url }}">{{$item->name}}</a></td>
                             <td>{{!empty($item->companies) ? $item->companies->name : "None"}}</td>
                             <td>{{!empty($item->city) ? $item->city->name : "None"}}</td>
                             {{-- <td>{{$item->location}}</td> --}}
                             <td>{{$item->expire}}</td>
-                           
+
                         </tr>
                         @endforeach
                         @endif
-                       
+
                     </tbody>
-                 
+
               </table>
               {{-- <div class="page-pagination text-right">
                 {!! $posts->withQueryString()->links() !!}
@@ -117,16 +119,16 @@
 <div class="gama--naviga">
 
     <div class="container ">
-        @if(!empty(get_all_recruitments(5)))
-        @if(count(get_all_recruitments(5)) == 0)
-        
+        @if(!empty($recruitments))
+        @if(count($recruitments) == 0)
+
             <div class="d-flex mt-1 mb-1">
                 <h5>{{__('Không có dữ liệu phù hợp')}}</h5>
             </div>
             @endif
-            @if(!empty(get_all_recruitments(5)))
+            @if(!empty($recruitments))
             <div class="d-flex mt-1 mb-3">
-                {!! get_all_recruitments(5)->links() !!}
+                {!! $recruitments->links() !!}
             </div>
             @endif
             @endif

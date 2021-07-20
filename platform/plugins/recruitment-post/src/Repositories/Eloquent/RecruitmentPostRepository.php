@@ -1,6 +1,7 @@
 <?php
 
 namespace Platform\RecruitmentPost\Repositories\Eloquent;
+
 use Platform\Base\Enums\BaseStatusEnum;
 
 use Platform\Support\Repositories\Eloquent\RepositoriesAbstract;
@@ -12,17 +13,17 @@ use Platform\Support\Repositories\Interfaces\RecruitmentProvincesInterface;
 
 class RecruitmentPostRepository extends RepositoriesAbstract implements RecruitmentPostInterface
 {
-     /**
+    /**
      * {@inheritDoc}
      */
     public function getAll($paginate = 10, $active = true)
     {
         $data = $this->model->select('recruitment_posts.*');
         if (request()->has('selectorder')) {
-            if(request()->selectorder == 1){
+            if (request()->selectorder == 1) {
                 $data->orderBy('recruitment_posts.created_at', 'desc');
             }
-            if(request()->selectorder == 2){
+            if (request()->selectorder == 2) {
                 $data->orderBy('recruitment_posts.created_at', 'asc');
             }
         }
@@ -41,20 +42,20 @@ class RecruitmentPostRepository extends RepositoriesAbstract implements Recruitm
         if (request()->has('country')) {
             $provinces = app(RecruitmentProvincesInterface::class)->getByCountry(request()->country);
             $provinceArr = [];
-            if(!empty($provinces)){
-                foreach($provinces as $item){
+            if (!empty($provinces)) {
+                foreach ($provinces as $item) {
                     array_push($provinceArr, $item->id);
                 }
             }
             // dd($provinceArr);
             $companies = app(RecruitmentCompanyInterface::class)->getByArrayProvince($provinceArr);
             $companyArr = [];
-            if(!empty($companies)){
-                foreach($companies as $item){
+            if (!empty($companies)) {
+                foreach ($companies as $item) {
                     array_push($companyArr, $item->id);
                 }
             }
-            if(request()->country != 0){
+            if (request()->country != 0) {
                 $data->whereIn('company', $companyArr);
             }
         }
@@ -62,26 +63,26 @@ class RecruitmentPostRepository extends RepositoriesAbstract implements Recruitm
         //     $data->where('major', request()->major);
         // }
         if (request()->has('field')) {
-            if(request()->field != 0){
-            $data->where('field', request()->field);
+            if (request()->field != 0) {
+                $data->where('field', request()->field);
             }
         }
         if (request()->has('selectcompany')) {
-            if(request()->selectcompany != 0){
-            $data->where('company', request()->selectcompany);
+            if (request()->selectcompany != 0) {
+                $data->where('company', request()->selectcompany);
             }
         }
         if (request()->has('selectaddress')) {
-            if(request()->selectaddress != 0){
-            $data->where('location', request()->selectaddress);
+            if (request()->selectaddress != 0) {
+                $data->where('location', request()->selectaddress);
             }
         }
         if (request()->has('selectposition')) {
-            if(request()->selectposition != 0){
-            $data->where('id', request()->selectposition);
+            if (request()->selectposition != 0) {
+                $data->where('id', request()->selectposition);
             }
         }
-     
+
         // $data
         // ->orderBy('recruitment_posts.is_featured', 'DESC')
         // ->orderBy('recruitment_posts.order', 'ASC')
@@ -90,14 +91,19 @@ class RecruitmentPostRepository extends RepositoriesAbstract implements Recruitm
             $data = $data->where('recruitment_posts.status', BaseStatusEnum::PUBLISHED);
         }
 
+        $data->when(!blank(request('candidate-position', '')), function ($q) {
+            $q->where('candidate_position_id', str_replace('#', '', request('candidate-position', '')));
+        });
+
         return $this->applyBeforeExecuteQuery($data)->paginate($paginate);
     }
     /**
      * {@inheritDoc}
      */
-    public function getAllForFilter(){
+    public function getAllForFilter()
+    {
         $data = $this->model->select('recruitment_posts.*')
-        ->where('recruitment_posts.status', BaseStatusEnum::PUBLISHED);
+            ->where('recruitment_posts.status', BaseStatusEnum::PUBLISHED);
         return $this->applyBeforeExecuteQuery($data)->get();
     }
 }

@@ -29,19 +29,9 @@
                             <li>{{ trans('Company') }}: {{!empty($talent->companies) ? $talent->companies->name : "None"}}</li>
                             <li>{{ trans('address') }}: {{!empty($talent->city) ? $talent->city->name : "None"}}</li>
                             <li>{{ trans('Department') }}: {!! $talent->department !!}</li>
-                            <li>{{ trans('type of contract') }}:
-                                @if($talent->type == 0)
-                                {{__('Nhân viên chính thức')}}
-                            @elseif($talent->type == 1)
-                                {{__('Nhân viên thời vụ')}}
-                            @elseif($talent->type == 2)
-                                {{__('Bán thời gian')}}
-                            @elseif($talent->type == 3)
-                                {{__('Thực tập')}}
-                            @elseif($talent->type == 4)
-                                {{__('Khác')}}
+                            @if(!blank($talent->candidatePosition))
+                                <li>{{ trans('type of contract') }}: {{ $talent->candidatePosition->name ?? '' }}</li>
                             @endif
-                            </li>
                             <li>{{ trans('Equipment and tools') }}: {!! $talent->timework !!}</li>
                             <li>{{ trans('the deadline for submission') }}: {!! $talent->expire !!}</li>
                         </ul>

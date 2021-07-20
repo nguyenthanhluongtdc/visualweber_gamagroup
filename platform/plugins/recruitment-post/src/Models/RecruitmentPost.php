@@ -6,6 +6,7 @@ use Platform\Base\Traits\EnumCastable;
 use Platform\Base\Enums\BaseStatusEnum;
 use Platform\Base\Models\BaseModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Platform\CandidatePosition\Models\CandidatePosition;
 use Platform\RecruitmentCompanie\Models\RecruitmentCompanie;
 use Platform\RecruitmentProvinces\Models\RecruitmentProvinces;
 //use Platform\RecruitmentCompanie\Http\Controllers\RecruitmentCompanyController;
@@ -34,9 +35,9 @@ class RecruitmentPost extends BaseModel
         'expire',
         'status',
         'company',
-        'type', 
+        'candidate_position_id',
         'location',
-        'department', 
+        'department',
         'timework'
     ];
 
@@ -46,10 +47,10 @@ class RecruitmentPost extends BaseModel
     protected $casts = [
         'status' => BaseStatusEnum::class,
     ];
-     /**
+    /**
      * @return BelongsTo
      */
-    public function companies() :BelongsTo
+    public function companies(): BelongsTo
     {
         return $this->belongsTo(RecruitmentCompanie::class, 'company');
     }
@@ -57,8 +58,18 @@ class RecruitmentPost extends BaseModel
     /**
      * @return BelongsTo
      */
-    public function city() :BelongsTo
+    public function city(): BelongsTo
     {
         return $this->belongsTo(RecruitmentProvinces::class, 'location');
+    }
+
+    /**
+     * Candidate Position function
+     *
+     * @return BelongsTo
+     */
+    public function candidatePosition(): BelongsTo
+    {
+        return $this->belongsTo(CandidatePosition::class);
     }
 }
