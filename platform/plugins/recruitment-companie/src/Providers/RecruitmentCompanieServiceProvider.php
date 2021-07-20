@@ -43,7 +43,7 @@ class RecruitmentCompanieServiceProvider extends ServiceProvider
                 'id'          => 'cms-plugins-recruitment-companie',
                 'priority'    => 5,
                 'parent_id'   => 'cms-plugins-recruitment-parent',
-                'name'        => 'plugins/recruitment-companie::recruitment-companie.name',
+                'name'        => 'Companie',
                 'url'         => route('recruitment-companie.index'),
                 'permissions' => ['recruitment-companie.index'],
             ]);

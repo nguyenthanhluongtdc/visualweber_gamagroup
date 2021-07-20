@@ -43,7 +43,7 @@ class RecruitmentPostServiceProvider extends ServiceProvider
                 'id'          => 'cms-plugins-recruitment-post',
                 'priority'    => 5,
                 'parent_id'   => 'cms-plugins-recruitment-parent',
-                'name'        => 'plugins/recruitment-post::recruitment-post.name',
+                'name'        => 'Post',
                 'url'         => route('recruitment-post.index'),
                 'permissions' => ['recruitment-post.index'],
             ]);

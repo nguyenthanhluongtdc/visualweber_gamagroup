@@ -124,7 +124,7 @@
             </div>
             @endif
             @if(!empty($recruitments))
-            <div class="d-flex justify-content-center">
+            <div class="d-flex">
                 {!! $recruitments->links() !!}
             </div>
             @endif
