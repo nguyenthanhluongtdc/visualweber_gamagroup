@@ -71,7 +71,7 @@
                     </div>
                     <div class=" Recruitment--buttom font-helve font18">
                         <a data-fancybox="poup" data-src="#poup" href="javascript:;"
-                            class="btn btn-primary Recruitment--profession Recruitment--profession__open">Nộp CV ứng tuyển</a>
+                            class="btn btn-primary Recruitment--profession Recruitment--profession__open">{{ trans('submit cv for recruitment application') }}</a>
                     </div>
                 </div>
                 <div id="poup" class="poup">
@@ -212,7 +212,7 @@
 
 
         <div class="Recruitment--buttom xem-them font-helve font18">
-            <a href="{{ get_slug_job() }}" class="primary-a">{{ trans('See more') }}</a>
+            <a href="/{{ get_slug_job() }}" class="primary-a">{{ trans('See more') }}</a>
 
         </div>
     </div>
