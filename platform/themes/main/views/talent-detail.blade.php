@@ -45,8 +45,9 @@
                 <div class="Recruitment Recruitment--item1 font-helve-light font18 ">
                     <div class="Recruitment--adree">
                         <ul>
-                            <li>Công ty: {!! $talent->company !!}</li>
-                            <li>Địa chỉ: {!! $talent->location !!}</li>
+                           
+                            <li>Công ty: {{!empty($talent->companies) ? $talent->companies->name : "None"}}</li>
+                            <li>Địa chỉ: {{!empty($talent->city) ? $talent->city->name : "None"}}</li>
                             <li>Phong ban: {!! $talent->department !!}</li>
                             <li>Loại hợp đồng: 
                                 @if($talent->type == 0)
@@ -202,8 +203,8 @@
                 <tr class="font-helve font18">
                     {{-- {{route('moi-truong-lam-viec',$item->slugable)}} --}}
                     <td><a href="{{ $item->url }}">{{$item->name}}</a></td>
-                    <td>{{$item->company}}</td>
-                    <td>{{$item->location}}</td>
+                    <td>{{!empty($item->companies) ? $item->companies->name : "None"}}</td>
+                            <td>{{!empty($item->city) ? $item->city->name : "None"}}</td>
                     <td>{{$item->expire}}</td>
                    
                 </tr>
