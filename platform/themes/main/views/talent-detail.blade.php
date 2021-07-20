@@ -197,7 +197,7 @@
 
 
         <div class="Recruitment--buttom xem-them font-helve font18">
-            <a href="/{{ get_slug_job() }}" class="primary-a">{{ trans('See more') }}</a>
+            <a href="{{ get_slug_job() }}" class="primary-a">{{ trans('See more') }}</a>
 
         </div>
     </div>
