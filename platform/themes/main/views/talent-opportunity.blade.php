@@ -120,7 +120,7 @@
         @if(!empty(get_all_recruitments(5)))
         @if(count(get_all_recruitments(5)) == 0)
         
-            <div class="d-flex mt-5 mb-5">
+            <div class="d-flex mt-1 mb-1">
                 <h5>{{__('Không có dữ liệu phù hợp')}}</h5>
             </div>
             @endif
