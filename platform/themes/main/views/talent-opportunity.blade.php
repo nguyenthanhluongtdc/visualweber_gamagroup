@@ -112,22 +112,23 @@
     </div>
 {{------------------------------- page ------------------------------------}}
 
+
 <div class="gama--naviga">
 
     <div class="container ">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination font-helve font20">
-
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Trang tiếp <img
-                            src="{{ Theme::asset()->url('images/new/next.png') }}" alt=""></a>
-                </li>
-            </ul>
-        </nav>
+        @if(!empty(get_all_recruitments(5)))
+        @if(count(get_all_recruitments(5)) == 0)
+        
+            <div class="d-flex mt-5 mb-5">
+                <h5>{{__('Không có dữ liệu phù hợp')}}</h5>
+            </div>
+            @endif
+            @if(!empty(get_all_recruitments(5)))
+            <div class="d-flex mt-1 mb-3">
+                {!! get_all_recruitments(5)->links() !!}
+            </div>
+            @endif
+            @endif
     </div>
 </div>
 </div>
