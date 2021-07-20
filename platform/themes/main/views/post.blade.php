@@ -50,7 +50,7 @@
                             <div class="post-new-item" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out">
                                 <div class="post-thumbnail">
                                     <a href="{{ $itemPost->url }}" class="post__overlay">
-                                        <img src="{{ RvMedia::getImageUrl($itemPost->image ,'medium', false, RvMedia::getDefaultImage()) }}" alt="{{ $itemPost->name }}">
+                                        <img src="{{ RvMedia::getImageUrl($itemPost->image,'news_thumbnail', false, RvMedia::getDefaultImage()) }}" alt="{{ $itemPost->name }}">
                                     </a>
                                 </div>
                                 <h5 class="font-helve font20"><a href="{{ $itemPost->url }}" class="post__title"> {{ $itemPost->name }}</a></h5>
@@ -81,7 +81,7 @@
                             <div class="post-relate-item" data-aos="zoom-in-up" data-aos-duration="700" data-aos-easing="ease-in-out">
                                 <div class="post-thumbnail">
                                     <a href="{{ $relatedItem->url }}" class="post__overlay">
-                                        <img src="{{ RvMedia::getImageUrl($relatedItem->image,'medium', false, RvMedia::getDefaultImage()) }}" alt="{{ $relatedItem->name }}">
+                                        <img src="{{ RvMedia::getImageUrl($relatedItem->image,'news_thumbnail', false, RvMedia::getDefaultImage()) }}" alt="{{ $relatedItem->name }}">
                                     </a>
                                 </div>
                                 <header class="post__header">

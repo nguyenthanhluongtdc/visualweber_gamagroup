@@ -72,7 +72,7 @@
                     @foreach ($listPost as $item)
                     <div class="item">
                         <a href="{{ $item->url }}">
-                            <div class="img"> <img src="{{ RvMedia::getImageUrl($item->image) }}" alt="{{ $item->name }}"></div>
+                            <div class="img"> <img src="{{ RvMedia::getImageUrl($item->image,'medium', false, RvMedia::getDefaultImage())}}" alt="{{ $item->name }}"></div>
                         </a>
                         <h5 class="font-helve font20"><a href="{{ $item->url }}">{{ $item->name }}</a></h5>
                     </div>
