@@ -22,7 +22,7 @@ $('.main-slider').owlCarousel({
     }
 });
 
-$('.open-menu-mobie').click(function () {
+$('.open-menu-mobie').click(function() {
     $('.list-menu-mobie').toggle("slow");
     $('.list-menu-mobie li').show(400);
 
@@ -94,30 +94,30 @@ $('.post-relate-carousel').owlCarousel({
 // number count for stats, using jQuery animate
 
 
-$.fn.digits = function(){ 
-    return this.each(function(){ 
-        $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
+$.fn.digits = function() {
+    return this.each(function() {
+        $(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
     })
 }
 $('.counter-number').digits();
 
 
-$('.counting').each(function () {
+$('.counting').each(function() {
     var $this = $(this),
         countTo = $this.attr('data-count');
 
     $({ countNum: $this.text() }).animate({
-        countNum: countTo
-    },
+            countNum: countTo
+        },
 
         {
 
             duration: 3000,
             easing: 'linear',
-            step: function () {
+            step: function() {
                 $this.text(Math.floor(this.countNum));
             },
-            complete: function () {
+            complete: function() {
                 $this.text(this.countNum);
                 //alert('finished');
             }
@@ -128,42 +128,45 @@ $('.counting').each(function () {
 });
 
 
-$('#select-contact').on('change', function (e) {
+$('#select-contact').on('change', function(e) {
     var optionSelected = $("option:selected", this);
     var valueSelected = this.value;
     var contact = $('select[id="select-contact"] :selected').attr('class');
-    for  (let i=1; i<100; i++){
-        if (contact == 'contact'+i){
-            $('.contact').hide().filter('.' + 'contact-show'+i).show()    
+    for (let i = 1; i < 100; i++) {
+        if (contact == 'contact' + i) {
+            $('.contact').hide().filter('.' + 'contact-show' + i).show()
         }
     }
 });
 
 
-$('.open-search').click(function(){
+$('.open-search').click(function() {
     $('.search-deskop').show();
 })
-$('.closer-search').click(function(){
+$('.closer-search').click(function() {
     $('.search-deskop').hide(300);
 })
 
 
-$('.search-btn-mobie').click(function(){
+$('.search-btn-mobie').click(function() {
     $('.search-mobie-wrap').show(200);
 })
-$('.close-search').click(function(){
+$('.close-search').click(function() {
     $('.search-mobie-wrap').hide();
 })
 
-$('#posts-form select').on('change', function(){
+$('#posts-form select').on('change', function() {
+    $(this).closest('form').submit();
+});
+
+$('#recruitment-form select').on('change', function() {
     $(this).closest('form').submit();
 });
 
 $('.dropdown')
-  .dropdown({
-    action: 'combo'
-  })
-;
+    .dropdown({
+        action: 'combo'
+    });
 
 
 $(".js-example-disabled-results").select2({
@@ -171,10 +174,6 @@ $(".js-example-disabled-results").select2({
 });
 
 
-$(".view-posts-mobie").click(function(){
+$(".view-posts-mobie").click(function() {
     $(".posts-form-fiter").toggle(300);
 });
-
-
-
-

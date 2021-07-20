@@ -92,11 +92,26 @@
                                     <p class=" font-helve-light font16">
                                         Vui lòng bổ sung các thông tin cá nhân của bạn để ứng tuyển
                                     </p>
-                                    <input type="text" name="name"  class="form-control" placeholder="Họ Tên" />
-                                    <input type="text" name="email" required class="form-control" placeholder="Email" />
-                                    <input type="text" name="phone" required class="form-control" placeholder="Số Điện Thoại " />
-                                    <input type="text" name="address" required class="form-control" placeholder="Địa chỉ " />
-                                    <input type="text" name="job"  class="form-control d-none"  />
+                                    <div class="form-group">
+                                        <input type="text" name="name"  class="form-control" placeholder="Họ Tên" />
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="email" required class="form-control" placeholder="Email" />
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="phone" required class="form-control" placeholder="Số Điện Thoại " />
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="address" required class="form-control" placeholder="Địa chỉ " />
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="job"  class="form-control d-none"  />
+
+                                    </div>
                             
                                     <label class=" cv-upload" for="cv_upload">
                                         <span class="btn btn-primary Recruitment--cv">Đính kèm CV ứng
@@ -112,7 +127,7 @@
                                     
                                     {{-- </div> --}}
                                     <div class="font-helve font18">
-                                        <button type="submit" value="Submit" class="btn btn-submint Recruitment--profession">ĐĂNG KÝ</button>
+                                        <button type="submit" value="Submit" class="btn btn-submint btn_session Recruitment--profession">ĐĂNG KÝ</button>
                                     </div>
                                 </div>
                             
@@ -216,31 +231,62 @@
     })
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $('.btn_session').click(function(e) {
+        // HideDialog();
+        // console.log("xcvbnm");
+        // e.preventDefault();
+        // sessionStorage["PopupShown"] = 'yes';
+    });
+    $.validator.addMethod("regxPhone", function (value, element, regexpr) {
+        return regexpr.test(value);
+    }, "Số điện thoại sai định dạng");
 
-<script >
-     $(document).ready(function($) {
-        
-        $("#register-form").validate({
+    $.validator.addMethod("regxEmail", function (value, element, regexpr) {
+        return regexpr.test(value);
+    }, "Email sai định dạng");
+
+    $("#register-form").validate({
+        ignore: [],
         rules: {
-            name: "required",                    
-            email:"required",
-            phone:"required",
-            address:"required"
-        //    city: "required",
-         
-        },
-        messages: {
-            name: "Please enter your Name",                   
-            name: "Please enter your Email",                   
-            name: "Please enter your Phone",                   
-            name: "Please enter your address",                   
+            name: {
+                required: true,
+            },
+           
+            phone: {
+                required: true,
+                digits: true,
+                regxPhone: /(09|08|07|05|03)+([0-9]{8})\b/
+            },
+            email: {
+                required: true,
+                email: true,
+                regxEmail: /^([a-zA-Z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+            },
            
         },
-         errorPlacement: function(error, element) 
-        submitHandler: function(form) {
+        messages: {
+            name: "Thông tin này không được bỏ trống!",
+            phone: {
+                required: 'Thông tin này không được bỏ trống!',
+                digits: 'Số điện thoại không hợp lệ!'
+            },
+            email: {
+                required: 'Thông tin này không được bỏ trống!',
+                email: 'Email không đúng định dạng!'
+            },
+           
+        },
+        errorElement: "div",
+        validClass: "valid-validate",
+        errorClass: "error-validate",
+        errorPlacement: function (error, element) {
+            error.insertAfter(element.parents('.form-group'));
+        },
+        submitHandler: function (form) {
+            Helper.showProcessingLoader();
             form.submit();
-        }
-        
+        },
     });
-});
+
 </script>
