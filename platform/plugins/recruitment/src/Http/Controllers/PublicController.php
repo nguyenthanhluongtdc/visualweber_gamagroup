@@ -9,6 +9,7 @@ use Platform\Base\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
 use Platform\Recruitment\Tables\RecruitmentTable;
 use Platform\Base\Events\DeletedContentEvent;
 use Platform\Base\Events\UpdatedContentEvent;
@@ -41,20 +42,27 @@ class PublicController extends BaseController
      */
     public function sendContact(RecruitmentRequest $request, BaseHttpResponse $response)
     {
+        Log::info('--- Start upload cv ---');
         $file = \RvMedia::handleUpload($request->file('cv'), 0, 'cv');
 
+        Log::debug($file);
+
         if (Arr::get($file, "error", true)) {
+            Log::error('Cv tải lên không thành công');
             return redirect()->back()
-                ->with('error_msg', __("Cv tải lên không thành công"));
+                ->with('error_msg', __("plugins/recruitment::recruitment.Cv tải lên không thành công"));
         }
 
-        $request->merge([
-            "cv" => Arr::get($file, 'data', collect())->resource->url ?? null
-        ]);
+        $data = $request->all();
+        Log::info($data);
 
-        $recruitment = $this->recruitmentRepository->create($request->all());
+        $data['cv'] = Arr::get($file, 'data', collect())->resource->url ?? null;
 
+        $recruitment = $this->recruitmentRepository->create($data);
+        Log::info($recruitment);
+
+        Log::info('Đã gửi cv thành công');
         return redirect()->back()
-            ->with('success_msg', __('Đã gửi cv thành công'));
+            ->with('success_msg', __('plugins/recruitment::recruitment.Đã gửi cv thành công'));
     }
 }

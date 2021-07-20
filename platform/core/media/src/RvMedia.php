@@ -203,7 +203,8 @@ class RvMedia
             return url($url);
         }
 
-        if ($size &&
+        if (
+            $size &&
             array_key_exists($size, $this->getSizes()) &&
             $this->canGenerateThumbnails($this->getMimeType($url))
         ) {
@@ -617,13 +618,17 @@ class RvMedia
 
         if (setting('media_watermark_enabled', config('core.media.media.watermark.enabled'))) {
             $image = Image::make($this->getRealPath($file->url));
-            $watermark = Image::make($this->getRealPath(setting('media_watermark_source',
-                config('core.media.media.watermark.source'))));
+            $watermark = Image::make($this->getRealPath(setting(
+                'media_watermark_source',
+                config('core.media.media.watermark.source')
+            )));
 
             // 10% less then an actual image (play with this value)
             // Watermark will be 10 less then the actual width of the image
-            $watermarkSize = round($image->width() * (setting('media_watermark_size',
-                        config('core.media.media.watermark.size')) / 100), 2);
+            $watermarkSize = round($image->width() * (setting(
+                'media_watermark_size',
+                config('core.media.media.watermark.size')
+            ) / 100), 2);
 
             // Resize watermark width keep height auto
             $watermark
@@ -632,14 +637,18 @@ class RvMedia
                 })
                 ->opacity(setting('media_watermark_opacity', config('core.media.media.watermark.opacity')));
 
-            $image->insert($watermark,
+            $image->insert(
+                $watermark,
                 setting('media_watermark_position', config('core.media.media.watermark.position')),
                 setting('watermark_position_x', config('core.media.media.watermark.x')),
                 setting('watermark_position_y', config('core.media.media.watermark.y'))
             );
 
-            $destinationPath = sprintf('%s/%s', trim(File::dirname($file->url), '/'),
-                File::name($file->url) . '.' . File::extension($file->url));
+            $destinationPath = sprintf(
+                '%s/%s',
+                trim(File::dirname($file->url), '/'),
+                File::name($file->url) . '.' . File::extension($file->url)
+            );
 
             $this->uploadManager->saveFile($destinationPath, $image->stream()->__toString());
         }

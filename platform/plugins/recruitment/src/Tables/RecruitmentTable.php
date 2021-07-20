@@ -12,6 +12,7 @@ use Yajra\DataTables\DataTables;
 use Platform\Recruitment\Models\Recruitment;
 
 use Html;
+use Platform\Media\RvMedia;
 
 class RecruitmentTable extends TableAbstract
 {
@@ -58,7 +59,16 @@ class RecruitmentTable extends TableAbstract
                 return Html::link(route('recruitment.edit', $item->id), $item->name);
             })
             ->editColumn('cv', function ($item) {
-                return $this->displayThumbnail($item->image);
+                return Html::link(get_image_url($item->cv), $item->media->name ?? "Tải xuống cv", ['download' => $item->media->name ?? "cv"]);
+            })
+            ->editColumn("job", function ($item) {
+                if (!blank($item->recruitmentPost)) {
+                    if (!Auth::user()->hasPermission('recruitment-post.edit')) {
+                        return $item->recruitmentPost->name;
+                    }
+                    return Html::link(route('recruitment-post.edit', $item->recruitmentPost->id), $item->recruitmentPost->name);
+                }
+                return "";
             })
             ->editColumn('checkbox', function ($item) {
                 return $this->getCheckbox($item->id);
@@ -73,9 +83,10 @@ class RecruitmentTable extends TableAbstract
                 return $this->getOperations('recruitment.edit', 'recruitment.destroy', $item);
             });
 
-            return apply_filters(BASE_FILTER_GET_LIST_DATA, $data, $this->repository->getModel())
+        return apply_filters(BASE_FILTER_GET_LIST_DATA, $data, $this->repository->getModel())
             ->addColumn('operations', function ($item) {
-                return $this->getOperations('recruitment.edit', 'recruitment.destroy', $item);
+                // return $this->getOperations('recruitment.edit', 'recruitment.destroy', $item);
+                return $this->getOperations(false, 'recruitment.destroy', $item);
             })
             ->escapeColumns([])
             ->make(true);
@@ -86,12 +97,7 @@ class RecruitmentTable extends TableAbstract
      */
     public function query()
     {
-        $query = $this->repository->getModel()->select([
-            'id',
-            'name',
-            'created_at',
-            'status',
-        ]);
+        $query = $this->repository->getModel()->select('*');
 
         return $this->applyScopes($query);
     }
@@ -112,14 +118,29 @@ class RecruitmentTable extends TableAbstract
                 'title' => trans('core/base::tables.name'),
                 'class' => 'text-left',
             ],
+            'email' => [
+                'name'  => 'recruitments.email',
+                'title' => trans('core/base::tables.email'),
+                'class' => 'text-left',
+            ],
+            'phone' => [
+                'name'  => 'recruitments.phone',
+                'title' => trans('plugins/recruitment::recruitment.phone'),
+                'class' => 'text-left',
+            ],
+            'cv' => [
+                'name'  => 'recruitments.cv',
+                'title' => trans('plugins/recruitment::recruitment.cv'),
+                'class' => 'text-left',
+            ],
+            'job' => [
+                'name'  => 'recruitments.job',
+                'title' => trans('plugins/recruitment::recruitment.job'),
+                'class' => 'text-left',
+            ],
             'created_at' => [
                 'name'  => 'app_recruitment_contacts.created_at',
                 'title' => trans('core/base::tables.created_at'),
-                'width' => '100px',
-            ],
-            'status' => [
-                'name'  => 'app_recruitment_contacts.status',
-                'title' => trans('core/base::tables.status'),
                 'width' => '100px',
             ],
         ];
@@ -165,7 +186,7 @@ class RecruitmentTable extends TableAbstract
         ];
     }
 
-   /**
+    /**
      * {@inheritDoc}
      */
     public function getDefaultButtons(): array

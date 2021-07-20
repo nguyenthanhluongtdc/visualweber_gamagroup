@@ -31,7 +31,7 @@ class RecruitmentForm extends FormAbstract
             ->addMetaBoxes([
                 'information' => [
                     'title'      => __('Thông tin người ứng tuyển'),
-                    'content'    => view('plugins/recruitment::contact-info', ['contact' => $this->getModel()])->render(),
+                    'content'    => view('plugins/recruitment::recruitment-info', ['recruitment' => $this->getModel()])->render(),
                     'attributes' => [
                         'style' => 'margin-top: 0',
                     ],
