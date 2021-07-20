@@ -95,37 +95,34 @@
                                     </p>
                                     <div class="form-group __group">
                                         <input type="text" name="name"  class="form-control" placeholder="Họ Tên" />
-<div class="errorTxt text-danger pt-2"></div>
+<div class="errorTxt text-danger pt-1"></div>
                                     </div>
                                     <div class="form-group __group">
                                         <input type="text" name="email" required class="form-control" placeholder="Email" />
-<div class="errorTxt text-danger pt-2"></div>
+<div class="errorTxt text-danger pt-1"></div>
                                     </div>
                                     <div class="form-group __group">
                                         <input type="text" name="phone" required class="form-control" placeholder="Số Điện Thoại " />
-<div class="errorTxt text-danger pt-2"></div>
+<div class="errorTxt text-danger pt-1"></div>
                                     </div>
                                     <div class="form-group __group">
                                         <input type="text" name="address" required class="form-control" placeholder="Địa chỉ " />
-<div class="errorTxt text-danger pt-2"></div>
+<div class="errorTxt text-danger pt-1"></div>
                                     </div>
                                     <div class="form-group __group">
                                         <input type="text" name="job"  class="form-control d-none"  />
-<div class="errorTxt text-danger pt-2"></div>
-
                                     </div>
 
                                         <label class=" cv-upload" for="cv_upload">
-                                            <span class="btn btn-primary Recruitment--cv">Đính kèm CV ứng
+                                            <span id="file_path" class="btn btn-primary Recruitment--cv mt-1    ">Đính kèm CV ứng
                                                 tuyển</span>
                                         </label>
-                                    <span id="file_path" class="d-block pt-2"></span>
+                                    {{-- <span id="file_path" class="d-block pt-2"></span> --}}
                                     <div class="form-group __group">
-
-                                    <input type="file" name="cv" id="cv_upload"
-                                        class="form-control-file d-none">
-                                        <div class="errorTxt text-danger pt-2"></div>
-                                    </div>
+                                        <input type="file" name="cv" id="cv_upload"
+                                            class="form-control-file d-none">
+                                            <div class="errorTxt text-danger pt-1"></div>
+                                        </div>
 
                                 </div>
 
