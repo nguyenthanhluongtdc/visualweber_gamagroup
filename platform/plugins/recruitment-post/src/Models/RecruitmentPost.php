@@ -59,6 +59,6 @@ class RecruitmentPost extends BaseModel
      */
     public function city() :BelongsTo
     {
-        return $this->belongsTo(RecruitmentProvinces::class, 'city');
+        return $this->belongsTo(RecruitmentProvinces::class, 'location');
     }
 }

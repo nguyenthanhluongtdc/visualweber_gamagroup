@@ -95,8 +95,8 @@
                         <tr class="font-helve font18">
                             <td><a href="{{ $item->url }}">{{$item->name}}</a></td>
                             <td>{{!empty($item->companies) ? $item->companies->name : "None"}}</td>
-                            {{-- <td>{{!empty($item->city) ? $item->city->name : "None"}}</td> --}}
-                            <td>{{$item->location}}</td>
+                            <td>{{!empty($item->city) ? $item->city->name : "None"}}</td>
+                            {{-- <td>{{$item->location}}</td> --}}
                             <td>{{$item->expire}}</td>
                            
                         </tr>
