@@ -158,7 +158,22 @@
         <div class="row develop-block">
             <div class="section4-home">
                 <div class="section4-content container" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out">
+
+                    @foreach (get_field($page, 'list_phat_trien_su_nghiep') as $item)
                     <div class="section4-item" >
+                        <img src="{{ RvMedia::getImageUrl(get_sub_field($item, 'item_talent_img')) }}" alt="{!! get_sub_field($item, 'item_talent_title') !!}">
+                        <div class="content-title" >
+                            <h5 class="title font-helve-bold font30">{!! get_sub_field($item, 'item_talent_title') !!}</h5>
+                            <div class="content-none ">
+                                <p class="desc font-helve-light font18">{!! get_sub_field($item, 'item_talent_title_16267506313') !!}</p>
+                            </div>
+        
+                        </div>
+                    </div>
+                @endforeach
+
+
+                    {{-- <div class="section4-item" >
                         <img src="{{ Theme::asset()->url('images/talent/44.jpg') }}" alt="">
                         <div class="content-title" >
                             <h3 class="title font-helve-bold font25">Phát triển bản thân</h3>
@@ -187,7 +202,7 @@
                             </div>
             
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             
