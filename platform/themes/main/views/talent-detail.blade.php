@@ -18,27 +18,7 @@
 {{-- ------------------------- nội dung trang tuyển dụng -------------- --}}
 <div class="Recruitment-s1">
     <div class="container">
-        @if(session()->has('success_msg') || session()->has('error_msg') || isset($errors))
-            <div class="mb-3">
-                @if (session()->has('success_msg'))
-                    <div class="alert alert-success">
-                        <span class="font-helve m-b-0">{{ session('success_msg') }}</span>
-                    </div>
-                @endif
-                @if (session()->has('error_msg'))
-                    <div class="alert alert-danger">
-                        <span class="font-helve">{{ session('error_msg') }}</span>
-                    </div>
-                @endif
-                @if (isset($errors) && count($errors))
-                    <div class="alert alert-danger">
-                        @foreach ($errors->all() as $error)
-                            <span class="font-helve">{{ $error }}</span> <br>
-                        @endforeach
-                    </div>
-                @endif
-            </div>
-        @endif
+
         <div class="row">
             <div class="col-md-4 ">
                 <div class="sticky-top">
@@ -226,9 +206,37 @@
 
      {{ count($errors->all()) }}
 </ul>
-{{--
-@if($errors->has())
-<script>
-    $('.Recruitment--profession__open').click();
-</script>
-@endif --}}
+
+<script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+
+@if(session()->has('success_msg') || session()->has('error_msg') || isset($errors))
+    {{-- <div class="mb-3"> --}}
+        @if (session()->has('success_msg'))
+            <script>
+                $(document).ready(function() {
+                    alertify.success("{{ session('success_msg') }}");
+                })
+            </script>
+            {{-- <div class="alert alert-success">
+                <span class="font-helve m-b-0">{{ session('success_msg') }}</span>
+            </div> --}}
+        @endif
+        @if (session()->has('error_msg'))
+            <script>
+                $(document).ready(function() {
+                    alertify.error("{{ session('error_msg') }}");
+                })
+            </script>
+            {{-- <div class="alert alert-danger">
+                <span class="font-helve">{{ session('error_msg') }}</span>
+            </div> --}}
+        @endif
+        {{-- @if (isset($errors) && count($errors))
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <span class="font-helve">{{ $error }}</span> <br>
+                @endforeach
+            </div>
+        @endif --}}
+    {{-- </div> --}}
+@endif

@@ -50,7 +50,7 @@ class PublicController extends BaseController
         if (Arr::get($file, "error", true)) {
             Log::error('Cv tải lên không thành công');
             return redirect()->back()
-                ->with('error_msg', __("plugins/recruitment::recruitment.Cv tải lên không thành công"));
+                ->with('error_msg', trans("plugins/recruitment::recruitment.cv_upload_fail"));
         }
 
         $data = $request->all();
@@ -63,6 +63,6 @@ class PublicController extends BaseController
 
         Log::info('Đã gửi cv thành công');
         return redirect()->back()
-            ->with('success_msg', __('plugins/recruitment::recruitment.Đã gửi cv thành công'));
+            ->with('success_msg', trans('plugins/recruitment::recruitment.cv_upload_success'));
     }
 }
