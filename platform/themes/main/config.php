@@ -65,6 +65,10 @@ return [
             $theme->asset()->container('footer')->add('select2', '//cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js');
 
             $theme->asset()->container('footer')->usePath()->add('script', 'js/common.js', [], [], time());
+            $theme->asset()->container('footer')->add('validate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js');
+            $theme->asset()->container('footer')->add('validate-method', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js');
+
+            $theme->asset()->container('footer')->usePath()->add('script', 'js/recruitment.js', [], [], time());
         },
 
         // Listen on event before render a layout,

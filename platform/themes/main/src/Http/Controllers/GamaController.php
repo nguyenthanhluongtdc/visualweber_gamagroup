@@ -9,8 +9,6 @@ use Platform\Blog\Repositories\Interfaces\PostInterface;
 use Platform\Theme\Http\Controllers\PublicController;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Platform\Theme\Events\RenderingSingleEvent;
-use Platform\Theme\Events\RenderingHomePageEvent;
-use Platform\Theme\Events\RenderingSiteMapEvent;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Platform\Partner\Models\Partner;
@@ -18,9 +16,9 @@ use Platform\Services\Models\Services;
 use Theme;
 use Response;
 use SeoHelper;
-use SiteMapManager;
 use SlugHelper;
 use RvMedia;
+
 class GamaController extends PublicController
 {
     /**
@@ -29,21 +27,21 @@ class GamaController extends PublicController
     public function getIndex()
     {
         SeoHelper::setTitle(theme_option('seo_title', 'Gama Group'))
-        ->setDescription(theme_option('seo_description', 'Gama Group'))
-        ->openGraph()
-        ->setTitle(@theme_option('seo_title'))
-        ->setSiteName(@theme_option('site_title'))
-        ->setUrl(route('public.index'))
-        ->setImage(RvMedia::getImageUrl(theme_option('seo_og_image'), 'og'))
-        ->addProperty('image:width', '1200')
-        ->addProperty('image:height', '630');
+            ->setDescription(theme_option('seo_description', 'Gama Group'))
+            ->openGraph()
+            ->setTitle(@theme_option('seo_title'))
+            ->setSiteName(@theme_option('site_title'))
+            ->setUrl(route('public.index'))
+            ->setImage(RvMedia::getImageUrl(theme_option('seo_og_image'), 'og'))
+            ->addProperty('image:width', '1200')
+            ->addProperty('image:height', '630');
         return parent::getIndex();
     }
 
     /**
      * {@inheritDoc}
      */
-  
+
 
     /**
      * {@inheritDoc}
@@ -90,7 +88,7 @@ class GamaController extends PublicController
             ->setMessage(__('No results found, please try with different keywords.'));
     }
 
-     /**
+    /**
      * @param string $key
      * @return \Illuminate\Http\RedirectResponse|Response
      * @throws FileNotFoundException
@@ -204,7 +202,7 @@ class GamaController extends PublicController
 
         return Theme::scope('partner-detail', $data)->render();
     }
-    
+
     public function getTalent($slug)
     {
         $slug = SlugHelper::getSlug($slug, SlugHelper::getPrefix(RecruitmentPost::class, 'nhan-tai'));
@@ -227,5 +225,4 @@ class GamaController extends PublicController
 
         return Theme::scope('talent-detail', $data)->render();
     }
-
 }
