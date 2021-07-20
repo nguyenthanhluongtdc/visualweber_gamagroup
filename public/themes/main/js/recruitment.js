@@ -75,6 +75,6 @@ const recruitment = {
 };
 
 $(document).ready(function () {
-    // recruitment.uploadCV();
+    recruitment.uploadCV();
     recruitment.submitForm();
 });
