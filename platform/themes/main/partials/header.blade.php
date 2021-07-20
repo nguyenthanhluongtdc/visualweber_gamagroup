@@ -80,7 +80,7 @@
         </div>
         <div class="search-deskop">
                 <form action="{{ route('public.search') }}" method="get" class="form-search container">
-                    <input type="text" name="q" placeholder="{{ __('Type to search...') }}" class="input-search-home"
+                    <input type="text" name="q" value="{{ request()->input('q') }}" placeholder="{{ __('Type to search...') }}" class="input-search-home"
                         autocomplete="off">
 
                         <div class="closer-search">
