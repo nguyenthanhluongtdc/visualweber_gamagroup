@@ -44,7 +44,6 @@ class RecruitmentPostServiceProvider extends ServiceProvider
                 'priority'    => 5,
                 'parent_id'   => 'cms-plugins-recruitment-parent',
                 'name'        => 'plugins/recruitment-post::recruitment-post.name',
-                'icon'        => 'fa fa-list',
                 'url'         => route('recruitment-post.index'),
                 'permissions' => ['recruitment-post.index'],
             ]);
@@ -70,7 +69,6 @@ class RecruitmentPostServiceProvider extends ServiceProvider
                         ];
                     });
             }
-
         });
     }
 }

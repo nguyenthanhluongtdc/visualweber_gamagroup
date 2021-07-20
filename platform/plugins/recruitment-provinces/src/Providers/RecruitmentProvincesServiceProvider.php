@@ -44,7 +44,6 @@ class RecruitmentProvincesServiceProvider extends ServiceProvider
                 'priority'    => 5,
                 'parent_id'   => 'cms-plugins-recruitment-parent',
                 'name'        => 'plugins/recruitment-provinces::recruitment-provinces.name',
-                'icon'        => 'fa fa-list',
                 'url'         => route('recruitment-provinces.index'),
                 'permissions' => ['recruitment-provinces.index'],
             ]);
