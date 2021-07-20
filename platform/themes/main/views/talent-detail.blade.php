@@ -109,21 +109,27 @@
                                         <input type="text" name="address" required class="form-control" placeholder="Địa chỉ " />
 <div class="errorTxt"></div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group __group">
                                         <input type="text" name="job"  class="form-control d-none"  />
+<div class="errorTxt"></div>
 
                                     </div>
 
-                                    <label class=" cv-upload" for="cv_upload">
-                                        <span class="btn btn-primary Recruitment--cv">Đính kèm CV ứng
-                                            tuyển</span>
-                                    </label>
+                                        <label class=" cv-upload" for="cv_upload">
+                                            <span class="btn btn-primary Recruitment--cv">Đính kèm CV ứng
+                                                tuyển</span>
+                                        </label>
                                     <span id="file_path"></span>
-                                    <input type="file" name="cv" required id="cv_upload"
+                                    <div class="form-group __group">
+
+                                    <input type="file" name="cv" id="cv_upload"
                                         class="form-control-file d-none">
+                                        <div class="errorTxt"></div>
+                                    </div>
+
                                 </div>
 
-                                <div class=" Recruitment--buttom font-helve font18" for="cv_upload">
+                                <div class=" Recruitment--buttom font-helve font18">
                                     {{-- <div class="form-group"> --}}
 
                                     {{-- </div> --}}

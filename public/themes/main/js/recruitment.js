@@ -22,6 +22,10 @@ const recruitment = {
                         required: true,
                         email: true,
                     },
+                    cv: {
+                        required: true,
+                        accept: "application/msword, application/pdf",
+                    },
                 },
                 messages: {
                     name: "Vui lòng nhập họ tên",
@@ -35,6 +39,10 @@ const recruitment = {
                     email: {
                         required: "Vui lòng nhập email",
                         email: "Email không đúng định dạng",
+                    },
+                    cv: {
+                        required: "Vui lòng tải lên CV",
+                        accept: "CV phải có dạng word hoặc pdf",
                     },
                 },
                 errorPlacement: function (error, element) {
@@ -50,18 +58,19 @@ const recruitment = {
         }
     },
     uploadCV: function () {
-        $("#cv_upload").change(function () {
-            if ($(this)[0].files[0].size > 2097152) {
-                alert("Chỉ cho phép upload file dưới 2MB!");
-                this.value = "";
-            } else {
-                $("#file_path").append(
-                    $("#cv_upload")
-                        .val()
-                        .replace(/C:\\fakepath\\/i, "")
-                );
-            }
-        });
+        // $("#cv_upload").change(function () {
+        //     if ($(this)[0].files[0].size > 2097152) {
+        //         alert("Chỉ cho phép upload file dưới 2MB!");
+        //         this.value = "";
+        //     } else {
+        //         $("#file_path").append(
+        //             $("#cv_upload")
+        //                 .val()
+        //                 .replace(/C:\\fakepath\\/i, "")
+        //         );
+        //     }
+        // });
+        // $(document).on(".Recruitment--cv", "click", function () {});
     },
 };
 
