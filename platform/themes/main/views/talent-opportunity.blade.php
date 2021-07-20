@@ -44,8 +44,7 @@
                     </select>
 
                     <select class="selectposition font-helve js-example-disabled-results" name="candidate-position" id="selectposition">
-                        <option selected disabled>{{__('Vị trí ứng tuyển')}}</option>
-                        <option value="">{{__("plugins/candidate-position::candidate-position.name")}}</option>
+                        <option value="" selected disabled>{{__("plugins/candidate-position::candidate-position.name")}}</option>
                         @foreach (get_candidate_position() as $item)
                             <option {{request()->get('candidate-position') == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->name}}</option>
                         @endforeach
