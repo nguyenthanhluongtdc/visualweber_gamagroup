@@ -62,12 +62,10 @@ const recruitment = {
             const file = $("#cv_upload")[0].files[0] || null;
 
             if (file && file.name) {
-                $("#file_path").html(
-                    `<span class="text-success">${file.name}</span>`
-                );
+                $("#file_path").text(file.name);
                 return false;
             }
-            $("#file_path").html("");
+            $("#file_path").text("Đính kèm CV ứng tuyển");
         });
     },
 };
