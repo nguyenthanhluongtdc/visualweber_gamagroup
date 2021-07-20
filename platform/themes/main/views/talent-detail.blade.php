@@ -63,7 +63,7 @@
                             <form action="{{route('public.recruitment.send-contact')}}" enctype="multipart/form-data" method="post"  id="recruitment_form" >
                                 @csrf
                                 <div class="poup--title font-helve-light font18">
-                                    <p>Bạn đang ứng tuyển vào vị trí: </p>
+                                    <p>{{ trans('applying for positions') }}:</p>
                                     <h2 class=" font-helve font20">
                                         {!! $talent->name !!}
                                     </h2>
@@ -71,22 +71,22 @@
 
                                 <div class="poup--form font-helve  ">
                                     <p class=" font-helve-light font16">
-                                        Vui lòng bổ sung các thông tin cá nhân của bạn để ứng tuyển
+                                        {{ trans('personal information') }}:
                                     </p>
                                     <div class="form-group __group">
-                                        <input type="text" name="name"  class="form-control" placeholder="Họ Tên" />
+                                        <input type="text" name="name"  class="form-control" placeholder="{{ trans('Name') }}" />
                                         <div class="errorTxt text-danger pt-1"></div>
                                     </div>
                                     <div class="form-group __group">
-                                        <input type="text" name="email" required class="form-control" placeholder="Email" />
+                                        <input type="text" name="email" required class="form-control" placeholder="{{ trans('Email') }}" />
                                         <div class="errorTxt text-danger pt-1"></div>
                                     </div>
                                     <div class="form-group __group">
-                                        <input type="text" name="phone" required class="form-control" placeholder="Số Điện Thoại " />
+                                        <input type="text" name="phone" required class="form-control" placeholder="{{ trans('Phone') }} " />
                                         <div class="errorTxt text-danger pt-1"></div>
                                     </div>
                                     <div class="form-group __group">
-                                        <input type="text" name="address" required class="form-control" placeholder="Địa chỉ " />
+                                        <input type="text" name="address" required class="form-control" placeholder="{{ trans('address') }}" />
                                         <div class="errorTxt text-danger pt-1"></div>
                                     </div>
                                     <div class="form-group __group">
@@ -94,7 +94,7 @@
                                     </div>
 
                                     <label class=" cv-upload" for="cv_upload">
-                                        <span id="file_path" class="btn btn-primary Recruitment--cv mt-1">Đính kèm CV ứng tuyển</span>
+                                        <span id="file_path" class="btn btn-primary Recruitment--cv mt-1">{{ trans('Attach your CV') }}</span>
                                     </label>
                                     <div class="form-group __group">
                                     <input type="file" name="cv" id="cv_upload"
@@ -105,7 +105,7 @@
 
                                 <div class=" Recruitment--buttom font-helve font18">
                                     <div class="font-helve font18">
-                                        <button type="submit" value="Submit" class="btn btn-submint btn_session Recruitment--profession">ĐĂNG KÝ</button>
+                                        <button type="submit" value="Submit" class="btn btn-submint btn_session Recruitment--profession">{{ trans('REGISTRATION') }}</button>
                                     </div>
                                 </div>
 
@@ -167,10 +167,10 @@
         <table class="table table-hover font-helve font18">
             <thead class="thead-light font-helve font18">
                 <tr>
-                    <th scope="col">Vị trí ứng tuyển</th>
-                    <th scope="col">Công ty</th>
-                    <th scope="col">Địa điểm làm việc</th>
-                    <th scope="col">Hạn nộp hồ sơ</th>
+                    <th scope="col">{{ trans('Nominee') }}</th>
+                    <th scope="col">{{ trans('Company') }}</th>
+                    <th scope="col">{{ trans('work address') }}</th>
+                    <th scope="col">{{ trans('the deadline for submission') }}</th>
                 </tr>
             </thead>
             <tbody class="font-helve font18">
