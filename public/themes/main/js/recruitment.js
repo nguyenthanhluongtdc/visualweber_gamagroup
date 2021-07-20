@@ -29,7 +29,7 @@ const recruitment = {
                 },
                 messages: {
                     name: "Vui lòng nhập họ tên",
-                    address: "Vui lòng chọn nhập địa chỉ",
+                    address: "Vui lòng nhập địa chỉ",
                     phone: {
                         required: "Vui lòng nhập số điện thoại",
                         number: "Vui lòng chỉ nhập số",
