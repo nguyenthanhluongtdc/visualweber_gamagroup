@@ -114,3 +114,10 @@ html:lang(en) .language-search li.lang-en a{
     background: #143961;
     border-radius: 5px;
 }
+
+html:lang(vi) .link-en-detail{
+    display: none;
+}
+html:lang(en) .link-vi-detail{
+    display: none;
+}
