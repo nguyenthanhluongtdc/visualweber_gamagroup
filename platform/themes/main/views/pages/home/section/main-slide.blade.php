@@ -1,4 +1,4 @@
-<div class="main-slider owl-carousel">
+<div class="main-slider slider-home owl-carousel">
    
    @if (!empty(get_featured_posts(5)))
        @foreach (get_featured_posts(5) as $item)
