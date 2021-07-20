@@ -35,7 +35,7 @@
                </div>
            </div>
            <div class="col-lg-2 footer-right">
-               <p>Liên kết với chúng tôi</p>
+               <p>{{ __("Connect with us") }}</p>
                <ul>
                    <li><a href="{{ theme_option('facebook') }}" target="_blank"><img src="{{ theme::asset()->url('images/homepage/iconfb.png') }}" alt="facebook" ></a></li>
                    <li><a href="{{ theme_option('youtube') }}" target="_blank"><img src="{{ theme::asset()->url('images/homepage/iconyt.png') }}" alt="youtube" ></a></li>

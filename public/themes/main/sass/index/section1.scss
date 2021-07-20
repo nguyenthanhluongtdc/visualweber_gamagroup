@@ -23,6 +23,9 @@
             }
             h2{
                 width: 78%;
+                @media(max-width : 1680px){
+                    width: 100%;
+                }
                 color: #fff;
                 margin-bottom: 70px;
                 line-height: 45px;
