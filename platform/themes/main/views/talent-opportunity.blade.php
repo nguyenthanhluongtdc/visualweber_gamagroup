@@ -44,15 +44,15 @@
                     </select>
 
                     <select class="selectposition font-helve js-example-disabled-results" name="candidate-position" id="selectposition">
-                        <option selected disabled>{{__('Vị trí ứng tuyển')}}</option>
+                        <option selected disabled>{{ trans('Nominee') }}</option>
                         <option value="">{{__("plugins/candidate-position::candidate-position.name")}}</option>
                         @foreach (get_candidate_position() as $item)
                             <option {{request()->get('candidate-position') == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->name}}</option>
                         @endforeach
                     </select>
                     <select class="selectcompany font-helve js-example-disabled-results" name="selectcompany" id="selectcompany">
-                        <option selected disabled>{{__('Công ty')}}</option>
-                        <option value="0">{{__('Tất cả')}}</option>
+                        <option selected disabled>{{ trans('Company') }}</option>
+                        <option value="0">{{ trans('all') }}</option>
                         @if(!empty(get_companies_for_form()))
                         @foreach (get_companies_for_form() as $item)
                         <option {{request()->selectcompany == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->name}}</option>
@@ -61,8 +61,8 @@
                     </select>
 
                     <select class="selectaddress font-helve js-example-disabled-results" name="selectaddress" id="selectaddress">
-                        <option selected disabled>{{__('Địa chỉ làm việc')}}</option>
-                        <option value="0">{{__('Tất cả')}}</option>
+                        <option selected disabled>{{ trans('work address') }}</option>
+                        <option value="0">{{ trans('all') }}</option>
                         @if(!empty(get_address_for_form()))
                         @foreach (get_address_for_form() as $item)
                         <option {{request()->selectaddress == $item->id ? "selected" : ""}} value="{{$item->id}}">{{$item->name}}</option>
@@ -82,10 +82,10 @@
             <table class="table table-hover font-helve font18">
                 <thead class="thead-light font-helve font18">
                   <tr>
-                    <th scope="col">Vị trí ứng tuyển</th>
-                    <th scope="col">Công ty</th>
-                    <th scope="col">Địa điểm làm việc</th>
-                    <th scope="col">Hạn nộp hồ sơ</th>
+                    <th scope="col">{{ trans('Nominee') }}</th>
+                    <th scope="col">{{ trans('Company') }}</th>
+                    <th scope="col">{{ trans('work address') }}</th>
+                    <th scope="col">{{ trans('the deadline for submission') }}</th>
                   </tr>
                 </thead>
 
@@ -122,8 +122,8 @@
         @if(!empty($recruitments))
         @if(count($recruitments) == 0)
 
-            <div class="d-flex mt-1 mb-1">
-                <h5>{{__('Không có dữ liệu phù hợp')}}</h5>
+            <div class="d-flex mt-1">
+                <h5 class="font-helve font18">{{ trans('no data') }}</h5>
             </div>
             @endif
             @if(!empty($recruitments))
