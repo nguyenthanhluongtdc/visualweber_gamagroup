@@ -121,7 +121,11 @@
     "type of contract": "type of contract",
     "Equipment and tools": "Equipment and tools",
     "the deadline for submission": "the deadline for submission",
-    "submit cv for recruitment application": "submit cv for recruitment application"
-
-
+    "submit cv for recruitment application": "submit cv for recruitment application",
+    "Nominee": "Nominee",
+    "work address": "work address",
+    "applying for positions": "you are applying for the position",
+    "personal information": "Please add your personal information to apply",
+    "Attach your CV": "Attach your CV",
+    "REGISTRATION": "REGISTRATION"
 }
