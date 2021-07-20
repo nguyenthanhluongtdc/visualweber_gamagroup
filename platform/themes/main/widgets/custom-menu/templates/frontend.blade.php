@@ -4,9 +4,9 @@
             @else
                 <aside class="widget widget--transparent">
                     @endif
-                    <div class="widget__header">
+                    {{-- <div class="widget__header">
                         <h3 class="widget__title">{{ $config['name'] }}</h3>
-                    </div>
+                    </div> --}}
                     <div class="widget__content">
                         {!!
                             Menu::generateMenu([
