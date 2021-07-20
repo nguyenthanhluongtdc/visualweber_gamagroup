@@ -1,8 +1,7 @@
 const recruitment = {
     submitForm: function () {
-        console.log("i here");
-
         try {
+            const lang = $("html").attr("lang") || "vi";
             $("#recruitment_form").validate({
                 ignore: ".ignore",
                 rules: {
@@ -24,27 +23,32 @@ const recruitment = {
                     },
                     cv: {
                         required: true,
-                        // accept: "application/msword, application/pdf",
+                        extension:
+                            "xls|csv|xlsx|pdf|ppt|pptx|doc|docx|png|jpg|jpeg",
                     },
                 },
-                messages: {
-                    name: "Vui lòng nhập họ tên",
-                    address: "Vui lòng nhập địa chỉ",
-                    phone: {
-                        required: "Vui lòng nhập số điện thoại",
-                        number: "Vui lòng chỉ nhập số",
-                        minlength: "Vui lòng nhập số điện thoại",
-                        maxlength: "Vui lòng nhập số điện thoại",
-                    },
-                    email: {
-                        required: "Vui lòng nhập email",
-                        email: "Email không đúng định dạng",
-                    },
-                    cv: {
-                        required: "Vui lòng tải lên CV",
-                        // accept: "CV phải có dạng word hoặc pdf",
-                    },
-                },
+                messages:
+                    lang == "vi"
+                        ? {
+                              name: "Vui lòng nhập họ tên",
+                              address: "Vui lòng nhập địa chỉ",
+                              phone: {
+                                  required: "Vui lòng nhập số điện thoại",
+                                  number: "Vui lòng chỉ nhập số",
+                                  minlength: "Vui lòng nhập số điện thoại",
+                                  maxlength: "Vui lòng nhập số điện thoại",
+                              },
+                              email: {
+                                  required: "Vui lòng nhập email",
+                                  email: "Email không đúng định dạng",
+                              },
+                              cv: {
+                                  required: "Vui lòng tải lên CV",
+                                  extension:
+                                      "CV tải lên không đúng định dạng, vui lòng dùng các định dạng sao (xls|csv|xlsx|pdf|ppt|pptx|doc|docx|png|jpg|jpeg)",
+                              },
+                          }
+                        : {},
                 errorPlacement: function (error, element) {
                     element.parents(".__group").find(".errorTxt").html(error);
                 },
@@ -71,6 +75,6 @@ const recruitment = {
 };
 
 $(document).ready(function () {
-    recruitment.uploadCV();
+    // recruitment.uploadCV();
     recruitment.submitForm();
 });

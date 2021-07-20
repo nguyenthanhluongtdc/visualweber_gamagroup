@@ -21,8 +21,8 @@ class RecruitmentRequest extends Request
             'email'   => 'required|email',
             'phone'   => 'required|numeric',
             'address'   => 'required',
-            'cv'   => 'required|max:2050|mimes:pdf,docx,doc,jpg,jpeg',
-            // 'job'   => 'required',
+            'cv'   => 'required|mimes:pdf,docx,doc,jpg,jpeg,png',
+            'job'   => 'required',
             'status' => Rule::in(BaseStatusEnum::values()),
         ];
     }

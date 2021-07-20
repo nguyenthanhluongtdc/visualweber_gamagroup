@@ -9,7 +9,6 @@
                 <div class="col-lg-12">
                     <h1 class="new-title font-helve-bold font30">
                         {!! $talent->name !!}
-
                     </h1>
                 </div>
             </div>
@@ -19,28 +18,29 @@
 {{-- ------------------------- nội dung trang tuyển dụng -------------- --}}
 <div class="Recruitment-s1">
     <div class="container">
-        <div class="row">
-
-            <div class="col-md-4 ">
-                @if(session()->has('success_msg') || session()->has('error_msg') || isset($errors))
+        @if(session()->has('success_msg') || session()->has('error_msg') || isset($errors))
+            <div class="mb-3">
                 @if (session()->has('success_msg'))
                     <div class="alert alert-success">
-                        <span class="m-b-0">Gửi thành công</span>
+                        <span class="font-helve m-b-0">{{ session('success_msg') }}</span>
                     </div>
                 @endif
                 @if (session()->has('error_msg'))
                     <div class="alert alert-danger">
-                        <p>{{ session('error_msg') }}</p>
+                        <span class="font-helve">{{ session('error_msg') }}</span>
                     </div>
                 @endif
                 @if (isset($errors) && count($errors))
                     <div class="alert alert-danger">
                         @foreach ($errors->all() as $error)
-                            <span>{{ $error }}</span> <br>
+                            <span class="font-helve">{{ $error }}</span> <br>
                         @endforeach
                     </div>
                 @endif
-            @endif
+            </div>
+        @endif
+        <div class="row">
+            <div class="col-md-4 ">
                 <div class="sticky-top">
                 <div class="Recruitment Recruitment--item1 font-helve-light font18 ">
                     <div class="Recruitment--adree">
@@ -71,7 +71,7 @@
                     </div>
                     <div class=" Recruitment--buttom font-helve font18">
                         <a data-fancybox="poup" data-src="#poup" href="javascript:;"
-                            class="btn btn-primary Recruitment--profession">Nộp CV ứng tuyển</a>
+                            class="btn btn-primary Recruitment--profession Recruitment--profession__open">Nộp CV ứng tuyển</a>
                     </div>
                 </div>
                 <div id="poup" class="poup">
@@ -80,7 +80,7 @@
                             <img src="{{ Theme::asset()->url('images/talent/two-woman.jpg') }}" alt="two-woman">
                         </div>
                         <div class="poup--block__form">
-                            <form action="{{route('recruitment.send')}}" enctype="multipart/form-data" method="post"  id="recruitment_form" >
+                            <form action="{{route('public.recruitment.send-contact')}}" enctype="multipart/form-data" method="post"  id="recruitment_form" >
                                 @csrf
                                 <div class="poup--title font-helve-light font18">
                                     <p>Bạn đang ứng tuyển vào vị trí: </p>
@@ -95,41 +95,35 @@
                                     </p>
                                     <div class="form-group __group">
                                         <input type="text" name="name"  class="form-control" placeholder="Họ Tên" />
-<div class="errorTxt text-danger pt-1"></div>
+                                        <div class="errorTxt text-danger pt-1"></div>
                                     </div>
                                     <div class="form-group __group">
                                         <input type="text" name="email" required class="form-control" placeholder="Email" />
-<div class="errorTxt text-danger pt-1"></div>
+                                        <div class="errorTxt text-danger pt-1"></div>
                                     </div>
                                     <div class="form-group __group">
                                         <input type="text" name="phone" required class="form-control" placeholder="Số Điện Thoại " />
-<div class="errorTxt text-danger pt-1"></div>
+                                        <div class="errorTxt text-danger pt-1"></div>
                                     </div>
                                     <div class="form-group __group">
                                         <input type="text" name="address" required class="form-control" placeholder="Địa chỉ " />
-<div class="errorTxt text-danger pt-1"></div>
+                                        <div class="errorTxt text-danger pt-1"></div>
                                     </div>
                                     <div class="form-group __group">
-                                        <input type="text" name="job"  class="form-control d-none"  />
+                                        <input type="text" name="job"  class="form-control d-none" value="{{ $talent->id }}"  />
                                     </div>
 
-                                        <label class=" cv-upload" for="cv_upload">
-                                            <span id="file_path" class="btn btn-primary Recruitment--cv mt-1    ">Đính kèm CV ứng
-                                                tuyển</span>
-                                        </label>
-                                    {{-- <span id="file_path" class="d-block pt-2"></span> --}}
+                                    <label class=" cv-upload" for="cv_upload">
+                                        <span id="file_path" class="btn btn-primary Recruitment--cv mt-1">Đính kèm CV ứng tuyển</span>
+                                    </label>
                                     <div class="form-group __group">
-                                        <input type="file" name="cv" id="cv_upload"
-                                            class="form-control-file d-none">
-                                            <div class="errorTxt text-danger pt-1"></div>
-                                        </div>
-
+                                    <input type="file" name="cv" id="cv_upload"
+                                        class="form-control-file d-none">
+                                        <div class="errorTxt text-danger pt-1"></div>
+                                    </div>
                                 </div>
 
                                 <div class=" Recruitment--buttom font-helve font18">
-                                    {{-- <div class="form-group"> --}}
-
-                                    {{-- </div> --}}
                                     <div class="font-helve font18">
                                         <button type="submit" value="Submit" class="btn btn-submint btn_session Recruitment--profession">ĐĂNG KÝ</button>
                                     </div>
@@ -224,3 +218,17 @@
         </div>
     </div>
 </div>
+
+<ul>
+     @foreach ($errors->all() as $error)
+         <li>{{ $error }}</li>
+     @endforeach
+
+     {{ count($errors->all()) }}
+</ul>
+{{--
+@if($errors->has())
+<script>
+    $('.Recruitment--profession__open').click();
+</script>
+@endif --}}
