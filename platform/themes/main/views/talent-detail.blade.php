@@ -85,7 +85,7 @@
                                 <div class="poup--title font-helve-light font18">
                                     <p>Bạn đang ứng tuyển vào vị trí: </p>
                                     <h2 class=" font-helve font20">
-                                        Chuyên Viên Kỹ Thuật Cấp Cao ERP
+                                        {!! $talent->name !!}
                                     </h2>
                                 </div>
 
@@ -227,73 +227,3 @@
         </div>
     </div>
 </div>
-{{-- <script>
-    $('#cv_upload').change(function(){
-        if($(this)[0].files[0].size > 2097152){
-            alert("Chỉ cho phép upload file dưới 2MB!");
-            this.value = "";
-        } else {
-            $('#file_path').append($('#cv_upload').val().replace(/C:\\fakepath\\/i, ''))
-        }
-    })
-</script> --}}
-{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-    $('.btn_session').click(function(e) {
-        // HideDialog();
-        // console.log("xcvbnm");
-        // e.preventDefault();
-        // sessionStorage["PopupShown"] = 'yes';
-    });
-    $.validator.addMethod("regxPhone", function (value, element, regexpr) {
-        return regexpr.test(value);
-    }, "Số điện thoại sai định dạng");
-
-    $.validator.addMethod("regxEmail", function (value, element, regexpr) {
-        return regexpr.test(value);
-    }, "Email sai định dạng");
-
-    $("#register-form").validate({
-        ignore: [],
-        rules: {
-            name: {
-                required: true,
-            },
-
-            phone: {
-                required: true,
-                digits: true,
-                regxPhone: /(09|08|07|05|03)+([0-9]{8})\b/
-            },
-            email: {
-                required: true,
-                email: true,
-                regxEmail: /^([a-zA-Z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
-            },
-
-        },
-        messages: {
-            name: "Thông tin này không được bỏ trống!",
-            phone: {
-                required: 'Thông tin này không được bỏ trống!',
-                digits: 'Số điện thoại không hợp lệ!'
-            },
-            email: {
-                required: 'Thông tin này không được bỏ trống!',
-                email: 'Email không đúng định dạng!'
-            },
-
-        },
-        errorElement: "div",
-        validClass: "valid-validate",
-        errorClass: "error-validate",
-        errorPlacement: function (error, element) {
-            error.insertAfter(element.parents('.form-group'));
-        },
-        submitHandler: function (form) {
-            Helper.showProcessingLoader();
-            form.submit();
-        },
-    });
-
-</script> --}}
