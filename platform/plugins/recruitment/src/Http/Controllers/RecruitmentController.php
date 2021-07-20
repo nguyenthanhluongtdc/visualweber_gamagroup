@@ -147,7 +147,7 @@ class RecruitmentController extends BaseController
             if ($request->hasFile('cv')) {
                 $request->file('cv')->storeAs('cv', $filename, 'file_cv');
             }
-            dd($request);
+            // dd($request);
             // EmailHandler::setModule(CONTACT_MODULE_SCREEN_NAME)
             //         ->setVariableValues([
             //             'contact_name'    => $contact->name ?? 'N/A',
