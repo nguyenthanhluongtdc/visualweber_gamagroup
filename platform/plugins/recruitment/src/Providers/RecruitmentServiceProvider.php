@@ -46,24 +46,22 @@ class RecruitmentServiceProvider extends ServiceProvider
                 'name'        => 'plugins/recruitment::recruitment.name',
                 'icon'        => 'fas fa-users',
             ])
-            ->registerItem([
-                'id'          => 'cms-plugins-recruitment',
-                'priority'    => 1,
-                'parent_id'   => 'cms-plugins-recruitment-parent',
-                'name'        => 'plugins/recruitment::recruitment.name',
-                'icon'        => 'fa fa-list',
-                'url'         => route('recruitment.index'),
-                'permissions' => ['recruitment.index'],
-            ]);
+                ->registerItem([
+                    'id'          => 'cms-plugins-recruitment',
+                    'priority'    => 1,
+                    'parent_id'   => 'cms-plugins-recruitment-parent',
+                    'name'        => 'plugins/recruitment::recruitment.name',
+                    'url'         => route('recruitment.index'),
+                    'permissions' => ['recruitment.index'],
+                ]);
             \EmailHandler::addTemplateSettings(CONTACT_MODULE_SCREEN_NAME, config('plugins.recruitment-contact.email', []));
-
         });
-        add_shortcode('recruitment-form', 'Recruitment form', 'Custom form', function($shortCode) {
+        add_shortcode('recruitment-form', 'Recruitment form', 'Custom form', function ($shortCode) {
             return view('plugins/recruitment::form', [
-                    'company'    => $shortCode->company,
-                    'post'       => $shortCode->post,
-                    'company_email'       => $shortCode->company_email,
-                ])->render(); 
+                'company'    => $shortCode->company,
+                'post'       => $shortCode->post,
+                'company_email'       => $shortCode->company_email,
+            ])->render();
         });
     }
 }
