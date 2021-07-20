@@ -46,10 +46,10 @@
                     <div class="Recruitment--adree">
                         <ul>
 
-                            <li>Công ty: {{!empty($talent->companies) ? $talent->companies->name : "None"}}</li>
-                            <li>Địa chỉ: {{!empty($talent->city) ? $talent->city->name : "None"}}</li>
-                            <li>Phong ban: {!! $talent->department !!}</li>
-                            <li>Loại hợp đồng:
+                            <li>{{ trans('Company') }}: {{!empty($talent->companies) ? $talent->companies->name : "None"}}</li>
+                            <li>{{ trans('address') }}: {{!empty($talent->city) ? $talent->city->name : "None"}}</li>
+                            <li>{{ trans('Department') }}: {!! $talent->department !!}</li>
+                            <li>{{ trans('type of contract') }}:
                                 @if($talent->type == 0)
                                 {{__('Nhân viên chính thức')}}
                             @elseif($talent->type == 1)
@@ -62,8 +62,8 @@
                                 {{__('Khác')}}
                             @endif
                             </li>
-                            <li>Thiết bị, công cụ: {!! $talent->timework !!}</li>
-                            <li>Hạn nộp hồ sơ: {!! $talent->expire !!}</li>
+                            <li>{{ trans('Equipment and tools') }}: {!! $talent->timework !!}</li>
+                            <li>{{ trans('the deadline for submission') }}: {!! $talent->expire !!}</li>
                         </ul>
                         {{-- @if (has_field($page, 'title_admin_16252012931'))
                             {!! get_field($page, 'title_admin_16252012931') !!}
@@ -140,7 +140,7 @@
             <div class="col-md-8 talent--desc">
                 <div class="opportunity1">
                     <h3 class="opportunity--item font-helve-bold font20">
-                        Tổng quan công việc
+                        {{ trans('job overview') }}
                     </h3>
                     <div class="desc--overview font-helve-light font18">
                         {!! $talent->experience !!}
@@ -151,8 +151,7 @@
 
                 <div class="opportunity">
                     <h3 class="opportunity--title font-helve-bold font20">
-                        Mô tả
-
+                        {{ trans('Describe') }}
                     </h3>
 
                     <div class="desc--overview font-helve-light font18">
@@ -163,7 +162,7 @@
                 <hr>
                 <div class="opportunity">
                     <h3 class="opportunity--title font-helve-bold font20">
-                        Trách nhiệm
+                        {{ trans('responsibility') }}
                     </h3>
                     <div class="desc--overview item font-helve-light font18">
                         {!! $talent->Responsibility !!}
@@ -182,7 +181,7 @@
 <div class="opportunity-table">
     <div class="container">
         <h3 class="opportunity--title item font-helve-bold font30">
-            Các vị trí khác
+            {{ trans('other locations') }}
         </h3>
 
         <table class="table table-hover font-helve font18">
