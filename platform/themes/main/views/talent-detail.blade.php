@@ -1,7 +1,25 @@
-{!! Theme::breadcrumb()->render() !!}
-
-
-
+<div class="breadcrumb-wrap">
+    <ul class="breadcrumb-list container font-helve-light" itemscope itemtype="http://schema.org/BreadcrumbList">
+       
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="bread-link">
+                   <a href="{{ route('public.index') }}">{{__('Home')}}</a>
+                    <span class="icon">
+                        <i class="fas fa-angle-right"></i>
+                    </span>
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="bread-link">
+                    <a href="{{ route('public.index') }}/{{  get_slug_job()  }}">{{__('Cơ hội nghề nghiệp')}}</a>
+                     <span class="icon">
+                         <i class="fas fa-angle-right"></i>
+                     </span>
+                 </li>
+        
+                <li class="active link-active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    {{ $talent->name }}
+                </li>
+       
+    </ul>
+</div>
 <div class="all-news-content">
     <div class="container">
         <div class="new-section1">
