@@ -80,6 +80,10 @@ class RecruitmentPostTable extends TableAbstract
             ->select([
                'id',
                'name',
+            //    'company',
+               'department',
+               'timework',
+               'expire',
                'created_at',
                'status',
            ]);
@@ -99,6 +103,22 @@ class RecruitmentPostTable extends TableAbstract
             ],
             'name' => [
                 'title' => trans('core/base::tables.name'),
+                'class' => 'text-left',
+            ],
+            // 'company' => [
+            //     'title' => trans('company'),
+            //     'class' => 'text-left',
+            // ],
+            'department' => [
+                'title' => trans('department'),
+                'class' => 'text-left',
+            ],
+            'timework' => [
+                'title' => trans('timework'),
+                'class' => 'text-left',
+            ],
+            'expire' => [
+                'title' => trans('expire'),
                 'class' => 'text-left',
             ],
             'created_at' => [
