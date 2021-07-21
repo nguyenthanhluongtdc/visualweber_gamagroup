@@ -82,7 +82,7 @@ class RecruitmentPostTable extends TableAbstract
                'name',
             //    'company',
                'department',
-               'timework',
+            //    'timework',
                'expire',
                'created_at',
                'status',
@@ -113,10 +113,10 @@ class RecruitmentPostTable extends TableAbstract
                 'title' => trans('department'),
                 'class' => 'text-left',
             ],
-            'timework' => [
-                'title' => trans('timework'),
-                'class' => 'text-left',
-            ],
+            // 'timework' => [
+            //     'title' => trans('timework'),
+            //     'class' => 'text-left',
+            // ],
             'expire' => [
                 'title' => trans('expire'),
                 'class' => 'text-left',
