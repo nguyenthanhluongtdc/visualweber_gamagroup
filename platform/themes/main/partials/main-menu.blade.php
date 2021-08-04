@@ -2,7 +2,11 @@
     @foreach ($menu_nodes as $key => $row)
         <li class="menu-item menu-big @if ($row->has_child) menu-item-has-children @endif {{ $row->css_class }} @if ($row->active) active @endif font-helve font17">
             <a href="{{ $row->url }}" target="{{ $row->target }}" class="menu-link">
-                @if ($row->icon_font)<i class='{{ trim($row->icon_font) }}'></i> @endif{{ $row->title }}
+                @if ($row->icon_font)
+                    <i class='font20 {{ trim($row->icon_font) }}'></i> 
+                @else 
+                    {{ $row->title }}
+                @endif
                 {{-- @if ($row->has_child) <span class="toggle-icon"><i class="fa fa-angle-down"></i></span>@endif --}}
             </a>
             @if ($row->has_child)

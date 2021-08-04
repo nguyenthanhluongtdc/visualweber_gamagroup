@@ -196,5 +196,38 @@ app()->booted(function () {
                     'class' => 'form-control',
                 ],
             ],
+        ])->setSection([
+            'title'      => __('Contact'),
+            'desc'       => __('Contact'),
+            'id'         => 'opt-text-subsection-contact',
+            'subsection' => true,
+            'icon'       => 'fa fa-phone',
+        ])
+        ->setField([
+            'id'         => 'icon_phone',
+            'section_id' => 'opt-text-subsection-contact',
+            'type'       => 'text',
+            'label'      => 'Icon phone',
+            'attributes' => [
+                'name'    => 'icon_phone',
+                'value'   => 'fas fa-phone-volume',
+                'options' => [
+                    'class'       => 'form-control',
+                    'placeholder' => 'fas fa-phone-volume',
+                ],
+            ], 
+            'helper'     => __('get icon from website: https://fontawesome.com/'),
+        ])->setField([
+            'id'         => 'phone_number',
+            'section_id' => 'opt-text-subsection-contact',
+            'type'       => 'text',
+            'label'      => 'Phone number',
+            'attributes' => [
+                'name'    => 'phone_number',
+                'value'   => null,
+                'options' => [
+                    'class'       => 'form-control',
+                ],
+            ],
         ]);
 });

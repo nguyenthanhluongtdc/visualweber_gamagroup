@@ -72,6 +72,12 @@
 </footer>
 {{-- <div id="back2top"><i class="fa fa-angle-up"></i></div> --}}
 
+<div class="pulsating">
+    <a href="tel: {{theme_option('phone_number')}}" title="{{theme_option('phone_number')}}">
+        <i class="fas fa-phone-volume"></i>
+    </a>
+</div>
+
 <!-- JS Library-->
 {!! Theme::footer() !!}
 

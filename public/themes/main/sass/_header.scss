@@ -275,7 +275,7 @@ a.primary-a {
                     }
                     position: relative;
                     a {
-                        color: #A8A9AD;
+                        color: white;
                         text-decoration: none;
                     }
                     .sub-menu-drop {
@@ -299,7 +299,7 @@ a.primary-a {
                         }
                         .item-menu-drop:hover {
                             a.child {
-                                color: #fff;
+                                color: #A8A9AD;
                             }
                             .sub-menu-3{
                                 display: block;
@@ -330,7 +330,7 @@ a.primary-a {
                             }
                             .item-menu-drop-3:hover {
                                 a.child-3 {
-                                    color: #fff;
+                                    color: #A8A9AD;
                                 }
                             }
                         }
@@ -355,6 +355,9 @@ a.primary-a {
                         left: 0;
                     }
                 }
+                li.menu-big>a {
+                    text-transform: uppercase;
+                }
                 li.menu-big:hover .sub-menu-drop {
                     display: block;
                 }
@@ -362,16 +365,16 @@ a.primary-a {
                 li.menu-big.active,
                 li.menu-big:hover {
                     a.menu-link {
-                        color: #fff;
+                        color: #A8A9AD;
                     }
                     &::after {
                         content: '';
                         position: absolute;
                         bottom: -16px;
-                        color: #fff;
+                        color: #A8A9AD;
                         width: 100%;
                         height: 2px;
-                        background: #fff;
+                        background: #A8A9AD;
                         left: 0;
                     }
                 }
@@ -561,7 +564,7 @@ button.search-btn:hover.input-search-home{
                 }
                 .item-menu-drop:hover {
                     a.child {
-                        color: #fff;
+                        color: #A8A9AD;
                     }
                 }
             }
@@ -571,7 +574,7 @@ button.search-btn:hover.input-search-home{
         }
         li.active {
             a {
-                color: #fff;
+                color: #A8A9AD;
             }
         }
         li:first-child {
@@ -632,3 +635,4 @@ button.search-btn:hover.input-search-home{
 .page-another strong{
     font-family: $font-helve;
 }
+
