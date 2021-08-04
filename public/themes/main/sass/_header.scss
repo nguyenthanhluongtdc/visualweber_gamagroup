@@ -364,9 +364,6 @@ a.primary-a {
 
                 li.menu-big.active,
                 li.menu-big:hover {
-                    a.menu-link {
-                        color: #A8A9AD;
-                    }
                     &::after {
                         content: '';
                         position: absolute;
@@ -376,6 +373,12 @@ a.primary-a {
                         height: 2px;
                         background: #A8A9AD;
                         left: 0;
+                    }
+                }
+                
+                li.menu-big:hover {
+                     a.menu-link {
+                        color: #A8A9AD;
                     }
                 }
                 
