@@ -370,7 +370,6 @@ a.primary-a {
                         bottom: -16px;
                         width: 100%;
                         height: 2px;
-                        background: #A8A9AD;
                         left: 0;
                     }
                 }
@@ -382,6 +381,7 @@ a.primary-a {
                     
                     &::after{
                         color: #A8A9AD;
+                         background: #A8A9AD;
                     }
                 }
                 
