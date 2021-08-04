@@ -269,10 +269,10 @@ a.primary-a {
                 align-items: center;
                 list-style: none;
                 li {
-                    margin-right: 63px;
-                    @media(max-width: 1919px) {
-                        margin-right: 55px;
-                    }
+                    margin-right: 55px;
+                    // @media(max-width: 1919px) {
+                    //     margin-right: 55px;
+                    // }
                     position: relative;
                     a {
                         color: white;
